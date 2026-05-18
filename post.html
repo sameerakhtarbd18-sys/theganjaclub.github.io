@@ -1,144 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Ganja Club</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0a0a0a;
-            --text: #e8e8e8;
-            --text-muted: #888;
-            --accent: #c9a84c;
-            --border: #1a1a1a;
-            --font-sans: 'Inter', -apple-system, sans-serif;
-            --font-serif: 'Playfair Display', Georgia, serif;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: var(--font-sans);
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.8;
-            -webkit-font-smoothing: antialiased;
-        }
-        .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
-        header {
-            padding: 32px 0 16px;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 40px;
-        }
-        .back { color: var(--accent); text-decoration: none; font-size: 0.85rem; }
-        .back:hover { text-decoration: underline; }
-        .site-title {
-            font-family: var(--font-serif);
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text);
-            text-decoration: none;
-        }
-        .site-title span { color: var(--accent); }
-        
-        article h1 {
-            font-family: var(--font-serif);
-            font-size: 2.2rem;
-            line-height: 1.3;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-        .meta {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 32px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid var(--border);
-        }
-        article p {
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-        }
-        article h2 {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            margin: 36px 0 16px;
-        }
-        article h3 {
-            font-size: 1.15rem;
-            margin: 28px 0 12px;
-            font-weight: 600;
-        }
-        article blockquote {
-            border-left: 3px solid var(--accent);
-            padding-left: 20px;
-            margin: 24px 0;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-        article ul, article ol {
-            margin: 16px 0;
-            padding-left: 24px;
-        }
-        article li { margin-bottom: 8px; }
-        article a { color: var(--accent); }
-        footer {
-            margin-top: 64px;
-            padding: 32px 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-        }
-        #post-content { display: none; }
-        #loading { color: var(--text-muted); text-align: center; padding: 80px 0; }
-        @media (max-width: 600px) {
-            article h1 { font-size: 1.6rem; }
-            .container { padding: 0 16px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ganja Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0b;--card:#111113;--text:#e4e0d8;--muted:#7a7770;--gold:#be9b3c;--line:#1e1e20;--sans:'Inter',sans-serif;--serif:'Libre Baskerville',Georgia,serif}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.8;font-weight:300;-webkit-font-smoothing:antialiased}
+.wrap{max-width:660px;margin:0 auto;padding:0 24px}
+a{color:var(--gold);text-decoration:none}
+a:hover{opacity:.8}
+.head{padding:28px 0;border-bottom:1px solid var(--line);margin-bottom:36px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--text);letter-spacing:-0.03em}
+.logo em{font-style:normal;color:var(--gold)}
+.back{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+.back:hover{color:var(--gold)}
+article h1{font-family:var(--serif);font-size:2rem;line-height:1.25;margin-bottom:10px;font-weight:400}
+.meta{color:var(--muted);font-size:.78rem;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--line);text-transform:uppercase;letter-spacing:.06em}
+article p{margin-bottom:18px;font-size:1rem;color:var(--text)}
+article h2{font-family:var(--serif);font-size:1.3rem;margin:32px 0 14px;color:var(--text);font-weight:400}
+article h3{font-size:1rem;margin:24px 0 10px;font-weight:500}
+article blockquote{border-left:2px solid var(--gold);padding-left:18px;margin:22px 0;color:var(--muted);font-style:italic}
+article ul,article ol{margin:14px 0;padding-left:22px}
+article li{margin-bottom:6px;color:var(--text)}
+.loading{text-align:center;padding:80px 0;color:var(--muted)}
+.ft{padding:36px 0;border-top:1px solid var(--line);margin-top:48px;text-align:center;font-size:.75rem;color:#444}
+.ft a{color:#555}
+.ft a:hover{color:var(--gold)}
+@media(max-width:600px){article h1{font-size:1.5rem}.wrap{padding:0 16px}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="/" class="site-title">THE GANJA <span>CLUB</span></a>
-        </header>
-        
-        <a href="/" class="back">← Back to all stories</a>
-        
-        <div id="loading">Loading...</div>
-        
-        <div id="post-content">
-            <article>
-                <h1 id="post-title"></h1>
-                <div class="meta" id="post-meta"></div>
-                <div id="post-body"></div>
-            </article>
-        </div>
-        
-        <footer>
-            <p>&copy; 2026 The Ganja Club · <a href="https://instagram.com/theganjaclub_" target="_blank">Instagram</a></p>
-        </footer>
-    </div>
+<div class="wrap">
+<div class="head">
+<a href="/theganjaclub.github.io/" class="logo">The Ganja <em>Club</em></a>
+<a href="/theganjaclub.github.io/" class="back">← Back</a>
+</div>
+<div id="loader" class="loading">Loading post…</div>
+<article id="post-full" style="display:none">
+<h1 id="p-title"></h1>
+<div class="meta" id="p-meta"></div>
+<div id="p-body"></div>
+</article>
+<div class="ft">© 2026 The Ganja Club</div>
+</div>
+<script>
+var BASE = window.location.pathname.replace(/\/[^\/]*$/,'');
+if (!BASE) BASE = '/theganjaclub.github.io';
 
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const postId = params.get('id');
-        
-        fetch('/posts.json')
-            .then(r => r.json())
-            .then(posts => {
-                const post = posts.find(p => p.id === postId) || posts[0];
-                if (!post) return;
-                
-                document.title = post.title + ' — The Ganja Club';
-                document.getElementById('post-title').textContent = post.title;
-                document.getElementById('post-meta').textContent = post.date + ' · ' + post.readTime + ' min read · ' + post.tags;
-                document.getElementById('post-body').innerHTML = post.body;
-                
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('post-content').style.display = 'block';
-            });
-    </script>
+var params = new URLSearchParams(window.location.search);
+var pid = params.get('id');
+var x = new XMLHttpRequest();
+x.open('GET', BASE + '/posts.json', true);
+x.onload = function(){
+if(x.status !== 200) return;
+try{
+var posts = JSON.parse(x.responseText);
+var post = posts.find(function(p){return p.id === pid;}) || posts[0];
+if(!post) return;
+document.title = post.title + ' — The Ganja Club';
+document.getElementById('p-title').textContent = post.title;
+document.getElementById('p-meta').textContent = post.date + ' · ' + post.readTime + ' min read · ' + post.tags;
+document.getElementById('p-body').innerHTML = post.body;
+document.getElementById('loader').style.display = 'none';
+document.getElementById('post-full').style.display = 'block';
+}catch(e){}
+};
+x.send();
+</script>
 </body>
 </html>
