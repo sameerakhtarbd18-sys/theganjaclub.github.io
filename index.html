@@ -86,7 +86,7 @@ a:hover{color:var(--gold)}
 
 <div class="feat" id="feat">
   <div class="tg">Latest Story</div>
-  <div class="fi" id="fimg"><img src="https://images.pexels.com/photos/27910870/pexels-photo-27910870.jpeg?w=800" alt="Cannabis" style="width:100%;height:100%;object-fit:cover"></div>
+  <div class="fi" id="fimg"><img src="https://files.catbox.moe/8hftu2.jpg" alt="The Ganja Club" style="width:100%;height:100%;object-fit:cover"></div>
   <div class="tl" id="ftit">Loading...</div>
   <div class="ex" id="fex">Daily medical cannabis intelligence</div>
   <div class="mt" id="fmet">The Ganja Club</div>
@@ -128,28 +128,31 @@ a:hover{color:var(--gold)}
 
 <script>
 var B = '/theganjaclub.github.io';
-var PEXELS = [
-  'https://images.pexels.com/photos/27910870/pexels-photo-27910870.jpeg?w=800',
-  'https://images.pexels.com/photos/27910867/pexels-photo-27910867.jpeg?w=800',
-  'https://images.pexels.com/photos/27910871/pexels-photo-27910871.jpeg?w=800',
-  'https://images.pexels.com/photos/27910872/pexels-photo-27910872.jpeg?w=800',
-  'https://images.pexels.com/photos/27910869/pexels-photo-27910869.jpeg?w=800',
-  'https://images.pexels.com/photos/27910873/pexels-photo-27910873.jpeg?w=800',
-  'https://images.pexels.com/photos/27910868/pexels-photo-27910868.jpeg?w=800',
-  'https://images.pexels.com/photos/27910874/pexels-photo-27910874.jpeg?w=800'
+var IMGS = [
+  'https://files.catbox.moe/8hftu2.jpg',
+  'https://files.catbox.moe/dfyu2a.jpg',
+  'https://files.catbox.moe/ubpbd6.jpg',
+  'https://files.catbox.moe/om28m3.jpg',
+  'https://files.catbox.moe/ofm686.jpg',
+  'https://files.catbox.moe/xme900.jpg',
+  'https://files.catbox.moe/okk6w1.jpg',
+  'https://files.catbox.moe/n2z42w.jpg',
+  'https://files.catbox.moe/9xdcm4.jpg',
+  'https://files.catbox.moe/xkfwcb.jpg'
 ];
-var PEXELS_SM = [
-  'https://images.pexels.com/photos/27910870/pexels-photo-27910870.jpeg?w=400',
-  'https://images.pexels.com/photos/27910867/pexels-photo-27910867.jpeg?w=400',
-  'https://images.pexels.com/photos/27910871/pexels-photo-27910871.jpeg?w=400',
-  'https://images.pexels.com/photos/27910872/pexels-photo-27910872.jpeg?w=400',
-  'https://images.pexels.com/photos/27910869/pexels-photo-27910869.jpeg?w=400',
-  'https://images.pexels.com/photos/27910873/pexels-photo-27910873.jpeg?w=400',
-  'https://images.pexels.com/photos/27910868/pexels-photo-27910868.jpeg?w=400',
-  'https://images.pexels.com/photos/27910874/pexels-photo-27910874.jpeg?w=400'
+var IMGS_SM = [
+  'https://files.catbox.moe/6gzkke.jpg',
+  'https://files.catbox.moe/ue2f0l.jpg',
+  'https://files.catbox.moe/hrlt2l.jpg',
+  'https://files.catbox.moe/14rye5.jpg',
+  'https://files.catbox.moe/oaoih8.jpg',
+  'https://files.catbox.moe/q4f90c.jpg',
+  'https://files.catbox.moe/b3ib9e.jpg',
+  'https://files.catbox.moe/osvpx0.jpg',
+  'https://files.catbox.moe/dg4eql.jpg',
+  'https://files.catbox.moe/58w48v.jpg'
 ];
 
-// Read category from URL
 var cat = 'all';
 var qs = window.location.search;
 if (qs.indexOf('cat=') > -1) {
@@ -157,7 +160,6 @@ if (qs.indexOf('cat=') > -1) {
   if (m) cat = m[1];
 }
 
-// Highlight active nav
 var links = document.querySelectorAll('.nav-bar a');
 for (var i = 0; i < links.length; i++) {
   links[i].classList.remove('act');
@@ -171,8 +173,6 @@ x.open('GET', B + '/posts.json', true);
 x.onload = function() {
   try {
     var allPosts = JSON.parse(x.responseText);
-    
-    // Filter by category
     var posts = [];
     for (var i = 0; i < allPosts.length; i++) {
       if (cat === 'all' || allPosts[i].tags.toLowerCase().indexOf(cat) > -1) {
@@ -181,20 +181,18 @@ x.onload = function() {
     }
     if (posts.length === 0) posts = allPosts;
     
-    // Featured
     var t = posts[0];
-    document.getElementById('fimg').innerHTML = '<img src="' + PEXELS[0] + '" alt="Cannabis" style="width:100%;height:100%;object-fit:cover">';
+    document.getElementById('fimg').innerHTML = '<img src="' + IMGS[0] + '" alt="The Ganja Club" style="width:100%;height:100%;object-fit:cover">';
     document.getElementById('ftit').innerHTML = '<a href="' + B + '/post.html?id=' + t.id + '">' + t.title + '</a>';
     document.getElementById('fex').textContent = t.excerpt;
     document.getElementById('fmet').textContent = t.date + ' - ' + t.readTime + ' min read';
     
-    // List
     var h = '';
     for (var i = 0; i < posts.length; i++) {
       var p = posts[i];
-      var im = PEXELS_SM[(i + 1) % PEXELS_SM.length];
+      var im = IMGS_SM[(i + 1) % IMGS_SM.length];
       h += '<a href="' + B + '/post.html?id=' + p.id + '" class="rw">';
-      h += '<div class="ri"><img src="' + im + '" alt="" loading="lazy"></div>';
+      h += '<div class="ri"><img src="' + im + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>';
       h += '<div class="rb">';
       h += '<div class="rt">' + p.title + '</div>';
       h += '<div class="rm">' + p.date + ' - ' + p.tags + '</div>';
@@ -202,11 +200,10 @@ x.onload = function() {
     }
     document.getElementById('posts').innerHTML = h;
     
-    // Grid
     var g = '';
     for (var i = 1; i < 5 && i < posts.length; i++) {
       var p = posts[i];
-      var im = PEXELS[(i + 2) % PEXELS.length];
+      var im = IMGS[(i + 2) % IMGS.length];
       g += '<a href="' + B + '/post.html?id=' + p.id + '">';
       g += '<div class="gi"><img src="' + im + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>';
       g += '<div class="gp">';

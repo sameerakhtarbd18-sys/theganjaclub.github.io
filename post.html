@@ -43,7 +43,7 @@ article li{margin-bottom:6px}
 </div>
 <div id="loader" class="ld">Loading post...</div>
 <article id="pf" style="display:none">
-<div id="img-here"></div>
+<div id="img-here"><img src="https://files.catbox.moe/8hftu2.jpg" alt="The Ganja Club" style="width:100%;height:100%;object-fit:cover"></div>
 <h1 id="ptit"></h1>
 <div class="mt" id="pmet"></div>
 <div id="pbd"></div>
@@ -53,11 +53,16 @@ article li{margin-bottom:6px}
 <script>
 var B = '/theganjaclub.github.io';
 var IMGS = [
-  'https://images.pexels.com/photos/27910870/pexels-photo-27910870.jpeg?w=800',
-  'https://images.pexels.com/photos/27910867/pexels-photo-27910867.jpeg?w=800',
-  'https://images.pexels.com/photos/27910871/pexels-photo-27910871.jpeg?w=800',
-  'https://images.pexels.com/photos/27910872/pexels-photo-27910872.jpeg?w=800',
-  'https://images.pexels.com/photos/27910869/pexels-photo-27910869.jpeg?w=800'
+  'https://files.catbox.moe/8hftu2.jpg',
+  'https://files.catbox.moe/dfyu2a.jpg',
+  'https://files.catbox.moe/ubpbd6.jpg',
+  'https://files.catbox.moe/om28m3.jpg',
+  'https://files.catbox.moe/ofm686.jpg',
+  'https://files.catbox.moe/xme900.jpg',
+  'https://files.catbox.moe/okk6w1.jpg',
+  'https://files.catbox.moe/n2z42w.jpg',
+  'https://files.catbox.moe/9xdcm4.jpg',
+  'https://files.catbox.moe/xkfwcb.jpg'
 ];
 var pid = window.location.search.split('=')[1] || '';
 var x = new XMLHttpRequest();
@@ -73,7 +78,7 @@ x.onload = function() {
     if (!post) return;
     document.title = post.title + ' - The Ganja Club';
     var idx = Math.floor(Math.random() * IMGS.length);
-    document.getElementById('img-here').innerHTML = '<img src="' + IMGS[idx] + '" alt="Cannabis" loading="lazy">';
+    document.getElementById('img-here').innerHTML = '<img src="' + IMGS[idx] + '" alt="The Ganja Club" loading="lazy" style="width:100%;height:100%;object-fit:cover">';
     document.getElementById('ptit').textContent = post.title;
     document.getElementById('pmet').textContent = post.date + ' - ' + post.readTime + ' min read - ' + post.tags;
     document.getElementById('pbd').innerHTML = post.body;
