@@ -19,13 +19,13 @@ a:hover{color:var(--gold)}
 .logo{font-family:var(--serif);font-size:1.5rem;font-weight:700;letter-spacing:-.03em}
 .logo span{color:var(--gold)}
 .sub{font-size:.7rem;color:var(--dim);margin-top:1px}
-.nav-bar{display:flex;margin:12px 0;border-bottom:1px solid var(--line)}
+.nav-bar{display:flex;margin:12px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
 .nav-bar a{padding:8px 16px;font-size:.78rem;color:var(--dim);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .1s}
 .nav-bar a:hover{color:var(--text);border-bottom-color:var(--gold)}
 .nav-bar .act{color:var(--text);font-weight:600;border-bottom-color:var(--gold)}
 .feat{background:var(--card);border:1px solid var(--line);padding:24px;margin:28px 0 32px}
 .feat .tg{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px}
-.feat .fi{width:100%;height:200px;background:#ddd;margin-bottom:14px;overflow:hidden}
+.feat .fi{width:100%;height:200px;margin-bottom:14px;overflow:hidden}
 .feat .fi img{width:100%;height:100%;object-fit:cover}
 .feat .tl{font-family:var(--serif);font-size:1.6rem;line-height:1.25;margin-bottom:8px}
 .feat .tl a{color:var(--text)}
@@ -39,7 +39,7 @@ a:hover{color:var(--gold)}
 .rw{display:flex;gap:14px;padding:14px 16px;border-bottom:1px solid var(--line);transition:background .1s;color:var(--text)}
 .rw:last-child{border:none}
 .rw:hover{background:#f5f3ef}
-.rw .ri{width:80px;height:80px;flex-shrink:0;background:#ddd;overflow:hidden}
+.rw .ri{width:80px;height:80px;flex-shrink:0;overflow:hidden}
 .rw .ri img{width:100%;height:100%;object-fit:cover}
 .rw .rb{flex:1;min-width:0}
 .rw .rt{font-family:var(--serif);font-size:.95rem;margin-bottom:2px;line-height:1.3}
@@ -47,22 +47,22 @@ a:hover{color:var(--gold)}
 .gr{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px}
 .gr a{background:var(--card);border:1px solid var(--line);overflow:hidden;transition:all .15s;display:block;color:var(--text)}
 .gr a:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.05)}
-.gr .gi{width:100%;height:130px;background:#ddd;overflow:hidden}
+.gr .gi{width:100%;height:130px;overflow:hidden}
 .gr .gi img{width:100%;height:100%;object-fit:cover}
 .gr .gp{padding:12px 14px 14px}
 .gr .gt{font-family:var(--serif);font-size:.85rem;margin-bottom:4px;line-height:1.3}
 .gr .ge{font-size:.73rem;color:var(--dim);line-height:1.4}
 .gr .gm{font-size:.6rem;color:#aaa;margin-top:6px}
 .ft{padding:30px 0 36px;border-top:2px solid var(--line);margin-top:36px}
-.ft .fi{display:flex;gap:36px;margin-bottom:18px}
-.ft .fc{flex:1}
+.ft .fi{display:flex;gap:36px;margin-bottom:18px;flex-wrap:wrap}
+.ft .fc{flex:1;min-width:140px}
 .ft .fh{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#aaa;margin-bottom:8px}
 .ft ul{list-style:none}
 .ft li{margin-bottom:4px}
 .ft a{font-size:.78rem;color:var(--dim)}
 .ft a:hover{color:var(--text)}
 .ft .fb{font-size:.68rem;color:#bbb;padding-top:14px;border-top:1px solid var(--line)}
-@media(max-width:600px){.gr{grid-template-columns:1fr}.feat .tl{font-size:1.2rem}.rw .ri{width:60px;height:60px}}
+@media(max-width:600px){.gr{grid-template-columns:1fr}.feat .tl{font-size:1.2rem}.rw .ri{width:60px;height:60px}.nav-bar a{padding:8px 10px;font-size:.72rem}}
 </style>
 </head>
 <body>
@@ -76,26 +76,26 @@ a:hover{color:var(--gold)}
 </div>
 </div>
 <nav class="nav-bar">
-<a href="/theganjaclub.github.io/?cat=all" class="act">Latest</a>
-<a href="/theganjaclub.github.io/?cat=politics">UK Policy</a>
-<a href="/theganjaclub.github.io/?cat=research">Research</a>
-<a href="/theganjaclub.github.io/?cat=patient">Patient</a>
-<a href="/theganjaclub.github.io/?cat=culture">Culture</a>
+<a href="?cat=all" class="act">Latest</a>
+<a href="?cat=politics">UK Policy</a>
+<a href="?cat=research">Research</a>
+<a href="?cat=patient">Patient</a>
+<a href="?cat=culture">Culture</a>
 </nav>
 </div>
 
 <div class="feat" id="feat">
   <div class="tg">Latest Story</div>
-  <div class="fi" id="fimg"><img src="https://files.catbox.moe/8hftu2.jpg" alt="The Ganja Club" style="width:100%;height:100%;object-fit:cover"></div>
+  <div class="fi" id="fimg"></div>
   <div class="tl" id="ftit">Loading...</div>
   <div class="ex" id="fex">Daily medical cannabis intelligence</div>
   <div class="mt" id="fmet">The Ganja Club</div>
 </div>
 
-<div class="sh"><h2>Latest Briefings</h2><a href="/theganjaclub.github.io/">All</a></div>
+<div class="sh"><h2>Latest Briefings</h2><a href="?cat=all">All</a></div>
 <div class="ls" id="posts"></div>
 
-<div class="sh"><h2>Features</h2><a href="/theganjaclub.github.io/">More</a></div>
+<div class="sh"><h2>Features</h2><a href="?cat=all">More</a></div>
 <div class="gr" id="feats"></div>
 
 <div class="ft">
@@ -107,10 +107,10 @@ a:hover{color:var(--gold)}
 <div class="fc">
 <div class="fh">Sections</div>
 <ul>
-<li><a href="/theganjaclub.github.io/?cat=politics">UK Policy</a></li>
-<li><a href="/theganjaclub.github.io/?cat=research">Research</a></li>
-<li><a href="/theganjaclub.github.io/?cat=patient">Patient Stories</a></li>
-<li><a href="/theganjaclub.github.io/?cat=culture">Culture</a></li>
+<li><a href="?cat=politics">UK Policy</a></li>
+<li><a href="?cat=research">Research</a></li>
+<li><a href="?cat=patient">Patient Stories</a></li>
+<li><a href="?cat=culture">Culture</a></li>
 </ul>
 </div>
 <div class="fc">
@@ -127,31 +127,8 @@ a:hover{color:var(--gold)}
 </div>
 
 <script>
-var B = '/theganjaclub.github.io';
-var IMGS = [
-  'https://files.catbox.moe/8hftu2.jpg',
-  'https://files.catbox.moe/dfyu2a.jpg',
-  'https://files.catbox.moe/ubpbd6.jpg',
-  'https://files.catbox.moe/om28m3.jpg',
-  'https://files.catbox.moe/ofm686.jpg',
-  'https://files.catbox.moe/xme900.jpg',
-  'https://files.catbox.moe/okk6w1.jpg',
-  'https://files.catbox.moe/n2z42w.jpg',
-  'https://files.catbox.moe/9xdcm4.jpg',
-  'https://files.catbox.moe/xkfwcb.jpg'
-];
-var IMGS_SM = [
-  'https://files.catbox.moe/6gzkke.jpg',
-  'https://files.catbox.moe/ue2f0l.jpg',
-  'https://files.catbox.moe/hrlt2l.jpg',
-  'https://files.catbox.moe/14rye5.jpg',
-  'https://files.catbox.moe/oaoih8.jpg',
-  'https://files.catbox.moe/q4f90c.jpg',
-  'https://files.catbox.moe/b3ib9e.jpg',
-  'https://files.catbox.moe/osvpx0.jpg',
-  'https://files.catbox.moe/dg4eql.jpg',
-  'https://files.catbox.moe/58w48v.jpg'
-];
+var B = '';
+var POST_IMGS = {"welcome": {"hero": "https://files.catbox.moe/8x7d8b.jpg", "thumb": "https://files.catbox.moe/hq0q0h.jpg"}, "cqc-clinic": {"hero": "https://files.catbox.moe/5dyggn.jpg", "thumb": "https://files.catbox.moe/d0pikf.jpg"}, "uk-growth": {"hero": "https://files.catbox.moe/l8g3yu.jpg", "thumb": "https://files.catbox.moe/ckmu8o.jpg"}, "patient-stigma": {"hero": "https://files.catbox.moe/lqq17q.jpg", "thumb": "https://files.catbox.moe/4loqwy.jpg"}, "global-review": {"hero": "https://files.catbox.moe/rz9vu5.jpg", "thumb": "https://files.catbox.moe/3474vj.jpg"}, "function-first": {"hero": "https://files.catbox.moe/hq0q0h.jpg", "thumb": "https://files.catbox.moe/u64ijv.jpg"}, "research-2026": {"hero": "https://files.catbox.moe/d0pikf.jpg", "thumb": "https://files.catbox.moe/qpu42g.jpg"}, "daily-roundup-1": {"hero": "https://files.catbox.moe/ckmu8o.jpg", "thumb": "https://files.catbox.moe/febipx.jpg"}, "nhs-prescribing": {"hero": "https://files.catbox.moe/4loqwy.jpg", "thumb": "https://files.catbox.moe/tz0wlh.jpg"}, "germany-model": {"hero": "https://files.catbox.moe/3474vj.jpg", "thumb": "https://files.catbox.moe/lx43m8.jpg"}, "cbd-research": {"hero": "https://files.catbox.moe/u64ijv.jpg", "thumb": "https://files.catbox.moe/janmr4.jpg"}, "patient-rights": {"hero": "https://files.catbox.moe/qpu42g.jpg", "thumb": "https://files.catbox.moe/s9q5t8.jpg"}, "cannabis-culture-london": {"hero": "https://files.catbox.moe/febipx.jpg", "thumb": "https://files.catbox.moe/eawgja.jpg"}, "thc-pain": {"hero": "https://files.catbox.moe/tz0wlh.jpg", "thumb": "https://files.catbox.moe/ey1sct.jpg"}, "home-office": {"hero": "https://files.catbox.moe/lx43m8.jpg", "thumb": "https://files.catbox.moe/s52kqg.jpg"}, "clinical-access": {"hero": "https://files.catbox.moe/janmr4.jpg", "thumb": "https://files.catbox.moe/hn9q0b.jpg"}, "terpenes": {"hero": "https://files.catbox.moe/s9q5t8.jpg", "thumb": "https://files.catbox.moe/tudfhb.jpg"}};
 
 var cat = 'all';
 var qs = window.location.search;
@@ -182,7 +159,8 @@ x.onload = function() {
     if (posts.length === 0) posts = allPosts;
     
     var t = posts[0];
-    document.getElementById('fimg').innerHTML = '<img src="' + IMGS[0] + '" alt="The Ganja Club" style="width:100%;height:100%;object-fit:cover">';
+    var imgs = POST_IMGS[t.id] || POST_IMGS[Object.keys(POST_IMGS)[0]];
+    document.getElementById('fimg').innerHTML = '<img src="' + imgs.hero + '" alt="' + t.title + '" style="width:100%;height:100%;object-fit:cover">';
     document.getElementById('ftit').innerHTML = '<a href="' + B + '/post.html?id=' + t.id + '">' + t.title + '</a>';
     document.getElementById('fex').textContent = t.excerpt;
     document.getElementById('fmet').textContent = t.date + ' - ' + t.readTime + ' min read';
@@ -190,9 +168,9 @@ x.onload = function() {
     var h = '';
     for (var i = 0; i < posts.length; i++) {
       var p = posts[i];
-      var im = IMGS_SM[(i + 1) % IMGS_SM.length];
+      var ims = POST_IMGS[p.id] || POST_IMGS[Object.keys(POST_IMGS)[0]];
       h += '<a href="' + B + '/post.html?id=' + p.id + '" class="rw">';
-      h += '<div class="ri"><img src="' + im + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>';
+      h += '<div class="ri"><img src="' + ims.thumb + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>';
       h += '<div class="rb">';
       h += '<div class="rt">' + p.title + '</div>';
       h += '<div class="rm">' + p.date + ' - ' + p.tags + '</div>';
@@ -203,9 +181,9 @@ x.onload = function() {
     var g = '';
     for (var i = 1; i < 5 && i < posts.length; i++) {
       var p = posts[i];
-      var im = IMGS[(i + 2) % IMGS.length];
+      var ims = POST_IMGS[p.id] || POST_IMGS[Object.keys(POST_IMGS)[0]];
       g += '<a href="' + B + '/post.html?id=' + p.id + '">';
-      g += '<div class="gi"><img src="' + im + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>';
+      g += '<div class="gi"><img src="' + ims.hero + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>';
       g += '<div class="gp">';
       g += '<div class="gt">' + p.title + '</div>';
       g += '<div class="ge">' + p.excerpt.substring(0, 110) + '...</div>';
