@@ -4,34 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Ganja Club</title>
+<meta name="description" content="The Ganja Club - Medical Cannabis News">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#fafaf9;--text:#1a1a1a;--dim:#666;--gold:#b8860b;--line:#e8e4dd;--sans:'Inter',sans-serif;--serif:'PT Serif',Georgia,serif}
+:root{--bg:#ffffff;--text:#111827;--dim:#6b7280;--green:#059669;--green-dark:#047857;--line:#e5e7eb;--sans:'Inter',sans-serif}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.8}
 .wrap{max-width:660px;margin:0 auto;padding:0 20px}
-a{color:var(--gold);text-decoration:none}
-a:hover{opacity:.7}
+a{color:var(--green);text-decoration:none}
+a:hover{opacity:.8}
 .hd{padding:24px 0;border-bottom:2px solid var(--text);margin-bottom:32px;display:flex;justify-content:space-between;align-items:center}
-.lg{font-family:var(--serif);font-size:1.1rem;font-weight:700;letter-spacing:-.03em}
-.lg span{color:var(--gold)}
+.lg{font-size:1.1rem;font-weight:700;letter-spacing:-.03em}
+.lg span{color:var(--green)}
 .bk{color:var(--dim);font-size:.78rem}
-.bk:hover{color:var(--text)}
-article h1{font-family:var(--serif);font-size:2rem;line-height:1.25;margin-bottom:10px;font-weight:700}
+.bk:hover{color:var(--green)}
+article h1{font-size:2rem;line-height:1.25;margin-bottom:10px;font-weight:700}
 .mt{color:var(--dim);font-size:.78rem;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--line)}
 article p{margin-bottom:16px;font-size:1rem}
-article h2{font-family:var(--serif);font-size:1.3rem;margin:28px 0 12px;font-weight:700}
+article h2{font-size:1.3rem;margin:28px 0 12px;font-weight:700}
 article h3{font-size:1rem;margin:20px 0 10px;font-weight:600}
-article blockquote{border-left:2px solid var(--gold);padding-left:16px;margin:20px 0;color:var(--dim);font-style:italic}
+article blockquote{border-left:2px solid var(--green);padding-left:16px;margin:20px 0;color:var(--dim);font-style:italic}
 article ul,article ol{margin:12px 0;padding-left:20px}
 article li{margin-bottom:6px}
-#img-here{width:100%;height:240px;margin-bottom:24px;overflow:hidden}
+#img-here{width:100%;height:240px;margin-bottom:24px;overflow:hidden;background:#e5e7eb}
 #img-here img{width:100%;height:100%;object-fit:cover}
 .ld{text-align:center;padding:80px 0;color:var(--dim)}
-.ft{padding:32px 0;border-top:2px solid var(--line);margin-top:40px;text-align:center;font-size:.75rem;color:#bbb}
-.ft a{color:#999}
-.ft a:hover{color:var(--text)}
+.ft{padding:32px 0;border-top:2px solid var(--line);margin-top:40px;text-align:center;font-size:.75rem;color:#9ca3af}
+.ft a{color:#9ca3af}
+.ft a:hover{color:var(--green)}
 @media(max-width:600px){article h1{font-size:1.4rem}#img-here{height:180px}}
 </style>
 </head>
@@ -39,7 +40,7 @@ article li{margin-bottom:6px}
 <div class="wrap">
 <div class="hd">
 <a href="/theganjaclub.github.io/" class="lg">The Ganja <span>Club</span></a>
-<a href="/theganjaclub.github.io/" class="bk">Back</a>
+<a href="/theganjaclub.github.io/" class="bk">← Back</a>
 </div>
 <div id="loader" class="ld">Loading post...</div>
 <article id="pf" style="display:none">
@@ -51,12 +52,11 @@ article li{margin-bottom:6px}
 <div class="ft">&copy; 2026 The Ganja Club</div>
 </div>
 <script>
-var B = '';
-var POST_IMGS = {"welcome": {"hero": "https://files.catbox.moe/8x7d8b.jpg", "thumb": "https://files.catbox.moe/hq0q0h.jpg"}, "cqc-clinic": {"hero": "https://files.catbox.moe/5dyggn.jpg", "thumb": "https://files.catbox.moe/d0pikf.jpg"}, "uk-growth": {"hero": "https://files.catbox.moe/l8g3yu.jpg", "thumb": "https://files.catbox.moe/ckmu8o.jpg"}, "patient-stigma": {"hero": "https://files.catbox.moe/lqq17q.jpg", "thumb": "https://files.catbox.moe/4loqwy.jpg"}, "global-review": {"hero": "https://files.catbox.moe/rz9vu5.jpg", "thumb": "https://files.catbox.moe/3474vj.jpg"}, "function-first": {"hero": "https://files.catbox.moe/hq0q0h.jpg", "thumb": "https://files.catbox.moe/u64ijv.jpg"}, "research-2026": {"hero": "https://files.catbox.moe/d0pikf.jpg", "thumb": "https://files.catbox.moe/qpu42g.jpg"}, "daily-roundup-1": {"hero": "https://files.catbox.moe/ckmu8o.jpg", "thumb": "https://files.catbox.moe/febipx.jpg"}, "nhs-prescribing": {"hero": "https://files.catbox.moe/4loqwy.jpg", "thumb": "https://files.catbox.moe/tz0wlh.jpg"}, "germany-model": {"hero": "https://files.catbox.moe/3474vj.jpg", "thumb": "https://files.catbox.moe/lx43m8.jpg"}, "cbd-research": {"hero": "https://files.catbox.moe/u64ijv.jpg", "thumb": "https://files.catbox.moe/janmr4.jpg"}, "patient-rights": {"hero": "https://files.catbox.moe/qpu42g.jpg", "thumb": "https://files.catbox.moe/s9q5t8.jpg"}, "cannabis-culture-london": {"hero": "https://files.catbox.moe/febipx.jpg", "thumb": "https://files.catbox.moe/eawgja.jpg"}, "thc-pain": {"hero": "https://files.catbox.moe/tz0wlh.jpg", "thumb": "https://files.catbox.moe/ey1sct.jpg"}, "home-office": {"hero": "https://files.catbox.moe/lx43m8.jpg", "thumb": "https://files.catbox.moe/s52kqg.jpg"}, "clinical-access": {"hero": "https://files.catbox.moe/janmr4.jpg", "thumb": "https://files.catbox.moe/hn9q0b.jpg"}, "terpenes": {"hero": "https://files.catbox.moe/s9q5t8.jpg", "thumb": "https://files.catbox.moe/tudfhb.jpg"}};
+var POST_IMGS = {"welcome": {"hero": "https://files.catbox.moe/8x7d8b.jpg", "thumb": "https://files.catbox.moe/lqq17q.jpg"}, "cqc-clinic": {"hero": "https://files.catbox.moe/5dyggn.jpg", "thumb": "https://files.catbox.moe/rz9vu5.jpg"}, "uk-growth": {"hero": "https://files.catbox.moe/l8g3yu.jpg", "thumb": "https://files.catbox.moe/hq0q0h.jpg"}, "patient-stigma": {"hero": "https://files.catbox.moe/lqq17q.jpg", "thumb": "https://files.catbox.moe/d0pikf.jpg"}, "global-review": {"hero": "https://files.catbox.moe/rz9vu5.jpg", "thumb": "https://files.catbox.moe/ckmu8o.jpg"}, "function-first": {"hero": "https://files.catbox.moe/hq0q0h.jpg", "thumb": "https://files.catbox.moe/4loqwy.jpg"}, "research-2026": {"hero": "https://files.catbox.moe/d0pikf.jpg", "thumb": "https://files.catbox.moe/3474vj.jpg"}, "daily-roundup-1": {"hero": "https://files.catbox.moe/ckmu8o.jpg", "thumb": "https://files.catbox.moe/u64ijv.jpg"}, "nhs-prescribing": {"hero": "https://files.catbox.moe/4loqwy.jpg", "thumb": "https://files.catbox.moe/qpu42g.jpg"}, "germany-model": {"hero": "https://files.catbox.moe/3474vj.jpg", "thumb": "https://files.catbox.moe/febipx.jpg"}, "cbd-research": {"hero": "https://files.catbox.moe/u64ijv.jpg", "thumb": "https://files.catbox.moe/tz0wlh.jpg"}, "patient-rights": {"hero": "https://files.catbox.moe/qpu42g.jpg", "thumb": "https://files.catbox.moe/lx43m8.jpg"}, "cannabis-culture-london": {"hero": "https://files.catbox.moe/febipx.jpg", "thumb": "https://files.catbox.moe/janmr4.jpg"}, "thc-pain": {"hero": "https://files.catbox.moe/tz0wlh.jpg", "thumb": "https://files.catbox.moe/s9q5t8.jpg"}, "home-office": {"hero": "https://files.catbox.moe/lx43m8.jpg", "thumb": "https://files.catbox.moe/eawgja.jpg"}, "clinical-access": {"hero": "https://files.catbox.moe/janmr4.jpg", "thumb": "https://files.catbox.moe/ey1sct.jpg"}, "terpenes": {"hero": "https://files.catbox.moe/s9q5t8.jpg", "thumb": "https://files.catbox.moe/s52kqg.jpg"}};
 
 var pid = window.location.search.split('=')[1] || '';
 var x = new XMLHttpRequest();
-x.open('GET', B + '/posts.json', true);
+x.open('GET', 'posts.json', true);
 x.onload = function() {
   try {
     var posts = JSON.parse(x.responseText);
@@ -68,7 +68,7 @@ x.onload = function() {
     if (!post) return;
     document.title = post.title + ' - The Ganja Club';
     var imgs = POST_IMGS[post.id] || POST_IMGS[Object.keys(POST_IMGS)[0]];
-    document.getElementById('img-here').innerHTML = '<img src="' + imgs.hero + '" alt="' + post.title + '" loading="lazy" style="width:100%;height:100%;object-fit:cover">';
+    document.getElementById('img-here').innerHTML = '<img src="' + imgs.hero + '" alt="' + post.title + '" loading="lazy">';
     document.getElementById('ptit').textContent = post.title;
     document.getElementById('pmet').textContent = post.date + ' - ' + post.readTime + ' min read - ' + post.tags;
     document.getElementById('pbd').innerHTML = post.body;
