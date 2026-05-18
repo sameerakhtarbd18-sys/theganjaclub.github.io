@@ -14,66 +14,63 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
 a{text-decoration:none;color:var(--text)}
 a:hover{color:var(--gold)}
-
-/* HEADER — clean, no sub-path issues */
-.head{padding:28px 0 0;margin-bottom:0}
+.head{padding:28px 0 0}
 .head-top{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:12px;border-bottom:2px solid var(--text)}
 .logo{font-family:var(--serif);font-size:1.5rem;font-weight:700;letter-spacing:-.03em}
 .logo span{color:var(--gold)}
 .sub{font-size:.7rem;color:var(--dim);margin-top:1px}
-.nav-bar{display:flex;gap:0;margin:12px 0;border-bottom:1px solid var(--line);padding-bottom:0}
-.nav-bar a{padding:8px 16px;font-size:.78rem;color:var(--dim);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s}
+.nav-bar{display:flex;gap:0;margin:12px 0;border-bottom:1px solid var(--line)}
+.nav-bar a{padding:8px 16px;font-size:.78rem;color:var(--dim);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .1s}
 .nav-bar a:hover{color:var(--text);border-bottom-color:var(--gold)}
-.nav-bar .on{color:var(--text);font-weight:600;border-bottom-color:var(--gold)}
+.feat-t{color:var(--text);font-weight:600;border-bottom-color:var(--gold)!important}
 
 /* FEATURED */
-.feat{background:var(--card);border:1px solid var(--line);padding:24px;margin-top:28px;margin-bottom:32px}
-.feat-tag{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px}
-.feat-img{width:100%;height:200px;background:var(--line);margin-bottom:16px;border-radius:2px;overflow:hidden;position:relative}
-.feat-img img{width:100%;height:100%;object-fit:cover}
-.feat-title{font-family:var(--serif);font-size:1.6rem;line-height:1.25;margin-bottom:8px}
-.feat-ex{font-size:.9rem;color:var(--dim);line-height:1.55}
-.feat-meta{font-size:.7rem;color:var(--dim);margin-top:8px;text-transform:uppercase;letter-spacing:.05em}
+.feat{background:var(--card);border:1px solid var(--line);padding:24px;margin:28px 0 32px}
+.feat .tag{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px}
+.feat .img{width:100%;height:200px;background:#ddd;margin-bottom:14px;overflow:hidden}
+.feat .img img{width:100%;height:100%;object-fit:cover}
+.feat .title{font-family:var(--serif);font-size:1.6rem;line-height:1.25;margin-bottom:8px}
+.feat .ex{font-size:.9rem;color:var(--dim);line-height:1.55}
+.feat .meta{font-size:.7rem;color:var(--dim);margin-top:8px;text-transform:uppercase;letter-spacing:.05em}
 
-/* BREAKING SECTION */
-.sec-hd{border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 16px;display:flex;justify-content:space-between;align-items:baseline}
+/* SECTION */
+.sec-hd{border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 14px;display:flex;justify-content:space-between}
 .sec-hd h2{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--dim)}
 .sec-hd a{font-size:.7rem;color:var(--gold);text-transform:uppercase;letter-spacing:.08em}
 
 /* POST ROWS */
 .list{border:1px solid var(--line);margin-bottom:32px;background:var(--card)}
-.row{border-bottom:1px solid var(--line);display:flex;gap:16px;padding:14px 16px;transition:background .1s}
-.row:last-child{border:none}
+.row{display:flex;gap:14px;padding:14px 16px;border-bottom:1px solid var(--line);transition:background .1s}
 .row:hover{background:#f5f3ef}
-.row-img{width:80px;height:80px;flex-shrink:0;background:var(--line);border-radius:2px;overflow:hidden}
+.row-img{width:80px;height:80px;flex-shrink:0;background:#ddd;overflow:hidden}
 .row-img img{width:100%;height:100%;object-fit:cover}
 .row-body{flex:1;min-width:0}
-.row-title{font-family:var(--serif);font-size:1rem;margin-bottom:2px;line-height:1.3}
+.row-title{font-family:var(--serif);font-size:.95rem;margin-bottom:2px;line-height:1.3}
 .row-meta{font-size:.65rem;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
 
 /* GRID */
 .grd{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px}
-.grd a{background:var(--card);border:1px solid var(--line);overflow:hidden;transition:all .15s}
-.grd a:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.grd-img{width:100%;height:140px;background:var(--line);overflow:hidden}
-.grd-img img{width:100%;height:100%;object-fit:cover}
-.grd-pad{padding:14px 16px 16px}
-.grd-title{font-family:var(--serif);font-size:.9rem;margin-bottom:4px;line-height:1.3}
-.grd-ex{font-size:.75rem;color:var(--dim);line-height:1.45}
-.grd-meta{font-size:.62rem;color:#aaa;margin-top:6px}
+.grd a{background:var(--card);border:1px solid var(--line);overflow:hidden;transition:all .15s;display:block}
+.grd a:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.05)}
+.grd .gi{width:100%;height:130px;background:#ddd;overflow:hidden}
+.grd .gi img{width:100%;height:100%;object-fit:cover}
+.grd .gp{padding:12px 14px 14px}
+.grd .gt{font-family:var(--serif);font-size:.85rem;margin-bottom:4px;line-height:1.3}
+.grd .ge{font-size:.73rem;color:var(--dim);line-height:1.4}
+.grd .gm{font-size:.6rem;color:#aaa;margin-top:6px}
 
 /* FOOTER */
-.ft{padding:32px 0 40px;border-top:2px solid var(--line);margin-top:40px}
-.ft-inner{display:flex;gap:40px;margin-bottom:20px}
-.ft-c{flex:1}
-.ft-h{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#aaa;margin-bottom:8px}
+.ft{padding:30px 0 36px;border-top:2px solid var(--line);margin-top:36px}
+.ft .fi{display:flex;gap:36px;margin-bottom:18px}
+.ft .fc{flex:1}
+.ft .fh{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#aaa;margin-bottom:8px}
 .ft ul{list-style:none}
 .ft li{margin-bottom:4px}
-.ft a{font-size:.8rem;color:var(--dim)}
+.ft a{font-size:.78rem;color:var(--dim)}
 .ft a:hover{color:var(--text)}
-.ft-bot{font-size:.7rem;color:#bbb;padding-top:16px;border-top:1px solid var(--line)}
-
-@media(max-width:600px){.grd{grid-template-columns:1fr}.feat-title{font-size:1.2rem}.row-img{width:60px;height:60px}}
+.ft .fb{font-size:.68rem;color:#bbb;padding-top:14px;border-top:1px solid var(--line)}
+.ft .fc .logo{font-size:1rem;margin-bottom:6px}
+@media(max-width:600px){.grd{grid-template-columns:1fr}.feat .title{font-size:1.2rem}.row-img{width:60px;height:60px}}
 </style>
 </head>
 <body>
@@ -86,124 +83,131 @@ a:hover{color:var(--gold)}
 <div class="sub">Daily intelligence · Culture · Community</div>
 </div>
 </div>
-<div class="nav-bar" id="main-nav">
-<a href="." class="on">Latest</a>
-<a href=".">UK Policy</a>
-<a href=".">Research</a>
-<a href=".">Patient Stories</a>
-<a href=".">Culture</a>
-</div>
-</div>
-
-<!-- Featured story with image -->
-<div class="feat" id="feat-panel">
-<div id="feat-content">
-<div class="feat-tag">Today's Briefing</div>
-<div class="feat-img" id="feat-img-placeholder" style="background:var(--line);display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:.8rem">Loading image…</div>
-<div class="feat-title" id="feat-title">Loading latest story…</div>
-<div class="feat-ex" id="feat-ex">Daily medical cannabis intelligence — UK policy, global reform, patient stories.</div>
-<div class="feat-meta" id="feat-meta">The Ganja Club</div>
-</div>
+<nav class="nav-bar">
+<a href="" class="feat-t">Latest</a>
+<a href="">Policy</a>
+<a href="">Research</a>
+<a href="">Patient</a>
+<a href="">Culture</a>
+</nav>
 </div>
 
-<div class="sec-hd"><h2>Latest Briefings</h2><a href=".">View all →</a></div>
-<div class="list" id="post-list"></div>
+<!-- FEATURED -->
+<div class="feat" id="featured">
+  <div class="tag" id="ftag">Today's Briefing</div>
+  <div class="img" id="fimg"></div>
+  <div class="title" id="ftitle">Loading...</div>
+  <div class="ex" id="fex">Daily medical cannabis intelligence</div>
+  <div class="meta" id="fmeta">The Ganja Club</div>
+</div>
 
-<div class="sec-hd"><h2>Features & Analysis</h2><a href=".">More →</a></div>
-<div class="grd" id="feat-grid"></div>
+<div class="sec-hd"><h2>Latest Briefings</h2><a href="">All →</a></div>
+<div class="list" id="posts"></div>
+
+<div class="sec-hd"><h2>Features & Analysis</h2><a href="">More →</a></div>
+<div class="grd" id="features"></div>
 
 <div class="ft">
-<div class="ft-inner">
-<div class="ft-c">
-<div class="logo" style="font-size:1rem;margin-bottom:6px">The Ganja <span>Club</span></div>
-<div style="font-size:.8rem;color:var(--dim);line-height:1.6">Daily intelligence at the intersection of UK medical cannabis, streetwear culture, and patient community. Part of the HIGH FUNCTION family.</div>
+<div class="fi">
+<div class="fc">
+<div class="logo" style="font-size:1rem">The Ganja <span>Club</span></div>
+<div style="font-size:.8rem;color:var(--dim);line-height:1.6;margin-top:6px">Daily intelligence at the intersection of UK medical cannabis, streetwear culture, and patient community. Part of the HIGH FUNCTION family.</div>
 </div>
-<div class="ft-c">
-<div class="ft-h">Sections</div>
+<div class="fc">
+<div class="fh">Sections</div>
 <ul>
-<li><a href=".">Latest</a></li>
-<li><a href=".">Policy & Regulation</a></li>
-<li><a href=".">Research & Science</a></li>
-<li><a href=".">Patient Stories</a></li>
-<li><a href=".">Culture</a></li>
+<li><a href="">Latest</a></li>
+<li><a href="">Policy & Regulation</a></li>
+<li><a href="">Research & Science</a></li>
+<li><a href="">Patient Stories</a></li>
+<li><a href="">Culture</a></li>
 </ul>
 </div>
-<div class="ft-c">
-<div class="ft-h">Connect</div>
+<div class="fc">
+<div class="fh">Connect</div>
 <ul>
-<li><a href="https://instagram.com/theganjaclub_" target="_blank">Instagram →</a></li>
-<li><a href="https://highfunction.store" target="_blank">HIGH FUNCTION Store →</a></li>
+<li><a href="https://instagram.com/theganjaclub_">Instagram</a></li>
+<li><a href="https://highfunction.store">Shop</a></li>
 </ul>
 </div>
 </div>
-<div class="ft-bot">© 2026 The Ganja Club · Information, not medical advice</div>
+<div class="fb">2026 The Ganja Club · Part of HIGH FUNCTION</div>
 </div>
 
 </div>
 
 <script>
-// Use absolute URL for reliability
-var BASE = '.';
-
-var CANNABIS_IMAGES = [
-  'https://images.unsplash.com/photo-1604335399105-a0c585db81b1?w=800&q=80',
-  'https://images.unsplash.com/photo-1603213758683-5ffc23d14eae?w=800&q=80',
-  'https://images.unsplash.com/photo-1588614959060-4d144f28b207?w=800&q=80',
-  'https://images.unsplash.com/photo-1595978204118-578c03f7b6db?w=800&q=80',
-  'https://images.unsplash.com/photo-1590191934444-9bff232022ef?w=800&q=80',
-  'https://images.unsplash.com/photo-1585644114976-c8a3c0f1631b?w=800&q=80',
-  'https://images.unsplash.com/photo-1610963403540-e6e1e8a10f58?w=800&q=80',
-  'https://images.unsplash.com/photo-1545328822-11bf72a0eadc?w=800&q=80',
-  'https://images.unsplash.com/photo-1593198078800-9dd05c13978f?w=800&q=80',
-  'https://images.unsplash.com/photo-1585145868792-c47b3cf0c003?w=800&q=80'
+var IMGS = [
+  'https://images.unsplash.com/photo-1604335399105-a0c585db81b1?w=800',
+  'https://images.unsplash.com/photo-1603213758683-5ffc23d14eae?w=800',
+  'https://images.unsplash.com/photo-1588614959060-4d144f28b207?w=800',
+  'https://images.unsplash.com/photo-1595978204118-578c03f7b6db?w=800',
+  'https://images.unsplash.com/photo-1590191934444-9bff232022ef?w=800',
+  'https://images.unsplash.com/photo-1585644114976-c8a3c0f1631b?w=800',
+  'https://images.unsplash.com/photo-1610963403540-e6e1e8a10f58?w=800',
+  'https://images.unsplash.com/photo-1545328822-11bf72a0eadc?w=800',
+  'https://images.unsplash.com/photo-1593198078800-9dd05c13978f?w=800',
+  'https://images.unsplash.com/photo-1585145868792-c47b3cf0c003?w=800'
 ];
-var CANNABIS_IMAGES_SMALL = [
-  'https://images.unsplash.com/photo-1604335399105-a0c585db81b1?w=400&q=80',
-  'https://images.unsplash.com/photo-1603213758683-5ffc23d14eae?w=400&q=80',
-  'https://images.unsplash.com/photo-1588614959060-4d144f28b207?w=400&q=80',
-  'https://images.unsplash.com/photo-1595978204118-578c03f7b6db?w=400&q=80',
-  'https://images.unsplash.com/photo-1590191934444-9bff232022ef?w=400&q=80',
-  'https://images.unsplash.com/photo-1585644114976-c8a3c0f1631b?w=400&q=80',
-  'https://images.unsplash.com/photo-1610963403540-e6e1e8a10f58?w=400&q=80',
-  'https://images.unsplash.com/photo-1545328822-11bf72a0eadc?w=400&q=80',
-  'https://images.unsplash.com/photo-1593198078800-9dd05c13978f?w=400&q=80',
-  'https://images.unsplash.com/photo-1585145868792-c47b3cf0c003?w=400&q=80'
+var IMGS_SM = [
+  'https://images.unsplash.com/photo-1604335399105-a0c585db81b1?w=400',
+  'https://images.unsplash.com/photo-1603213758683-5ffc23d14eae?w=400',
+  'https://images.unsplash.com/photo-1588614959060-4d144f28b207?w=400',
+  'https://images.unsplash.com/photo-1595978204118-578c03f7b6db?w=400',
+  'https://images.unsplash.com/photo-1590191934444-9bff232022ef?w=400',
+  'https://images.unsplash.com/photo-1585644114976-c8a3c0f1631b?w=400',
+  'https://images.unsplash.com/photo-1610963403540-e6e1e8a10f58?w=400',
+  'https://images.unsplash.com/photo-1545328822-11bf72a0eadc?w=400',
+  'https://images.unsplash.com/photo-1593198078800-9dd05c13978f?w=400',
+  'https://images.unsplash.com/photo-1585145868792-c47b3cf0c003?w=400'
 ];
 
-fetch(BASE + '/posts.json').then(function(r){return r.json()}).then(function(posts){
-if(!posts.length) return;
-var top = posts[0];
-var imgIdx = 0;
-
-// Featured
-document.getElementById('feat-title').innerHTML = '<a href="'+BASE+'/post.html?id='+top.id+'">'+top.title+'</a>';
-document.getElementById('feat-ex').textContent = top.excerpt;
-document.getElementById('feat-meta').textContent = top.date + ' · ' + top.readTime + ' min read';
-var fi = document.getElementById('feat-img-placeholder');
-fi.innerHTML = '<img src="'+CANNABIS_IMAGES[0]+'" alt="Cannabis culture" style="width:100%;height:100%;object-fit:cover" loading="lazy">';
-
-// List
-document.getElementById('post-list').innerHTML = posts.map(function(p,i){
-var img = CANNABIS_IMAGES_SMALL[(i+1) % CANNABIS_IMAGES_SMALL.length];
-return '<a href="'+BASE+'/post.html?id='+p.id+'" class="row">' +
-'<div class="row-img"><img src="'+img+'" alt="" loading="lazy"></div>' +
-'<div class="row-body">' +
-'<div class="row-title">'+p.title+'</div>' +
-'<div class="row-meta">'+p.date+' · '+p.tags+'</div></div></a>';
-}).join('');
-
-// Grid
-var grid = document.getElementById('feat-grid');
-grid.innerHTML = posts.slice(1,5).map(function(p,i){
-var img = CANNABIS_IMAGES[(i+3) % CANNABIS_IMAGES.length];
-return '<a href="'+BASE+'/post.html?id='+p.id+'">' +
-'<div class="grd-img"><img src="'+img+'" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>' +
-'<div class="grd-pad"><div class="grd-title">'+p.title+'</div>' +
-'<div class="grd-ex">'+p.excerpt.substring(0,110)+'…</div>' +
-'<div class="grd-meta">'+p.date+' · '+p.readTime+' min</div></div></a>';
-}).join('');
-
-}).catch(function(){});
+var req = new XMLHttpRequest();
+req.open('GET', 'posts.json', true);
+req.onload = function() {
+  try {
+    var posts = JSON.parse(req.responseText);
+    if (!posts.length) return;
+    
+    // Featured
+    var top = posts[0];
+    document.getElementById('fimg').innerHTML = '<img src="' + IMGS[0] + '" alt="Cannabis" style="width:100%;height:100%;object-fit:cover">';
+    document.getElementById('ftitle').innerHTML = '<a href="post.html?id=' + top.id + '">' + top.title + '</a>';
+    document.getElementById('fex').textContent = top.excerpt;
+    document.getElementById('fmeta').textContent = top.date + ' - ' + top.readTime + ' min read';
+    
+    // List
+    var html = '';
+    for (var i = 0; i < posts.length; i++) {
+      var p = posts[i];
+      var img = IMGS_SM[(i + 1) % IMGS_SM.length];
+      html += '<a href="post.html?id=' + p.id + '" class="row">';
+      html += '<div class="row-img"><img src="' + img + '" alt="" loading="lazy"></div>';
+      html += '<div class="row-body">';
+      html += '<div class="row-title">' + p.title + '</div>';
+      html += '<div class="row-meta">' + p.date + ' - ' + p.tags + '</div>';
+      html += '</div></a>';
+    }
+    document.getElementById('posts').innerHTML = html;
+    
+    // Grid
+    var ghtml = '';
+    for (var i = 1; i < 5 && i < posts.length; i++) {
+      var p = posts[i];
+      var img = IMGS[(i + 2) % IMGS.length];
+      ghtml += '<a href="post.html?id=' + p.id + '">';
+      ghtml += '<div class="gi"><img src="' + img + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>';
+      ghtml += '<div class="gp">';
+      ghtml += '<div class="gt">' + p.title + '</div>';
+      ghtml += '<div class="ge">' + p.excerpt.substring(0, 110) + '...</div>';
+      ghtml += '<div class="gm">' + p.date + ' - ' + p.readTime + ' min</div>';
+      ghtml += '</div></a>';
+    }
+    document.getElementById('features').innerHTML = ghtml;
+    
+  } catch(e) {}
+};
+req.send();
 </script>
 </body>
 </html>
