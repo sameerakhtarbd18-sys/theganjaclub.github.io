@@ -12,7 +12,7 @@
 :root{--bg:#fafaf9;--card:#fff;--text:#1a1a1a;--dim:#666;--gold:#b8860b;--line:#e8e4dd;--sans:'Inter',sans-serif;--serif:'PT Serif',Georgia,serif}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
-a{text-decoration:none;color:var(--text)}
+a{text-decoration:none;color:inherit}
 a:hover{color:var(--gold)}
 .head{padding:28px 0 0}
 .head-top{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:12px;border-bottom:2px solid var(--text)}
@@ -22,42 +22,44 @@ a:hover{color:var(--gold)}
 .nav-bar{display:flex;gap:0;margin:12px 0;border-bottom:1px solid var(--line)}
 .nav-bar a{padding:8px 16px;font-size:.78rem;color:var(--dim);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .1s}
 .nav-bar a:hover{color:var(--text);border-bottom-color:var(--gold)}
-.feat-t{color:var(--text);font-weight:600;border-bottom-color:var(--gold)!important}
+.nav-bar .act{color:var(--text);font-weight:600;border-bottom-color:var(--gold)}
 
 /* FEATURED */
 .feat{background:var(--card);border:1px solid var(--line);padding:24px;margin:28px 0 32px}
-.feat .tag{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px}
-.feat .img{width:100%;height:200px;background:#ddd;margin-bottom:14px;overflow:hidden}
-.feat .img img{width:100%;height:100%;object-fit:cover}
-.feat .title{font-family:var(--serif);font-size:1.6rem;line-height:1.25;margin-bottom:8px}
+.feat .tg{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px}
+.feat .fi{width:100%;height:200px;background:#ddd;margin-bottom:14px;overflow:hidden}
+.feat .fi img{width:100%;height:100%;object-fit:cover}
+.feat .tl{font-family:var(--serif);font-size:1.6rem;line-height:1.25;margin-bottom:8px}
+.feat .tl a{color:var(--text)}
+.feat .tl a:hover{color:var(--gold)}
 .feat .ex{font-size:.9rem;color:var(--dim);line-height:1.55}
-.feat .meta{font-size:.7rem;color:var(--dim);margin-top:8px;text-transform:uppercase;letter-spacing:.05em}
+.feat .mt{font-size:.7rem;color:var(--dim);margin-top:8px;text-transform:uppercase;letter-spacing:.05em}
 
 /* SECTION */
-.sec-hd{border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 14px;display:flex;justify-content:space-between}
-.sec-hd h2{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--dim)}
-.sec-hd a{font-size:.7rem;color:var(--gold);text-transform:uppercase;letter-spacing:.08em}
+.sh{border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 14px;display:flex;justify-content:space-between}
+.sh h2{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--dim)}
+.sh a{font-size:.7rem;color:var(--gold);text-transform:uppercase;letter-spacing:.08em}
 
-/* POST ROWS */
-.list{border:1px solid var(--line);margin-bottom:32px;background:var(--card)}
-.row{display:flex;gap:14px;padding:14px 16px;border-bottom:1px solid var(--line);transition:background .1s}
-.row:hover{background:#f5f3ef}
-.row-img{width:80px;height:80px;flex-shrink:0;background:#ddd;overflow:hidden}
-.row-img img{width:100%;height:100%;object-fit:cover}
-.row-body{flex:1;min-width:0}
-.row-title{font-family:var(--serif);font-size:.95rem;margin-bottom:2px;line-height:1.3}
-.row-meta{font-size:.65rem;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
+/* ROWS */
+.ls{border:1px solid var(--line);margin-bottom:32px;background:var(--card)}
+.rw{display:flex;gap:14px;padding:14px 16px;border-bottom:1px solid var(--line);transition:background .1s;color:var(--text)}
+.rw:hover{background:#f5f3ef}
+.rw .ri{width:80px;height:80px;flex-shrink:0;background:#ddd;overflow:hidden}
+.rw .ri img{width:100%;height:100%;object-fit:cover}
+.rw .rb{flex:1;min-width:0}
+.rw .rt{font-family:var(--serif);font-size:.95rem;margin-bottom:2px;line-height:1.3}
+.rw .rm{font-size:.65rem;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
 
 /* GRID */
-.grd{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px}
-.grd a{background:var(--card);border:1px solid var(--line);overflow:hidden;transition:all .15s;display:block}
-.grd a:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.05)}
-.grd .gi{width:100%;height:130px;background:#ddd;overflow:hidden}
-.grd .gi img{width:100%;height:100%;object-fit:cover}
-.grd .gp{padding:12px 14px 14px}
-.grd .gt{font-family:var(--serif);font-size:.85rem;margin-bottom:4px;line-height:1.3}
-.grd .ge{font-size:.73rem;color:var(--dim);line-height:1.4}
-.grd .gm{font-size:.6rem;color:#aaa;margin-top:6px}
+.gr{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px}
+.gr a{background:var(--card);border:1px solid var(--line);overflow:hidden;transition:all .15s;display:block;color:var(--text)}
+.gr a:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.05)}
+.gr .gi{width:100%;height:130px;background:#ddd;overflow:hidden}
+.gr .gi img{width:100%;height:100%;object-fit:cover}
+.gr .gp{padding:12px 14px 14px}
+.gr .gt{font-family:var(--serif);font-size:.85rem;margin-bottom:4px;line-height:1.3}
+.gr .ge{font-size:.73rem;color:var(--dim);line-height:1.4}
+.gr .gm{font-size:.6rem;color:#aaa;margin-top:6px}
 
 /* FOOTER */
 .ft{padding:30px 0 36px;border-top:2px solid var(--line);margin-top:36px}
@@ -69,8 +71,7 @@ a:hover{color:var(--gold)}
 .ft a{font-size:.78rem;color:var(--dim)}
 .ft a:hover{color:var(--text)}
 .ft .fb{font-size:.68rem;color:#bbb;padding-top:14px;border-top:1px solid var(--line)}
-.ft .fc .logo{font-size:1rem;margin-bottom:6px}
-@media(max-width:600px){.grd{grid-template-columns:1fr}.feat .title{font-size:1.2rem}.row-img{width:60px;height:60px}}
+@media(max-width:600px){.gr{grid-template-columns:1fr}.feat .tl{font-size:1.2rem}.rw .ri{width:60px;height:60px}}
 </style>
 </head>
 <body>
@@ -84,28 +85,27 @@ a:hover{color:var(--gold)}
 </div>
 </div>
 <nav class="nav-bar">
-<a href="" class="feat-t">Latest</a>
-<a href="">Policy</a>
-<a href="">Research</a>
-<a href="">Patient</a>
-<a href="">Culture</a>
+<a href="/theganjaclub.github.io/" class="act">Latest</a>
+<a href="/theganjaclub.github.io/">UK Policy</a>
+<a href="/theganjaclub.github.io/">Research</a>
+<a href="/theganjaclub.github.io/">Patient Stories</a>
+<a href="/theganjaclub.github.io/">Culture</a>
 </nav>
 </div>
 
-<!-- FEATURED -->
-<div class="feat" id="featured">
-  <div class="tag" id="ftag">Today's Briefing</div>
-  <div class="img" id="fimg"></div>
-  <div class="title" id="ftitle">Loading...</div>
+<div class="feat" id="feat">
+  <div class="tg" id="ftag">Today's Briefing</div>
+  <div class="fi" id="fimg"></div>
+  <div class="tl" id="ftit">Loading...</div>
   <div class="ex" id="fex">Daily medical cannabis intelligence</div>
-  <div class="meta" id="fmeta">The Ganja Club</div>
+  <div class="mt" id="fmet">The Ganja Club</div>
 </div>
 
-<div class="sec-hd"><h2>Latest Briefings</h2><a href="">All →</a></div>
-<div class="list" id="posts"></div>
+<div class="sh"><h2>Latest Briefings</h2><a href="/theganjaclub.github.io/">All →</a></div>
+<div class="ls" id="posts"></div>
 
-<div class="sec-hd"><h2>Features & Analysis</h2><a href="">More →</a></div>
-<div class="grd" id="features"></div>
+<div class="sh"><h2>Features</h2><a href="/theganjaclub.github.io/">More →</a></div>
+<div class="gr" id="feats"></div>
 
 <div class="ft">
 <div class="fi">
@@ -116,11 +116,11 @@ a:hover{color:var(--gold)}
 <div class="fc">
 <div class="fh">Sections</div>
 <ul>
-<li><a href="">Latest</a></li>
-<li><a href="">Policy & Regulation</a></li>
-<li><a href="">Research & Science</a></li>
-<li><a href="">Patient Stories</a></li>
-<li><a href="">Culture</a></li>
+<li><a href="/theganjaclub.github.io/">Latest</a></li>
+<li><a href="/theganjaclub.github.io/">Policy & Regulation</a></li>
+<li><a href="/theganjaclub.github.io/">Research & Science</a></li>
+<li><a href="/theganjaclub.github.io/">Patient Stories</a></li>
+<li><a href="/theganjaclub.github.io/">Culture</a></li>
 </ul>
 </div>
 <div class="fc">
@@ -137,7 +137,8 @@ a:hover{color:var(--gold)}
 </div>
 
 <script>
-var IMGS = [
+var B = '/theganjaclub.github.io';
+var IMG = [
   'https://images.unsplash.com/photo-1604335399105-a0c585db81b1?w=800',
   'https://images.unsplash.com/photo-1603213758683-5ffc23d14eae?w=800',
   'https://images.unsplash.com/photo-1588614959060-4d144f28b207?w=800',
@@ -149,7 +150,7 @@ var IMGS = [
   'https://images.unsplash.com/photo-1593198078800-9dd05c13978f?w=800',
   'https://images.unsplash.com/photo-1585145868792-c47b3cf0c003?w=800'
 ];
-var IMGS_SM = [
+var IMG_S = [
   'https://images.unsplash.com/photo-1604335399105-a0c585db81b1?w=400',
   'https://images.unsplash.com/photo-1603213758683-5ffc23d14eae?w=400',
   'https://images.unsplash.com/photo-1588614959060-4d144f28b207?w=400',
@@ -162,52 +163,52 @@ var IMGS_SM = [
   'https://images.unsplash.com/photo-1585145868792-c47b3cf0c003?w=400'
 ];
 
-var req = new XMLHttpRequest();
-req.open('GET', 'posts.json', true);
-req.onload = function() {
+var x = new XMLHttpRequest();
+x.open('GET', B + '/posts.json', true);
+x.onload = function() {
   try {
-    var posts = JSON.parse(req.responseText);
-    if (!posts.length) return;
+    var p = JSON.parse(x.responseText);
+    if (!p.length) return;
     
     // Featured
-    var top = posts[0];
-    document.getElementById('fimg').innerHTML = '<img src="' + IMGS[0] + '" alt="Cannabis" style="width:100%;height:100%;object-fit:cover">';
-    document.getElementById('ftitle').innerHTML = '<a href="post.html?id=' + top.id + '">' + top.title + '</a>';
-    document.getElementById('fex').textContent = top.excerpt;
-    document.getElementById('fmeta').textContent = top.date + ' - ' + top.readTime + ' min read';
+    var t = p[0];
+    document.getElementById('fimg').innerHTML = '<img src="' + IMG[0] + '" alt="Cannabis" style="width:100%;height:100%;object-fit:cover">';
+    document.getElementById('ftit').innerHTML = '<a href="' + B + '/post.html?id=' + t.id + '">' + t.title + '</a>';
+    document.getElementById('fex').textContent = t.excerpt;
+    document.getElementById('fmet').textContent = t.date + ' - ' + t.readTime + ' min read';
     
     // List
-    var html = '';
-    for (var i = 0; i < posts.length; i++) {
-      var p = posts[i];
-      var img = IMGS_SM[(i + 1) % IMGS_SM.length];
-      html += '<a href="post.html?id=' + p.id + '" class="row">';
-      html += '<div class="row-img"><img src="' + img + '" alt="" loading="lazy"></div>';
-      html += '<div class="row-body">';
-      html += '<div class="row-title">' + p.title + '</div>';
-      html += '<div class="row-meta">' + p.date + ' - ' + p.tags + '</div>';
-      html += '</div></a>';
+    var h = '';
+    for (var i = 0; i < p.length; i++) {
+      var q = p[i];
+      var im = IMG_S[(i + 1) % IMG_S.length];
+      h += '<a href="' + B + '/post.html?id=' + q.id + '" class="rw">';
+      h += '<div class="ri"><img src="' + im + '" alt="" loading="lazy"></div>';
+      h += '<div class="rb">';
+      h += '<div class="rt">' + q.title + '</div>';
+      h += '<div class="rm">' + q.date + ' - ' + q.tags + '</div>';
+      h += '</div></a>';
     }
-    document.getElementById('posts').innerHTML = html;
+    document.getElementById('posts').innerHTML = h;
     
     // Grid
-    var ghtml = '';
-    for (var i = 1; i < 5 && i < posts.length; i++) {
-      var p = posts[i];
-      var img = IMGS[(i + 2) % IMGS.length];
-      ghtml += '<a href="post.html?id=' + p.id + '">';
-      ghtml += '<div class="gi"><img src="' + img + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>';
-      ghtml += '<div class="gp">';
-      ghtml += '<div class="gt">' + p.title + '</div>';
-      ghtml += '<div class="ge">' + p.excerpt.substring(0, 110) + '...</div>';
-      ghtml += '<div class="gm">' + p.date + ' - ' + p.readTime + ' min</div>';
-      ghtml += '</div></a>';
+    var g = '';
+    for (var i = 1; i < 5 && i < p.length; i++) {
+      var q = p[i];
+      var im = IMG[(i + 2) % IMG.length];
+      g += '<a href="' + B + '/post.html?id=' + q.id + '">';
+      g += '<div class="gi"><img src="' + im + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>';
+      g += '<div class="gp">';
+      g += '<div class="gt">' + q.title + '</div>';
+      g += '<div class="ge">' + q.excerpt.substring(0, 110) + '...</div>';
+      g += '<div class="gm">' + q.date + ' - ' + q.readTime + ' min</div>';
+      g += '</div></a>';
     }
-    document.getElementById('features').innerHTML = ghtml;
+    document.getElementById('feats').innerHTML = g;
     
   } catch(e) {}
 };
-req.send();
+x.send();
 </script>
 </body>
 </html>
