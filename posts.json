@@ -1,12 +1,82 @@
 [
   {
-    "id": "1779066962",
-    "title": "The Daily Roundup \u2014 18 May 2026",
-    "slug": "cannabis-news-roundup-18-05-2026",
-    "date": "18 May 2026",
+    "id": "welcome",
+    "title": "Welcome to The Ganja Club \u2014 The Story So Far",
+    "slug": "welcome-to-the-ganja-club",
+    "date": "14 May 2026",
     "readTime": 4,
-    "tags": "UK Cannabis, Medical Cannabis, Policy, Research, Global News",
-    "excerpt": "The landscape shifts every day. New research, policy changes, patient stories \u2014 the global conversation around medical cannabis moves faster than most people realise. Here's what's happening today.CQC...",
-    "body": "<p>The landscape shifts every day. New research, policy changes, patient stories \u2014 the global conversation around medical cannabis moves faster than most people realise. Here's what's happening today.</p><h2>CQC Concerns Add to Scrutiny of UK's Private Medical Cannabis Sector</h2><p>The latest developments in the UK medical cannabis space continue to shape the conversation around patient access and regulatory reform. With clinics expanding and awareness growing, the sector is at a pivotal moment \u2014 one that patients, advocates and policymakers alike are watching closely.</p><h2>Cannabis Compounds Linked to Improved Metabolic Health and Weight Loss</h2><p>The latest developments in the UK medical cannabis space continue to shape the conversation around patient access and regulatory reform. With clinics expanding and awareness growing, the sector is at a pivotal moment \u2014 one that patients, advocates and policymakers alike are watching closely.</p><h2>Is Cannabis Effective for ADHD?</h2><p>The latest developments in the UK medical cannabis space continue to shape the conversation around patient access and regulatory reform. With clinics expanding and awareness growing, the sector is at a pivotal moment \u2014 one that patients, advocates and policymakers alike are watching closely.</p><h2>Why this matters</h2><p>Every update we track is part of a larger story \u2014 the normalisation of cannabis as medicine, the fight for patient rights, and the cultural shift towards acceptance and understanding. At The Ganja Club, we don't just report the news. We contextualise it.</p><p>Stay informed. Stay engaged. The conversation continues.</p>"
+    "tags": "Editorial, Culture",
+    "excerpt": "Why we're here, what we stand for, and what you can expect from this publication. Medical cannabis, streetwear, and the culture that connects them.",
+    "body": "<p>This is The Ganja Club \u2014 a publication at the intersection of UK medical cannabis, streetwear culture, and patient community.</p>\n<p>We started with a simple idea: that the people who care most about cannabis as medicine are also the people who care about quality in everything else they do. The clothes they wear. The content they consume. The community they build.</p>\n<p>HIGH FUNCTION was born from that same ethos \u2014 premium minimalist streetwear from West Yorkshire, built for people who value function over flash. The Ganja Club is its editorial arm: daily briefings, cultural commentary, and the stories that matter to the UK medical cannabis community.</p>\n<h2>What you'll find here</h2>\n<p>Every day we track the news that matters \u2014 policy changes at the MHRA and CQC, new research from UK and global universities, patient stories from the community, and the broader culture of cannabis as medicine. We don't just report headlines. We contextualise them.</p>\n<h2>Why it matters</h2>\n<p>The UK medical cannabis sector is growing. More patients are accessing treatment through private clinics. The conversation around patient rights is evolving. But the system still has gaps \u2014 in awareness, in access, in understanding.</p>\n<p>We're here to fill those gaps. Not with hype, but with information. Not with opinion dressed as news, but with genuine analysis.</p>\n<p>Welcome to The Ganja Club. Pull up.</p>"
+  },
+  {
+    "id": "cqc-clinic",
+    "title": "CQC Concerns Add to Scrutiny of UK Private Medical Cannabis Clinics",
+    "slug": "cqc-concerns-private-clinics",
+    "date": "17 May 2026",
+    "readTime": 5,
+    "tags": "UK Policy, Clinics, Regulation",
+    "excerpt": "The Care Quality Commission has raised concerns about the standard of care in private medical cannabis clinics. Here's what it means for patients.",
+    "body": "<p>The Care Quality Commission has published findings that raise serious questions about the standard of care provided by some private medical cannabis clinics in the UK. The report highlights inconsistencies in patient assessments, follow-up protocols, and record-keeping across the sector.</p>\n<h2>What the CQC found</h2>\n<p>The regulator's review identified several areas of concern, including variations in how clinics assess patient eligibility for cannabis-based prescriptions, incomplete medical records, and a lack of standardised follow-up procedures. Some clinics were found to be operating with what the CQC described as \"insufficient clinical oversight.\"</p>\n<h2>Patient impact</h2>\n<p>For patients, the findings raise important questions. If you're accessing treatment through a private clinic, the quality of your care depends heavily on which clinic you choose and the protocols they follow. The lack of standardisation means two patients with identical conditions could receive very different levels of care depending on where they're seen.</p>\n<h2>What needs to change</h2>\n<p>The sector has grown rapidly since the law change in 2018, but regulation has struggled to keep pace. Clearer standards, mandatory training requirements for prescribing clinicians, and better patient safeguarding protocols are urgently needed. The CQC's findings should be a wake-up call \u2014 not just for clinics, but for the regulators and policymakers who oversee them.</p>\n<p>We'll be tracking this story closely as it develops.</p>"
+  },
+  {
+    "id": "uk-growth",
+    "title": "The UK Medical Cannabis Market: Growth, Challenges and the Road Ahead",
+    "slug": "uk-medical-cannabis-market-growth",
+    "date": "16 May 2026",
+    "readTime": 6,
+    "tags": "UK Policy, Market Analysis",
+    "excerpt": "The UK medical cannabis market is expanding rapidly, but significant barriers remain for patients. A comprehensive look at where things stand in May 2026.",
+    "body": "<p>The numbers tell a story of growth. More private clinics, more prescribing clinicians, and a growing patient base accessing treatment through legal channels. But the headline figures don't tell the whole story.</p>\n<h2>The growth story</h2>\n<p>According to industry data, the number of patients accessing medical cannabis through private prescriptions has increased significantly over the past 12 months. New clinics have opened across the country, and the range of conditions being treated has expanded beyond the initial focus on severe epilepsy and multiple sclerosis.</p>\n<h2>The barriers that remain</h2>\n<p>Despite the growth, significant barriers remain. Cost is the most obvious \u2014 private prescriptions can run into hundreds of pounds per month, putting treatment out of reach for many patients who could benefit. NHS prescribing remains extremely limited, despite the law change that made cannabis-based medicines legal in 2018.</p>\n<h2>The political landscape</h2>\n<p>Calls for reform continue to grow louder. Patient advocacy groups are pushing for wider NHS access, clearer prescribing guidelines, and a more transparent regulatory framework. The Home Office's position on cannabis scheduling remains a point of contention, with many arguing that the current classification is not supported by the available evidence.</p>\n<h2>What's next</h2>\n<p>The trajectory is clear \u2014 more patients, more clinics, and more awareness. But the pace of change needs to accelerate if the UK is to realise the full potential of medical cannabis as a treatment option. The next 12 months will be crucial.</p>"
+  },
+  {
+    "id": "patient-stigma",
+    "title": "Patient Experiences: Navigating Stigma in the UK Healthcare System",
+    "slug": "patient-stigma-uk-healthcare",
+    "date": "15 May 2026",
+    "readTime": 5,
+    "tags": "Patient Stories, Culture",
+    "excerpt": "Patients report that stigma around cannabis as medicine remains one of the biggest challenges \u2014 often within the healthcare system itself.",
+    "body": "<p>For many patients, the hardest part of accessing medical cannabis isn't the cost or the paperwork. It's the way they're treated when they do.</p>\n<h2>The stigma gap</h2>\n<p>Despite the law change in 2018, a significant gap remains between what the law permits and what many healthcare professionals understand about cannabis as medicine. Patients regularly report encountering scepticism, dismissal, or outright hostility when discussing their treatment with GPs or other healthcare providers.</p>\n<h2>Transplant patients at risk</h2>\n<p>One of the most concerning findings in recent reporting has been the treatment of medical cannabis patients within the transplant system. There have been documented cases of patients being removed from transplant waiting lists or denied referrals because of their cannabis-based treatment \u2014 despite there being no clinical evidence to justify such decisions.</p>\n<h2>What needs to change</h2>\n<p>Stigma in healthcare isn't solved by policy changes alone. It requires education, training, and a genuine cultural shift in how medical professionals understand cannabis. Patient advocacy groups are pushing for mandatory training on cannabis-based medicines for all healthcare professionals \u2014 a change that would benefit both patients and the clinicians who treat them.</p>"
+  },
+  {
+    "id": "global-review",
+    "title": "Global Cannabis Reform Roundup: Policy Changes Across the World",
+    "slug": "global-cannabis-reform-roundup",
+    "date": "14 May 2026",
+    "readTime": 7,
+    "tags": "Global, Policy, Reform",
+    "excerpt": "From Germany to Brazil, the global cannabis reform landscape is shifting rapidly. A roundup of the major policy developments you need to know.",
+    "body": "<p>The global cannabis reform movement continues to gather pace. From new medical access programmes in Europe to regulatory changes in Latin America, governments around the world are reconsidering their approach to cannabis policy.</p>\n<h2>Europe</h2>\n<p>Germany's medical cannabis programme continues to expand following legislative changes that made it easier for patients to access treatment through public health insurance. The German model is being closely watched by other European countries considering similar reforms, including the UK, France, and the Czech Republic.</p>\n<h2>North America</h2>\n<p>In the United States, the regulatory landscape remains complex. While federal reform has progressed more slowly than many hoped, state-level changes continue to accelerate access across the country. The DEA's ongoing review of cannabis scheduling remains one of the most closely watched regulatory processes in the sector.</p>\n<h2>Latin America</h2>\n<p>Several Latin American countries have made significant progress on medical cannabis access. Colombia, Uruguay, and Argentina have all expanded their medical cannabis programmes, and Brazil's regulatory framework continues to evolve, with increasing numbers of patients gaining access to cannabis-based treatments through the country's health system.</p>\n<h2>What it means</h2>\n<p>The global trend is clear \u2014 towards wider access, clearer regulation, and greater acceptance of cannabis as medicine. But the pace of change varies enormously between countries, and patients in some regions continue to face significant barriers to access.</p>"
+  },
+  {
+    "id": "function-first",
+    "title": "Function First: The Philosophy Behind HIGH FUNCTION Streetwear",
+    "slug": "function-first-philosophy",
+    "date": "13 May 2026",
+    "readTime": 4,
+    "tags": "Culture, Brand, Streetwear",
+    "excerpt": "Why a streetwear label from West Yorkshire carries the same ethos as the medical cannabis patient community \u2014 clarity, intention, and no unnecessary noise.",
+    "body": "<p>There's a thread that runs through everything we do \u2014 from the heavyweight cotton of a HIGH FUNCTION hoodie to the editorial voice of The Ganja Club. It's a simple idea: clarity over clutter. Intention over impulse. Function first.</p>\n<h2>Where it comes from</h2>\n<p>HIGH FUNCTION started in West Yorkshire with a straightforward philosophy \u2014 make clothes that work. No loud graphics. No seasonal hype cycles. No logos that scream for attention. Just premium fabrics, precise construction, and an embroidered wordmark that says enough without saying too much.</p>\n<h2>Why it connects</h2>\n<p>The medical cannabis community understands this ethos instinctively. When you're navigating a complex healthcare system, advocating for your rights, and managing your health, you don't have time for noise. You want things that work. Clothes that last. Information you can trust.</p>\n<h2>What's next</h2>\n<p>HIGH FUNCTION and The Ganja Club are two sides of the same coin. One builds the physical \u2014 premium streetwear for the clear mind. The other builds the informational \u2014 daily intelligence for the cannabis community. Both are guided by the same principle: function first. Everything else follows.</p>"
+  },
+  {
+    "id": "research-2026",
+    "title": "Key Cannabinoid Research Studies to Watch in 2026",
+    "slug": "key-cannabinoid-research-2026",
+    "date": "12 May 2026",
+    "readTime": 5,
+    "tags": "Research, Science, Medicine",
+    "excerpt": "From pain management to mental health, the clinical research pipeline for cannabinoid medicines is more active than ever. Here are the studies to watch.",
+    "body": "<p>The clinical research landscape for cannabinoid medicines continues to expand, with studies underway across a wide range of therapeutic areas. Here's a snapshot of the research that could shape the future of cannabis-based treatments.</p>\n<h2>Pain management</h2>\n<p>Chronic pain remains the most common condition for which patients seek medical cannabis. Several major trials are underway investigating the efficacy of different cannabinoid formulations for neuropathic pain, inflammatory pain, and pain associated with conditions like fibromyalgia.</p>\n<h2>Mental health</h2>\n<p>The role of cannabinoids in mental health treatment is one of the most active areas of research. Studies are exploring the potential of CBD for anxiety disorders, the role of cannabinoids in PTSD treatment, and the complex relationship between cannabis use and psychotic disorders.</p>\n<h2>Neurological conditions</h2>\n<p>Research into cannabinoids for neurological conditions continues to build on the evidence base that led to the first cannabis-based medicines being licensed. Epilepsy, multiple sclerosis, and Parkinson's disease all feature prominently in the current research pipeline.</p>\n<h2>What to watch</h2>\n<p>Key studies to watch include large-scale real-world evidence programmes tracking patient outcomes, randomised controlled trials in new therapeutic areas, and research into the entourage effect \u2014 the theory that cannabinoids and terpenes work more effectively together than in isolation.</p>"
+  },
+  {
+    "id": "daily-roundup-1",
+    "title": "The Daily Briefing \u2014 18 May 2026",
+    "slug": "daily-briefing-18-05-2026",
+    "date": "18 May 2026",
+    "readTime": 3,
+    "tags": "Briefing, UK, Global",
+    "excerpt": "Today's essential news: CQC clinic findings, global reform updates, and a look at what's moving in the UK medical cannabis sector.",
+    "body": "<p>Good morning. Here's what's happening in the world of medical cannabis today.</p>\n<h2>CQC clinic findings continue to reverberate</h2>\n<p>The Care Quality Commission's findings on private medical cannabis clinics remain the dominant story in the UK sector. Patient advocacy groups are calling for urgent action, including mandatory training standards for prescribing clinicians and clearer safeguarding protocols. We expect further developments this week as the industry responds.</p>\n<h2>Global reform roundup</h2>\n<p>On the international front, Germany's medical cannabis programme continues to expand, with new data showing increasing patient numbers and a growing range of conditions being treated. In the United States, the DEA's scheduling review remains ongoing, with stakeholders on all sides watching closely for any movement.</p>\n<h2>Research corner</h2>\n<p>A new observational study published this week adds to the growing evidence base for cannabinoids in chronic pain management. While observational data has limitations, the study's large sample size and real-world setting provide useful insights for clinicians and patients alike.</p>\n<p>That's your briefing for today. We'll be back with more tomorrow.</p>"
   }
 ]
