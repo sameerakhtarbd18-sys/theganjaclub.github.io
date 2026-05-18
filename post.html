@@ -39,7 +39,7 @@ article li{margin-bottom:6px}
 <div class="wrap">
 <div class="hd">
 <a href="/theganjaclub.github.io/" class="lg">The Ganja <span>Club</span></a>
-<a href="/theganjaclub.github.io/" class="bk">← Back</a>
+<a href="/theganjaclub.github.io/" class="bk">Back</a>
 </div>
 <div id="loader" class="ld">Loading post...</div>
 <article id="pf" style="display:none">
@@ -52,13 +52,12 @@ article li{margin-bottom:6px}
 </div>
 <script>
 var B = '/theganjaclub.github.io';
-var IMG = [
-  'https://images.unsplash.com/photo-1604335399105-a0c585db81b1?w=800',
-  'https://images.unsplash.com/photo-1603213758683-5ffc23d14eae?w=800',
-  'https://images.unsplash.com/photo-1588614959060-4d144f28b207?w=800',
-  'https://images.unsplash.com/photo-1595978204118-578c03f7b6db?w=800',
-  'https://images.unsplash.com/photo-1590191934444-9bff232022ef?w=800',
-  'https://images.unsplash.com/photo-1585644114976-c8a3c0f1631b?w=800'
+var IMGS = [
+  'https://images.pexels.com/photos/27910870/pexels-photo-27910870.jpeg?w=800',
+  'https://images.pexels.com/photos/27910867/pexels-photo-27910867.jpeg?w=800',
+  'https://images.pexels.com/photos/27910871/pexels-photo-27910871.jpeg?w=800',
+  'https://images.pexels.com/photos/27910872/pexels-photo-27910872.jpeg?w=800',
+  'https://images.pexels.com/photos/27910869/pexels-photo-27910869.jpeg?w=800'
 ];
 var pid = window.location.search.split('=')[1] || '';
 var x = new XMLHttpRequest();
@@ -73,8 +72,8 @@ x.onload = function() {
     if (!post) post = posts[0];
     if (!post) return;
     document.title = post.title + ' - The Ganja Club';
-    var idx = Math.floor(Math.random() * IMG.length);
-    document.getElementById('img-here').innerHTML = '<img src="' + IMG[idx] + '" alt="Cannabis" loading="lazy">';
+    var idx = Math.floor(Math.random() * IMGS.length);
+    document.getElementById('img-here').innerHTML = '<img src="' + IMGS[idx] + '" alt="Cannabis" loading="lazy">';
     document.getElementById('ptit').textContent = post.title;
     document.getElementById('pmet').textContent = post.date + ' - ' + post.readTime + ' min read - ' + post.tags;
     document.getElementById('pbd').innerHTML = post.body;

@@ -19,12 +19,10 @@ a:hover{color:var(--gold)}
 .logo{font-family:var(--serif);font-size:1.5rem;font-weight:700;letter-spacing:-.03em}
 .logo span{color:var(--gold)}
 .sub{font-size:.7rem;color:var(--dim);margin-top:1px}
-.nav-bar{display:flex;gap:0;margin:12px 0;border-bottom:1px solid var(--line)}
+.nav-bar{display:flex;margin:12px 0;border-bottom:1px solid var(--line)}
 .nav-bar a{padding:8px 16px;font-size:.78rem;color:var(--dim);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .1s}
 .nav-bar a:hover{color:var(--text);border-bottom-color:var(--gold)}
 .nav-bar .act{color:var(--text);font-weight:600;border-bottom-color:var(--gold)}
-
-/* FEATURED */
 .feat{background:var(--card);border:1px solid var(--line);padding:24px;margin:28px 0 32px}
 .feat .tg{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:8px}
 .feat .fi{width:100%;height:200px;background:#ddd;margin-bottom:14px;overflow:hidden}
@@ -34,23 +32,18 @@ a:hover{color:var(--gold)}
 .feat .tl a:hover{color:var(--gold)}
 .feat .ex{font-size:.9rem;color:var(--dim);line-height:1.55}
 .feat .mt{font-size:.7rem;color:var(--dim);margin-top:8px;text-transform:uppercase;letter-spacing:.05em}
-
-/* SECTION */
 .sh{border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 14px;display:flex;justify-content:space-between}
 .sh h2{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--dim)}
 .sh a{font-size:.7rem;color:var(--gold);text-transform:uppercase;letter-spacing:.08em}
-
-/* ROWS */
-.ls{border:1px solid var(--line);margin-bottom:32px;background:var(--card)}
+.ls{background:var(--card);border:1px solid var(--line);margin-bottom:32px}
 .rw{display:flex;gap:14px;padding:14px 16px;border-bottom:1px solid var(--line);transition:background .1s;color:var(--text)}
+.rw:last-child{border:none}
 .rw:hover{background:#f5f3ef}
 .rw .ri{width:80px;height:80px;flex-shrink:0;background:#ddd;overflow:hidden}
 .rw .ri img{width:100%;height:100%;object-fit:cover}
 .rw .rb{flex:1;min-width:0}
 .rw .rt{font-family:var(--serif);font-size:.95rem;margin-bottom:2px;line-height:1.3}
 .rw .rm{font-size:.65rem;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
-
-/* GRID */
 .gr{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px}
 .gr a{background:var(--card);border:1px solid var(--line);overflow:hidden;transition:all .15s;display:block;color:var(--text)}
 .gr a:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.05)}
@@ -60,8 +53,6 @@ a:hover{color:var(--gold)}
 .gr .gt{font-family:var(--serif);font-size:.85rem;margin-bottom:4px;line-height:1.3}
 .gr .ge{font-size:.73rem;color:var(--dim);line-height:1.4}
 .gr .gm{font-size:.6rem;color:#aaa;margin-top:6px}
-
-/* FOOTER */
 .ft{padding:30px 0 36px;border-top:2px solid var(--line);margin-top:36px}
 .ft .fi{display:flex;gap:36px;margin-bottom:18px}
 .ft .fc{flex:1}
@@ -85,42 +76,41 @@ a:hover{color:var(--gold)}
 </div>
 </div>
 <nav class="nav-bar">
-<a href="/theganjaclub.github.io/" class="act">Latest</a>
-<a href="/theganjaclub.github.io/">UK Policy</a>
-<a href="/theganjaclub.github.io/">Research</a>
-<a href="/theganjaclub.github.io/">Patient Stories</a>
-<a href="/theganjaclub.github.io/">Culture</a>
+<a href="/theganjaclub.github.io/?cat=all" class="act">Latest</a>
+<a href="/theganjaclub.github.io/?cat=politics">UK Policy</a>
+<a href="/theganjaclub.github.io/?cat=research">Research</a>
+<a href="/theganjaclub.github.io/?cat=patient">Patient</a>
+<a href="/theganjaclub.github.io/?cat=culture">Culture</a>
 </nav>
 </div>
 
 <div class="feat" id="feat">
-  <div class="tg" id="ftag">Today's Briefing</div>
-  <div class="fi" id="fimg"></div>
+  <div class="tg">Latest Story</div>
+  <div class="fi" id="fimg"><img src="https://images.pexels.com/photos/27910870/pexels-photo-27910870.jpeg?w=800" alt="Cannabis" style="width:100%;height:100%;object-fit:cover"></div>
   <div class="tl" id="ftit">Loading...</div>
   <div class="ex" id="fex">Daily medical cannabis intelligence</div>
   <div class="mt" id="fmet">The Ganja Club</div>
 </div>
 
-<div class="sh"><h2>Latest Briefings</h2><a href="/theganjaclub.github.io/">All →</a></div>
+<div class="sh"><h2>Latest Briefings</h2><a href="/theganjaclub.github.io/">All</a></div>
 <div class="ls" id="posts"></div>
 
-<div class="sh"><h2>Features</h2><a href="/theganjaclub.github.io/">More →</a></div>
+<div class="sh"><h2>Features</h2><a href="/theganjaclub.github.io/">More</a></div>
 <div class="gr" id="feats"></div>
 
 <div class="ft">
 <div class="fi">
 <div class="fc">
 <div class="logo" style="font-size:1rem">The Ganja <span>Club</span></div>
-<div style="font-size:.8rem;color:var(--dim);line-height:1.6;margin-top:6px">Daily intelligence at the intersection of UK medical cannabis, streetwear culture, and patient community. Part of the HIGH FUNCTION family.</div>
+<div style="font-size:.8rem;color:var(--dim);line-height:1.6;margin-top:6px">Daily intelligence. Part of the HIGH FUNCTION family.</div>
 </div>
 <div class="fc">
 <div class="fh">Sections</div>
 <ul>
-<li><a href="/theganjaclub.github.io/">Latest</a></li>
-<li><a href="/theganjaclub.github.io/">Policy & Regulation</a></li>
-<li><a href="/theganjaclub.github.io/">Research & Science</a></li>
-<li><a href="/theganjaclub.github.io/">Patient Stories</a></li>
-<li><a href="/theganjaclub.github.io/">Culture</a></li>
+<li><a href="/theganjaclub.github.io/?cat=politics">UK Policy</a></li>
+<li><a href="/theganjaclub.github.io/?cat=research">Research</a></li>
+<li><a href="/theganjaclub.github.io/?cat=patient">Patient Stories</a></li>
+<li><a href="/theganjaclub.github.io/?cat=culture">Culture</a></li>
 </ul>
 </div>
 <div class="fc">
@@ -131,77 +121,98 @@ a:hover{color:var(--gold)}
 </ul>
 </div>
 </div>
-<div class="fb">2026 The Ganja Club · Part of HIGH FUNCTION</div>
+<div class="fb">2026 The Ganja Club</div>
 </div>
 
 </div>
 
 <script>
 var B = '/theganjaclub.github.io';
-var IMG = [
-  'https://images.unsplash.com/photo-1604335399105-a0c585db81b1?w=800',
-  'https://images.unsplash.com/photo-1603213758683-5ffc23d14eae?w=800',
-  'https://images.unsplash.com/photo-1588614959060-4d144f28b207?w=800',
-  'https://images.unsplash.com/photo-1595978204118-578c03f7b6db?w=800',
-  'https://images.unsplash.com/photo-1590191934444-9bff232022ef?w=800',
-  'https://images.unsplash.com/photo-1585644114976-c8a3c0f1631b?w=800',
-  'https://images.unsplash.com/photo-1610963403540-e6e1e8a10f58?w=800',
-  'https://images.unsplash.com/photo-1545328822-11bf72a0eadc?w=800',
-  'https://images.unsplash.com/photo-1593198078800-9dd05c13978f?w=800',
-  'https://images.unsplash.com/photo-1585145868792-c47b3cf0c003?w=800'
+var PEXELS = [
+  'https://images.pexels.com/photos/27910870/pexels-photo-27910870.jpeg?w=800',
+  'https://images.pexels.com/photos/27910867/pexels-photo-27910867.jpeg?w=800',
+  'https://images.pexels.com/photos/27910871/pexels-photo-27910871.jpeg?w=800',
+  'https://images.pexels.com/photos/27910872/pexels-photo-27910872.jpeg?w=800',
+  'https://images.pexels.com/photos/27910869/pexels-photo-27910869.jpeg?w=800',
+  'https://images.pexels.com/photos/27910873/pexels-photo-27910873.jpeg?w=800',
+  'https://images.pexels.com/photos/27910868/pexels-photo-27910868.jpeg?w=800',
+  'https://images.pexels.com/photos/27910874/pexels-photo-27910874.jpeg?w=800'
 ];
-var IMG_S = [
-  'https://images.unsplash.com/photo-1604335399105-a0c585db81b1?w=400',
-  'https://images.unsplash.com/photo-1603213758683-5ffc23d14eae?w=400',
-  'https://images.unsplash.com/photo-1588614959060-4d144f28b207?w=400',
-  'https://images.unsplash.com/photo-1595978204118-578c03f7b6db?w=400',
-  'https://images.unsplash.com/photo-1590191934444-9bff232022ef?w=400',
-  'https://images.unsplash.com/photo-1585644114976-c8a3c0f1631b?w=400',
-  'https://images.unsplash.com/photo-1610963403540-e6e1e8a10f58?w=400',
-  'https://images.unsplash.com/photo-1545328822-11bf72a0eadc?w=400',
-  'https://images.unsplash.com/photo-1593198078800-9dd05c13978f?w=400',
-  'https://images.unsplash.com/photo-1585145868792-c47b3cf0c003?w=400'
+var PEXELS_SM = [
+  'https://images.pexels.com/photos/27910870/pexels-photo-27910870.jpeg?w=400',
+  'https://images.pexels.com/photos/27910867/pexels-photo-27910867.jpeg?w=400',
+  'https://images.pexels.com/photos/27910871/pexels-photo-27910871.jpeg?w=400',
+  'https://images.pexels.com/photos/27910872/pexels-photo-27910872.jpeg?w=400',
+  'https://images.pexels.com/photos/27910869/pexels-photo-27910869.jpeg?w=400',
+  'https://images.pexels.com/photos/27910873/pexels-photo-27910873.jpeg?w=400',
+  'https://images.pexels.com/photos/27910868/pexels-photo-27910868.jpeg?w=400',
+  'https://images.pexels.com/photos/27910874/pexels-photo-27910874.jpeg?w=400'
 ];
+
+// Read category from URL
+var cat = 'all';
+var qs = window.location.search;
+if (qs.indexOf('cat=') > -1) {
+  var m = qs.match(/cat=([^&]+)/);
+  if (m) cat = m[1];
+}
+
+// Highlight active nav
+var links = document.querySelectorAll('.nav-bar a');
+for (var i = 0; i < links.length; i++) {
+  links[i].classList.remove('act');
+  if (links[i].href.indexOf('cat=' + cat) > -1) {
+    links[i].classList.add('act');
+  }
+}
 
 var x = new XMLHttpRequest();
 x.open('GET', B + '/posts.json', true);
 x.onload = function() {
   try {
-    var p = JSON.parse(x.responseText);
-    if (!p.length) return;
+    var allPosts = JSON.parse(x.responseText);
+    
+    // Filter by category
+    var posts = [];
+    for (var i = 0; i < allPosts.length; i++) {
+      if (cat === 'all' || allPosts[i].tags.toLowerCase().indexOf(cat) > -1) {
+        posts.push(allPosts[i]);
+      }
+    }
+    if (posts.length === 0) posts = allPosts;
     
     // Featured
-    var t = p[0];
-    document.getElementById('fimg').innerHTML = '<img src="' + IMG[0] + '" alt="Cannabis" style="width:100%;height:100%;object-fit:cover">';
+    var t = posts[0];
+    document.getElementById('fimg').innerHTML = '<img src="' + PEXELS[0] + '" alt="Cannabis" style="width:100%;height:100%;object-fit:cover">';
     document.getElementById('ftit').innerHTML = '<a href="' + B + '/post.html?id=' + t.id + '">' + t.title + '</a>';
     document.getElementById('fex').textContent = t.excerpt;
     document.getElementById('fmet').textContent = t.date + ' - ' + t.readTime + ' min read';
     
     // List
     var h = '';
-    for (var i = 0; i < p.length; i++) {
-      var q = p[i];
-      var im = IMG_S[(i + 1) % IMG_S.length];
-      h += '<a href="' + B + '/post.html?id=' + q.id + '" class="rw">';
+    for (var i = 0; i < posts.length; i++) {
+      var p = posts[i];
+      var im = PEXELS_SM[(i + 1) % PEXELS_SM.length];
+      h += '<a href="' + B + '/post.html?id=' + p.id + '" class="rw">';
       h += '<div class="ri"><img src="' + im + '" alt="" loading="lazy"></div>';
       h += '<div class="rb">';
-      h += '<div class="rt">' + q.title + '</div>';
-      h += '<div class="rm">' + q.date + ' - ' + q.tags + '</div>';
+      h += '<div class="rt">' + p.title + '</div>';
+      h += '<div class="rm">' + p.date + ' - ' + p.tags + '</div>';
       h += '</div></a>';
     }
     document.getElementById('posts').innerHTML = h;
     
     // Grid
     var g = '';
-    for (var i = 1; i < 5 && i < p.length; i++) {
-      var q = p[i];
-      var im = IMG[(i + 2) % IMG.length];
-      g += '<a href="' + B + '/post.html?id=' + q.id + '">';
+    for (var i = 1; i < 5 && i < posts.length; i++) {
+      var p = posts[i];
+      var im = PEXELS[(i + 2) % PEXELS.length];
+      g += '<a href="' + B + '/post.html?id=' + p.id + '">';
       g += '<div class="gi"><img src="' + im + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>';
       g += '<div class="gp">';
-      g += '<div class="gt">' + q.title + '</div>';
-      g += '<div class="ge">' + q.excerpt.substring(0, 110) + '...</div>';
-      g += '<div class="gm">' + q.date + ' - ' + q.readTime + ' min</div>';
+      g += '<div class="gt">' + p.title + '</div>';
+      g += '<div class="ge">' + p.excerpt.substring(0, 110) + '...</div>';
+      g += '<div class="gm">' + p.date + ' - ' + p.readTime + ' min</div>';
       g += '</div></a>';
     }
     document.getElementById('feats').innerHTML = g;
