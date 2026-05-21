@@ -1,0 +1,21 @@
+{
+  "_note": "Add affiliate links here. Seedbanks go in 'seedbanks', clinics in 'clinics'. When active=true, the blog auto-links matching articles.",
+  "active": false,
+  "seedbanks": [],
+  "clinics": [],
+  "cbd_brands": [],
+  "accessories": [],
+  "auto_link_rules": {
+    "tags_to_categories": {
+      "genetics": "seedbanks",
+      "strains": "seedbanks",
+      "research": "seedbanks",
+      "clinics": "clinics",
+      "nhs": "clinics",
+      "access": "clinics",
+      "prescribing": "clinics",
+      "cbd": "cbd_brands",
+      "patient stories": "clinics"
+    }
+  }
+}
