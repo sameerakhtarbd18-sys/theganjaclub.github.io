@@ -1,37 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Ganja Club</title>
-<meta name="description" content="The Ganja Club - Medical Cannabis News">
+<meta name="description" content="The Ganja Club — Medical Cannabis News">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#ffffff;--text:#111827;--dim:#6b7280;--green:#059669;--green-dark:#047857;--line:#e5e7eb;--sans:'Inter',sans-serif}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.8}
+:root{--bg:#ffffff;--text:#111827;--dim:#6b7280;--green:#059669;--green-dark:#047857;--line:#e5e7eb;--card:#f9fafb;--sans:'Inter',sans-serif}
+[data-theme="dark"]{--bg:#0f172a;--text:#f1f5f9;--dim:#94a3b8;--line:#334155;--card:#1e293b}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.8;transition:background .2s,color .2s}
 .wrap{max-width:660px;margin:0 auto;padding:0 20px}
 a{color:var(--green);text-decoration:none}
 a:hover{opacity:.8}
-.hd{padding:24px 0;border-bottom:2px solid var(--text);margin-bottom:32px;display:flex;justify-content:space-between;align-items:center}
-.lg{font-size:1.1rem;font-weight:700;letter-spacing:-.03em}
+.hd{padding:24px 0;border-bottom:2px solid var(--text);margin-bottom:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.lg{font-size:1.2rem;font-weight:700;letter-spacing:-.03em;color:var(--text)}
 .lg span{color:var(--green)}
+.hd-actions{display:flex;gap:10px;align-items:center}
 .bk{color:var(--dim);font-size:.78rem}
 .bk:hover{color:var(--green)}
+#theme-toggle{background:none;border:1px solid var(--line);color:var(--dim);cursor:pointer;font-size:.9rem;padding:4px 8px;border-radius:4px;transition:all .15s}
+#theme-toggle:hover{color:var(--text)}
 article h1{font-size:2rem;line-height:1.25;margin-bottom:10px;font-weight:700}
 .mt{color:var(--dim);font-size:.78rem;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.mt .region-badge{display:inline-block;font-size:.7rem;padding:2px 8px;border-radius:3px;background:var(--green);color:#fff;margin-left:8px;text-transform:uppercase;vertical-align:middle}
 article p{margin-bottom:16px;font-size:1rem}
 article h2{font-size:1.3rem;margin:28px 0 12px;font-weight:700}
 article h3{font-size:1rem;margin:20px 0 10px;font-weight:600}
 article blockquote{border-left:2px solid var(--green);padding-left:16px;margin:20px 0;color:var(--dim);font-style:italic}
 article ul,article ol{margin:12px 0;padding-left:20px}
 article li{margin-bottom:6px}
-#img-here{width:100%;height:240px;margin-bottom:24px;overflow:hidden;background:#e5e7eb}
+#img-here{width:100%;height:240px;margin-bottom:24px;overflow:hidden;background:var(--line);border-radius:4px}
 #img-here img{width:100%;height:100%;object-fit:cover}
 .ld{text-align:center;padding:80px 0;color:var(--dim)}
-.ft{padding:32px 0;border-top:2px solid var(--line);margin-top:40px;text-align:center;font-size:.75rem;color:#9ca3af}
-.ft a{color:#9ca3af}
+.related-section{margin-top:40px;padding-top:20px;border-top:1px solid var(--line)}
+.related-section h3{font-size:.85rem;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.related-section a{display:block;padding:8px 0;color:var(--dim);font-size:.85rem;border-bottom:1px solid var(--line)}
+.related-section a:hover{color:var(--green)}
+.ft{padding:32px 0;border-top:2px solid var(--line);margin-top:40px;text-align:center;font-size:.75rem;color:var(--dim)}
+.ft a{color:var(--dim);margin:0 8px}
 .ft a:hover{color:var(--green)}
 @media(max-width:600px){article h1{font-size:1.4rem}#img-here{height:180px}}
 </style>
@@ -40,43 +49,93 @@ article li{margin-bottom:6px}
 <div class="wrap">
 <div class="hd">
 <a href="/" class="lg">The Ganja <span>Club</span></a>
-<a href="/" class="bk">← Back</a>
+<div class="hd-actions">
+  <a href="/" class="bk">← Back</a>
+  <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
 </div>
-<div id="loader" class="ld">Loading post...</div>
+</div>
+<div id="loader" class="ld">Loading post…</div>
 <article id="pf" style="display:none">
 <div id="img-here"></div>
 <h1 id="ptit"></h1>
 <div class="mt" id="pmet"></div>
 <div id="pbd"></div>
+<div class="related-section" id="related"></div>
 </article>
-<div class="ft">&copy; 2026 The Ganja Club</div>
+<div class="ft">
+  <a href="/">Home</a>
+  <a href="/uk.html">UK</a>
+  <a href="/global.html">Global</a>
+  <a href="/rss.xml">RSS</a>
+  <br>© 2026 The Ganja Club
 </div>
-<script>
-var POST_IMGS = {"welcome": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-alejo-turola-2741789-17269272.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-30682035.jpg"}, "cqc-clinic": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-blak7ta-31952151.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-30682036.jpg"}, "uk-growth": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-brokkelen-nl-netherlands-amsterdam-2646648-10729431.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-30682042.jpg"}, "patient-stigma": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-30682035.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33349199.jpg"}, "global-review": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-30682036.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33639863%20%281%29.jpg"}, "function-first": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-30682042.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856588.jpg"}, "research-2026": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33349199.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856589.jpg"}, "daily-roundup-1": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33639863%20%281%29.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856592.jpg"}, "nhs-prescribing": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856588.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856594.jpg"}, "germany-model": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856589.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33965723.jpg"}, "cbd-research": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856592.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33965725.jpg"}, "patient-rights": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856594.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33965726.jpg"}, "cannabis-culture-london": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33965723.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-34246667.jpg"}, "thc-pain": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33965725.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-34246669.jpg"}, "home-office": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33965726.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-haley-bee-347725846-28862111.jpg"}, "clinical-access": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-34246667.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-jess-vide-9259936.jpg"}, "terpenes": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-34246669.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-jess-vide-9259987.jpg"}};
+</div>
 
-var pid = window.location.search.split('=')[1] || '';
-var x = new XMLHttpRequest();
-x.open('GET', 'posts.json', true);
-x.onload = function() {
-  try {
-    var posts = JSON.parse(x.responseText);
-    var post = null;
-    for (var i = 0; i < posts.length; i++) {
-      if (posts[i].id === pid) { post = posts[i]; break; }
-    }
-    if (!post) post = posts[0];
-    if (!post) return;
-    document.title = post.title + ' - The Ganja Club';
-    var imgs = POST_IMGS[post.id] || POST_IMGS[Object.keys(POST_IMGS)[0]];
-    document.getElementById('img-here').innerHTML = '<img src="' + imgs.hero + '" alt="' + post.title + '" loading="lazy">';
-    document.getElementById('ptit').textContent = post.title;
-    document.getElementById('pmet').textContent = post.date + ' - ' + post.readTime + ' min read - ' + post.tags;
-    document.getElementById('pbd').innerHTML = post.body;
-    document.getElementById('loader').style.display = 'none';
-    document.getElementById('pf').style.display = 'block';
-  } catch(e) {}
-};
-x.send();
+<script>
+// Dark mode
+function toggleTheme(){
+  const h=document.documentElement;
+  const d=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',d?'light':'dark');
+  document.getElementById('theme-toggle').textContent=d?'🌙':'☀️';
+  localStorage.setItem('theme',d?'light':'dark');
+}
+(function(){
+  const s=localStorage.getItem('theme');
+  if(s==='dark'||(!s&&matchMedia('(prefers-color-scheme:dark)').matches)){
+    document.documentElement.setAttribute('data-theme','dark');
+    document.getElementById('theme-toggle').textContent='☀️';
+  }
+})();
+
+// Load post
+const params = new URLSearchParams(window.location.search);
+const slug = params.get('id');
+if(!slug){document.getElementById('loader').textContent='Post not found.';}
+else{
+  fetch('/posts.json')
+    .then(r=>r.json())
+    .then(posts=>{
+      const post = posts.find(p=>p.slug===slug||p.id===slug);
+      if(!post){document.getElementById('loader').textContent='Post not found.';return;}
+      
+      document.title = post.title + ' — The Ganja Club';
+      document.getElementById('loader').style.display='none';
+      document.getElementById('pf').style.display='block';
+      document.getElementById('ptit').textContent=post.title;
+      
+      // Metadata
+      const region = post.region;
+      document.getElementById('pmet').innerHTML = 
+        `${post.date} · ${post.readTime||'?'} min read · ${post.tags||''}${region?`<span class="region-badge">${region}</span>`:''}`;
+      
+      // Image
+      const img = document.getElementById('img-here');
+      const imgUrl = post.image || `https://pub-849a283a10a5443389b4f17848459996.r2.dev/tgc/${post.slug||post.id}.jpg`;
+      img.innerHTML = `<img src="${imgUrl}" alt="${post.title}" onerror="this.parentElement.style.display='none'">`;
+      
+      // Body
+      document.getElementById('pbd').innerHTML = post.body||'';
+      
+      // Related posts
+      const tags = (post.tags||'').split(',').map(t=>t.trim().toLowerCase());
+      const related = posts
+        .filter(p=>p.id!==post.id)
+        .map(p=>{
+          const pt=(p.tags||'').split(',').map(t=>t.trim().toLowerCase());
+          return {post:p, score:tags.filter(t=>pt.includes(t)).length};
+        })
+        .filter(r=>r.score>0)
+        .sort((a,b)=>b.score-a.score)
+        .slice(0,4);
+      
+      if(related.length){
+        document.getElementById('related').innerHTML = 
+          '<h3>Related articles</h3>' +
+          related.map(r=>`<a href="/post.html?id=${r.post.slug||r.post.id}">${r.post.title}</a>`).join('');
+      }
+    });
+}
 </script>
 </body>
 </html>

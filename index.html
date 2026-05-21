@@ -1,204 +1,333 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Ganja Club — Medical Cannabis News & Culture</title>
 <meta name="description" content="Daily intelligence on UK medical cannabis, patient rights, global policy, and the culture that binds it all.">
+<link rel="alternate" type="application/rss+xml" href="/rss.xml" title="The Ganja Club">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#ffffff;--card:#f9fafb;--text:#111827;--dim:#6b7280;--green:#059669;--green-dark:#047857;--line:#e5e7eb;--sans:'Inter',sans-serif}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+:root{--bg:#ffffff;--card:#f9fafb;--card-hover:#f3f4f6;--text:#111827;--dim:#6b7280;--green:#059669;--green-dark:#047857;--line:#e5e7eb;--sans:'Inter',sans-serif;--shadow:0 1px 3px rgba(0,0,0,.04)}
+[data-theme="dark"]{--bg:#0f172a;--card:#1e293b;--card-hover:#273449;--text:#f1f5f9;--dim:#94a3b8;--line:#334155;--shadow:0 1px 3px rgba(0,0,0,.2)}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;transition:background .2s,color .2s}
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
 a{text-decoration:none;color:inherit}
 a:hover{color:var(--green)}
-.head{padding:28px 0 0}
-.head-top{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:12px;border-bottom:2px solid var(--text)}
-.logo{font-size:1.5rem;font-weight:700;letter-spacing:-.03em}
+
+/* Navigation */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:2px solid var(--text);margin-bottom:6px;flex-wrap:wrap;gap:8px}
+.logo{font-size:1.4rem;font-weight:700;letter-spacing:-.03em;white-space:nowrap}
 .logo span{color:var(--green)}
-.sub{font-size:.7rem;color:var(--dim);margin-top:1px}
-.nav-bar{display:flex;margin:12px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.nav-bar a{padding:8px 16px;font-size:.78rem;color:var(--dim);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .1s}
-.nav-bar a:hover{color:var(--text);border-bottom-color:var(--green)}
-.nav-bar .act{color:var(--text);font-weight:600;border-bottom-color:var(--green)}
-.feat{background:var(--card);border:1px solid var(--line);padding:24px;margin:28px 0 32px}
+.nav-links{display:flex;gap:2px;flex-wrap:wrap}
+.nav-links a{padding:6px 12px;font-size:.78rem;color:var(--dim);border-radius:4px;transition:all .15s;font-weight:500}
+.nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--card)}
+.nav-links a.active{font-weight:600}
+.nav-actions{display:flex;gap:6px;align-items:center}
+#theme-toggle{background:none;border:1px solid var(--line);color:var(--dim);cursor:pointer;font-size:1rem;padding:6px 10px;border-radius:4px;transition:all .15s}
+#theme-toggle:hover{color:var(--text);border-color:var(--dim)}
+
+/* Search */
+.search-wrap{position:relative;margin:16px 0}
+.search-wrap input{width:100%;padding:10px 14px 10px 38px;border:1px solid var(--line);border-radius:6px;font-size:.85rem;background:var(--card);color:var(--text);font-family:var(--sans);transition:border-color .15s}
+.search-wrap input:focus{outline:none;border-color:var(--green)}
+.search-wrap .s-icon{position:absolute;left:12px;top:11px;color:var(--dim);font-size:.85rem}
+#no-results{display:none;text-align:center;padding:40px 0;color:var(--dim)}
+
+/* Featured */
+.feat{background:var(--card);border:1px solid var(--line);padding:24px;margin:20px 0 28px;border-radius:6px}
 .feat .tg{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--green);margin-bottom:8px}
-.feat .fi{width:100%;height:200px;margin-bottom:14px;overflow:hidden;background:#e5e7eb}
+.feat .fi{width:100%;height:200px;margin-bottom:14px;overflow:hidden;background:var(--line);border-radius:4px}
 .feat .fi img{width:100%;height:100%;object-fit:cover}
 .feat .tl{font-size:1.6rem;line-height:1.25;margin-bottom:8px;font-weight:700}
-.feat .tl a{color:var(--text)}
-.feat .tl a:hover{color:var(--green)}
 .feat .ex{font-size:.9rem;color:var(--dim);line-height:1.55}
 .feat .mt{font-size:.7rem;color:var(--dim);margin-top:8px;text-transform:uppercase;letter-spacing:.05em}
-.sh{border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 14px;display:flex;justify-content:space-between}
+
+/* Section headers */
+.sh{border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 14px;display:flex;justify-content:space-between;align-items:center}
 .sh h2{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--dim)}
-.sh a{font-size:.7rem;color:var(--green);text-transform:uppercase;letter-spacing:.08em}
-.sh a:hover{opacity:.8}
-.ls{background:var(--card);border:1px solid var(--line);margin-bottom:32px}
-.rw{display:flex;gap:14px;padding:14px 16px;border-bottom:1px solid var(--line);transition:background .1s;color:var(--text)}
-.rw:last-child{border:none}
-.rw:hover{background:#f0fdf4}
-.rw .ri{width:80px;height:80px;flex-shrink:0;overflow:hidden;background:#e5e7eb}
-.rw .ri img{width:100%;height:100%;object-fit:cover}
-.rw .rb{flex:1;min-width:0}
-.rw .rt{font-size:.95rem;margin-bottom:2px;line-height:1.3;font-weight:500}
-.rw .rm{font-size:.65rem;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
-.gr{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px}
-.gr a{background:var(--card);border:1px solid var(--line);overflow:hidden;transition:all .15s;display:block;color:var(--text)}
-.gr a:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
-.gr .gi{width:100%;height:130px;overflow:hidden;background:#e5e7eb}
-.gr .gi img{width:100%;height:100%;object-fit:cover}
-.gr .gp{padding:12px 14px 14px}
-.gr .gt{font-size:.85rem;margin-bottom:4px;line-height:1.3;font-weight:600}
-.gr .ge{font-size:.73rem;color:var(--dim);line-height:1.4}
-.gr .gm{font-size:.6rem;color:#9ca3af;margin-top:6px}
-.ft{padding:30px 0 36px;border-top:2px solid var(--line);margin-top:36px}
-.ft .fi{display:flex;gap:36px;margin-bottom:18px;flex-wrap:wrap}
-.ft .fc{flex:1;min-width:140px}
-.ft .fh{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#9ca3af;margin-bottom:8px}
-.ft ul{list-style:none}
-.ft li{margin-bottom:4px}
-.ft a{font-size:.78rem;color:var(--dim)}
+.region-badge{display:inline-block;font-size:.65rem;padding:2px 7px;border-radius:3px;background:var(--green);color:#fff;margin-left:6px;text-transform:uppercase;letter-spacing:.05em;vertical-align:middle}
+
+/* Post cards */
+.pl{display:flex;flex-direction:column;gap:1px}
+.card{display:flex;gap:14px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:6px;transition:background .15s,transform .1s;cursor:pointer}
+.card:hover{background:var(--card-hover)}
+.card-img{width:80px;height:80px;flex-shrink:0;border-radius:4px;overflow:hidden;background:var(--line)}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.card-body{flex:1;min-width:0}
+.card-body h3{font-size:.95rem;font-weight:600;line-height:1.3;margin-bottom:4px}
+.card-body .cex{font-size:.78rem;color:var(--dim);line-height:1.45;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-body .cmeta{font-size:.68rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em}
+.card-body .ctags{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+.card-body .ctags span{font-size:.62rem;padding:1px 6px;border-radius:3px;background:var(--line);color:var(--dim);text-transform:uppercase;letter-spacing:.04em}
+
+/* Related posts */
+.related{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.related h4{font-size:.7rem;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.related-links{display:flex;gap:8px;flex-wrap:wrap}
+.related-links a{font-size:.75rem;color:var(--green);padding:4px 10px;background:var(--card);border-radius:4px;transition:all .15s}
+.related-links a:hover{background:var(--green);color:#fff}
+
+/* Load more */
+#load-more{display:block;width:100%;padding:14px;margin:20px 0 40px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--dim);font-family:var(--sans);font-size:.85rem;cursor:pointer;transition:all .15s}
+#load-more:hover{color:var(--text);border-color:var(--green)}
+
+/* Newsletter */
+.nl{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:28px 24px;margin:32px 0;text-align:center}
+.nl h3{font-size:1.1rem;margin-bottom:6px}
+.nl p{font-size:.82rem;color:var(--dim);margin-bottom:16px}
+.nl-form{display:flex;gap:8px;max-width:400px;margin:0 auto}
+.nl-form input{flex:1;padding:10px 14px;border:1px solid var(--line);border-radius:4px;font-size:.85rem;background:var(--bg);color:var(--text);font-family:var(--sans)}
+.nl-form input:focus{outline:none;border-color:var(--green)}
+.nl-form button{padding:10px 20px;background:var(--green);color:#fff;border:none;border-radius:4px;font-size:.85rem;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background .15s}
+.nl-form button:hover{background:var(--green-dark)}
+
+/* Footer */
+.ft{padding:24px 0;border-top:2px solid var(--line);margin-top:20px;text-align:center;font-size:.72rem;color:var(--dim)}
+.ft a{color:var(--dim);margin:0 8px}
 .ft a:hover{color:var(--green)}
-.ft .fb{font-size:.68rem;color:#d1d5db;padding-top:14px;border-top:1px solid var(--line)}
-@media(max-width:600px){.gr{grid-template-columns:1fr}.feat .tl{font-size:1.2rem}.rw .ri{width:60px;height:60px}.nav-bar a{padding:8px 10px;font-size:.72rem}}
+
+@media(max-width:600px){
+  .nav{flex-direction:column;align-items:flex-start;gap:10px}
+  .nav-links{width:100%}
+  .nav-actions{align-self:flex-end;margin-top:-36px}
+  .feat .tl{font-size:1.2rem}
+  .card{flex-direction:column}
+  .card-img{width:100%;height:140px}
+  .nl-form{flex-direction:column}
+  .search-wrap{margin:12px 0}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<div class="head">
-<div class="head-top">
-<div>
-<div class="logo">The Ganja <span>Club</span></div>
-<div class="sub">Daily intelligence · Culture · Community</div>
-</div>
-</div>
-<nav class="nav-bar">
-<a href="?cat=all" class="act">Latest</a>
-<a href="?cat=politics">UK Policy</a>
-<a href="?cat=research">Research</a>
-<a href="?cat=patient">Patient</a>
-<a href="?cat=culture">Culture</a>
+<!-- Navigation -->
+<nav class="nav">
+  <a href="/" class="logo">The Ganja <span>Club</span></a>
+  <div class="nav-links">
+    <a href="/" class="active" data-nav="latest">Latest</a>
+    <a href="/uk.html" data-nav="uk">UK</a>
+    <a href="/europe.html" data-nav="europe">Europe</a>
+    <a href="/usa.html" data-nav="usa">USA</a>
+    <a href="/global.html" data-nav="global">Global</a>
+    <a href="#" data-nav="research" onclick="filterByTag('Research');return false">Research</a>
+  </div>
+  <div class="nav-actions">
+    <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+  </div>
 </nav>
+
+<!-- Search -->
+<div class="search-wrap">
+  <span class="s-icon">🔍</span>
+  <input type="text" id="search" placeholder="Search articles..." oninput="doSearch()">
 </div>
 
-<!-- FEATURED: rendered in HTML so images show immediately -->
-<div class="feat" id="feat">
-  <div class="tg">Latest Story</div>
-  <div class="fi"><img src="https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-alejo-turola-2741789-17269272.jpg" alt="Welcome to The Ganja Club — The Story So Far" style="width:100%;height:100%;object-fit:cover"></div>
-  <div class="tl"><a href="/post.html?id=welcome">Welcome to The Ganja Club — The Story So Far</a></div>
-  <div class="ex">Why we're here, what we stand for, and what you can expect from this publication. Medical cannabis, streetwear, and the culture that connects them.</div>
-  <div class="mt">14 May 2026 - 4 min read</div>
+<div id="no-results">No articles match your search.</div>
+
+<!-- Featured (latest post) -->
+<div class="feat" id="featured"></div>
+
+<!-- Post list -->
+<div class="sh"><h2>LATEST BRIEFINGS</h2></div>
+<div class="pl" id="post-list"></div>
+<button id="load-more" onclick="loadMore()">Load more articles</button>
+
+<!-- Newsletter -->
+<div class="nl">
+  <h3>Get the daily briefing</h3>
+  <p>Medical cannabis intelligence, straight to your inbox. No spam, no fuss.</p>
+  <div class="nl-form">
+    <input type="email" id="nl-email" placeholder="your@email.com">
+    <button onclick="subscribe()">Subscribe</button>
+  </div>
 </div>
 
-<div class="sh"><h2>Latest Briefings</h2><a href="?cat=all">All</a></div>
-<div class="ls" id="posts">
-  <!-- JS fills this, but we fallback gracefully -->
-</div>
-
-<div class="sh"><h2>Features</h2><a href="?cat=all">More</a></div>
-<div class="gr" id="feats">
-  <!-- JS fills this -->
-</div>
-
+<!-- Footer -->
 <div class="ft">
-<div class="fi">
-<div class="fc">
-<div class="logo" style="font-size:1rem">The Ganja <span>Club</span></div>
-<div style="font-size:.8rem;color:var(--dim);line-height:1.6;margin-top:6px">Daily intelligence for the UK medical cannabis community.</div>
-</div>
-<div class="fc">
-<div class="fh">Sections</div>
-<ul>
-<li><a href="?cat=politics">UK Policy</a></li>
-<li><a href="?cat=research">Research</a></li>
-<li><a href="?cat=patient">Patient Stories</a></li>
-<li><a href="?cat=culture">Culture</a></li>
-</ul>
-</div>
-<div class="fc">
-<div class="fh">Connect</div>
-<ul>
-<li><a href="https://instagram.com/theganjaclub_">Instagram</a></li>
-<li><a href="https://highfunction.store">Shop</a></li>
-</ul>
-</div>
-</div>
-<div class="fb">2026 The Ganja Club</div>
+  <a href="/rss.xml">RSS</a>
+  <a href="https://instagram.com/theganjaclub_" target="_blank">Instagram</a>
+  <a href="https://highfunction.store" target="_blank">Shop</a>
+  <br><br>
+  © 2026 The Ganja Club. Medical cannabis news & culture.
 </div>
 
 </div>
 
 <script>
-var POST_IMGS = {"welcome": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-alejo-turola-2741789-17269272.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-30682035.jpg"}, "cqc-clinic": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-blak7ta-31952151.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-30682036.jpg"}, "uk-growth": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-brokkelen-nl-netherlands-amsterdam-2646648-10729431.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-30682042.jpg"}, "patient-stigma": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-30682035.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33349199.jpg"}, "global-review": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-30682036.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33639863%20%281%29.jpg"}, "function-first": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-30682042.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856588.jpg"}, "research-2026": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33349199.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856589.jpg"}, "daily-roundup-1": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33639863%20%281%29.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856592.jpg"}, "nhs-prescribing": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856588.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856594.jpg"}, "germany-model": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856589.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33965723.jpg"}, "cbd-research": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856592.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33965725.jpg"}, "patient-rights": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33856594.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33965726.jpg"}, "cannabis-culture-london": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33965723.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-34246667.jpg"}, "thc-pain": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33965725.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-34246669.jpg"}, "home-office": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-33965726.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-haley-bee-347725846-28862111.jpg"}, "clinical-access": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-34246667.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-jess-vide-9259936.jpg"}, "terpenes": {"hero": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-diego-barros-2149566212-34246669.jpg", "thumb": "https://pub-c597ef3a62a046a1b7c37234c53d3390.r2.dev/pexels-jess-vide-9259987.jpg"}};
+// State
+let allPosts = [];
+let currentPage = 0;
+const PER_PAGE = 10;
+let searchQuery = '';
 
-var cat = 'all';
-var qs = window.location.search;
-if (qs.indexOf('cat=') > -1) {
-  var m = qs.match(/cat=([^&]+)/);
-  if (m) cat = m[1];
+// Load posts
+fetch('/posts.json')
+  .then(r => r.json())
+  .then(posts => {
+    allPosts = posts;
+    renderFeatured();
+    renderPosts();
+  });
+
+// Dark mode
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('theme-toggle').textContent = isDark ? '🌙' : '☀️';
+  localStorage.setItem('theme', isDark ? 'light' : 'dark');
 }
 
-var links = document.querySelectorAll('.nav-bar a');
-for (var i = 0; i < links.length; i++) {
-  links[i].classList.remove('act');
-  if (links[i].href.indexOf('cat=' + cat) > -1) {
-    links[i].classList.add('act');
+// Init theme from localStorage
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme:dark)').matches)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('theme-toggle').textContent = '☀️';
   }
+})();
+
+// Filter posts by search
+function getFilteredPosts() {
+  if (!searchQuery) return allPosts;
+  const q = searchQuery.toLowerCase();
+  return allPosts.filter(p => 
+    p.title.toLowerCase().includes(q) ||
+    (p.tags || '').toLowerCase().includes(q) ||
+    (p.excerpt || '').toLowerCase().includes(q)
+  );
 }
 
-var x = new XMLHttpRequest();
-x.open('GET', 'posts.json', true);
-x.onload = function() {
-  var postsScript = [];
-  try { postsScript = JSON.parse(x.responseText); } catch(e) {}
+function doSearch() {
+  searchQuery = document.getElementById('search').value.trim();
+  currentPage = 0;
+  const filtered = getFilteredPosts();
+  document.getElementById('no-results').style.display = filtered.length ? 'none' : 'block';
+  renderFeatured(filtered);
+  renderPosts(filtered);
+}
+
+function filterByTag(tag) {
+  document.getElementById('search').value = tag;
+  searchQuery = tag;
+  currentPage = 0;
+  const filtered = getFilteredPosts();
+  document.getElementById('no-results').style.display = filtered.length ? 'none' : 'block';
+  renderFeatured(filtered);
+  renderPosts(filtered);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Render featured post
+function renderFeatured(posts) {
+  const p = (posts || allPosts);
+  if (!p.length) return;
+  const post = p[0];
+  const el = document.getElementById('featured');
+  const tags = (post.tags || '').split(',').map(t => t.trim()).filter(Boolean);
+  const region = post.region;
+  el.innerHTML = `
+    <div class="tg">${tags[0] || 'LATEST'}${region ? `<span class="region-badge">${region}</span>` : ''}</div>
+    <div class="fi"><img src="${getPostImage(post)}" alt="${esc(post.title)}" loading="eager" onerror="this.parentElement.style.display='none'"></div>
+    <div class="tl"><a href="/post.html?id=${post.slug || post.id}">${esc(post.title)}</a></div>
+    <div class="ex">${esc(post.excerpt || '')}</div>
+    <div class="mt">${post.date} · ${post.readTime || '?'} min read</div>
+    <div class="related" id="related-${post.id}"></div>
+  `;
+  renderRelated(post);
+}
+
+// Related posts
+function renderRelated(post) {
+  const tags = (post.tags || '').split(',').map(t => t.trim().toLowerCase());
+  const related = allPosts
+    .filter(p => p.id !== post.id)
+    .map(p => {
+      const ptags = (p.tags || '').split(',').map(t => t.trim().toLowerCase());
+      const overlap = tags.filter(t => ptags.includes(t)).length;
+      return {post: p, score: overlap};
+    })
+    .filter(r => r.score > 0)
+    .sort((a,b) => b.score - a.score)
+    .slice(0, 3);
   
-  var filtered = [];
-  for (var i = 0; i < postsScript.length; i++) {
-    if (cat === 'all' || postsScript[i].tags.toLowerCase().indexOf(cat) > -1) {
-      filtered.push(postsScript[i]);
-    }
-  }
-  if (filtered.length === 0) filtered = postsScript;
+  if (!related.length) return;
+  const el = document.getElementById(`related-${post.id}`);
+  if (!el) return;
+  el.innerHTML = '<h4>Related</h4><div class="related-links">' +
+    related.map(r => `<a href="/post.html?id=${r.post.slug || r.post.id}">${esc(r.post.title)}</a>`).join('') +
+    '</div>';
+}
+
+// Render post list
+function renderPosts(posts) {
+  const p = (posts || getFilteredPosts());
+  const visible = p.slice(1, 1 + (currentPage + 1) * PER_PAGE);
+  const el = document.getElementById('post-list');
   
-  if (filtered.length > 0) {
-    var t0 = filtered[0];
-    var imgs0 = POST_IMGS[t0.id] || POST_IMGS[Object.keys(POST_IMGS)[0]];
-    var featHtml = '<div class="tg">Latest Story</div>';
-    featHtml += '<div class="fi"><img src="' + imgs0.hero + '" alt="' + t0.title + '" style="width:100%;height:100%;object-fit:cover"></div>';
-    featHtml += '<div class="tl"><a href="post.html?id=' + t0.id + '">' + t0.title + '</a></div>';
-    featHtml += '<div class="ex">' + t0.excerpt + '</div>';
-    featHtml += '<div class="mt">' + t0.date + ' - ' + t0.readTime + ' min read</div>';
-    document.getElementById('feat').innerHTML = featHtml;
-  }
+  el.innerHTML = visible.map(post => {
+    const tags = (post.tags || '').split(',').map(t => t.trim()).filter(Boolean).slice(0, 3);
+    const region = post.region;
+    return `
+    <a href="/post.html?id=${post.slug || post.id}" class="card">
+      <div class="card-img"><img src="${getPostImage(post)}" alt="${esc(post.title)}" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
+      <div class="card-body">
+        <h3>${esc(post.title)}${region ? `<span class="region-badge">${region}</span>` : ''}</h3>
+        <div class="cex">${esc(post.excerpt || '')}</div>
+        <div class="cmeta">${post.date} · ${post.readTime || '?'} min read</div>
+        <div class="ctags">${tags.map(t => `<span>${t}</span>`).join('')}</div>
+      </div>
+    </a>`;
+  }).join('');
   
-  var listHtml = '';
-  for (var i = 0; i < filtered.length; i++) {
-    var p = filtered[i];
-    var ims = POST_IMGS[p.id] || POST_IMGS[Object.keys(POST_IMGS)[0]];
-    listHtml += '<a href="post.html?id=' + p.id + '" class="rw">';
-    listHtml += '<div class="ri"><img src="' + ims.thumb + '" alt="" loading="lazy"></div>';
-    listHtml += '<div class="rb"><div class="rt">' + p.title + '</div>';
-    listHtml += '<div class="rm">' + p.date + ' - ' + p.tags + '</div></div></a>';
+  // Load more button
+  const hasMore = visible.length < (p.length - 1);
+  document.getElementById('load-more').style.display = hasMore ? 'block' : 'none';
+}
+
+function loadMore() {
+  currentPage++;
+  renderPosts();
+}
+
+// Get image URL for a post (from R2 or placeholder)
+function getPostImage(post) {
+  if (post.image) return post.image;
+  // Use R2 patterns: try post-specific image
+  const slug = post.slug || post.id;
+  return `https://pub-849a283a10a5443389b4f17848459996.r2.dev/tgc/${slug}.jpg`;
+}
+
+function esc(s) {
+  const d = document.createElement('div');
+  d.textContent = s || '';
+  return d.innerHTML;
+}
+
+// Newsletter (placeholder)
+function subscribe() {
+  const email = document.getElementById('nl-email').value.trim();
+  if (!email || !email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
   }
-  document.getElementById('posts').innerHTML = listHtml;
-  
-  var featHtml2 = '';
-  for (var i = 1; i < 5 && i < filtered.length; i++) {
-    var p = filtered[i];
-    var ims = POST_IMGS[p.id] || POST_IMGS[Object.keys(POST_IMGS)[0]];
-    featHtml2 += '<a href="post.html?id=' + p.id + '">';
-    featHtml2 += '<div class="gi"><img src="' + ims.hero + '" alt="" loading="lazy"></div>';
-    featHtml2 += '<div class="gp"><div class="gt">' + p.title + '</div>';
-    featHtml2 += '<div class="ge">' + p.excerpt.substring(0, 110) + '...</div>';
-    featHtml2 += '<div class="gm">' + p.date + ' - ' + p.readTime + ' min</div></div></a>';
-  }
-  document.getElementById('feats').innerHTML = featHtml2;
-};
-x.send();
+  alert('Thanks! Newsletter signup coming soon — we\'ll let you know when it\'s live.');
+  document.getElementById('nl-email').value = '';
+}
+
+// Mark active nav
+(function() {
+  const path = window.location.pathname;
+  document.querySelectorAll('[data-nav]').forEach(a => {
+    a.classList.remove('active');
+    if (path === '/' && a.dataset.nav === 'latest') a.classList.add('active');
+    else if (path.includes(a.dataset.nav) && a.dataset.nav !== 'latest') a.classList.add('active');
+  });
+})();
 </script>
 </body>
 </html>
