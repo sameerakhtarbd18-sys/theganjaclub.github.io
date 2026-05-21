@@ -310,15 +310,35 @@ function esc(s) {
   return d.innerHTML;
 }
 
-// Newsletter (placeholder)
+// Newsletter
 function subscribe() {
   const email = document.getElementById('nl-email').value.trim();
+  const btn = document.querySelector('.nl-form button');
   if (!email || !email.includes('@')) {
     alert('Please enter a valid email address.');
     return;
   }
-  alert('Thanks! Newsletter signup coming soon — we\'ll let you know when it\'s live.');
-  document.getElementById('nl-email').value = '';
+  btn.disabled = true;
+  btn.textContent = 'Subscribing...';
+  fetch('/.netlify/functions/subscribe', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email })
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.ok) {
+      document.getElementById('nl-email').value = '';
+      alert('Subscribed! Check your inbox to confirm.');
+    } else {
+      alert(data.error || 'Something went wrong.');
+    }
+  })
+  .catch(() => alert('Network error. Try again.'))
+  .finally(() => {
+    btn.disabled = false;
+    btn.textContent = 'Subscribe';
+  });
 }
 
 // Mark active nav

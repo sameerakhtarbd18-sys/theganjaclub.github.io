@@ -171,9 +171,14 @@ function loadMore(){currentPage++;render();}
 function esc(s){const d=document.createElement('div');d.textContent=s||'';return d.innerHTML;}
 function subscribe(){
   const e=document.getElementById('nl-email').value.trim();
+  const b=document.querySelector('.nl-form button');
   if(!e||!e.includes('@')){alert('Please enter a valid email.');return;}
-  alert('Thanks! Coming soon.');
-  document.getElementById('nl-email').value='';
+  b.disabled=true;b.textContent='Subscribing...';
+  fetch('/.netlify/functions/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:e})})
+  .then(r=>r.json()).then(d=>{
+    if(d.ok){document.getElementById('nl-email').value='';alert('Subscribed! Check your inbox.');}
+    else{alert(d.error||'Something went wrong.');}
+  }).catch(()=>alert('Network error.')).finally(()=>{b.disabled=false;b.textContent='Subscribe';});
 }
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{"token": "PLACEHOLDER"}"></script>
