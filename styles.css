@@ -421,9 +421,9 @@ a:hover {
 }
 
 .affiliate-strip img {
+  width: 728px;
   max-width: 100%;
   height: auto;
-  max-height: 60px;
   border-radius: var(--radius-sm);
   display: inline-block;
 }
