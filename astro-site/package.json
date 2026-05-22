@@ -1,0 +1,21 @@
+{
+  "name": "astro-site",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && npx pagefind --site dist",
+    "preview": "astro preview",
+    "astro": "astro",
+    "postbuild": "npx pagefind --site dist"
+  },
+  "dependencies": {
+    "@astrojs/netlify": "^7.0.10",
+    "@astrojs/rss": "^4.0.18",
+    "astro": "^6.3.7",
+    "pagefind": "^1.5.2"
+  }
+}

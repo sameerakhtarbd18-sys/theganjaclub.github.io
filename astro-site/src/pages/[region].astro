@@ -1,0 +1,86 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import AffiliateBanner from "../components/AffiliateBanner.astro";
+import Search from "../components/Search.astro";
+import GrowWidget from "../components/GrowWidget.astro";
+
+export async function getStaticPaths() {
+  return [
+    { params: { region: "uk" } },
+    { params: { region: "europe" } },
+    { params: { region: "usa" } },
+    { params: { region: "global" } },
+    { params: { region: "research" } },
+  ];
+}
+
+const { region } = Astro.params;
+
+const regionNames: Record<string, string> = {
+  uk: "United Kingdom",
+  europe: "Europe",
+  usa: "United States",
+  global: "Global",
+  research: "Research",
+};
+
+const regionBlurbs: Record<string, string> = {
+  uk: "Tracking UK medical cannabis policy, patient stories, and market developments.",
+  europe: "Covering the rapidly evolving European cannabis landscape.",
+  usa: "Federal reform, state legalisation, and the shifting American cannabis economy.",
+  global: "Cannabis reform movements and international policy developments worldwide.",
+  research: "Clinical trials, cannabinoid science, and the evidence shaping policy.",
+};
+
+const name = regionNames[region] || region.toUpperCase();
+const blurb = regionBlurbs[region] || "";
+
+let posts;
+if (region === "research") {
+  const allPosts = await getCollection("posts");
+  posts = allPosts
+    .filter(p => p.data.tags.some((t: string) => ["Research", "Science", "Clinical", "Study", "Medicine", "CBD"].includes(t)))
+    .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+} else {
+  posts = await getCollection("posts", ({ data }) => data.region === region);
+  posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+}
+
+function getReadTime(body: string): number {
+  return Math.max(1, Math.ceil((body || "").split(/\s+/).length / 200));
+}
+---
+
+<Base
+  title={`${name} — The Ganja Club`}
+  description={blurb}
+  region={region}
+>
+
+<AffiliateBanner />
+<Nav />
+<Search />
+
+<main id="main-content">
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <h2>{name}</h2>
+      </div>
+    </div>
+    <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:24px;">{blurb}</p>
+    <div class="card-grid">
+      {posts.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
+    </div>
+    {posts.length === 0 && <p style="text-align:center;color:var(--text-muted);padding:40px;font-size:0.85rem;">No articles yet in this section.</p>}
+  </section>
+</main>
+
+<Footer />
+<GrowWidget />
+
+</Base>

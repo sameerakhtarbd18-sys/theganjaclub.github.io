@@ -1,0 +1,54 @@
+---
+export interface Props {
+  title: string;
+  url: string;
+  description?: string;
+}
+
+const { title, url, description = "" } = Astro.props;
+const encodedTitle = encodeURIComponent(title);
+const encodedUrl = encodeURIComponent(url);
+const encodedDesc = encodeURIComponent(description);
+
+const twitterUrl = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`;
+const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+const whatsappUrl = `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`;
+---
+
+<div class="share-section">
+  <div class="share-label">Share this article</div>
+  <div class="share-buttons">
+    <a href={twitterUrl} target="_blank" rel="noopener" class="share-btn twitter" aria-label="Share on X">
+      𝕏 Share
+    </a>
+    <a href={facebookUrl} target="_blank" rel="noopener" class="share-btn facebook" aria-label="Share on Facebook">
+      f Share
+    </a>
+    <a href={linkedinUrl} target="_blank" rel="noopener" class="share-btn linkedin" aria-label="Share on LinkedIn">
+      in Share
+    </a>
+    <a href={whatsappUrl} target="_blank" rel="noopener" class="share-btn whatsapp" aria-label="Share on WhatsApp">
+      ✦ Share
+    </a>
+    <button class="share-btn copy" id="copy-link-btn" aria-label="Copy link">
+      📋 Copy Link
+    </button>
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById('copy-link-btn');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        btn.textContent = '✓ Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = '📋 Copy Link';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    });
+  }
+</script>

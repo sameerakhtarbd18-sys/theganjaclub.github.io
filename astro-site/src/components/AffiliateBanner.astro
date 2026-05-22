@@ -1,0 +1,13 @@
+<div class="affiliate-banner" id="affiliate-banner">
+  <a href="https://www.cannabis-seeds-store.co.uk/?a_aid=theganjaclub" target="_blank" rel="sponsored noopener">
+    <img src="https://affiliates.cannabis-seeds-store.co.uk/media/banners/980x208aff.gif" alt="The Vault Cannabis Seeds Store" width="980" height="30" />
+  </a>
+  <button class="close-banner" id="close-banner" aria-label="Close ad">×</button>
+</div>
+
+<script>
+  document.getElementById('close-banner')?.addEventListener('click', () => {
+    document.getElementById('affiliate-banner')!.style.display = 'none';
+    document.documentElement.style.setProperty('--banner-height', '0px');
+  });
+</script>

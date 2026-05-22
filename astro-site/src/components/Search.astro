@@ -1,0 +1,56 @@
+<div class="search-overlay" id="search-overlay">
+  <div class="search-modal">
+    <input type="text" class="search-input" id="search-input" placeholder="Search articles by keyword, topic, or region…" autofocus />
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    const overlay = document.getElementById('search-overlay');
+    const input = document.getElementById('search-input');
+    const results = document.getElementById('search-results');
+    const navSearch = document.querySelector('.nav-search-btn');
+    
+    function openSearch() { overlay.classList.add('open'); input.focus(); }
+    function closeSearch() { overlay.classList.remove('open'); results.innerHTML = ''; input.value = ''; }
+    
+    if (navSearch) navSearch.addEventListener('click', openSearch);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeSearch(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeSearch();
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+    });
+    
+    let pagefindInitialized = false;
+    
+    async function initPagefind() {
+      if (pagefindInitialized) return;
+      try {
+        await import('/pagefind/pagefind.js');
+        pagefindInitialized = true;
+      } catch(e) {}
+    }
+    
+    input.addEventListener('input', async function() {
+      const query = this.value.trim();
+      if (!query) { results.innerHTML = ''; return; }
+      await initPagefind();
+      if (!window.pagefind) { results.innerHTML = '<div class="search-result">Search not available.</div>'; return; }
+      
+      try {
+        const search = await window.pagefind.search(query);
+        if (!search.results.length) {
+          results.innerHTML = '<div class="search-result">No results found.</div>';
+          return;
+        }
+        results.innerHTML = (await Promise.all(search.results.slice(0, 10).map(async r => {
+          const data = await r.data();
+          return `<a href="${data.url}" class="search-result">${data.excerpt}</a>`;
+        }))).join('');
+      } catch(e) {
+        results.innerHTML = '<div class="search-result">Search error.</div>';
+      }
+    });
+  })();
+</script>

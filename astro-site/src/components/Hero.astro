@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+const { title, slug, excerpt, image, tags, date, region } = post.data;
+const body = post.body || "";
+const readTime = Math.max(1, Math.ceil(body.split(/\s+/).length / 200));
+const kicker = tags?.[0] || "BRIEFING";
+const siteUrl = "https://theganjaclub.netlify.app";
+const imgSrc = image.startsWith("http") ? image : `${siteUrl}${image}`;
+const formattedDate = new Date(date).toLocaleDateString("en-GB", {
+  day: "numeric", month: "long", year: "numeric"
+}).toUpperCase();
+
+const regionNames: Record<string, string> = {
+  uk: "UK", europe: "Europe", usa: "USA", global: "Global",
+};
+---
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-kicker">{kicker}</div>
+      <h1 class="hero-title">
+        <a href={`/post/${slug}`}>{title}</a>
+      </h1>
+      <p class="hero-excerpt">{excerpt}</p>
+      <div class="hero-meta">
+        <span>{formattedDate}</span>
+        <span>·</span>
+        <span>{readTime} MIN READ</span>
+        {region && region !== "global" && (
+          <><span>·</span><a href={`/${region}`}>{regionNames[region] || region}</a></>
+        )}
+      </div>
+      <a href={`/post/${slug}`} class="hero-cta">Read the briefing</a>
+    </div>
+    <a href={`/post/${slug}`} class="hero-image" aria-hidden="true" tabindex="-1">
+      <img src={imgSrc} alt="" loading="eager" decoding="async" />
+    </a>
+  </div>
+</section>

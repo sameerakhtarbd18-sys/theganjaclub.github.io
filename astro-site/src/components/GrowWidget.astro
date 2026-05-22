@@ -1,0 +1,57 @@
+<button class="grow-widget-btn" id="grow-widget-btn" aria-label="Open Grow Assistant" title="Ask Grow">🌱</button>
+<div class="grow-widget-panel" id="grow-widget-panel">
+  <div class="grow-widget-header">
+    <h4>🌱 Grow Assistant</h4>
+    <button id="grow-widget-close" aria-label="Close">×</button>
+  </div>
+  <div class="grow-widget-body" id="grow-widget-body">
+    <div class="message">Hey! I'm Grow Assistant, your cannabis cultivation expert. Ask me anything about growing — soil, lights, nutrients, troubleshooting. What can I help with? 🌿</div>
+  </div>
+  <div class="grow-widget-footer">
+    <input type="text" id="grow-widget-input" placeholder="Ask about growing..." />
+    <button id="grow-widget-send">Send</button>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const btn = document.getElementById('grow-widget-btn');
+    const panel = document.getElementById('grow-widget-panel');
+    const close = document.getElementById('grow-widget-close');
+    const input = document.getElementById('grow-widget-input');
+    const send = document.getElementById('grow-widget-send');
+    const body = document.getElementById('grow-widget-body');
+    
+    btn?.addEventListener('click', () => panel?.classList.toggle('open'));
+    close?.addEventListener('click', () => panel?.classList.remove('open'));
+    
+    async function askGrow(question: string) {
+      body!.innerHTML += `<div class="message user">${question}</div>`;
+      body!.scrollTop = body!.scrollHeight;
+      try {
+        const res = await fetch('/.netlify/functions/ask-grow', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question })
+        });
+        const data = await res.json();
+        body!.innerHTML += `<div class="message">${data.answer || 'Sorry, something went wrong.'}</div>`;
+      } catch(e) {
+        body!.innerHTML += '<div class="message">Error connecting to Grow Assistant.</div>';
+      }
+      body!.scrollTop = body!.scrollHeight;
+    }
+    
+    send?.addEventListener('click', () => {
+      const q = input?.value.trim();
+      if (q) { askGrow(q); if (input) input.value = ''; }
+    });
+    
+    input?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const q = input.value.trim();
+        if (q) { askGrow(q); input.value = ''; }
+      }
+    });
+  })();
+</script>

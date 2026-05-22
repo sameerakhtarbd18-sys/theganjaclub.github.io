@@ -1,0 +1,24 @@
+---
+const currentPath = Astro.url.pathname;
+function isActive(path: string) {
+  if (path === '/') return currentPath === '/';
+  return currentPath.startsWith(path);
+}
+---
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌿 The Ganja <span>Club</span></a>
+    <div class="nav-links">
+      <a href="/" class:list={["active", isActive('/') && !isActive('/uk') && !isActive('/europe') && !isActive('/usa') && !isActive('/global') && !isActive('/research') && !isActive('/grow') && !isActive('/post')]}>Latest</a>
+      <a href="/uk" class:list={["active", isActive('/uk')]}>UK</a>
+      <a href="/europe" class:list={["active", isActive('/europe')]}>Europe</a>
+      <a href="/usa" class:list={["active", isActive('/usa')]}>USA</a>
+      <a href="/global" class:list={["active", isActive('/global')]}>Global</a>
+      <a href="/research" class:list={["active", isActive('/research')]}>Research</a>
+      <a href="/grow-assistant" class:list={["active", isActive('/grow-assistant')]}>🌱 Grow</a>
+      <a href="/rss" class:list={["active", isActive('/rss')]}>RSS</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+    </div>
+  </div>
+</nav>

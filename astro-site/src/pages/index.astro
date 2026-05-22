@@ -1,0 +1,115 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import Newsletter from "../components/Newsletter.astro";
+import AffiliateBanner from "../components/AffiliateBanner.astro";
+import Search from "../components/Search.astro";
+import GrowWidget from "../components/GrowWidget.astro";
+
+const posts = await getCollection("posts", ({ data }) => !data.slug.includes("daily-briefing"));
+posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const featured = posts[0];
+const latest = posts.slice(1, 7);
+
+const regionPosts = (region: string) =>
+  posts.filter(p => p.data.region === region).slice(0, 3);
+
+const ukPosts = regionPosts("uk");
+const europePosts = regionPosts("europe");
+const usaPosts = regionPosts("usa");
+const globalPosts = regionPosts("global");
+
+function getReadTime(body: string): number {
+  return Math.max(1, Math.ceil((body || "").split(/\s+/).length / 200));
+}
+---
+
+<Base
+  title="The Ganja Club — Medical Cannabis News, Policy & Culture"
+  description="Daily intelligence on UK medical cannabis, global policy reform, industry analysis, and the culture that binds it all."
+>
+
+<AffiliateBanner />
+<Nav />
+<Search />
+
+<main id="main-content">
+  <Hero post={featured} />
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Latest Briefings</h2>
+      <a href="/">View All →</a>
+    </div>
+    <div class="card-grid">
+      {latest.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section class="section">
+    <div class="section-header">
+      <h2>United Kingdom</h2>
+      <a href="/uk">All UK →</a>
+    </div>
+    <div class="card-grid">
+      {ukPosts.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Europe</h2>
+      <a href="/europe">All Europe →</a>
+    </div>
+    <div class="card-grid">
+      {europePosts.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>United States</h2>
+      <a href="/usa">All USA →</a>
+    </div>
+    <div class="card-grid">
+      {usaPosts.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>Global</h2>
+      <a href="/global">All Global →</a>
+    </div>
+    <div class="card-grid">
+      {globalPosts.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
+    </div>
+  </section>
+
+  <Newsletter />
+</main>
+
+<Footer />
+<GrowWidget />
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top" style="position:fixed;bottom:80px;right:16px;z-index:140;width:36px;height:36px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);box-shadow:var(--shadow);cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;color:var(--text-secondary);">↑</button>
+
+<script>
+  const btn = document.getElementById('back-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.scrollY > 500);
+      btn.style.opacity = window.scrollY > 500 ? '1' : '0';
+    });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+</script>
+
+</Base>
