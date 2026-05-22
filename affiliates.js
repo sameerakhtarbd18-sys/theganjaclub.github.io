@@ -1,5 +1,5 @@
 // Affiliate auto-link engine for The Ganja Club
-// Reads affiliates.json and injects relevant affiliate links into articles
+// Reads affiliates.json and injects relevant affiliate links + partner banners into articles
 // based on tag matching rules defined in affiliates.json
 
 (function() {
