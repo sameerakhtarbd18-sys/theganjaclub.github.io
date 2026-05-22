@@ -404,6 +404,51 @@ a:hover {
   transform: scale(1.03);
 }
 
+/* ── Sticky Affiliate Strip ────────────────────────────────── */
+.affiliate-strip {
+  position: sticky;
+  top: 60px;
+  z-index: calc(var(--z-nav) - 1);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: 10px 0;
+  text-align: center;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.affiliate-strip .container {
+  position: relative;
+}
+
+.affiliate-strip img {
+  max-width: 100%;
+  height: auto;
+  max-height: 60px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+.affiliate-close {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-tertiary);
+  font-size: 0.7rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: var(--font-body);
+  transition: all var(--transition);
+}
+
+.affiliate-close:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-tertiary);
+}
+
 /* ── Section Headers ───────────────────────────────────────── */
 .section-header {
   display: flex;
