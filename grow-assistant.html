@@ -4,253 +4,179 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Grow Assistant — The Ganja Club</title>
-<meta name="description" content="AI-powered cannabis cultivation guide. Educational answers to your growing questions. No medical advice.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<meta name="description" content="AI-powered cannabis cultivation knowledge engine. Educational answers to your growing questions. No medical advice.">
+<link rel="stylesheet" href="/styles.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#ffffff;--card:#f9fafb;--card-hover:#f3f4f6;--text:#111827;--dim:#6b7280;--green:#059669;--green-dark:#047857;--line:#e5e7eb;--sans:'Inter',sans-serif;--radius:6px}
-[data-theme="dark"]{--bg:#0f172a;--card:#1e293b;--card-hover:#273449;--text:#f1f5f9;--dim:#94a3b8;--line:#334155}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;transition:background .2s,color .2s;min-height:100vh}
-.wrap{max-width:720px;margin:0 auto;padding:0 20px}
-a{color:var(--green);text-decoration:none}
-a:hover{opacity:.8}
-
-/* Header — matches blog */
-.hd{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:2px solid var(--text);margin-bottom:32px;flex-wrap:wrap;gap:8px}
-.lg{font-size:1.2rem;font-weight:700;letter-spacing:-.03em;color:var(--text)}
-.lg span{color:var(--green)}
-.hd-actions{display:flex;gap:10px;align-items:center}
-.bk{color:var(--dim);font-size:.78rem}
-.bk:hover{color:var(--green)}
-#theme-toggle{background:none;border:1px solid var(--line);color:var(--dim);cursor:pointer;font-size:.9rem;padding:4px 8px;border-radius:4px;transition:all .15s}
-#theme-toggle:hover{color:var(--text)}
-
-/* Mascot */
-.mascot{text-align:center;margin-bottom:16px}
-.mascot-emoji{font-size:64px;line-height:1;animation:float 3s ease-in-out infinite;display:inline-block}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-
-/* Title */
-.title{font-size:1.6rem;font-weight:700;margin-bottom:4px;text-align:center;letter-spacing:-.02em}
-.subtitle{font-size:.82rem;color:var(--dim);margin-bottom:28px;text-align:center;letter-spacing:.04em;text-transform:uppercase}
-
-/* Feature pills */
-.features{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;justify-content:center}
-.feature{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px 16px;font-size:.78rem;color:var(--dim);display:flex;align-items:center;gap:7px;transition:all .15s}
-.feature:hover{border-color:var(--green);color:var(--text)}
-.feature .ficon{font-size:.95rem}
-
-/* Chat wrapper */
-.chat-wrap{width:100%;max-width:600px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
-.chat-messages{flex:1;min-height:300px;max-height:420px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;background:var(--bg)}
-.chat-messages::-webkit-scrollbar{width:4px}
-.chat-messages::-webkit-scrollbar-track{background:transparent}
-.chat-messages::-webkit-scrollbar-thumb{background:var(--line);border-radius:2px}
-
-/* Message bubbles */
-.msg{max-width:85%;padding:10px 14px;border-radius:var(--radius);font-size:.85rem;line-height:1.55;animation:fadeIn .25s ease}
-.msg.bot{background:var(--card);color:var(--text);align-self:flex-start;border:1px solid var(--line);border-bottom-left-radius:2px}
-.msg.user{background:var(--green);color:#fff;align-self:flex-end;border-bottom-right-radius:2px;font-weight:500}
-.msg .src{display:block;font-size:.65rem;color:var(--dim);margin-top:6px;padding-top:6px;border-top:1px solid var(--line)}
-.msg.user .src{color:rgba(255,255,255,.6);border-top-color:rgba(255,255,255,.15)}
-@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
-
-/* Disclaimer */
-.disclaimer-banner{background:var(--card);border:1px solid var(--line);padding:8px 14px;margin:0 0 12px;font-size:.7rem;color:var(--dim);line-height:1.4;text-align:center;border-radius:var(--radius)}
-
-/* Typing indicator */
-.typing{display:flex;gap:4px;padding:10px 14px}
-.typing span{width:6px;height:6px;background:var(--dim);border-radius:50%;animation:bounce 1.4s infinite ease-in-out}
-.typing span:nth-child(2){animation-delay:.2s}
-.typing span:nth-child(3){animation-delay:.4s}
-@keyframes bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-6px)}}
-
-/* Input */
-.chat-input-wrap{display:flex;gap:8px;padding:10px 14px;border-top:1px solid var(--line);background:var(--card)}
-.chat-input-wrap input{flex:1;padding:10px 14px;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);color:var(--text);font-size:.85rem;font-family:var(--sans);outline:none;transition:border-color .15s}
-.chat-input-wrap input:focus{border-color:var(--green)}
-.chat-input-wrap input::placeholder{color:var(--dim)}
-.chat-input-wrap button{width:40px;height:40px;background:var(--green);color:#fff;border:none;border-radius:var(--radius);font-size:1.1rem;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.chat-input-wrap button:hover{background:var(--green-dark)}
-.chat-input-wrap button:disabled{opacity:.4;cursor:not-allowed}
-
-/* Quick suggestions */
-.suggestions{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:16px auto 0;max-width:600px}
-.suggestions button{background:transparent;border:1px solid var(--line);color:var(--dim);padding:6px 12px;border-radius:20px;font-size:.73rem;cursor:pointer;font-family:var(--sans);transition:all .15s}
-.suggestions button:hover{color:var(--text);border-color:var(--green);background:var(--card)}
-
-/* Footer */
-.ft{padding:32px 0;border-top:2px solid var(--line);margin-top:40px;text-align:center;font-size:.75rem;color:var(--dim)}
-.ft a{color:var(--dim);margin:0 8px}
-.ft a:hover{color:var(--green)}
-.ft-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:8px 0}
-
-@media(max-width:600px){
-  .title{font-size:1.3rem}
-  .mascot-emoji{font-size:48px}
-  .chat-messages{max-height:320px}
-  .features{gap:6px}
-  .feature{font-size:.72rem;padding:8px 12px}
-}
+/* Grow Assistant specific overrides */
+.grow-main{max-width:720px;margin:0 auto;padding:var(--space-2xl) var(--space-lg) var(--space-3xl);text-align:center}
+.grow-mascot{font-size:64px;margin-bottom:var(--space-lg);animation:grow-float 3s ease-in-out infinite;display:inline-block}
+@keyframes grow-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.grow-title{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;margin-bottom:var(--space-xs);color:var(--color-text)}
+.grow-subtitle{font-size:var(--text-sm);color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--space-xl)}
+.grow-features{display:flex;gap:var(--space-sm);margin-bottom:var(--space-xl);flex-wrap:wrap;justify-content:center}
+.grow-feature{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);padding:10px 18px;font-size:var(--text-sm);color:var(--color-text-secondary);display:flex;align-items:center;gap:8px;transition:all var(--transition)}
+.grow-feature:hover{border-color:var(--color-accent);color:var(--color-text)}
+.grow-chat-wrap{width:100%;max-width:600px;margin:0 auto;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column}
+.grow-chat-msgs{flex:1;min-height:340px;max-height:440px;overflow-y:auto;padding:var(--space-lg);display:flex;flex-direction:column;gap:12px;background:var(--color-bg)}
+.grow-chat-msgs::-webkit-scrollbar{width:4px}
+.grow-chat-msgs::-webkit-scrollbar-track{background:transparent}
+.grow-chat-msgs::-webkit-scrollbar-thumb{background:var(--color-border);border-radius:2px}
+.grow-msg{max-width:85%;padding:10px 14px;border-radius:var(--radius);font-size:var(--text-sm);line-height:1.55;animation:grow-fade .2s ease}
+.grow-msg-bot{background:var(--color-surface);color:var(--color-text);align-self:flex-start;border:1px solid var(--color-border);border-bottom-left-radius:2px}
+.grow-msg-user{background:var(--color-accent);color:#fff;align-self:flex-end;border-bottom-right-radius:2px;font-weight:500}
+.grow-msg-src{display:block;font-size:var(--text-xs);color:var(--color-text-tertiary);margin-top:6px;padding-top:6px;border-top:1px solid var(--color-border)}
+.grow-msg-user .grow-msg-src{color:rgba(255,255,255,.55);border-top-color:rgba(255,255,255,.15)}
+@keyframes grow-fade{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+.grow-disclaimer{background:var(--color-accent-light);padding:8px 16px;font-size:var(--text-xs);color:var(--color-text-secondary);text-align:center;line-height:1.4;border-top:1px solid var(--color-border)}
+.grow-typing{display:flex;gap:4px;padding:10px 14px}
+.grow-typing span{width:5px;height:5px;background:var(--color-text-tertiary);border-radius:50%;animation:grow-bounce 1.4s infinite ease-in-out}
+.grow-typing span:nth-child(2){animation-delay:.2s}
+.grow-typing span:nth-child(3){animation-delay:.4s}
+@keyframes grow-bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-5px)}}
+.grow-input-wrap{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--color-border);background:var(--color-surface)}
+.grow-input-wrap input{flex:1;padding:11px 16px;background:var(--color-bg);border:1px solid var(--color-border);border-radius:var(--radius);color:var(--color-text);font-size:var(--text-sm);font-family:var(--font-body);outline:none;transition:border-color var(--transition)}
+.grow-input-wrap input:focus{border-color:var(--color-accent)}
+.grow-input-wrap input::placeholder{color:var(--color-text-tertiary)}
+.grow-input-wrap button{width:42px;height:42px;background:var(--color-accent);color:#fff;border:none;border-radius:var(--radius);font-size:1.1rem;cursor:pointer;transition:all var(--transition);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.grow-input-wrap button:hover{background:var(--color-accent-dark)}
+.grow-input-wrap button:disabled{opacity:.4;cursor:not-allowed}
+.grow-suggestions{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:var(--space-lg)}
+.grow-suggestions button{background:transparent;border:1px solid var(--color-border);color:var(--color-text-secondary);padding:7px 14px;border-radius:20px;font-size:var(--text-xs);cursor:pointer;font-family:var(--font-body);transition:all var(--transition)}
+.grow-suggestions button:hover{color:var(--color-text);border-color:var(--color-accent);background:var(--color-surface)}
+@media(max-width:600px){.grow-mascot{font-size:48px}.grow-title{font-size:var(--text-xl)}.grow-chat-msgs{max-height:320px}}
 </style>
 </head>
 <body>
-<div class="wrap">
 
-<header class="hd">
-  <a href="/" class="lg">The Ganja <span>Club</span></a>
-  <div class="hd-actions">
-    <a href="/" class="bk">← Back</a>
-    <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+<div id="reading-progress"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><span class="nav-brand-icon">🌿</span>The Ganja <span>Club</span></a>
+    <div class="nav-links" style="display:flex">
+      <a href="/">Latest</a>
+      <a href="/uk.html">UK</a>
+      <a href="/europe.html">Europe</a>
+      <a href="/usa.html">USA</a>
+      <a href="/global.html">Global</a>
+      <a href="/grow-assistant.html" class="nav-grow-link active">🌱 Grow</a>
+    </div>
+    <div class="nav-actions">
+      <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+    </div>
   </div>
-</header>
+</nav>
 
-<main>
-  <div class="mascot"><div class="mascot-emoji">🤖</div></div>
-  <h1 class="title">Hi, I'm Grow Assistant</h1>
-  <p class="subtitle">Cannabis Cultivation Knowledge Engine</p>
+<main class="grow-main">
+  <div class="grow-mascot">🤖</div>
+  <h1 class="grow-title">Hi, I'm Grow Assistant</h1>
+  <p class="grow-subtitle">Cannabis Cultivation Knowledge Engine</p>
 
-  <div class="features">
-    <div class="feature"><span class="ficon">🌱</span> Learn to grow</div>
-    <div class="feature"><span class="ficon">🔬</span> Diagnose problems</div>
-    <div class="feature"><span class="ficon">💡</span> Get grow advice</div>
+  <div class="grow-features">
+    <div class="grow-feature">🌱 Learn to grow</div>
+    <div class="grow-feature">🔬 Diagnose problems</div>
+    <div class="grow-feature">💡 Get grow advice</div>
   </div>
 
-  <div class="chat-wrap">
-    <div class="chat-messages" id="messages">
-      <div class="msg bot">
+  <div class="grow-chat-wrap">
+    <div class="grow-chat-msgs" id="messages">
+      <div class="grow-msg grow-msg-bot">
         Hey! I'm your cannabis cultivation guide. Ask me anything about growing — nutrients, lighting, pest control, troubleshooting, harvest timing. What can I help with today?
       </div>
     </div>
-    <div class="disclaimer-banner">
-      ⚠️ Educational only. No medical advice. Cultivation laws vary — always check local regulations.
-    </div>
-    <div class="chat-input-wrap">
+    <div class="grow-disclaimer">⚠️ Educational only. No medical advice. Cultivation laws vary — always check local regulations.</div>
+    <div class="grow-input-wrap">
       <input type="text" id="question" placeholder="Ask a growing question..." autofocus onkeydown="if(event.key==='Enter')ask()">
       <button id="send-btn" onclick="ask()">➤</button>
     </div>
   </div>
 
-  <div class="suggestions">
+  <div class="grow-suggestions">
     <button onclick="quickAsk('What nutrients does cannabis need during veg?')">Veg nutrients</button>
     <button onclick="quickAsk('How do I prevent powdery mildew?')">Powdery mildew</button>
-    <button onclick="quickAsk('What pH should my water be for soil growing?')">Water pH</button>
+    <button onclick="quickAsk('What pH should my water be for soil?')">Water pH</button>
     <button onclick="quickAsk('How do I know when to harvest?')">Harvest timing</button>
   </div>
 </main>
 
-<footer class="ft">
-  <div class="ft-links">
-    <a href="/">Home</a>
-    <a href="/uk.html">UK</a>
-    <a href="/europe.html">Europe</a>
-    <a href="/usa.html">USA</a>
-    <a href="/global.html">Global</a>
-    <a href="/rss.xml">RSS</a>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 The Ganja Club. Medical cannabis news & culture.</span>
+      <div class="footer-social">
+        <a href="https://instagram.com/theganjaclub_" target="_blank">📷</a>
+        <a href="https://instagram.com/thenugarchive" target="_blank">📷</a>
+      </div>
+    </div>
   </div>
-  <div class="ft-links">
-    <a href="https://instagram.com/theganjaclub_" target="_blank">@theganjaclub_</a>
-    <a href="https://instagram.com/thenugarchive" target="_blank">@thenugarchive</a>
-  </div>
-  <br>© 2026 The Ganja Club. Medical cannabis news & culture.
 </footer>
 
-</div>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
 <script>
-// Dark mode
 function toggleTheme() {
-  const h = document.documentElement;
-  const d = h.getAttribute('data-theme') === 'dark';
+  var h = document.documentElement;
+  var d = h.getAttribute('data-theme') === 'dark';
   h.setAttribute('data-theme', d ? 'light' : 'dark');
   document.getElementById('theme-toggle').textContent = d ? '🌙' : '☀️';
   localStorage.setItem('theme', d ? 'light' : 'dark');
 }
 (function() {
-  const s = localStorage.getItem('theme');
+  var s = localStorage.getItem('theme');
   if (s === 'dark' || (!s && matchMedia('(prefers-color-scheme:dark)').matches)) {
     document.documentElement.setAttribute('data-theme', 'dark');
     document.getElementById('theme-toggle').textContent = '☀️';
   }
 })();
 
-// Chat
-const messagesEl = document.getElementById('messages');
-const inputEl = document.getElementById('question');
-const sendBtn = document.getElementById('send-btn');
-let isAsking = false;
+window.addEventListener('scroll', function() {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+  document.getElementById('back-to-top').classList.toggle('visible', window.scrollY > 600);
+  var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  document.getElementById('reading-progress').style.width = h ? (window.scrollY / h * 100) + '%' : '0%';
+});
 
-function addMessage(text, type, sources) {
-  const div = document.createElement('div');
-  div.className = 'msg ' + type;
-  div.textContent = text;
+var msgEl = document.getElementById('messages');
+var inputEl = document.getElementById('question');
+var sendBtn = document.getElementById('send-btn');
+var isAsking = false;
+
+function addMsg(text, type, sources) {
+  var d = document.createElement('div');
+  d.className = 'grow-msg grow-msg-' + type;
+  d.textContent = text;
   if (sources && sources.length) {
-    const srcEl = document.createElement('span');
-    srcEl.className = 'src';
-    srcEl.textContent = '📄 ' + sources.map(function(s) { return s.source; }).join(' · ');
-    div.appendChild(srcEl);
+    var s = document.createElement('span');
+    s.className = 'grow-msg-src';
+    s.textContent = '📄 ' + sources.map(function(x) { return x.source; }).join(' · ');
+    d.appendChild(s);
   }
-  messagesEl.appendChild(div);
-  messagesEl.scrollTop = messagesEl.scrollHeight;
+  msgEl.appendChild(d);
+  msgEl.scrollTop = msgEl.scrollHeight;
 }
-
 function addTyping() {
-  const div = document.createElement('div');
-  div.className = 'msg bot typing';
-  div.id = 'typing';
-  div.innerHTML = '<span></span><span></span><span></span>';
-  messagesEl.appendChild(div);
-  messagesEl.scrollTop = messagesEl.scrollHeight;
+  var d = document.createElement('div');
+  d.className = 'grow-msg grow-msg-bot grow-typing';
+  d.id = 'typing';
+  d.innerHTML = '<span></span><span></span><span></span>';
+  msgEl.appendChild(d);
+  msgEl.scrollTop = msgEl.scrollHeight;
 }
-
-function removeTyping() {
-  const el = document.getElementById('typing');
-  if (el) el.remove();
-}
-
+function removeTyping() { var e = document.getElementById('typing'); if (e) e.remove(); }
 async function ask() {
-  const question = inputEl.value.trim();
-  if (!question || isAsking) return;
-
-  isAsking = true;
-  sendBtn.disabled = true;
-  inputEl.disabled = true;
-
-  addMessage(question, 'user');
-  inputEl.value = '';
-  addTyping();
-
+  var q = inputEl.value.trim();
+  if (!q || isAsking) return;
+  isAsking = true; sendBtn.disabled = true; inputEl.disabled = true;
+  addMsg(q, 'user'); inputEl.value = ''; addTyping();
   try {
-    const resp = await fetch('/.netlify/functions/ask-grow', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ question: question })
-    });
-    const data = await resp.json();
+    var r = await fetch('/.netlify/functions/ask-grow', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ question: q }) });
+    var d = await r.json();
     removeTyping();
-    if (data.error) {
-      addMessage('Sorry, something went wrong. Please try again.', 'bot');
-    } else {
-      addMessage(data.answer, 'bot', data.sources);
-    }
-  } catch (e) {
-    removeTyping();
-    addMessage('Network error. Please check your connection and try again.', 'bot');
-  }
-
-  isAsking = false;
-  sendBtn.disabled = false;
-  inputEl.disabled = false;
-  inputEl.focus();
+    addMsg(d.error ? 'Sorry, something went wrong.' : d.answer, 'bot', d.sources);
+  } catch(e) { removeTyping(); addMsg('Network error. Please try again.', 'bot'); }
+  isAsking = false; sendBtn.disabled = false; inputEl.disabled = false; inputEl.focus();
 }
-
-function quickAsk(q) {
-  inputEl.value = q;
-  ask();
-}
+function quickAsk(q) { inputEl.value = q; ask(); }
 </script>
 </body>
 </html>

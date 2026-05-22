@@ -3,341 +3,382 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Ganja Club — Medical Cannabis News & Culture</title>
-<meta name="description" content="Daily intelligence on UK medical cannabis, patient rights, global policy, and the culture that binds it all.">
+<title>The Ganja Club — Medical Cannabis News, Policy & Culture</title>
+<meta name="description" content="Daily intelligence on UK medical cannabis, global policy reform, industry analysis, and the culture that binds it all.">
+<meta property="og:title" content="The Ganja Club">
+<meta property="og:description" content="Medical cannabis news, policy analysis, and culture.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Ganja Club">
+<meta property="og:image" content="https://theganjaclub.netlify.app/images/pexels-kindelmedia-7667912.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@theganjaclub_">
+<link rel="canonical" href="https://theganjaclub.netlify.app/">
 <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="The Ganja Club">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#ffffff;--card:#f9fafb;--card-hover:#f3f4f6;--text:#111827;--dim:#6b7280;--green:#059669;--green-dark:#047857;--line:#e5e7eb;--sans:'Inter',sans-serif;--shadow:0 1px 3px rgba(0,0,0,.04)}
-[data-theme="dark"]{--bg:#0f172a;--card:#1e293b;--card-hover:#273449;--text:#f1f5f9;--dim:#94a3b8;--line:#334155;--shadow:0 1px 3px rgba(0,0,0,.2)}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;transition:background .2s,color .2s}
-.wrap{max-width:720px;margin:0 auto;padding:0 20px}
-a{text-decoration:none;color:inherit}
-a:hover{color:var(--green)}
-
-/* Navigation */
-.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:2px solid var(--text);margin-bottom:6px;flex-wrap:wrap;gap:8px}
-.logo{font-size:1.4rem;font-weight:700;letter-spacing:-.03em;white-space:nowrap}
-.logo span{color:var(--green)}
-.nav-links{display:flex;gap:2px;flex-wrap:wrap}
-.nav-links a{padding:6px 12px;font-size:.78rem;color:var(--dim);border-radius:4px;transition:all .15s;font-weight:500}
-.nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--card)}
-.nav-links a.active{font-weight:600}
-.nav-actions{display:flex;gap:6px;align-items:center}
-#theme-toggle{background:none;border:1px solid var(--line);color:var(--dim);cursor:pointer;font-size:1rem;padding:6px 10px;border-radius:4px;transition:all .15s}
-#theme-toggle:hover{color:var(--text);border-color:var(--dim)}
-
-/* Search */
-.search-wrap{position:relative;margin:16px 0}
-.search-wrap input{width:100%;padding:10px 14px 10px 38px;border:1px solid var(--line);border-radius:6px;font-size:.85rem;background:var(--card);color:var(--text);font-family:var(--sans);transition:border-color .15s}
-.search-wrap input:focus{outline:none;border-color:var(--green)}
-.search-wrap .s-icon{position:absolute;left:12px;top:11px;color:var(--dim);font-size:.85rem}
-#no-results{display:none;text-align:center;padding:40px 0;color:var(--dim)}
-
-/* Featured */
-.feat{background:var(--card);border:1px solid var(--line);padding:24px;margin:20px 0 28px;border-radius:6px}
-.feat .tg{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--green);margin-bottom:8px}
-.feat .fi{width:100%;height:200px;margin-bottom:14px;overflow:hidden;background:var(--line);border-radius:4px}
-.feat .fi img{width:100%;height:100%;object-fit:cover}
-.feat .tl{font-size:1.6rem;line-height:1.25;margin-bottom:8px;font-weight:700}
-.feat .ex{font-size:.9rem;color:var(--dim);line-height:1.55}
-.feat .mt{font-size:.7rem;color:var(--dim);margin-top:8px;text-transform:uppercase;letter-spacing:.05em}
-
-/* Section headers */
-.sh{border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 14px;display:flex;justify-content:space-between;align-items:center}
-.sh h2{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--dim)}
-.region-badge{display:inline-block;font-size:.65rem;padding:2px 7px;border-radius:3px;background:var(--green);color:#fff;margin-left:6px;text-transform:uppercase;letter-spacing:.05em;vertical-align:middle}
-
-/* Post cards */
-.pl{display:flex;flex-direction:column;gap:1px}
-.card{display:flex;gap:14px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:6px;transition:background .15s,transform .1s;cursor:pointer}
-.card:hover{background:var(--card-hover)}
-.card-img{width:80px;height:80px;flex-shrink:0;border-radius:4px;overflow:hidden;background:var(--line)}
-.card-img img{width:100%;height:100%;object-fit:cover}
-.card-body{flex:1;min-width:0}
-.card-body h3{font-size:.95rem;font-weight:600;line-height:1.3;margin-bottom:4px}
-.card-body .cex{font-size:.78rem;color:var(--dim);line-height:1.45;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.card-body .cmeta{font-size:.68rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em}
-.card-body .ctags{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
-.card-body .ctags span{font-size:.62rem;padding:1px 6px;border-radius:3px;background:var(--line);color:var(--dim);text-transform:uppercase;letter-spacing:.04em}
-
-/* Related posts */
-.related{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
-.related h4{font-size:.7rem;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
-.related-links{display:flex;gap:8px;flex-wrap:wrap}
-.related-links a{font-size:.75rem;color:var(--green);padding:4px 10px;background:var(--card);border-radius:4px;transition:all .15s}
-.related-links a:hover{background:var(--green);color:#fff}
-
-/* Load more */
-#load-more{display:block;width:100%;padding:14px;margin:20px 0 40px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--dim);font-family:var(--sans);font-size:.85rem;cursor:pointer;transition:all .15s}
-#load-more:hover{color:var(--text);border-color:var(--green)}
-
-/* Newsletter */
-.nl{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:28px 24px;margin:32px 0;text-align:center}
-.nl h3{font-size:1.1rem;margin-bottom:6px}
-.nl p{font-size:.82rem;color:var(--dim);margin-bottom:16px}
-.nl-form{display:flex;gap:8px;max-width:400px;margin:0 auto}
-.nl-form input{flex:1;padding:10px 14px;border:1px solid var(--line);border-radius:4px;font-size:.85rem;background:var(--bg);color:var(--text);font-family:var(--sans)}
-.nl-form input:focus{outline:none;border-color:var(--green)}
-.nl-form button{padding:10px 20px;background:var(--green);color:#fff;border:none;border-radius:4px;font-size:.85rem;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background .15s}
-.nl-form button:hover{background:var(--green-dark)}
-
-/* Footer */
-.ft{padding:24px 0;border-top:2px solid var(--line);margin-top:20px;text-align:center;font-size:.72rem;color:var(--dim)}
-.ft a{color:var(--dim);margin:0 8px}
-.ft a:hover{color:var(--green)}
-
-@media(max-width:600px){
-  .nav{flex-direction:column;align-items:flex-start;gap:10px}
-  .nav-links{width:100%}
-  .nav-actions{align-self:flex-end;margin-top:-36px}
-  .feat .tl{font-size:1.2rem}
-  .card{flex-direction:column}
-  .card-img{width:100%;height:140px}
-  .nl-form{flex-direction:column}
-  .search-wrap{margin:12px 0}
-}
-</style>
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<div class="wrap">
+
+<div id="reading-progress"></div>
 
 <!-- Navigation -->
-<nav class="nav">
-  <a href="/" class="logo">The Ganja <span>Club</span></a>
-  <div class="nav-links">
-    <a href="/" class="active" data-nav="latest">Latest</a>
-    <a href="/uk.html" data-nav="uk">UK</a>
-    <a href="/europe.html" data-nav="europe">Europe</a>
-    <a href="/usa.html" data-nav="usa">USA</a>
-    <a href="/global.html" data-nav="global">Global</a>
-<a href="/" onclick="filterByTag('Research');return false">Research</a>
-    <a href="/grow-assistant.html">Grow</a>
-  </div>
-  <div class="nav-actions">
-    <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span class="nav-brand-icon">🌿</span>
+      The Ganja <span>Club</span>
+    </a>
+    <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="/" class="active" data-nav="latest">Latest</a>
+      <a href="/uk.html" data-nav="uk">UK</a>
+      <a href="/europe.html" data-nav="europe">Europe</a>
+      <a href="/usa.html" data-nav="usa">USA</a>
+      <a href="/global.html" data-nav="global">Global</a>
+      <a href="/" onclick="filterByTag('Research');return false;">Research</a>
+      <a href="/grow-assistant.html" class="nav-grow-link">🌱 Grow</a>
+    </div>
+    <div class="nav-actions">
+      <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+    </div>
   </div>
 </nav>
 
-<!-- Leaderboard -->
-<div style="max-width:728px;margin:12px auto 0;text-align:center">
-  <a href="http://www.cannabis-seeds-store.co.uk/apcollective-0-1-9.html" target="_blank" rel="sponsored">
-    <img src="https://affiliates.cannabis-seeds-store.co.uk/media/banners/980x208aff.gif" 
-         alt="The Vault Cannabis Seeds Store" 
-         style="max-width:100%;height:auto;border-radius:4px"
-         width="728" height="90" loading="eager">
-  </a>
-</div>
-
-<!-- Search -->
-<div class="search-wrap">
-  <span class="s-icon">🔍</span>
-  <input type="text" id="search" placeholder="Search articles..." oninput="doSearch()">
-</div>
-
-<div id="no-results">No articles match your search.</div>
-
-<!-- Featured (latest post) -->
-<div class="feat" id="featured"></div>
-
-<!-- Post list -->
-<div class="sh"><h2>LATEST BRIEFINGS</h2></div>
-<div class="pl" id="post-list"></div>
-<button id="load-more" onclick="loadMore()">Load more articles</button>
-
-<!-- Newsletter -->
-<div class="nl">
-  <h3>Get the daily briefing</h3>
-  <p>Medical cannabis intelligence, straight to your inbox. No spam, no fuss.</p>
-  <div class="nl-form">
-    <input type="email" id="nl-email" placeholder="your@email.com">
-    <button onclick="subscribe()">Subscribe</button>
+<!-- Hero -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid" id="hero-section">
+      <div class="loading-state">Loading latest briefing…</div>
+    </div>
   </div>
-</div>
+</header>
+
+<main class="container">
+
+  <!-- Search -->
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search" placeholder="Search articles by keyword, topic, or region…" oninput="doSearch()">
+  </div>
+  <div class="empty-state" id="no-results" style="display:none">No articles match your search.</div>
+
+  <!-- Latest -->
+  <div class="section-header">
+    <h2 class="section-title">Latest Briefings</h2>
+    <a href="/" class="section-link">View all →</a>
+  </div>
+  <div class="article-grid" id="latest-grid"></div>
+
+  <!-- Leaderboard -->
+  <div class="leaderboard">
+    <a href="http://www.cannabis-seeds-store.co.uk/apcollective-0-1-9.html" target="_blank" rel="sponsored">
+      <img src="https://affiliates.cannabis-seeds-store.co.uk/media/banners/980x208aff.gif" alt="The Vault Cannabis Seeds Store" width="728" height="90" loading="lazy">
+    </a>
+  </div>
+
+  <!-- UK -->
+  <hr class="section-divider">
+  <div class="section-header">
+    <h2 class="section-title">United Kingdom</h2>
+    <a href="/uk.html" class="section-link">All UK →</a>
+  </div>
+  <div id="uk-posts"></div>
+
+  <!-- Europe -->
+  <hr class="section-divider">
+  <div class="section-header">
+    <h2 class="section-title">Europe</h2>
+    <a href="/europe.html" class="section-link">All Europe →</a>
+  </div>
+  <div id="europe-posts"></div>
+
+  <!-- USA -->
+  <hr class="section-divider">
+  <div class="section-header">
+    <h2 class="section-title">United States</h2>
+    <a href="/usa.html" class="section-link">All USA →</a>
+  </div>
+  <div id="usa-posts"></div>
+
+  <!-- Global -->
+  <hr class="section-divider">
+  <div class="section-header">
+    <h2 class="section-title">Global</h2>
+    <a href="/global.html" class="section-link">All Global →</a>
+  </div>
+  <div id="global-posts"></div>
+
+  <!-- Research -->
+  <hr class="section-divider">
+  <div class="section-header">
+    <h2 class="section-title">Research</h2>
+  </div>
+  <div id="research-posts"></div>
+
+  <!-- Newsletter -->
+  <div class="newsletter">
+    <div class="newsletter-icon">📬</div>
+    <h3 class="newsletter-title">The Daily Briefing</h3>
+    <p class="newsletter-desc">Medical cannabis intelligence, straight to your inbox. No spam, no fuss — just the news that matters.</p>
+    <div class="newsletter-form">
+      <input type="email" id="nl-email" placeholder="your@email.com">
+      <button onclick="subscribe()">Subscribe</button>
+    </div>
+  </div>
+
+</main>
 
 <!-- Footer -->
-<div class="ft">
-  <a href="/rss.xml">RSS</a>
-  <a href="https://instagram.com/theganjaclub_" target="_blank">@theganjaclub_</a>
-  <a href="https://instagram.com/thenugarchive" target="_blank">@thenugarchive</a>
-  <br><br>
-  © 2026 The Ganja Club. Medical cannabis news & culture.
-</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">The Ganja <span>Club</span></div>
+        <p class="footer-desc">Daily intelligence on UK medical cannabis, global policy reform, industry analysis, and the culture that binds it all.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Sections</div>
+        <div class="footer-links">
+          <a href="/uk.html">United Kingdom</a>
+          <a href="/europe.html">Europe</a>
+          <a href="/usa.html">United States</a>
+          <a href="/global.html">Global</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">More</div>
+        <div class="footer-links">
+          <a href="/grow-assistant.html">Grow Assistant</a>
+          <a href="/rss.xml">RSS Feed</a>
+          <a href="/post.html">Latest Article</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Follow</div>
+        <div class="footer-links">
+          <a href="https://instagram.com/theganjaclub_" target="_blank">@theganjaclub_</a>
+          <a href="https://instagram.com/thenugarchive" target="_blank">@thenugarchive</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Ganja Club. Medical cannabis news & culture.</span>
+      <div class="footer-social">
+        <a href="https://instagram.com/theganjaclub_" target="_blank" title="Instagram">📷</a>
+        <a href="/rss.xml" title="RSS">📡</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
-</div>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
 <script>
-// State
+/* ═══════════════════════════════════════════════════════════
+   THE GANJA CLUB — Homepage Engine
+   ═══════════════════════════════════════════════════════════ */
+
 let allPosts = [];
-let currentPage = 0;
-const PER_PAGE = 10;
 let searchQuery = '';
 
-// Load posts
-fetch('/posts.json')
-  .then(r => r.json())
-  .then(posts => {
-    allPosts = posts;
-    renderFeatured();
-    renderPosts();
-  });
-
-// Dark mode
+/* ── Theme ────────────────────────────────────────────── */
 function toggleTheme() {
-  const html = document.documentElement;
-  const isDark = html.getAttribute('data-theme') === 'dark';
-  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-  document.getElementById('theme-toggle').textContent = isDark ? '🌙' : '☀️';
-  localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  var h = document.documentElement;
+  var d = h.getAttribute('data-theme') === 'dark';
+  h.setAttribute('data-theme', d ? 'light' : 'dark');
+  document.getElementById('theme-toggle').textContent = d ? '🌙' : '☀️';
+  localStorage.setItem('theme', d ? 'light' : 'dark');
 }
 
-// Init theme from localStorage
 (function() {
-  const saved = localStorage.getItem('theme');
-  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme:dark)').matches)) {
+  var s = localStorage.getItem('theme');
+  if (s === 'dark' || (!s && matchMedia('(prefers-color-scheme:dark)').matches)) {
     document.documentElement.setAttribute('data-theme', 'dark');
     document.getElementById('theme-toggle').textContent = '☀️';
   }
 })();
 
-// Filter posts by search
-function getFilteredPosts() {
-  if (!searchQuery) return allPosts;
-  const q = searchQuery.toLowerCase();
-  return allPosts.filter(p => 
-    p.title.toLowerCase().includes(q) ||
-    (p.tags || '').toLowerCase().includes(q) ||
-    (p.excerpt || '').toLowerCase().includes(q)
+/* ── Scroll effects ───────────────────────────────────── */
+window.addEventListener('scroll', function() {
+  var nav = document.getElementById('nav');
+  nav.classList.toggle('scrolled', window.scrollY > 10);
+
+  var btn = document.getElementById('back-to-top');
+  btn.classList.toggle('visible', window.scrollY > 600);
+
+  var winScroll = document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  document.getElementById('reading-progress').style.width = height ? (winScroll / height * 100) + '%' : '0%';
+});
+
+/* ── Mobile nav ───────────────────────────────────────── */
+document.getElementById('mobile-toggle').addEventListener('click', function() {
+  document.getElementById('nav-links').classList.toggle('open');
+});
+
+/* ── Image helpers ────────────────────────────────────── */
+function getPostImage(post) {
+  if (post.image) {
+    if (post.image.startsWith('http')) return post.image;
+    return '/' + post.image;
+  }
+  var slug = post.slug || post.id;
+  return 'https://pub-849a283a10a5443389b4f17848459996.r2.dev/tgc/' + slug + '.jpg';
+}
+
+function esc(s) {
+  var d = document.createElement('div');
+  d.textContent = s || '';
+  return d.innerHTML;
+}
+
+/* ── Card HTML ────────────────────────────────────────── */
+function cardHTML(post) {
+  var tags = (post.tags || '').split(',').map(function(t) { return t.trim(); }).filter(Boolean);
+  return (
+    '<article class="card">' +
+      '<a href="/post.html?id=' + (post.slug || post.id) + '" class="card-image">' +
+        '<img src="' + getPostImage(post) + '" alt="' + esc(post.title) + '" loading="lazy" onerror="this.parentElement.style.display=\'none\'">' +
+        (post.region ? '<span class="card-tag">' + esc(post.region) + '</span>' : '') +
+      '</a>' +
+      '<div class="card-body">' +
+        (tags.length ? '<div class="card-kicker">' + esc(tags[0]) + '</div>' : '') +
+        '<h3 class="card-title"><a href="/post.html?id=' + (post.slug || post.id) + '">' + esc(post.title) + '</a></h3>' +
+        '<p class="card-excerpt">' + esc((post.excerpt || '').substring(0, 120)) + '…</p>' +
+        '<div class="card-meta">' + (post.date || '') + ' · ' + (post.readTime || '?') + ' min read</div>' +
+      '</div>' +
+    '</article>'
   );
 }
 
+function cardHorizontalHTML(post) {
+  var tags = (post.tags || '').split(',').map(function(t) { return t.trim(); }).filter(Boolean);
+  return (
+    '<article class="card card-horizontal">' +
+      '<a href="/post.html?id=' + (post.slug || post.id) + '" class="card-image">' +
+        '<img src="' + getPostImage(post) + '" alt="' + esc(post.title) + '" loading="lazy" onerror="this.parentElement.style.display=\'none\'">' +
+      '</a>' +
+      '<div class="card-body">' +
+        (tags.length ? '<div class="card-kicker">' + esc(tags[0]) + '</div>' : '') +
+        '<h3 class="card-title"><a href="/post.html?id=' + (post.slug || post.id) + '">' + esc(post.title) + '</a></h3>' +
+        '<p class="card-excerpt">' + esc((post.excerpt || '').substring(0, 140)) + '…</p>' +
+        '<div class="card-meta">' + (post.date || '') + ' · ' + (post.readTime || '?') + ' min read' +
+          (post.region ? ' · <span class="region-badge">' + esc(post.region) + '</span>' : '') +
+        '</div>' +
+      '</div>' +
+    '</article>'
+  );
+}
+
+/* ── Search ───────────────────────────────────────────── */
 function doSearch() {
   searchQuery = document.getElementById('search').value.trim();
-  currentPage = 0;
-  const filtered = getFilteredPosts();
-  document.getElementById('no-results').style.display = filtered.length ? 'none' : 'block';
-  renderFeatured(filtered);
-  renderPosts(filtered);
+  renderAll(getFilteredPosts());
+}
+
+function getFilteredPosts() {
+  if (!searchQuery) return allPosts;
+  var q = searchQuery.toLowerCase();
+  return allPosts.filter(function(p) {
+    return (p.title || '').toLowerCase().indexOf(q) !== -1 ||
+           (p.tags || '').toLowerCase().indexOf(q) !== -1 ||
+           (p.excerpt || '').toLowerCase().indexOf(q) !== -1 ||
+           (p.region || '').toLowerCase().indexOf(q) !== -1;
+  });
 }
 
 function filterByTag(tag) {
   document.getElementById('search').value = tag;
   searchQuery = tag;
-  currentPage = 0;
-  const filtered = getFilteredPosts();
-  document.getElementById('no-results').style.display = filtered.length ? 'none' : 'block';
-  renderFeatured(filtered);
-  renderPosts(filtered);
-  window.scrollTo({top:0,behavior:'smooth'});
+  renderAll(getFilteredPosts());
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Render featured post
-function renderFeatured(posts) {
-  const p = (posts || allPosts);
-  if (!p.length) return;
-  const post = p[0];
-  const el = document.getElementById('featured');
-  const tags = (post.tags || '').split(',').map(t => t.trim()).filter(Boolean);
-  const region = post.region;
-  el.innerHTML = `
-    <div class="tg">${tags[0] || 'LATEST'}${region ? `<span class="region-badge">${region}</span>` : ''}</div>
-    <div class="fi"><img src="${getPostImage(post)}" alt="${esc(post.title)}" loading="eager" onerror="this.parentElement.style.display='none'"></div>
-    <div class="tl"><a href="/post.html?id=${post.slug || post.id}">${esc(post.title)}</a></div>
-    <div class="ex">${esc(post.excerpt || '')}</div>
-    <div class="mt">${post.date} · ${post.readTime || '?'} min read</div>
-    <div class="related" id="related-${post.id}"></div>
-  `;
-  renderRelated(post);
+/* ── Section helpers ──────────────────────────────────── */
+function byRegion(region) {
+  return function(p) { return p.region === region; };
 }
 
-// Related posts
-function renderRelated(post) {
-  const tags = (post.tags || '').split(',').map(t => t.trim().toLowerCase());
-  const related = allPosts
-    .filter(p => p.id !== post.id)
-    .map(p => {
-      const ptags = (p.tags || '').split(',').map(t => t.trim().toLowerCase());
-      const overlap = tags.filter(t => ptags.includes(t)).length;
-      return {post: p, score: overlap};
-    })
-    .filter(r => r.score > 0)
-    .sort((a,b) => b.score - a.score)
-    .slice(0, 3);
-  
-  if (!related.length) return;
-  const el = document.getElementById(`related-${post.id}`);
-  if (!el) return;
-  el.innerHTML = '<h4>Related</h4><div class="related-links">' +
-    related.map(r => `<a href="/post.html?id=${r.post.slug || r.post.id}">${esc(r.post.title)}</a>`).join('') +
-    '</div>';
+function byTag(tag) {
+  return function(p) { return (p.tags || '').toLowerCase().indexOf(tag.toLowerCase()) !== -1; };
 }
 
-// Render post list
-function renderPosts(posts) {
-  const p = (posts || getFilteredPosts());
-  const visible = p.slice(1, 1 + (currentPage + 1) * PER_PAGE);
-  const el = document.getElementById('post-list');
-  
-  el.innerHTML = visible.map(post => {
-    const tags = (post.tags || '').split(',').map(t => t.trim()).filter(Boolean).slice(0, 3);
-    const region = post.region;
-    return `
-    <a href="/post.html?id=${post.slug || post.id}" class="card">
-      <div class="card-img"><img src="${getPostImage(post)}" alt="${esc(post.title)}" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
-      <div class="card-body">
-        <h3>${esc(post.title)}${region ? `<span class="region-badge">${region}</span>` : ''}</h3>
-        <div class="cex">${esc(post.excerpt || '')}</div>
-        <div class="cmeta">${post.date} · ${post.readTime || '?'} min read</div>
-        <div class="ctags">${tags.map(t => `<span>${t}</span>`).join('')}</div>
-      </div>
-    </a>`;
-  }).join('');
-  
-  // Load more button
-  const hasMore = visible.length < (p.length - 1);
-  document.getElementById('load-more').style.display = hasMore ? 'block' : 'none';
+/* ── Render everything ────────────────────────────────── */
+function renderAll(posts) {
+  var p = posts;
+  var hasResults = p.length > 0;
+  document.getElementById('no-results').style.display = hasResults ? 'none' : 'block';
+
+  if (!hasResults) {
+    document.getElementById('hero-section').innerHTML = '';
+    document.getElementById('latest-grid').innerHTML = '';
+    document.getElementById('uk-posts').innerHTML = '';
+    document.getElementById('europe-posts').innerHTML = '';
+    document.getElementById('usa-posts').innerHTML = '';
+    document.getElementById('global-posts').innerHTML = '';
+    document.getElementById('research-posts').innerHTML = '';
+    return;
+  }
+
+  /* Hero — first post */
+  var hero = p[0];
+  var heroTags = (hero.tags || '').split(',').map(function(t) { return t.trim(); }).filter(Boolean);
+  document.getElementById('hero-section').innerHTML =
+    '<div class="hero-content">' +
+      '<div class="hero-kicker">' + esc(heroTags[0] || 'LATEST') + (hero.region ? ' · <span class="region-badge">' + esc(hero.region) + '</span>' : '') + '</div>' +
+      '<h1 class="hero-title"><a href="/post.html?id=' + (hero.slug || hero.id) + '">' + esc(hero.title) + '</a></h1>' +
+      '<p class="hero-excerpt">' + esc((hero.excerpt || '').substring(0, 200)) + '…</p>' +
+      '<div class="hero-meta">' +
+        '<span>' + (hero.date || '') + '</span>' +
+        '<span>·</span>' +
+        '<span>' + (hero.readTime || '?') + ' min read</span>' +
+      '</div>' +
+      '<a href="/post.html?id=' + (hero.slug || hero.id) + '" class="hero-cta">Read the briefing →</a>' +
+    '</div>' +
+    '<a href="/post.html?id=' + (hero.slug || hero.id) + '" class="hero-image">' +
+      '<img src="' + getPostImage(hero) + '" alt="' + esc(hero.title) + '" onerror="this.parentElement.style.display=\'none\'">' +
+    '</a>';
+
+  /* Latest — next 6 posts */
+  var latest = p.slice(1, 7);
+  document.getElementById('latest-grid').innerHTML = latest.map(cardHTML).join('');
+
+  /* Region sections — 3 posts each, horizontal cards */
+  var uk = p.filter(byRegion('UK')).slice(0, 3);
+  var europe = p.filter(byRegion('Europe')).slice(0, 3);
+  var usa = p.filter(byRegion('USA')).slice(0, 3);
+  var global = p.filter(byRegion('Global')).slice(0, 3);
+
+  document.getElementById('uk-posts').innerHTML = uk.length ? uk.map(cardHorizontalHTML).join('') : '<p class="empty-state">No UK articles match your search.</p>';
+  document.getElementById('europe-posts').innerHTML = europe.length ? europe.map(cardHorizontalHTML).join('') : '<p class="empty-state">No Europe articles match your search.</p>';
+  document.getElementById('usa-posts').innerHTML = usa.length ? usa.map(cardHorizontalHTML).join('') : '<p class="empty-state">No USA articles match your search.</p>';
+  document.getElementById('global-posts').innerHTML = global.length ? global.map(cardHorizontalHTML).join('') : '<p class="empty-state">No Global articles match your search.</p>';
+
+  /* Research */
+  var research = p.filter(byTag('Research')).slice(0, 4);
+  document.getElementById('research-posts').innerHTML = research.length ?
+    '<div class="article-grid article-grid-4">' + research.map(cardHTML).join('') + '</div>' :
+    '<p class="empty-state">No Research articles match your search.</p>';
 }
 
-function loadMore() {
-  currentPage++;
-  renderPosts();
-}
-
-// Get image URL for a post (from R2 or placeholder)
-function getPostImage(post) {
-  if (post.image) return post.image;
-  // Use R2 patterns: try post-specific image
-  const slug = post.slug || post.id;
-  return `https://pub-849a283a10a5443389b4f17848459996.r2.dev/tgc/${slug}.jpg`;
-}
-
-function esc(s) {
-  const d = document.createElement('div');
-  d.textContent = s || '';
-  return d.innerHTML;
-}
-
-// Newsletter
+/* ── Newsletter ───────────────────────────────────────── */
 function subscribe() {
-  const email = document.getElementById('nl-email').value.trim();
-  const btn = document.querySelector('.nl-form button');
-  if (!email || !email.includes('@')) {
+  var email = document.getElementById('nl-email').value.trim();
+  var btn = document.querySelector('.newsletter-form button');
+  if (!email || email.indexOf('@') === -1) {
     alert('Please enter a valid email address.');
     return;
   }
   btn.disabled = true;
-  btn.textContent = 'Subscribing...';
+  btn.textContent = 'Subscribing…';
   fetch('/.netlify/functions/subscribe', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email })
+    body: JSON.stringify({ email: email })
   })
-  .then(r => r.json())
-  .then(data => {
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
     if (data.ok) {
       document.getElementById('nl-email').value = '';
       alert('Subscribed! Check your inbox to confirm.');
@@ -345,23 +386,27 @@ function subscribe() {
       alert(data.error || 'Something went wrong.');
     }
   })
-  .catch(() => alert('Network error. Try again.'))
-  .finally(() => {
+  .catch(function() { alert('Network error. Try again.'); })
+  .finally(function() {
     btn.disabled = false;
     btn.textContent = 'Subscribe';
   });
 }
 
-// Mark active nav
-(function() {
-  const path = window.location.pathname;
-  document.querySelectorAll('[data-nav]').forEach(a => {
-    a.classList.remove('active');
-    if (path === '/' && a.dataset.nav === 'latest') a.classList.add('active');
-    else if (path.includes(a.dataset.nav) && a.dataset.nav !== 'latest') a.classList.add('active');
+/* ── Boot ─────────────────────────────────────────────── */
+fetch('/posts.json')
+  .then(function(r) { return r.json(); })
+  .then(function(posts) {
+    allPosts = posts.sort(function(a, b) {
+      return (b.date || '').localeCompare(a.date || '');
+    });
+    renderAll(allPosts);
+  })
+  .catch(function() {
+    document.getElementById('hero-section').innerHTML = '<div class="loading-state">Unable to load articles. Please try again.</div>';
   });
-})();
 </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{"token": "PLACEHOLDER"}"></script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "PLACEHOLDER"}'></script>
 </body>
 </html>

@@ -16,133 +16,187 @@
 <meta name="twitter:site" content="@theganjaclub_">
 <link rel="canonical" href="https://theganjaclub.netlify.app/">
 <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="The Ganja Club">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#ffffff;--text:#111827;--dim:#6b7280;--green:#059669;--green-dark:#047857;--line:#e5e7eb;--card:#f9fafb;--sans:'Inter',sans-serif}
-[data-theme="dark"]{--bg:#0f172a;--text:#f1f5f9;--dim:#94a3b8;--line:#334155;--card:#1e293b}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.8;transition:background .2s,color .2s}
-.wrap{max-width:660px;margin:0 auto;padding:0 20px}
-a{color:var(--green);text-decoration:none}
-a:hover{opacity:.8}
-.hd{padding:24px 0;border-bottom:2px solid var(--text);margin-bottom:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.lg{font-size:1.2rem;font-weight:700;letter-spacing:-.03em;color:var(--text)}
-.lg span{color:var(--green)}
-.hd-actions{display:flex;gap:10px;align-items:center}
-.bk{color:var(--dim);font-size:.78rem}
-.bk:hover{color:var(--green)}
-#theme-toggle{background:none;border:1px solid var(--line);color:var(--dim);cursor:pointer;font-size:.9rem;padding:4px 8px;border-radius:4px;transition:all .15s}
-#theme-toggle:hover{color:var(--text)}
-article h1{font-size:2rem;line-height:1.25;margin-bottom:10px;font-weight:700}
-.mt{color:var(--dim);font-size:.78rem;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--line)}
-.mt .region-badge{display:inline-block;font-size:.7rem;padding:2px 8px;border-radius:3px;background:var(--green);color:#fff;margin-left:8px;text-transform:uppercase;vertical-align:middle}
-article p{margin-bottom:16px;font-size:1rem}
-article h2{font-size:1.3rem;margin:28px 0 12px;font-weight:700}
-article h3{font-size:1rem;margin:20px 0 10px;font-weight:600}
-article blockquote{border-left:2px solid var(--green);padding-left:16px;margin:20px 0;color:var(--dim);font-style:italic}
-article ul,article ol{margin:12px 0;padding-left:20px}
-article li{margin-bottom:6px}
-#img-here{width:100%;height:240px;margin-bottom:24px;overflow:hidden;background:var(--line);border-radius:4px}
-#img-here img{width:100%;height:100%;object-fit:cover}
-.ld{text-align:center;padding:80px 0;color:var(--dim)}
-.related-section{margin-top:40px;padding-top:20px;border-top:1px solid var(--line)}
-.related-section h3{font-size:.85rem;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
-.related-section a{display:block;padding:8px 0;color:var(--dim);font-size:.85rem;border-bottom:1px solid var(--line)}
-.related-section a:hover{color:var(--green)}
-.nug-cta{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px 24px;margin:32px 0;text-align:center}
-.nug-cta h3{font-size:1rem;margin-bottom:6px}
-.nug-cta p{font-size:.82rem;color:var(--dim);margin-bottom:4px}
-.nug-cta a{font-weight:600}
-.ft{padding:32px 0;border-top:2px solid var(--line);margin-top:40px;text-align:center;font-size:.75rem;color:var(--dim)}
-.ft a{color:var(--dim);margin:0 8px}
-.ft a:hover{color:var(--green)}
-.ft-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:8px 0}
-@media(max-width:600px){article h1{font-size:1.4rem}#img-here{height:180px}}
-</style>
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<div class="wrap">
-<div class="hd">
-<a href="/" class="lg">The Ganja <span>Club</span></a>
-<div class="hd-actions">
-  <a href="/grow-assistant.html" class="bk" style="margin-right:12px">🌱 Grow</a>
-  <a href="/" class="bk">← Back</a>
-  <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
-</div>
-</div>
 
-<!-- Leaderboard -->
-<div style="max-width:728px;margin:12px auto 0;text-align:center">
-  <a href="http://www.cannabis-seeds-store.co.uk/apcollective-0-1-9.html" target="_blank" rel="sponsored">
-    <img src="https://affiliates.cannabis-seeds-store.co.uk/media/banners/980x208aff.gif" 
-         alt="The Vault Cannabis Seeds Store" 
-         style="max-width:100%;height:auto;border-radius:4px"
-         width="728" height="90" loading="eager">
-  </a>
-</div>
+<div id="reading-progress"></div>
 
-<div id="loader" class="ld">Loading post…</div>
-<article id="pf" style="display:none">
-<div id="img-here"></div>
-<h1 id="ptit"></h1>
-<div class="mt" id="pmet"></div>
-<div id="pbd"></div>
-<div class="nug-cta" id="nug-cta">
-  <h3>🧬 Explore strain deep dives</h3>
-  <p>Follow <a href="https://instagram.com/thenugarchive" target="_blank">@thenugarchive</a> for macro photography, strain genetics, and terpene profiles.</p>
-</div>
-<div class="related-section" id="related"></div>
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span class="nav-brand-icon">🌿</span>
+      The Ganja <span>Club</span>
+    </a>
+    <div class="nav-links" style="display:flex">
+      <a href="/">Latest</a>
+      <a href="/uk.html">UK</a>
+      <a href="/europe.html">Europe</a>
+      <a href="/usa.html">USA</a>
+      <a href="/global.html">Global</a>
+      <a href="/grow-assistant.html" class="nav-grow-link">🌱 Grow</a>
+    </div>
+    <div class="nav-actions">
+      <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Loader -->
+<div class="loading-state" id="loader">Loading article…</div>
+
+<!-- Article -->
+<article id="article" style="display:none">
+
+  <!-- Hero image -->
+  <div class="article-hero">
+    <div class="container">
+      <div class="article-hero-image" id="hero-img"></div>
+      <div class="article-header">
+        <div class="article-kicker" id="a-kicker"></div>
+        <h1 class="article-title" id="a-title"></h1>
+        <div class="article-meta" id="a-meta"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="container-article">
+    <div class="article-body" id="a-body"></div>
+
+    <!-- Nug CTA -->
+    <div class="nug-cta" id="nug-cta">
+      <h3>🧬 Explore strain deep dives</h3>
+      <p>Follow <a href="https://instagram.com/thenugarchive" target="_blank">@thenugarchive</a> for macro photography, strain genetics, and terpene profiles.</p>
+    </div>
+
+    <!-- Related -->
+    <div class="related-section" id="related"></div>
+  </div>
 </article>
-<div class="ft">
-  <div class="ft-links">
-    <a href="/">Home</a>
-    <a href="/uk.html">UK</a>
-    <a href="/europe.html">Europe</a>
-    <a href="/usa.html">USA</a>
-    <a href="/global.html">Global</a>
-    <a href="/rss.xml">RSS</a>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">The Ganja <span>Club</span></div>
+        <p class="footer-desc">Daily intelligence on UK medical cannabis, global policy reform, industry analysis, and the culture that binds it all.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Sections</div>
+        <div class="footer-links">
+          <a href="/uk.html">United Kingdom</a>
+          <a href="/europe.html">Europe</a>
+          <a href="/usa.html">United States</a>
+          <a href="/global.html">Global</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">More</div>
+        <div class="footer-links">
+          <a href="/grow-assistant.html">Grow Assistant</a>
+          <a href="/rss.xml">RSS Feed</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Follow</div>
+        <div class="footer-links">
+          <a href="https://instagram.com/theganjaclub_" target="_blank">@theganjaclub_</a>
+          <a href="https://instagram.com/thenugarchive" target="_blank">@thenugarchive</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Ganja Club. Medical cannabis news & culture.</span>
+    </div>
   </div>
-  <div class="ft-links">
-    <a href="https://instagram.com/theganjaclub_" target="_blank">@theganjaclub_</a>
-    <a href="https://instagram.com/thenugarchive" target="_blank">@thenugarchive</a>
-  </div>
-  <br>© 2026 The Ganja Club. Medical cannabis news & culture.
-</div>
-</div>
+</footer>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
 <script>
-// Dark mode
-function toggleTheme(){
-  const h=document.documentElement;
-  const d=h.getAttribute('data-theme')==='dark';
-  h.setAttribute('data-theme',d?'light':'dark');
-  document.getElementById('theme-toggle').textContent=d?'🌙':'☀️';
-  localStorage.setItem('theme',d?'light':'dark');
+/* ═══════════════════════════════════════════════════════════
+   THE GANJA CLUB — Article Engine
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Theme ────────────────────────────────────────────── */
+function toggleTheme() {
+  var h = document.documentElement;
+  var d = h.getAttribute('data-theme') === 'dark';
+  h.setAttribute('data-theme', d ? 'light' : 'dark');
+  document.getElementById('theme-toggle').textContent = d ? '🌙' : '☀️';
+  localStorage.setItem('theme', d ? 'light' : 'dark');
 }
-(function(){
-  const s=localStorage.getItem('theme');
-  if(s==='dark'||(!s&&matchMedia('(prefers-color-scheme:dark)').matches)){
-    document.documentElement.setAttribute('data-theme','dark');
-    document.getElementById('theme-toggle').textContent='☀️';
+(function() {
+  var s = localStorage.getItem('theme');
+  if (s === 'dark' || (!s && matchMedia('(prefers-color-scheme:dark)').matches)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('theme-toggle').textContent = '☀️';
   }
 })();
 
-// Load post
-const params = new URLSearchParams(window.location.search);
-const slug = params.get('id');
-if(!slug){document.getElementById('loader').textContent='Post not found.';}
-else{
-  fetch('/posts.json')
-    .then(r=>r.json())
-    .then(posts=>{
-      const post = posts.find(p=>p.slug===slug||p.id===slug);
-      if(!post){document.getElementById('loader').textContent='Post not found.';return;}
+/* ── Scroll ──────────────────────────────────────────── */
+window.addEventListener('scroll', function() {
+  var nav = document.getElementById('nav');
+  nav.classList.toggle('scrolled', window.scrollY > 10);
 
-      // Dynamic SEO tags
-      const desc = (post.excerpt||'').replace(/"/g,'&quot;').substring(0,160);
-      const img = post.image ? 'https://theganjaclub.netlify.app/'+post.image : 'https://theganjaclub.netlify.app/images/pexels-kindelmedia-7667912.webp';
+  var btn = document.getElementById('back-to-top');
+  btn.classList.toggle('visible', window.scrollY > 600);
+
+  var winScroll = document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  document.getElementById('reading-progress').style.width = height ? (winScroll / height * 100) + '%' : '0%';
+});
+
+/* ── Helpers ─────────────────────────────────────────── */
+function getPostImage(post) {
+  if (post.image) {
+    if (post.image.startsWith('http')) return post.image;
+    return '/' + post.image;
+  }
+  return 'https://pub-849a283a10a5443389b4f17848459996.r2.dev/tgc/' + (post.slug || post.id) + '.jpg';
+}
+
+function esc(s) {
+  var d = document.createElement('div');
+  d.textContent = s || '';
+  return d.innerHTML;
+}
+
+function setMeta(name, content) {
+  var el = document.querySelector('meta[property="' + name + '"], meta[name="' + name + '"]');
+  if (!el) { el = document.createElement('meta'); el.setAttribute('property', name); document.head.appendChild(el); }
+  el.setAttribute('content', content || '');
+}
+
+function parseDate(dateStr) {
+  var months = { January:'01', February:'02', March:'03', April:'04', May:'05', June:'06', July:'07', August:'08', September:'09', October:'10', November:'11', December:'12' };
+  var parts = dateStr.split(' ');
+  if (parts.length === 3) return parts[2] + '-' + (months[parts[1]] || '01') + '-' + parts[0].padStart(2, '0');
+  return dateStr;
+}
+
+/* ── Load post ────────────────────────────────────────── */
+var params = new URLSearchParams(window.location.search);
+var slug = params.get('id');
+
+if (!slug) {
+  document.getElementById('loader').textContent = 'Article not found.';
+} else {
+  fetch('/posts.json')
+    .then(function(r) { return r.json(); })
+    .then(function(posts) {
+      var post = posts.find(function(p) { return p.slug === slug || p.id === slug; });
+      if (!post) {
+        document.getElementById('loader').textContent = 'Article not found.';
+        return;
+      }
+
+      /* SEO */
+      var desc = (post.excerpt || '').replace(/"/g, '&quot;').substring(0, 160);
+      var img = getPostImage(post);
       document.title = post.title + ' — The Ganja Club';
       setMeta('description', desc);
       setMeta('og:title', post.title + ' — The Ganja Club');
@@ -151,75 +205,91 @@ else{
       setMeta('twitter:title', post.title);
       setMeta('twitter:description', desc);
       setMeta('twitter:image', img);
-      const canon = document.querySelector('link[rel="canonical"]');
-      if(canon) canon.href = 'https://theganjaclub.netlify.app/post.html?id='+(post.slug||post.id);
+      var canon = document.querySelector('link[rel="canonical"]');
+      if (canon) canon.href = 'https://theganjaclub.netlify.app/post.html?id=' + (post.slug || post.id);
 
-      // Schema markup
-      const schema = {
-        '@context':'https://schema.org',
-        '@type':'NewsArticle',
+      /* Schema */
+      var schema = {
+        '@context': 'https://schema.org',
+        '@type': 'NewsArticle',
         'headline': post.title,
-        'description': post.excerpt||'',
+        'description': post.excerpt || '',
         'image': img,
         'datePublished': parseDate(post.date),
         'dateModified': parseDate(post.date),
-        'author':{'@type':'Organization','name':'The Ganja Club','url':'https://theganjaclub.netlify.app'},
-        'publisher':{'@type':'Organization','name':'The Ganja Club','url':'https://theganjaclub.netlify.app'}
+        'author': { '@type': 'Organization', 'name': 'The Ganja Club', 'url': 'https://theganjaclub.netlify.app' },
+        'publisher': { '@type': 'Organization', 'name': 'The Ganja Club', 'url': 'https://theganjaclub.netlify.app' }
       };
-      let sEl = document.getElementById('schema-data');
-      if(!sEl){sEl=document.createElement('script');sEl.id='schema-data';sEl.type='application/ld+json';document.head.appendChild(sEl);}
+      var sEl = document.getElementById('schema-data');
+      if (!sEl) { sEl = document.createElement('script'); sEl.id = 'schema-data'; sEl.type = 'application/ld+json'; document.head.appendChild(sEl); }
       sEl.textContent = JSON.stringify(schema);
 
-      // Render
-      document.getElementById('loader').style.display='none';
-      document.getElementById('pf').style.display='block';
-      document.getElementById('ptit').textContent=post.title;
+      /* Render */
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('article').style.display = 'block';
 
-      const region = post.region;
-      const shareUrl = encodeURIComponent('https://theganjaclub.netlify.app/post.html?id='+(post.slug||post.id));
-      const shareTitle = encodeURIComponent(post.title);
-      document.getElementById('pmet').innerHTML =
-        `${post.date} · ${post.readTime||'?'} min read · ${post.tags||''}${region?`<span class="region-badge">${region}</span>`:''} &nbsp; <a href="https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}" target="_blank" title="Share on X" style="font-size:.85rem">🔗 Share</a>`;
+      /* Hero image */
+      var hi = document.getElementById('hero-img');
+      hi.innerHTML = '<img src="' + img + '" alt="' + esc(post.title) + '" onerror="this.parentElement.style.display=\'none\'">';
 
-      const imgEl = document.getElementById('img-here');
-      const imgUrl = post.image || 'images/pexels-kindelmedia-7667912.webp';
-      imgEl.innerHTML = `<img src="${imgUrl}" alt="${post.title}" loading="eager" onerror="this.parentElement.style.display='none'">`;
+      /* Kicker */
+      var tags = (post.tags || '').split(',').map(function(t) { return t.trim(); }).filter(Boolean);
+      document.getElementById('a-kicker').innerHTML =
+        esc(tags[0] || 'LATEST') + (post.region ? ' · <span class="region-badge">' + esc(post.region) + '</span>' : '');
 
-      document.getElementById('pbd').innerHTML = post.body||'';
+      /* Title */
+      document.getElementById('a-title').textContent = post.title;
 
-      // Related
-      const tags = (post.tags||'').split(',').map(t=>t.trim().toLowerCase());
-      const related = posts
-        .filter(p=>p.id!==post.id)
-        .map(p=>{
-          const pt=(p.tags||'').split(',').map(t=>t.trim().toLowerCase());
-          return {post:p, score:tags.filter(t=>pt.includes(t)).length};
+      /* Meta */
+      var shareUrl = encodeURIComponent('https://theganjaclub.netlify.app/post.html?id=' + (post.slug || post.id));
+      var shareTitle = encodeURIComponent(post.title);
+      document.getElementById('a-meta').innerHTML =
+        esc(post.date) + ' · ' + (post.readTime || '?') + ' min read · ' + esc(post.tags || '') +
+        ' &nbsp; <a href="https://twitter.com/intent/tweet?url=' + shareUrl + '&text=' + shareTitle + '" target="_blank" style="font-size:.9rem" title="Share on X">🔗 Share</a>';
+
+      /* Body */
+      document.getElementById('a-body').innerHTML = post.body || '';
+
+      /* Related */
+      var postTags = (post.tags || '').split(',').map(function(t) { return t.trim().toLowerCase(); });
+      var related = posts
+        .filter(function(p) { return p.id !== post.id; })
+        .map(function(p) {
+          var pt = (p.tags || '').split(',').map(function(t) { return t.trim().toLowerCase(); });
+          return { post: p, score: postTags.filter(function(t) { return pt.indexOf(t) !== -1; }).length };
         })
-        .filter(r=>r.score>0)
-        .sort((a,b)=>b.score-a.score)
-        .slice(0,4);
-      if(related.length){
+        .filter(function(r) { return r.score > 0; })
+        .sort(function(a, b) { return b.score - a.score; })
+        .slice(0, 3);
+
+      if (related.length) {
         document.getElementById('related').innerHTML =
-          '<h3>Related articles</h3>' +
-          related.map(r=>`<a href="/post.html?id=${r.post.slug||r.post.id}">${r.post.title}</a>`).join('');
+          '<h2 class="section-title">Related Articles</h2>' +
+          '<div class="related-grid">' +
+          related.map(function(r) {
+            var p = r.post;
+            return (
+              '<article class="card">' +
+                '<a href="/post.html?id=' + (p.slug || p.id) + '" class="card-image">' +
+                  '<img src="' + getPostImage(p) + '" alt="' + esc(p.title) + '" loading="lazy" onerror="this.parentElement.style.display=\'none\'">' +
+                '</a>' +
+                '<div class="card-body">' +
+                  '<h3 class="card-title"><a href="/post.html?id=' + (p.slug || p.id) + '">' + esc(p.title) + '</a></h3>' +
+                  '<div class="card-meta">' + esc(p.date) + ' · ' + (p.readTime || '?') + ' min read</div>' +
+                '</div>' +
+              '</article>'
+            );
+          }).join('') +
+          '</div>';
       }
+    })
+    .catch(function() {
+      document.getElementById('loader').textContent = 'Unable to load article. Please try again.';
     });
 }
-
-function setMeta(name, content) {
-  let el = document.querySelector(`meta[property="${name}"], meta[name="${name}"]`);
-  if(!el){el=document.createElement('meta');el.setAttribute('property',name);document.head.appendChild(el);}
-  el.setAttribute('content', content||'');
-}
-
-function parseDate(dateStr) {
-  const months={January:'01',February:'02',March:'03',April:'04',May:'05',June:'06',July:'07',August:'08',September:'09',October:'10',November:'11',December:'12'};
-  const parts = dateStr.split(' ');
-  if(parts.length===3) return `${parts[2]}-${months[parts[1]]||'01'}-${parts[0].padStart(2,'0')}`;
-  return dateStr;
-}
 </script>
-<script src="/affiliates.js"></script>
+
 <script src="/grow-widget.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "PLACEHOLDER"}'></script>
 </body>
 </html>
