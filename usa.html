@@ -72,6 +72,7 @@ a:hover{color:var(--green)}
     <a href="/europe.html">Europe</a>
     <a href="/usa.html" class="active">USA</a>
     <a href="/global.html">Global</a>
+    <a href="/" onclick="filterByTag('Research');return false">Research</a>
   </div>
   <div class="nav-actions">
     <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
@@ -87,8 +88,6 @@ a:hover{color:var(--green)}
          width="728" height="90" loading="eager">
   </a>
 </div>
-
-<!--
 
 <div class="search-wrap">
   <span class="s-icon">🔍</span>
@@ -180,6 +179,7 @@ function render(posts){
 }
 
 function loadMore(){currentPage++;render();}
+function filterByTag(tag){document.getElementById('search').value=tag;searchQuery=tag;currentPage=0;const f=getFiltered();document.getElementById('no-results').style.display=f.length?'none':'block';render(f);window.scrollTo({top:0,behavior:'smooth'});}
 function esc(s){const d=document.createElement('div');d.textContent=s||'';return d.innerHTML;}
 function subscribe(){
   const e=document.getElementById('nl-email').value.trim();
