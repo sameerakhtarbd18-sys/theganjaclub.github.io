@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grow Assistant — The Ganja Club</title>
+<meta name="description" content="AI-powered cannabis cultivation guide. Educational answers to your growing questions. No medical advice.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#121510;--card:#1a1d18;--text:#ffffff;--dim:#8b9484;--green:#4ade80;--green-dark:#22c55e;--line:#2a2d26;--sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--radius:8px}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;align-items:center}
+a{color:var(--green);text-decoration:none}
+
+/* Nav */
+.nav{width:100%;max-width:720px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.nav .logo{font-size:1rem;font-weight:700;color:var(--text);letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.nav .logo span{color:var(--green)}
+.nav .back{font-size:.8rem;color:var(--dim);transition:color .15s}
+.nav .back:hover{color:var(--text)}
+
+/* Main */
+.main{flex:1;width:100%;max-width:720px;padding:40px 20px 60px;display:flex;flex-direction:column;align-items:center}
+
+/* Robot mascot */
+.mascot{margin-bottom:24px;position:relative}
+.mascot-emoji{font-size:72px;line-height:1;filter:drop-shadow(0 0 20px rgba(74,222,128,.15));animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* Heading */
+.title{font-size:2rem;font-weight:700;margin-bottom:4px;text-align:center;letter-spacing:-.02em}
+.subtitle{font-size:.82rem;color:var(--dim);margin-bottom:28px;text-align:center;letter-spacing:.04em;text-transform:uppercase}
+
+/* Feature bullets */
+.features{display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap;justify-content:center}
+.feature{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 18px;font-size:.78rem;color:var(--dim);display:flex;align-items:center;gap:8px;transition:all .15s}
+.feature:hover{border-color:var(--green);color:var(--text)}
+.feature .ficon{font-size:1rem}
+
+/* Chat container */
+.chat-wrap{width:100%;max-width:600px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.chat-messages{flex:1;min-height:300px;max-height:450px;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:16px}
+.chat-messages::-webkit-scrollbar{width:4px}
+.chat-messages::-webkit-scrollbar-track{background:transparent}
+.chat-messages::-webkit-scrollbar-thumb{background:var(--line);border-radius:2px}
+
+/* Message bubbles */
+.msg{max-width:85%;padding:12px 16px;border-radius:var(--radius);font-size:.88rem;line-height:1.55;animation:fadeIn .3s ease}
+.msg.bot{background:var(--line);color:var(--text);align-self:flex-start;border-bottom-left-radius:2px}
+.msg.user{background:var(--green);color:#121510;align-self:flex-end;border-bottom-right-radius:2px;font-weight:500}
+.msg .src{display:block;font-size:.68rem;color:var(--dim);margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.08)}
+.msg.user .src{color:rgba(0,0,0,.4);border-top-color:rgba(0,0,0,.08)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+/* Disclaimer banner */
+.disclaimer-banner{background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.15);border-radius:var(--radius);padding:10px 14px;margin:0 20px 12px;font-size:.7rem;color:var(--dim);line-height:1.4;text-align:center}
+
+/* Typing indicator */
+.typing{display:flex;gap:4px;padding:12px 16px}
+.typing span{width:6px;height:6px;background:var(--dim);border-radius:50%;animation:bounce 1.4s infinite ease-in-out}
+.typing span:nth-child(2){animation-delay:.2s}
+.typing span:nth-child(3){animation-delay:.4s}
+@keyframes bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-8px)}}
+
+/* Input area */
+.chat-input-wrap{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--line);background:var(--card)}
+.chat-input-wrap input{flex:1;padding:12px 16px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:var(--radius);color:var(--text);font-size:.88rem;font-family:var(--sans);outline:none;transition:border-color .15s}
+.chat-input-wrap input:focus{border-color:var(--green)}
+.chat-input-wrap input::placeholder{color:var(--dim)}
+.chat-input-wrap button{width:44px;height:44px;background:var(--green);color:#121510;border:none;border-radius:var(--radius);font-size:1.2rem;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.chat-input-wrap button:hover{background:#6aeb96}
+.chat-input-wrap button:disabled{opacity:.4;cursor:not-allowed}
+
+/* Quick suggestions */
+.suggestions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.suggestions button{background:transparent;border:1px solid var(--line);color:var(--dim);padding:8px 14px;border-radius:20px;font-size:.75rem;cursor:pointer;font-family:var(--sans);transition:all .15s}
+.suggestions button:hover{color:var(--text);border-color:var(--green)}
+
+/* Footer */
+.footer{margin-top:32px;text-align:center;font-size:.7rem;color:var(--dim)}
+.footer span{color:var(--green)}
+
+/* Responsive */
+@media(max-width:600px){
+  .title{font-size:1.5rem}
+  .mascot-emoji{font-size:56px}
+  .chat-messages{max-height:350px}
+  .features{gap:8px}
+  .feature{font-size:.72rem;padding:10px 14px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="logo">🌿 The Ganja <span>Club</span></a>
+  <a href="/" class="back">← Back to Blog</a>
+</nav>
+
+<main class="main">
+
+  <div class="mascot">
+    <div class="mascot-emoji">🤖</div>
+  </div>
+
+  <h1 class="title">Hi, I'm Grow Assistant</h1>
+  <p class="subtitle">Cannabis Cultivation Knowledge Engine</p>
+
+  <div class="features">
+    <div class="feature"><span class="ficon">🌱</span> Learn to grow</div>
+    <div class="feature"><span class="ficon">🔬</span> Diagnose problems</div>
+    <div class="feature"><span class="ficon">💡</span> Get grow advice</div>
+  </div>
+
+  <div class="chat-wrap">
+    <div class="disclaimer-banner">
+      ⚠️ Educational only. No medical advice. Cultivation laws vary — always check local regulations.
+    </div>
+    <div class="chat-messages" id="messages">
+      <div class="msg bot">
+        Hey! I'm your cannabis cultivation guide. Ask me anything about growing — nutrients, lighting, pest control, troubleshooting, harvest timing. What can I help with today?
+      </div>
+    </div>
+    <div class="chat-input-wrap">
+      <input type="text" id="question" placeholder="Ask a growing question..." autofocus onkeydown="if(event.key==='Enter')ask()">
+      <button id="send-btn" onclick="ask()">➤</button>
+    </div>
+  </div>
+
+  <div class="suggestions">
+    <button onclick="quickAsk('What nutrients does cannabis need during veg?')">Veg nutrients</button>
+    <button onclick="quickAsk('How do I prevent powdery mildew?')">Powdery mildew</button>
+    <button onclick="quickAsk('What pH should my water be for soil growing?')">Water pH</button>
+    <button onclick="quickAsk('How do I know when to harvest?')">Harvest timing</button>
+  </div>
+
+  <div class="footer">
+    Powered by <span>The Ganja Club</span> · Part of <a href="https://instagram.com/theganjaclub_" target="_blank">@theganjaclub_</a>
+  </div>
+
+</main>
+
+<script>
+const messagesEl = document.getElementById('messages');
+const inputEl = document.getElementById('question');
+const sendBtn = document.getElementById('send-btn');
+let isAsking = false;
+
+function addMessage(text, type, sources) {
+  const div = document.createElement('div');
+  div.className = `msg ${type}`;
+  div.textContent = text;
+  if (sources && sources.length) {
+    const srcEl = document.createElement('span');
+    srcEl.className = 'src';
+    srcEl.textContent = '📄 ' + sources.map(s => s.source).join(' · ');
+    div.appendChild(srcEl);
+  }
+  messagesEl.appendChild(div);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+function addTyping() {
+  const div = document.createElement('div');
+  div.className = 'msg bot typing';
+  div.id = 'typing';
+  div.innerHTML = '<span></span><span></span><span></span>';
+  messagesEl.appendChild(div);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+function removeTyping() {
+  const el = document.getElementById('typing');
+  if (el) el.remove();
+}
+
+async function ask() {
+  const question = inputEl.value.trim();
+  if (!question || isAsking) return;
+  
+  isAsking = true;
+  sendBtn.disabled = true;
+  inputEl.disabled = true;
+  
+  addMessage(question, 'user');
+  inputEl.value = '';
+  addTyping();
+  
+  try {
+    const resp = await fetch('/.netlify/functions/ask-grow', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question })
+    });
+    
+    const data = await resp.json();
+    removeTyping();
+    
+    if (data.error) {
+      addMessage('Sorry, something went wrong. Please try again.', 'bot');
+    } else {
+      addMessage(data.answer, 'bot', data.sources);
+    }
+  } catch (e) {
+    removeTyping();
+    addMessage('Network error. Please check your connection and try again.', 'bot');
+  }
+  
+  isAsking = false;
+  sendBtn.disabled = false;
+  inputEl.disabled = false;
+  inputEl.focus();
+}
+
+function quickAsk(q) {
+  inputEl.value = q;
+  ask();
+}
+</script>
+</body>
+</html>
