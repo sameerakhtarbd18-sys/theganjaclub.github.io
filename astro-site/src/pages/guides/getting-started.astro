@@ -1,0 +1,202 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import AffiliateBanner from "../../components/AffiliateBanner.astro";
+---
+
+<Base
+  title="Getting Started — UK Medical Cannabis | The Ganja Club"
+  description="Everything you need to know about becoming a medical cannabis patient in the UK: eligibility, choosing a clinic, your first consultation, and getting your prescription."
+  ogImage="/images/flower/pexels-kindelmedia-7667912.webp"
+>
+
+<AffiliateBanner />
+<Nav />
+
+<main id="main-content">
+  <article class="guide">
+    <header class="guide-hero">
+      <p class="kicker">🏁 Patient Guide</p>
+      <h1>Getting Started</h1>
+      <p class="guide-subtitle">From eligibility to your first prescription — everything you need to know about becoming a medical cannabis patient in the UK.</p>
+    </header>
+
+    <div class="guide-body">
+      <section>
+        <h2>Are You Eligible?</h2>
+        <p>Medical cannabis can be prescribed in the UK when a specialist consultant determines it is clinically appropriate. You may be eligible if:</p>
+        <ul>
+          <li>You have a diagnosed medical condition that has not responded adequately to licensed treatments</li>
+          <li>You have tried at least two conventional treatments (medications or therapies) for your condition</li>
+          <li>Your condition is one for which there is evidence that cannabis-based medicines may help</li>
+        </ul>
+        <p>Common conditions treated include chronic pain, anxiety, PTSD, multiple sclerosis, epilepsy, chemotherapy-induced nausea, and more. This is not an exhaustive list — the decision is made by a specialist based on your individual circumstances.</p>
+      </section>
+
+      <section>
+        <h2>Choosing a Clinic</h2>
+        <p>The UK has a growing number of private medical cannabis clinics, each with different specialities, pricing structures, and pharmacy partnerships. When choosing a clinic, consider:</p>
+        <ul>
+          <li><strong>Initial consultation cost:</strong> Typically £50–£250, depending on the clinic and the complexity of your case</li>
+          <li><strong>Follow-up costs:</strong> Usually required every 3 months initially, then every 6 months once stable</li>
+          <li><strong>Project Twenty21 and access schemes:</strong> Some clinics offer reduced rates through schemes like T21</li>
+          <li><strong>Pharmacy options:</strong> Which pharmacies they work with affects product availability and pricing</li>
+          <li><strong>Specialist expertise:</strong> Some clinics specialise in particular conditions — check if they have experience treating yours</li>
+        </ul>
+        <p>MedBud.wiki maintains a comprehensive and impartial directory of UK clinics with pricing, patient reviews, and detailed comparisons.</p>
+      </section>
+
+      <section>
+        <h2>Your Medical Records</h2>
+        <p>You will typically need to provide your Summary Care Record (SCR) from your NHS GP. This is a summary of your medical history, diagnoses, and past treatments. Most clinics will request this on your behalf with your consent, though you can also obtain it yourself through the NHS App or by contacting your GP surgery.</p>
+        <p>Some clinics accept other forms of medical evidence, such as clinic letters from specialists or hospital discharge summaries. The key requirement is documented evidence of your condition and treatment history.</p>
+      </section>
+
+      <section>
+        <h2>Your First Consultation</h2>
+        <p>Your initial appointment is typically 30–60 minutes with a specialist consultant. During this consultation, the doctor will:</p>
+        <ul>
+          <li>Review your medical history and current condition</li>
+          <li>Discuss previous treatments and why they haven't worked</li>
+          <li>Assess whether cannabis-based medicines are clinically appropriate for you</li>
+          <li>Explain the potential benefits, risks, and side effects</li>
+          <li>If appropriate, prescribe a starting treatment plan</li>
+        </ul>
+        <p>Be honest about any previous cannabis use — your doctor needs a complete picture to prescribe safely. Previous use is not a barrier to treatment and can actually help guide product selection.</p>
+      </section>
+
+      <section>
+        <h2>Receiving Your Prescription</h2>
+        <p>If the consultant decides to prescribe, your prescription is sent to a specialist pharmacy. The process typically works like this:</p>
+        <ol>
+          <li>The consultant writes your prescription after the appointment</li>
+          <li>The prescription is reviewed by a multidisciplinary team (MDT) — a standard safeguard</li>
+          <li>Once approved, the prescription is sent to the pharmacy</li>
+          <li>The pharmacy contacts you to arrange payment and delivery</li>
+          <li>Medication is delivered to your address, typically within 2–5 working days</li>
+        </ol>
+        <p>Your first prescription is usually a small quantity to assess your response. Follow-up appointments allow the consultant to adjust your treatment based on how you're responding.</p>
+      </section>
+
+      <section>
+        <h2>Costs to Expect</h2>
+        <p>Private medical cannabis treatment involves ongoing costs:</p>
+        <ul>
+          <li><strong>Initial consultation:</strong> £50–£250 (one-off)</li>
+          <li><strong>Follow-up consultations:</strong> £50–£150 (every 3–6 months)</li>
+          <li><strong>Medication:</strong> £5–£14 per gram for flower, varying by product and pharmacy</li>
+          <li><strong>Delivery:</strong> Usually free or a small charge</li>
+        </ul>
+        <p>Some clinics offer access schemes that reduce costs. Project Twenty21 collects real-world evidence while subsidising treatment for participating patients.</p>
+      </section>
+
+      <section class="resource-box">
+        <h2>Further Resources</h2>
+        <ul>
+          <li><a href="https://medbud.wiki/guides/patients-joining/" target="_blank" rel="noopener">MedBud.wiki — Becoming a Patient (Full Guide) →</a></li>
+          <li><a href="https://medbud.wiki/guides/patients-joining/eligibility-conditions/" target="_blank" rel="noopener">MedBud.wiki — Eligibility Conditions →</a></li>
+          <li><a href="https://medbud.wiki/guides/patients-joining/clinic-application/" target="_blank" rel="noopener">MedBud.wiki — Applying to a Clinic →</a></li>
+          <li><a href="/guides/patient-rights">Your Patient Rights →</a></li>
+        </ul>
+      </section>
+    </div>
+  </article>
+</main>
+
+<Footer />
+</Base>
+
+<style>
+  .guide { max-width: 760px; margin: 0 auto; }
+  .guide-hero {
+    text-align: center;
+    padding: 56px 24px 40px;
+  }
+  .kicker {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+  .guide-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .guide-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  .guide-body {
+    padding: 0 24px 64px;
+  }
+  .guide-body section {
+    margin-bottom: 40px;
+  }
+  .guide-body h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--green);
+    display: inline-block;
+  }
+  .guide-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 20px 0 8px;
+  }
+  .guide-body p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+  }
+  .guide-body ul, .guide-body ol {
+    margin: 8px 0 16px 20px;
+  }
+  .guide-body li {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+  .guide-body strong {
+    color: var(--text);
+  }
+  .guide-body a {
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .guide-body a:hover { color: var(--green-dark); }
+  .resource-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+  .resource-box h2 {
+    border-bottom: none;
+    margin-bottom: 16px;
+  }
+  .resource-box ul { margin-bottom: 0; }
+  .resource-box li { margin-bottom: 8px; }
+</style>

@@ -5,6 +5,7 @@ date: "16 May 2026"
 region: "uk"
 excerpt: "The UK medical cannabis market is expanding rapidly, but significant barriers remain for patients. A comprehensive look at where things stand in May 2026."
 image: "/images/industrial-weed/pexels-diego-barros-2149566212-33965728.webp"
+category: "news"
 tags:
   - UK Policy
   - Market Analysis

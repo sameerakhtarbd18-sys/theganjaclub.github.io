@@ -1,0 +1,192 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import AffiliateBanner from "../../components/AffiliateBanner.astro";
+---
+
+<Base
+  title="Patient Rights — UK Medical Cannabis Law | The Ganja Club"
+  description="Your legal rights as a UK medical cannabis patient: driving, travel, housing, workplace protections, and what the law actually says."
+  ogImage="/images/industrial-weed/pexels-jess-vide-9259930.webp"
+>
+
+<AffiliateBanner />
+<Nav />
+
+<main id="main-content">
+  <article class="guide">
+    <header class="guide-hero">
+      <p class="kicker">⚖️ Patient Guide</p>
+      <h1>Patient Rights</h1>
+      <p class="guide-subtitle">Your legal rights as a UK medical cannabis patient — what the law says and what it means in practice.</p>
+    </header>
+
+    <div class="guide-body">
+      <section>
+        <h2>The Legal Framework</h2>
+        <p>Medical cannabis has been legal in the UK since November 2018, when the Misuse of Drugs Regulations were amended to reschedule cannabis-based products for medicinal use (CBPMs). This means consultant specialists on the GMC's Specialist Register can prescribe unlicensed cannabis-based medicines where clinically appropriate.</p>
+        <p>Despite the legal change, NHS prescribing remains extremely limited — most patients access treatment through private clinics. Understanding your rights is essential whether you're a current patient or considering treatment.</p>
+      </section>
+
+      <section>
+        <h2>Driving and Medical Cannabis</h2>
+        <p>You can legally drive while taking prescribed cannabis-based medicine, provided:</p>
+        <ul>
+          <li>You are taking your medication exactly as prescribed</li>
+          <li>You are not impaired — the same standard applies as for any prescription medication that may affect driving</li>
+          <li>You can demonstrate that you took the medication in accordance with your prescription if stopped</li>
+        </ul>
+        <p>Section 5A(3) of the Road Traffic Act provides a medical defence for patients taking prescribed medication. Keep your prescription documentation with you when driving, and never drive if you feel impaired.</p>
+      </section>
+
+      <section>
+        <h2>Travel with Medical Cannabis</h2>
+        <p><strong>Domestic travel (within the UK):</strong> You can carry your prescribed medication anywhere in the UK. Carry your prescription and clinic documentation.</p>
+        <p><strong>International travel:</strong> Medical cannabis is not universally recognised. Before travelling:</p>
+        <ul>
+          <li>Check the destination country's laws — many countries prohibit cannabis in any form</li>
+          <li>Contact the embassy or consulate of your destination before travel</li>
+          <li>Obtain a travel letter from your clinic</li>
+          <li>Carry medication in original packaging with pharmacy labels</li>
+        </ul>
+        <p>Never assume your UK prescription is valid abroad. Countries with strict drug laws may not recognise UK medical cannabis prescriptions.</p>
+      </section>
+
+      <section>
+        <h2>Housing and Tenancy</h2>
+        <p>Landlords and housing associations cannot discriminate against you for being a medical cannabis patient. Your prescription is a protected characteristic under disability discrimination law if your underlying condition qualifies as a disability under the Equality Act 2010.</p>
+        <p>However, in practice, issues can arise — particularly around vaping policies in rental properties. Your tenancy agreement may restrict smoking, but vaping prescribed medication is a reasonable adjustment that landlords should accommodate.</p>
+      </section>
+
+      <section>
+        <h2>Workplace Rights</h2>
+        <p>Employers have a duty under the Equality Act 2010 to make reasonable adjustments for employees with disabilities, which can include accommodation for prescribed medical cannabis use. Your employer should:</p>
+        <ul>
+          <li>Treat your prescription the same as any other prescribed medication</li>
+          <li>Not discriminate against you for being a medical cannabis patient</li>
+          <li>Consider reasonable adjustments, such as breaks for medication or a private space to vape</li>
+        </ul>
+        <p>If you face discrimination at work related to your prescription, you may have grounds for an employment tribunal claim.</p>
+      </section>
+
+      <section>
+        <h2>Police Encounters</h2>
+        <p>If stopped by police while carrying your medication:</p>
+        <ul>
+          <li>Remain calm and cooperative</li>
+          <li>Explain that you are a medical cannabis patient with a legal prescription</li>
+          <li>Show your prescription documentation, clinic letter, and medication in original packaging</li>
+          <li>If officers are unfamiliar with medical cannabis prescribing, politely explain the 2018 legal changes</li>
+        </ul>
+        <p>Organisations like <strong>MedBud.wiki</strong> maintain resources and community support for patients navigating legal encounters.</p>
+      </section>
+
+      <section class="resource-box">
+        <h2>Further Resources</h2>
+        <ul>
+          <li><a href="https://medbud.wiki/guides/patients/law-and-legislation/" target="_blank" rel="noopener">MedBud.wiki — Law &amp; Legislation Guide →</a></li>
+          <li><a href="https://medbud.wiki/guides/patients/confirming-patient-identity/" target="_blank" rel="noopener">MedBud.wiki — Confirming Patient Identity →</a></li>
+          <li><a href="/guides/getting-started">Getting Started with Medical Cannabis →</a></li>
+        </ul>
+      </section>
+    </div>
+  </article>
+</main>
+
+<Footer />
+</Base>
+
+<style>
+  .guide { max-width: 760px; margin: 0 auto; }
+  .guide-hero {
+    text-align: center;
+    padding: 56px 24px 40px;
+  }
+  .kicker {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+  .guide-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .guide-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  .guide-body {
+    padding: 0 24px 64px;
+  }
+  .guide-body section {
+    margin-bottom: 40px;
+  }
+  .guide-body h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--green);
+    display: inline-block;
+  }
+  .guide-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 20px 0 8px;
+  }
+  .guide-body p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+  }
+  .guide-body ul {
+    margin: 8px 0 16px 20px;
+  }
+  .guide-body li {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+  .guide-body strong {
+    color: var(--text);
+  }
+  .guide-body a {
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .guide-body a:hover { color: var(--green-dark); }
+  .resource-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+  .resource-box h2 {
+    border-bottom: none;
+    margin-bottom: 16px;
+  }
+  .resource-box ul { margin-bottom: 0; }
+  .resource-box li { margin-bottom: 8px; }
+</style>

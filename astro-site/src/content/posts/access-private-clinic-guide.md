@@ -5,6 +5,7 @@ date: "4 May 2026"
 region: "uk"
 excerpt: "A practical guide to accessing medical cannabis through a private UK clinic — what to expect, how much it costs, and how to choose a clinic."
 image: "/images/flower/pexels-diego-barros-2149566212-33856589.webp"
+category: "news"
 tags:
   - Patient Stories
   - Guide

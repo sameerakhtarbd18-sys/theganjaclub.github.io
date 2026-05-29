@@ -5,6 +5,7 @@ date: "15 May 2026"
 region: "uk"
 excerpt: "Patients report that stigma around cannabis as medicine remains one of the biggest challenges — often within the healthcare system itself."
 image: "/images/flower/pexels-alejo-turola-2741789-17269272.webp"
+category: "news"
 tags:
   - Patient Stories
   - Culture

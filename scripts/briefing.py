@@ -459,6 +459,7 @@ date: "{post['date']}"
 region: "{region}"
 excerpt: "{post['excerpt'].replace(chr(34), chr(92)+chr(34))}"
 image: "{img}"
+category: "news"
 tags:
 """
     for t in tags:

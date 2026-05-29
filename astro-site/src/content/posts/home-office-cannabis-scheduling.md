@@ -5,6 +5,7 @@ date: "5 May 2026"
 region: "uk"
 excerpt: "The Home Office's position on cannabis scheduling continues to draw criticism from clinicians, researchers, and patient groups."
 image: "/images/industrial-weed/pexels-jess-vide-9259933.webp"
+category: "news"
 tags:
   - UK Policy
   - Politics

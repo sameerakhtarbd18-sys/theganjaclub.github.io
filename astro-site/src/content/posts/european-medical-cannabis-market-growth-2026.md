@@ -5,6 +5,7 @@ date: "5 May 2026"
 region: "europe"
 excerpt: "The European medical cannabis market has surpassed €2 billion in annual revenue for the first time, driven by surging demand in Germany, the UK, Poland, and Italy. With domestic cultivation scaling up and insurance reimbursement expanding, the sector is poised for continued growth into 2027."
 image: "/images/industrial-weed/pexels-jess-vide-9259990.webp"
+category: "news"
 tags:
   - Europe
   - Market Analysis

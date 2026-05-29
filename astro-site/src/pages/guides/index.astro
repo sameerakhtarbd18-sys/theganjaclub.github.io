@@ -1,0 +1,154 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import AffiliateBanner from "../../components/AffiliateBanner.astro";
+
+const guides = [
+  {
+    title: "Patient Rights",
+    slug: "patient-rights",
+    description: "Your legal rights as a UK medical cannabis patient — from driving and travel to housing and workplace protections.",
+    icon: "⚖️",
+  },
+  {
+    title: "Getting Started",
+    slug: "getting-started",
+    description: "Everything you need to know about becoming a medical cannabis patient in the UK — eligibility, clinics, and your first prescription.",
+    icon: "🏁",
+  },
+  {
+    title: "Using Cannabis",
+    slug: "using-cannabis",
+    description: "Practical guidance on dosing, storage, vaporisers, and getting the most from your prescribed medication.",
+    icon: "💨",
+  },
+  {
+    title: "Strains & Terpenes",
+    slug: "strains-terpenes",
+    description: "Understand the compounds that shape your experience — from THC and CBD to the terpenes behind every aroma and effect.",
+    icon: "🧬",
+  },
+];
+---
+
+<Base
+  title="Patient Guides — The Ganja Club"
+  description="Practical, plain-English guides for UK medical cannabis patients. Rights, access, using cannabis safely, and understanding your medication."
+  ogImage="/images/flower/pexels-kindelmedia-7667912.webp"
+>
+
+<AffiliateBanner />
+<Nav />
+
+<main id="main-content">
+  <header class="page-hero">
+    <p class="kicker">Patient Guides</p>
+    <h1>Navigating Medical Cannabis</h1>
+    <p class="hero-sub">Practical, plain-English guidance for UK patients. No jargon, no spin — just clear information to help you make informed decisions about your treatment.</p>
+  </header>
+
+  <section class="section">
+    <div class="card-grid">
+      {guides.map((guide) => (
+        <a href={`/guides/${guide.slug}`} class="guide-card">
+          <span class="guide-icon">{guide.icon}</span>
+          <h2 class="guide-title">{guide.title}</h2>
+          <p class="guide-desc">{guide.description}</p>
+          <span class="guide-cta">Read guide →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</main>
+
+<Footer />
+</Base>
+
+<style>
+  .page-hero {
+    text-align: center;
+    padding: 64px 24px 48px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .kicker {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+  .page-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .section {
+    padding: 0 24px 64px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+  }
+  .guide-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .guide-card:hover {
+    border-color: var(--green);
+    box-shadow: var(--shadow-lg);
+  }
+  .guide-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+  .guide-title {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .guide-desc {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    flex: 1;
+  }
+  .guide-cta {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--green);
+    margin-top: 16px;
+  }
+  @media (min-width: 640px) {
+    .card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

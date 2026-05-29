@@ -10,6 +10,7 @@ const posts = defineCollection({
     region: z.string(),
     excerpt: z.string(),
     image: z.string(),
+    category: z.enum(["news", "guide"]).default("news"),
     tags: z.array(z.string()).default(["uncategorized"]),
   }),
 });

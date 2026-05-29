@@ -5,6 +5,7 @@ date: "28 May 2026"
 region: "uk"
 excerpt: "Pew Poll Shows Strong Public Support for Ending Marijuana Prohibition in US A new poll from the Pew Research Center has found that marijuana prohibition is increasingly unpopular among Americans. The"
 image: "/images/flower/pexels-kindelmedia-7667897.webp"
+category: "news"
 tags:
   - Briefing
   - UK

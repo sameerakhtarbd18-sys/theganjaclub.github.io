@@ -5,6 +5,7 @@ date: "28 May 2026"
 region: "europe"
 excerpt: "At Cannabis Europa London 2026, held in May, delegates confronted a stark divide: the EU races toward regulatory harmonisation and adult-use reform, while the UK remains mired in a stalled medical programme. Investment is flowing east, and the conversation has shifted from ‘if’ to ‘when’ for adult-use in countries like the Czech Republic and the Netherlands."
 image: "/images/industrial-weed/pexels-bxxxty-5564076.webp"
+category: "news"
 tags:
   - Conference
   - Europe

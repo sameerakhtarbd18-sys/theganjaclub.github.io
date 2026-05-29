@@ -5,6 +5,7 @@ date: "6 May 2026"
 region: "global"
 excerpt: "A major new meta-analysis provides some of the strongest evidence yet for THC-based treatments in chronic pain management."
 image: "/images/flower/pexels-diego-barros-2149566212-33639863.webp"
+category: "news"
 tags:
   - Research
   - Science

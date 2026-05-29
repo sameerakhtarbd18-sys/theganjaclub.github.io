@@ -5,6 +5,7 @@ date: "23 May 2026"
 region: "uk"
 excerpt: "US House passes funding bill to expand medical cannabis access for veterans The US House of Representatives has approved an FY27 funding bill that includes a provision to expand medical cannabis"
 image: "/images/flower/pexels-teanna-morgan-48865981-7584671.webp"
+category: "news"
 tags:
   - Briefing
   - UK

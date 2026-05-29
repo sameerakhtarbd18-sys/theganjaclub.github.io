@@ -5,6 +5,7 @@ date: "29 May 2026"
 region: "uk"
 excerpt: "Pew Poll finds majority of Americans now oppose cannabis prohibition A new survey from the Pew Research Centre has found that support for ending cannabis prohibition continues to grow among the"
 image: "/images/flower/pexels-kindelmedia-7667897.webp"
+category: "news"
 tags:
   - Briefing
   - UK

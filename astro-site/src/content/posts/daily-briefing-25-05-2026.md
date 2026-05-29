@@ -5,6 +5,7 @@ date: "25 May 2026"
 region: "usa"
 excerpt: "NORML calls for renewed support in fight for cannabis justice The US advocacy organisation NORML has issued a public appeal for continued support, arguing that the fight for \"justice, equity, and"
 image: "/images/flower/pexels-diego-barros-2149566212-33856589.webp"
+category: "news"
 tags:
   - Briefing
   - USA

@@ -5,6 +5,7 @@ date: "22 April 2026"
 region: "usa"
 excerpt: "Bipartisan legislation and a $25 million VA funding push could finally allow doctors to recommend medical cannabis to veterans in legal states."
 image: "/images/flower/pexels-haley-bee-347725846-28862111.webp"
+category: "news"
 tags:
   - USA
   - Veterans

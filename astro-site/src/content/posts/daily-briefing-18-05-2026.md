@@ -5,6 +5,7 @@ date: "18 May 2026"
 region: "uk"
 excerpt: "UK reform outlook, the Guardian's deep dive on access barriers, and Cannabis Europa London kicks off next week."
 image: "/images/industrial-weed/pexels-diego-barros-2149566212-33965726.webp"
+category: "news"
 tags:
   - Briefing
   - UK

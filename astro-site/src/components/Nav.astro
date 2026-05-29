@@ -4,21 +4,219 @@ function isActive(path: string) {
   if (path === '/') return currentPath === '/';
   return currentPath.startsWith(path);
 }
+function isNews() {
+  return isActive('/uk') || isActive('/europe') || isActive('/usa') || isActive('/global') || isActive('/research');
+}
+function isGuides() {
+  return isActive('/guides');
+}
 ---
 
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="/" class="nav-brand">🌿 The Ganja <span>Club</span></a>
     <div class="nav-links">
-      <a href="/" class:list={["active", isActive('/') && !isActive('/uk') && !isActive('/europe') && !isActive('/usa') && !isActive('/global') && !isActive('/research') && !isActive('/grow') && !isActive('/post')]}>Latest</a>
-      <a href="/uk" class:list={["active", isActive('/uk')]}>UK</a>
-      <a href="/europe" class:list={["active", isActive('/europe')]}>Europe</a>
-      <a href="/usa" class:list={["active", isActive('/usa')]}>USA</a>
-      <a href="/global" class:list={["active", isActive('/global')]}>Global</a>
-      <a href="/research" class:list={["active", isActive('/research')]}>Research</a>
-      <a href="/grow-assistant" class:list={["active", isActive('/grow-assistant')]}>🌱 Grow</a>
-      <a href="/rss" class:list={["active", isActive('/rss')]}>RSS</a>
+      <!-- News dropdown -->
+      <div class="nav-dropdown">
+        <a href="/" class:list={["nav-item", "nav-trigger", { active: isActive('/') && !isNews() || isNews() }]}>
+          📰 News
+          <span class="dropdown-arrow">▾</span>
+        </a>
+        <div class="dropdown-menu">
+          <a href="/" class:list={["dropdown-item", { active: isActive('/') && !isNews() }]}>Latest</a>
+          <a href="/uk" class:list={["dropdown-item", { active: isActive('/uk') }]}>🇬🇧 UK</a>
+          <a href="/europe" class:list={["dropdown-item", { active: isActive('/europe') }]}>🇪🇺 Europe</a>
+          <a href="/usa" class:list={["dropdown-item", { active: isActive('/usa') }]}>🇺🇸 USA</a>
+          <a href="/global" class:list={["dropdown-item", { active: isActive('/global') }]}>🌍 Global</a>
+          <a href="/research" class:list={["dropdown-item", { active: isActive('/research') }]}>🔬 Research</a>
+        </div>
+      </div>
+
+      <!-- Guides dropdown -->
+      <div class="nav-dropdown">
+        <a href="/guides" class:list={["nav-item", "nav-trigger", { active: isGuides() }]}>
+          📋 Guides
+          <span class="dropdown-arrow">▾</span>
+        </a>
+        <div class="dropdown-menu">
+          <a href="/guides" class:list={["dropdown-item", { active: currentPath === '/guides' }]}>All Guides</a>
+          <a href="/guides/patient-rights" class:list={["dropdown-item", { active: isActive('/guides/patient-rights') }]}>⚖️ Patient Rights</a>
+          <a href="/guides/getting-started" class:list={["dropdown-item", { active: isActive('/guides/getting-started') }]}>🏁 Getting Started</a>
+          <a href="/guides/using-cannabis" class:list={["dropdown-item", { active: isActive('/guides/using-cannabis') }]}>💨 Using Cannabis</a>
+          <a href="/guides/strains-terpenes" class:list={["dropdown-item", { active: isActive('/guides/strains-terpenes') }]}>🧬 Strains &amp; Terpenes</a>
+        </div>
+      </div>
+
+      <!-- Resources direct link -->
+      <a href="/resources" class:list={["nav-item", { active: isActive('/resources') }]}>🔗 Resources</a>
+
+      <!-- Grow Assistant -->
+      <a href="/grow-assistant" class:list={["nav-item", { active: isActive('/grow-assistant') }]}>🌱 Grow</a>
+
+      <!-- RSS -->
+      <a href="/rss" class:list={["nav-item", { active: isActive('/rss') }]}>RSS</a>
+
       <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
     </div>
   </div>
 </nav>
+
+<style>
+  .site-nav {
+    position: sticky;
+    top: var(--banner-height);
+    z-index: 100;
+    background: var(--bg-nav);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--nav-height);
+    padding: 0 16px;
+    gap: 8px;
+  }
+  .nav-brand {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .nav-brand span {
+    color: var(--green);
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .nav-item {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+  .nav-item:hover {
+    color: var(--text);
+    background: var(--border-light);
+  }
+  .nav-item.active {
+    color: var(--green);
+    font-weight: 600;
+  }
+  /* Dropdown */
+  .nav-dropdown {
+    position: relative;
+  }
+  .nav-trigger {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    cursor: default;
+  }
+  .dropdown-arrow {
+    font-size: 0.6rem;
+    margin-left: 1px;
+    transition: transform 0.15s;
+  }
+  .nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    padding: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4px);
+    transition: opacity 0.15s, visibility 0.15s, transform 0.15s;
+    z-index: 101;
+  }
+  .nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .dropdown-item {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 3px;
+    transition: color 0.1s, background 0.1s;
+    white-space: nowrap;
+  }
+  .dropdown-item:hover {
+    color: var(--text);
+    background: var(--border-light);
+  }
+  .dropdown-item.active {
+    color: var(--green);
+    font-weight: 600;
+    background: rgba(5, 150, 105, 0.06);
+  }
+  /* Theme toggle button */
+  #theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: color 0.15s, background 0.15s;
+    margin-left: 4px;
+  }
+  #theme-toggle:hover {
+    color: var(--text);
+    background: var(--border-light);
+  }
+  /* Mobile: compact  */
+  @media (max-width: 720px) {
+    .nav-brand {
+      font-size: 1rem;
+    }
+    .nav-item {
+      font-size: 0.72rem;
+      padding: 5px 7px;
+    }
+    .nav-links {
+      gap: 1px;
+    }
+    .dropdown-item {
+      font-size: 0.75rem;
+      padding: 7px 10px;
+    }
+  }
+  @media (max-width: 580px) {
+    .nav-brand span {
+      display: none;
+    }
+    .nav-item {
+      font-size: 0.68rem;
+      padding: 4px 6px;
+    }
+  }
+</style>

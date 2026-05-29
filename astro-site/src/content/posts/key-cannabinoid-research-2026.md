@@ -5,6 +5,7 @@ date: "12 May 2026"
 region: "global"
 excerpt: "From pain management to mental health, the clinical research pipeline for cannabinoid medicines is more active than ever. Here are the studies to watch."
 image: "/images/flower/pexels-diego-barros-2149566212-30682035.webp"
+category: "news"
 tags:
   - Research
   - Science

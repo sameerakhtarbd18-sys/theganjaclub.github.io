@@ -5,6 +5,7 @@ date: "17 May 2026"
 region: "uk"
 excerpt: "The Care Quality Commission has raised concerns about the standard of care in private medical cannabis clinics. Here's what it means for patients."
 image: "/images/industrial-weed/pexels-diego-barros-2149566212-33965727.webp"
+category: "news"
 tags:
   - UK Policy
   - Clinics

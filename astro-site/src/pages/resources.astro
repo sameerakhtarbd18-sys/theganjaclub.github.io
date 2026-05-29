@@ -1,0 +1,256 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import AffiliateBanner from "../components/AffiliateBanner.astro";
+
+const resources = [
+  {
+    title: "MedBud.wiki",
+    url: "https://medbud.wiki/",
+    description: "The UK's most comprehensive medical cannabis resource. Search strains, compare clinics and pharmacies, access detailed patient guides, and join community forums. Independently run and trusted by thousands of UK patients.",
+    tag: "Essential",
+    featured: true,
+  },
+  {
+    title: "Smokie McGreen",
+    url: "https://smokiemcgreen.com/",
+    description: "Patient-focused education platform with terpene infographics, patient rights guides, clinic spotlights, and YouTube content. Plain English, no jargon — a trusted voice in the UK medical cannabis community.",
+    tag: "Education",
+  },
+  {
+    title: "Drug Science — Project Twenty21",
+    url: "https://www.drugscience.org.uk/project-twenty21/",
+    description: "The UK's largest medical cannabis patient registry, building the evidence base for NHS access while subsidising treatment for participating patients. Founded by Professor David Nutt.",
+    tag: "Research",
+  },
+  {
+    title: "Cancard",
+    url: "https://www.cancard.co.uk/",
+    description: "A patient verification card recognised by UK police forces. Provides identification for medical cannabis patients and supports advocacy for broader access. Free for eligible patients.",
+    tag: "Patient ID",
+  },
+  {
+    title: "PLEA (Patient-Led Engagement for Access)",
+    url: "https://pleacommunity.org.uk/",
+    description: "Community-led patient advocacy organisation working to improve medical cannabis access in the UK. Runs campaigns, publishes patient surveys, and engages with policymakers.",
+    tag: "Advocacy",
+  },
+  {
+    title: "UK Medical Cannabis Clinics Directory",
+    url: "https://medbud.wiki/clinics/",
+    description: "MedBud's impartial directory of every UK medical cannabis clinic — pricing, services, pharmacy partnerships, and patient reviews. The definitive starting point for choosing a clinic.",
+    tag: "Clinics",
+  },
+];
+
+const guides = [
+  { title: "Patient Rights", url: "/guides/patient-rights", desc: "Your legal rights as a UK medical cannabis patient." },
+  { title: "Getting Started", url: "/guides/getting-started", desc: "Eligibility, clinics, and your first prescription." },
+  { title: "Using Cannabis", url: "/guides/using-cannabis", desc: "Dosing, vaporisers, storage, and practical guidance." },
+  { title: "Strains & Terpenes", url: "/guides/strains-terpenes", desc: "Cannabinoids, terpenes, and choosing the right medication." },
+];
+---
+
+<Base
+  title="Resources — Medical Cannabis Links & Directories | The Ganja Club"
+  description="Curated directory of trusted medical cannabis resources: MedBud.wiki, clinics, patient advocacy, research, and community support."
+  ogImage="/images/flower/pexels-kindelmedia-7667912.webp"
+>
+
+<AffiliateBanner />
+<Nav />
+
+<main id="main-content">
+  <header class="page-hero">
+    <p class="kicker">🔗 Resources</p>
+    <h1>Curated Cannabis Directory</h1>
+    <p class="hero-sub">A hand-picked collection of the best resources, tools, and communities for UK medical cannabis patients. We've done the filtering so you don't have to.</p>
+  </header>
+
+  <section class="section">
+    <h2 class="section-heading">External Resources</h2>
+    <div class="resource-grid">
+      {resources.map((r) => (
+        <a href={r.url} target="_blank" rel="noopener" class={`resource-card${r.featured ? ' featured' : ''}`}>
+          <div class="resource-header">
+            <h3>{r.title}</h3>
+            <span class="resource-tag">{r.tag}</span>
+          </div>
+          <p>{r.description}</p>
+          <span class="resource-cta">Visit {r.url.replace('https://', '').replace('www.', '').split('/')[0]} →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <h2 class="section-heading">Our Guides</h2>
+    <div class="guide-mini-grid">
+      {guides.map((g) => (
+        <a href={g.url} class="guide-mini-card">
+          <h3>{g.title}</h3>
+          <p>{g.desc}</p>
+          <span class="resource-cta">Read guide →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</main>
+
+<Footer />
+</Base>
+
+<style>
+  .page-hero {
+    text-align: center;
+    padding: 64px 24px 48px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .kicker {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+  .page-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .section {
+    padding: 0 24px 48px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .section-alt {
+    padding-bottom: 64px;
+  }
+  .section-heading {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 24px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--green);
+    display: inline-block;
+  }
+  .resource-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+  }
+  .resource-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .resource-card.featured {
+    border-color: var(--green);
+    border-width: 2px;
+  }
+  .resource-card:hover {
+    border-color: var(--green);
+    box-shadow: var(--shadow-lg);
+  }
+  .resource-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .resource-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .resource-tag {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--green);
+    background: rgba(5, 150, 105, 0.08);
+    padding: 3px 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .resource-card p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    flex: 1;
+  }
+  .resource-cta {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--green);
+    margin-top: 14px;
+  }
+  .guide-mini-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+  }
+  .guide-mini-card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+  .guide-mini-card:hover {
+    border-color: var(--green);
+  }
+  .guide-mini-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .guide-mini-card p {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    flex: 1;
+  }
+  @media (min-width: 640px) {
+    .resource-grid { grid-template-columns: repeat(2, 1fr); }
+    .guide-mini-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 900px) {
+    .resource-grid { grid-template-columns: repeat(3, 1fr); }
+    .guide-mini-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>
