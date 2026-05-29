@@ -416,6 +416,65 @@ def append_to_posts_json(post: dict) -> bool:
     return True
 
 
+def append_to_astro_markdown(post: dict) -> bool:
+    """
+    Also write the post as an Astro markdown file for the SSG.
+    Path: astro-site/src/content/posts/{slug}.md
+    """
+    import random
+    ASTRO_POSTS_DIR = os.path.join(BLOG_DIR, "astro-site", "src", "content", "posts")
+    os.makedirs(ASTRO_POSTS_DIR, exist_ok=True)
+
+    md_path = os.path.join(ASTRO_POSTS_DIR, f"{post['slug']}.md")
+
+    if os.path.exists(md_path):
+        print(f"⚠️  Astro markdown {md_path} already exists — skipping.")
+        return False
+
+    # Pick a random image for variety
+    flower_imgs = [f for f in os.listdir(os.path.join(BLOG_DIR, "astro-site", "public", "images", "flower"))
+                   if f.endswith('.webp')] if os.path.exists(os.path.join(BLOG_DIR, "astro-site", "public", "images", "flower")) else []
+    ind_imgs = [f for f in os.listdir(os.path.join(BLOG_DIR, "astro-site", "public", "images", "industrial-weed"))
+                if f.endswith('.webp')] if os.path.exists(os.path.join(BLOG_DIR, "astro-site", "public", "images", "industrial-weed")) else []
+    
+    img = ""
+    if flower_imgs:
+        img = f"/images/flower/{random.choice(flower_imgs)}"
+    elif ind_imgs:
+        img = f"/images/industrial-weed/{random.choice(ind_imgs)}"
+
+    # Region: use the first non-Briefing tag that matches a region
+    tags = [t.strip() for t in post["tags"].split(",")]
+    region_map = {"UK": "uk", "Europe": "europe", "USA": "usa", "Global": "global"}
+    region = "global"
+    for t in tags:
+        if t in region_map:
+            region = region_map[t]
+            break
+
+    md_content = f"""---
+title: "{post['title'].replace(chr(34), chr(92)+chr(34))}"
+slug: "{post['slug']}"
+date: "{post['date']}"
+region: "{region}"
+excerpt: "{post['excerpt'].replace(chr(34), chr(92)+chr(34))}"
+image: "{img}"
+tags:
+"""
+    for t in tags:
+        md_content += f"  - {t}\n"
+    
+    md_content += "---\n\n"
+    md_content += post["body"]
+    md_content += "\n"
+
+    with open(md_path, "w", encoding="utf-8") as f:
+        f.write(md_content)
+
+    print(f"📝 Astro markdown written: {md_path}")
+    return True
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -462,7 +521,10 @@ def main():
     # 6. Append to posts.json
     success = append_to_posts_json(post)
 
-    if success:
+    # 7. Also write Astro markdown
+    astro_success = append_to_astro_markdown(post)
+
+    if success or astro_success:
         print("\n🎉 Daily briefing generated and appended successfully!")
     else:
         print("\n⚠️  Briefing was not appended (may already exist for today).")
