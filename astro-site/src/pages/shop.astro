@@ -1,0 +1,43 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import AffiliateBanner from "../components/AffiliateBanner.astro";
+---
+
+<Base
+  title="Shop — Coming Soon | The Ganja Club"
+  description="The Ganja Club shop is coming soon. Premium cannabis accessories, lifestyle goods, and curated products."
+  ogImage="/logo.svg"
+>
+
+<AffiliateBanner />
+<Nav />
+
+<main id="main-content">
+  <div class="shop-page">
+    <div class="shop-icon">
+      <img src="/logo.svg" alt="The Ganja Club" style="width:60px;height:auto;opacity:0.8;" />
+    </div>
+
+    <h1>Shop — Coming Soon</h1>
+
+    <p>
+      We're curating a collection of premium cannabis accessories, lifestyle goods,
+      and essentials. Quality you can trust, delivered to your door.
+    </p>
+
+    <form class="shop-notify" onsubmit="event.preventDefault(); alert('Thanks! We\'ll let you know when the shop opens.');">
+      <input type="email" placeholder="Your email for launch alerts" required />
+      <button type="submit">Notify Me</button>
+    </form>
+
+    <p style="font-size:0.75rem;color:var(--text-muted);margin-top:24px;">
+      No spam. Just a one-time heads-up when we open.
+    </p>
+  </div>
+</main>
+
+<Footer />
+
+</Base>
