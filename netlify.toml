@@ -48,3 +48,13 @@
 
 [functions]
   directory = "astro-site/netlify/functions"
+
+[[redirects]]
+  from = "/grow-assistant"
+  to = "/guides"
+  status = 301
+
+[[redirects]]
+  from = "/grow-assistant.html"
+  to = "/guides"
+  status = 301

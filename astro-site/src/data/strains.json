@@ -1,0 +1,1051 @@
+{
+  "lastReviewed": "2026-06-11",
+  "disclaimer": "Cannabinoid figures are typical published ranges, not batch values — prescribed products carry batch-specific certificates of analysis. Strain availability under these names varies by clinic formulary. This is educational information, not medical advice; product selection is a decision for your prescribing clinician.",
+  "strains": [
+    {
+      "id": "bedrocan",
+      "name": "Bedrocan",
+      "type": "sativa",
+      "thcRange": [
+        20,
+        24
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "focused",
+        "uplifted",
+        "energetic"
+      ],
+      "medicalUses": [
+        "chronic pain",
+        "fatigue",
+        "nausea"
+      ],
+      "flavours": [
+        "earthy",
+        "pine",
+        "citrus"
+      ],
+      "terpenes": [
+        "terpinolene",
+        "myrcene"
+      ],
+      "lineage": "Jack Herer-derived cultivar",
+      "ukAvailability": "Standardised pharmaceutical-grade product prescribed in the UK",
+      "description": "The most widely prescribed standardised flower in Europe. Grown to pharmaceutical GMP standards with batch-consistent cannabinoid content, it is the benchmark high-THC product in many UK prescriptions."
+    },
+    {
+      "id": "bediol",
+      "name": "Bediol",
+      "type": "hybrid",
+      "thcRange": [
+        6,
+        7
+      ],
+      "cbdRange": [
+        7,
+        9
+      ],
+      "effects": [
+        "calm",
+        "clear-headed",
+        "mild"
+      ],
+      "medicalUses": [
+        "chronic pain",
+        "inflammation",
+        "anxiety"
+      ],
+      "flavours": [
+        "earthy",
+        "herbal"
+      ],
+      "terpenes": [
+        "myrcene",
+        "caryophyllene"
+      ],
+      "lineage": "Bedrocan BV cultivar",
+      "ukAvailability": "Standardised pharmaceutical-grade product prescribed in the UK",
+      "description": "A balanced THC:CBD product designed for patients who need symptom relief with minimal impairment. Often the starting point for cannabis-naive patients in UK titration plans."
+    },
+    {
+      "id": "bedrolite",
+      "name": "Bedrolite",
+      "type": "hybrid",
+      "thcRange": [
+        0,
+        1
+      ],
+      "cbdRange": [
+        8,
+        10
+      ],
+      "effects": [
+        "clear-headed",
+        "calm"
+      ],
+      "medicalUses": [
+        "epilepsy",
+        "inflammation",
+        "anxiety"
+      ],
+      "flavours": [
+        "herbal",
+        "earthy"
+      ],
+      "terpenes": [
+        "myrcene",
+        "pinene"
+      ],
+      "lineage": "Bedrocan BV cultivar",
+      "ukAvailability": "Standardised pharmaceutical-grade product prescribed in the UK",
+      "description": "A CBD-dominant flower with negligible THC, prescribed where cannabidiol is the therapeutic target. No meaningful intoxication at standard doses."
+    },
+    {
+      "id": "bedica",
+      "name": "Bedica",
+      "type": "indica",
+      "thcRange": [
+        13,
+        15
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "relaxed",
+        "sedated",
+        "calm"
+      ],
+      "medicalUses": [
+        "insomnia",
+        "muscle spasm",
+        "chronic pain"
+      ],
+      "flavours": [
+        "earthy",
+        "herbal"
+      ],
+      "terpenes": [
+        "myrcene",
+        "limonene"
+      ],
+      "lineage": "Bedrocan BV cultivar",
+      "ukAvailability": "Standardised pharmaceutical-grade product prescribed in the UK",
+      "description": "An indica-type standardised flower with a myrcene-forward profile, typically prescribed for evening use where sleep and muscle relaxation are the goals."
+    },
+    {
+      "id": "og-kush",
+      "name": "OG Kush",
+      "type": "hybrid",
+      "thcRange": [
+        18,
+        25
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "relaxed",
+        "euphoric",
+        "hungry"
+      ],
+      "medicalUses": [
+        "chronic pain",
+        "stress",
+        "insomnia"
+      ],
+      "flavours": [
+        "earthy",
+        "pine",
+        "diesel"
+      ],
+      "terpenes": [
+        "myrcene",
+        "limonene",
+        "caryophyllene"
+      ],
+      "lineage": "Chemdawg × Hindu Kush (reported)",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "One of the most influential cultivars in modern cannabis, parent to much of the 'Kush' and 'Cookies' families. High-THC with a heavy, relaxing finish."
+    },
+    {
+      "id": "blue-dream",
+      "name": "Blue Dream",
+      "type": "hybrid",
+      "thcRange": [
+        17,
+        24
+      ],
+      "cbdRange": [
+        0,
+        2
+      ],
+      "effects": [
+        "uplifted",
+        "creative",
+        "relaxed"
+      ],
+      "medicalUses": [
+        "chronic pain",
+        "depression",
+        "nausea"
+      ],
+      "flavours": [
+        "berry",
+        "sweet",
+        "herbal"
+      ],
+      "terpenes": [
+        "myrcene",
+        "pinene"
+      ],
+      "lineage": "Blueberry × Haze",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A sativa-leaning hybrid famous for balancing cerebral lift with gentle body relaxation — a daytime-friendly profile at moderate doses."
+    },
+    {
+      "id": "northern-lights",
+      "name": "Northern Lights",
+      "type": "indica",
+      "thcRange": [
+        16,
+        22
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "sedated",
+        "relaxed",
+        "sleepy"
+      ],
+      "medicalUses": [
+        "insomnia",
+        "chronic pain",
+        "appetite loss"
+      ],
+      "flavours": [
+        "earthy",
+        "sweet",
+        "pine"
+      ],
+      "terpenes": [
+        "myrcene",
+        "caryophyllene"
+      ],
+      "lineage": "Afghani × Thai (reported)",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A foundational indica known for fast-onset physical relaxation. Classic evening cultivar referenced by many modern indica lines."
+    },
+    {
+      "id": "white-widow",
+      "name": "White Widow",
+      "type": "hybrid",
+      "thcRange": [
+        18,
+        25
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "euphoric",
+        "energetic",
+        "social"
+      ],
+      "medicalUses": [
+        "stress",
+        "depression",
+        "chronic pain"
+      ],
+      "flavours": [
+        "earthy",
+        "woody",
+        "spicy"
+      ],
+      "terpenes": [
+        "myrcene",
+        "caryophyllene"
+      ],
+      "lineage": "Brazilian sativa × South Indian indica",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A 1990s Dutch classic with a balanced but potent effect profile; the parent of an extended 'White' family of cultivars."
+    },
+    {
+      "id": "sour-diesel",
+      "name": "Sour Diesel",
+      "type": "sativa",
+      "thcRange": [
+        19,
+        25
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "energetic",
+        "uplifted",
+        "focused"
+      ],
+      "medicalUses": [
+        "depression",
+        "fatigue",
+        "stress"
+      ],
+      "flavours": [
+        "diesel",
+        "citrus",
+        "pungent"
+      ],
+      "terpenes": [
+        "limonene",
+        "caryophyllene"
+      ],
+      "lineage": "Chemdawg lineage",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A fast-acting cerebral sativa with the signature fuel aroma. Popular for daytime symptom management where sedation is unwanted."
+    },
+    {
+      "id": "granddaddy-purple",
+      "name": "Granddaddy Purple",
+      "type": "indica",
+      "thcRange": [
+        17,
+        23
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "relaxed",
+        "sleepy",
+        "hungry"
+      ],
+      "medicalUses": [
+        "insomnia",
+        "chronic pain",
+        "appetite loss"
+      ],
+      "flavours": [
+        "berry",
+        "grape",
+        "sweet"
+      ],
+      "terpenes": [
+        "myrcene",
+        "pinene"
+      ],
+      "lineage": "Purple Urkle × Big Bud",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A deeply physical indica with a grape-forward terpene profile, typically chosen for end-of-day pain and sleep support."
+    },
+    {
+      "id": "jack-herer",
+      "name": "Jack Herer",
+      "type": "sativa",
+      "thcRange": [
+        18,
+        24
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "focused",
+        "creative",
+        "uplifted"
+      ],
+      "medicalUses": [
+        "fatigue",
+        "depression",
+        "stress"
+      ],
+      "flavours": [
+        "pine",
+        "spicy",
+        "citrus"
+      ],
+      "terpenes": [
+        "terpinolene",
+        "pinene"
+      ],
+      "lineage": "Haze × Northern Lights #5 × Shiva Skunk",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "The cultivar behind Bedrocan's flagship product — a clear-headed, functional sativa profile that defined an entire category."
+    },
+    {
+      "id": "gorilla-glue-4",
+      "name": "GG4 (Gorilla Glue #4)",
+      "type": "hybrid",
+      "thcRange": [
+        22,
+        28
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "relaxed",
+        "euphoric",
+        "sedated"
+      ],
+      "medicalUses": [
+        "chronic pain",
+        "insomnia",
+        "stress"
+      ],
+      "flavours": [
+        "earthy",
+        "diesel",
+        "pungent"
+      ],
+      "terpenes": [
+        "caryophyllene",
+        "limonene"
+      ],
+      "lineage": "Chem's Sister × Sour Dubb × Chocolate Diesel",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A very high-THC hybrid with heavy resin production and a strongly physical effect; common in high-potency UK flower categories under various names."
+    },
+    {
+      "id": "girl-scout-cookies",
+      "name": "GSC",
+      "type": "hybrid",
+      "thcRange": [
+        20,
+        28
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "euphoric",
+        "relaxed",
+        "hungry"
+      ],
+      "medicalUses": [
+        "chronic pain",
+        "nausea",
+        "appetite loss"
+      ],
+      "flavours": [
+        "sweet",
+        "earthy",
+        "mint"
+      ],
+      "terpenes": [
+        "caryophyllene",
+        "limonene",
+        "humulene"
+      ],
+      "lineage": "OG Kush × Durban Poison",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "Parent of the 'Cookies' and 'Cake' families that dominate modern menus. Potent, dessert-leaning profile with strong appetite effects."
+    },
+    {
+      "id": "gelato",
+      "name": "Gelato",
+      "type": "hybrid",
+      "thcRange": [
+        20,
+        26
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "relaxed",
+        "euphoric",
+        "creative"
+      ],
+      "medicalUses": [
+        "chronic pain",
+        "stress",
+        "depression"
+      ],
+      "flavours": [
+        "sweet",
+        "citrus",
+        "berry"
+      ],
+      "terpenes": [
+        "caryophyllene",
+        "limonene"
+      ],
+      "lineage": "Sunset Sherbet × Thin Mint GSC",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A dessert-profile hybrid widely grown for the regulated European market; balanced effects with a pronounced sweet terpene profile."
+    },
+    {
+      "id": "wedding-cake",
+      "name": "Wedding Cake",
+      "type": "hybrid",
+      "thcRange": [
+        21,
+        27
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "relaxed",
+        "euphoric",
+        "sleepy"
+      ],
+      "medicalUses": [
+        "chronic pain",
+        "insomnia",
+        "stress"
+      ],
+      "flavours": [
+        "sweet",
+        "vanilla",
+        "earthy"
+      ],
+      "terpenes": [
+        "limonene",
+        "caryophyllene"
+      ],
+      "lineage": "Triangle Kush × Animal Mints",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A potent indica-leaning hybrid common in EU-GMP supply chains; rich, doughy terpene profile with a heavy finish."
+    },
+    {
+      "id": "amnesia-haze",
+      "name": "Amnesia Haze",
+      "type": "sativa",
+      "thcRange": [
+        20,
+        25
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "energetic",
+        "euphoric",
+        "creative"
+      ],
+      "medicalUses": [
+        "depression",
+        "fatigue",
+        "stress"
+      ],
+      "flavours": [
+        "citrus",
+        "earthy",
+        "spicy"
+      ],
+      "terpenes": [
+        "terpinolene",
+        "limonene"
+      ],
+      "lineage": "Haze family",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A European coffee-shop staple with a long-lasting cerebral effect. Strong daytime profile; higher doses can feel racy for anxiety-prone patients."
+    },
+    {
+      "id": "super-lemon-haze",
+      "name": "Super Lemon Haze",
+      "type": "sativa",
+      "thcRange": [
+        18,
+        25
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "uplifted",
+        "energetic",
+        "social"
+      ],
+      "medicalUses": [
+        "depression",
+        "fatigue",
+        "stress"
+      ],
+      "flavours": [
+        "citrus",
+        "sweet",
+        "zesty"
+      ],
+      "terpenes": [
+        "terpinolene",
+        "limonene"
+      ],
+      "lineage": "Lemon Skunk × Super Silver Haze",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A multi-award-winning citrus sativa; bright, functional, and strongly limonene-forward."
+    },
+    {
+      "id": "durban-poison",
+      "name": "Durban Poison",
+      "type": "sativa",
+      "thcRange": [
+        17,
+        24
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "energetic",
+        "focused",
+        "clear-headed"
+      ],
+      "medicalUses": [
+        "fatigue",
+        "depression"
+      ],
+      "flavours": [
+        "sweet",
+        "pine",
+        "anise"
+      ],
+      "terpenes": [
+        "terpinolene",
+        "myrcene"
+      ],
+      "lineage": "South African landrace",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A pure landrace sativa prized for clean, alert energy with little body load — one of the most functional daytime profiles."
+    },
+    {
+      "id": "purple-punch",
+      "name": "Purple Punch",
+      "type": "indica",
+      "thcRange": [
+        18,
+        25
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "sleepy",
+        "relaxed",
+        "hungry"
+      ],
+      "medicalUses": [
+        "insomnia",
+        "chronic pain",
+        "nausea"
+      ],
+      "flavours": [
+        "grape",
+        "berry",
+        "sweet"
+      ],
+      "terpenes": [
+        "caryophyllene",
+        "limonene"
+      ],
+      "lineage": "Larry OG × Granddaddy Purple",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A dessert indica bred for evening use; grape candy profile and a fast, heavy wind-down."
+    },
+    {
+      "id": "zkittlez",
+      "name": "Zkittlez",
+      "type": "indica",
+      "thcRange": [
+        15,
+        22
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "relaxed",
+        "happy",
+        "calm"
+      ],
+      "medicalUses": [
+        "stress",
+        "anxiety",
+        "chronic pain"
+      ],
+      "flavours": [
+        "fruity",
+        "sweet",
+        "tropical"
+      ],
+      "terpenes": [
+        "caryophyllene",
+        "humulene"
+      ],
+      "lineage": "Grape Ape × Grapefruit",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A moderate-THC indica with an unusually fruity terpene profile — often better tolerated by patients sensitive to very high potency."
+    },
+    {
+      "id": "pink-kush",
+      "name": "Pink Kush",
+      "type": "indica",
+      "thcRange": [
+        19,
+        26
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "relaxed",
+        "sedated",
+        "euphoric"
+      ],
+      "medicalUses": [
+        "chronic pain",
+        "insomnia"
+      ],
+      "flavours": [
+        "sweet",
+        "floral",
+        "vanilla"
+      ],
+      "terpenes": [
+        "myrcene",
+        "limonene"
+      ],
+      "lineage": "OG Kush relative",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A heavily physical OG descendant common in Canadian-supplied UK menus; strong analgesic reputation among patients."
+    },
+    {
+      "id": "critical",
+      "name": "Critical",
+      "type": "indica",
+      "thcRange": [
+        16,
+        21
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "relaxed",
+        "calm",
+        "sleepy"
+      ],
+      "medicalUses": [
+        "chronic pain",
+        "insomnia",
+        "stress"
+      ],
+      "flavours": [
+        "earthy",
+        "sweet",
+        "skunky"
+      ],
+      "terpenes": [
+        "myrcene",
+        "caryophyllene"
+      ],
+      "lineage": "Afghani × Skunk #1",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A workhorse European indica found across EU-GMP producers; dependable, moderate-to-strong relaxation."
+    },
+    {
+      "id": "tangerine-dream",
+      "name": "Tangie",
+      "type": "sativa",
+      "thcRange": [
+        18,
+        22
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "uplifted",
+        "creative",
+        "social"
+      ],
+      "medicalUses": [
+        "depression",
+        "fatigue",
+        "stress"
+      ],
+      "flavours": [
+        "citrus",
+        "tangerine",
+        "sweet"
+      ],
+      "terpenes": [
+        "limonene",
+        "myrcene"
+      ],
+      "lineage": "California Orange × Skunk",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A citrus-dominant sativa whose terpene profile (high limonene) is often cited in mood-focused product selection."
+    },
+    {
+      "id": "skunk-1",
+      "name": "Skunk #1",
+      "type": "hybrid",
+      "thcRange": [
+        15,
+        19
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "balanced",
+        "relaxed",
+        "uplifted"
+      ],
+      "medicalUses": [
+        "stress",
+        "chronic pain"
+      ],
+      "flavours": [
+        "skunky",
+        "earthy",
+        "sweet"
+      ],
+      "terpenes": [
+        "myrcene",
+        "caryophyllene"
+      ],
+      "lineage": "Afghani × Acapulco Gold × Colombian Gold",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "The 1970s hybrid that stabilised modern cannabis breeding. Moderate potency by today's standards; historically significant."
+    },
+    {
+      "id": "cannatonic",
+      "name": "Cannatonic",
+      "type": "hybrid",
+      "thcRange": [
+        3,
+        7
+      ],
+      "cbdRange": [
+        6,
+        12
+      ],
+      "effects": [
+        "calm",
+        "clear-headed",
+        "mild"
+      ],
+      "medicalUses": [
+        "anxiety",
+        "inflammation",
+        "chronic pain",
+        "epilepsy"
+      ],
+      "flavours": [
+        "earthy",
+        "citrus",
+        "woody"
+      ],
+      "terpenes": [
+        "myrcene",
+        "pinene"
+      ],
+      "lineage": "MK Ultra × G13 Haze",
+      "ukAvailability": "Available via UK clinic formularies (product names vary by producer)",
+      "description": "One of the first widely available CBD-rich cultivars; a near-balanced ratio favoured where THC sensitivity is a concern."
+    },
+    {
+      "id": "harlequin",
+      "name": "Harlequin",
+      "type": "sativa",
+      "thcRange": [
+        4,
+        7
+      ],
+      "cbdRange": [
+        8,
+        12
+      ],
+      "effects": [
+        "clear-headed",
+        "calm",
+        "focused"
+      ],
+      "medicalUses": [
+        "chronic pain",
+        "anxiety",
+        "inflammation"
+      ],
+      "flavours": [
+        "earthy",
+        "mango",
+        "herbal"
+      ],
+      "terpenes": [
+        "myrcene",
+        "pinene"
+      ],
+      "lineage": "Colombian Gold × Thai × Swiss landrace",
+      "ukAvailability": "Available via UK clinic formularies (product names vary by producer)",
+      "description": "A reliably CBD-dominant sativa (roughly 5:2 CBD:THC) used for daytime pain and anxiety management with minimal impairment."
+    },
+    {
+      "id": "acdc",
+      "name": "ACDC",
+      "type": "hybrid",
+      "thcRange": [
+        1,
+        6
+      ],
+      "cbdRange": [
+        12,
+        20
+      ],
+      "effects": [
+        "clear-headed",
+        "calm"
+      ],
+      "medicalUses": [
+        "epilepsy",
+        "inflammation",
+        "anxiety",
+        "chronic pain"
+      ],
+      "flavours": [
+        "earthy",
+        "woody",
+        "sweet"
+      ],
+      "terpenes": [
+        "myrcene",
+        "pinene"
+      ],
+      "lineage": "Cannatonic phenotype",
+      "ukAvailability": "Available via UK clinic formularies (product names vary by producer)",
+      "description": "Among the highest-CBD flower cultivars in circulation, with CBD:THC ratios up to 20:1. Effectively non-intoxicating at typical doses."
+    },
+    {
+      "id": "charlottes-web",
+      "name": "Charlotte's Web",
+      "type": "hybrid",
+      "thcRange": [
+        0,
+        1
+      ],
+      "cbdRange": [
+        13,
+        20
+      ],
+      "effects": [
+        "clear-headed",
+        "calm"
+      ],
+      "medicalUses": [
+        "epilepsy",
+        "inflammation",
+        "anxiety"
+      ],
+      "flavours": [
+        "earthy",
+        "pine",
+        "herbal"
+      ],
+      "terpenes": [
+        "myrcene",
+        "caryophyllene"
+      ],
+      "lineage": "Hemp-derived high-CBD cultivar",
+      "ukAvailability": "Available via UK clinic formularies (product names vary by producer)",
+      "description": "The cultivar that changed the public conversation on paediatric epilepsy and CBD. Negligible THC; CBD-led therapeutic profile."
+    },
+    {
+      "id": "do-si-dos",
+      "name": "Do-Si-Dos",
+      "type": "indica",
+      "thcRange": [
+        20,
+        28
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "sedated",
+        "relaxed",
+        "euphoric"
+      ],
+      "medicalUses": [
+        "insomnia",
+        "chronic pain",
+        "stress"
+      ],
+      "flavours": [
+        "sweet",
+        "earthy",
+        "floral"
+      ],
+      "terpenes": [
+        "limonene",
+        "caryophyllene"
+      ],
+      "lineage": "GSC × Face Off OG",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A very potent Cookies-family indica increasingly common in EU-GMP supply; strong evening/sleep profile."
+    },
+    {
+      "id": "mac-1",
+      "name": "MAC 1",
+      "type": "hybrid",
+      "thcRange": [
+        20,
+        26
+      ],
+      "cbdRange": [
+        0,
+        1
+      ],
+      "effects": [
+        "euphoric",
+        "creative",
+        "relaxed"
+      ],
+      "medicalUses": [
+        "stress",
+        "depression",
+        "chronic pain"
+      ],
+      "flavours": [
+        "citrus",
+        "creamy",
+        "spicy"
+      ],
+      "terpenes": [
+        "limonene",
+        "caryophyllene"
+      ],
+      "lineage": "Alien Cookies × Starfighter × Columbian",
+      "ukAvailability": "Cultivar name common internationally — check current UK formularies for equivalents",
+      "description": "A modern connoisseur hybrid with a balanced but strong effect and a distinctive creamy-citrus profile; appears in premium UK menus."
+    }
+  ]
+}

@@ -6,7 +6,6 @@ import Footer from "../../components/Footer.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import ShareButtons from "../../components/ShareButtons.astro";
 import AffiliateBanner from "../../components/AffiliateBanner.astro";
-import GrowWidget from "../../components/GrowWidget.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -27,6 +26,30 @@ const body = post.body || "";
 const siteUrl = "https://theganjaclub.netlify.app";
 const postUrl = `${siteUrl}/post/${slug}`;
 
+const fullImage = image
+  ? (image.startsWith("http") ? image : `${siteUrl}/${image.replace(/^\//, "")}`)
+  : `${siteUrl}/images/flower/pexels-kindelmedia-7667912.webp`;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  headline: title,
+  description: excerpt,
+  image: [fullImage],
+  datePublished: date,
+  dateModified: date,
+  author: { "@type": "Organization", name: "The Ganja Club", url: siteUrl },
+  publisher: {
+    "@type": "Organization",
+    name: "The Ganja Club",
+    url: siteUrl,
+    logo: { "@type": "ImageObject", url: `${siteUrl}/logo.svg` },
+  },
+  mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+};
+
+
+
 const kicker = tags?.[0] || "BRIEFING";
 const formattedDate = new Date(date).toLocaleDateString("en-GB", {
   day: "numeric", month: "long", year: "numeric"
@@ -36,6 +59,16 @@ const readingTime = Math.max(1, Math.ceil((body || "").split(/\s+/).length / 225
 
 const regionNames: Record<string, string> = {
   uk: "UK", europe: "Europe", usa: "USA", global: "Global",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: regionNames[region] || "News", item: `${siteUrl}/${region}` },
+    { "@type": "ListItem", position: 3, name: title, item: postUrl },
+  ],
 };
 
 const related = posts
@@ -49,7 +82,9 @@ const related = posts
   description={excerpt}
   ogImage={image}
   ogType="article"
->
+ canonicalUrl={postUrl}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} is:inline />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} is:inline />
 
 <AffiliateBanner />
 <Nav />
@@ -88,6 +123,5 @@ const related = posts
 </main>
 
 <Footer />
-<GrowWidget />
 
 </Base>

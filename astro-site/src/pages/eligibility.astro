@@ -1,0 +1,239 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Newsletter from "../components/Newsletter.astro";
+
+const siteUrl = "https://theganjaclub.netlify.app";
+---
+
+<Base
+  title="Could You Qualify for Medical Cannabis in the UK? | The Ganja Club"
+  description="A two-minute guided checker explaining how UK medical cannabis eligibility works — who can prescribe, what specialists look for, and what your next step is."
+  canonicalUrl={`${siteUrl}/eligibility`}
+>
+  <Nav />
+
+  <main class="tool-page">
+    <header class="tool-header">
+      <p class="kicker">PATIENT TOOLS</p>
+      <h1>Could you qualify for medical cannabis?</h1>
+      <p class="lede">
+        Medical cannabis has been legal in the UK since November 2018, but only specialist doctors can
+        prescribe it — and most patients never hear about it from their GP. This two-minute checker
+        explains how eligibility actually works and what your next step would be.
+        <strong>It is general information, not a medical assessment</strong> — only a GMC-registered
+        specialist can determine eligibility.
+      </p>
+    </header>
+
+    <div class="checker" id="checker">
+
+      <section class="step" data-step="1">
+        <p class="step-label">QUESTION 1 OF 4</p>
+        <h2>Are you 18 or over?</h2>
+        <div class="answers">
+          <button class="answer" data-next="2">Yes</button>
+          <button class="answer" data-result="under18">No</button>
+        </div>
+      </section>
+
+      <section class="step" data-step="2" hidden>
+        <p class="step-label">QUESTION 2 OF 4</p>
+        <h2>Do you have a diagnosed, ongoing condition?</h2>
+        <p class="step-help">UK clinics most commonly assess patients with conditions such as chronic pain,
+        anxiety, insomnia, PTSD, multiple sclerosis, epilepsy, fibromyalgia, migraine, IBD and
+        chemotherapy-related nausea — but condition lists vary by clinic.</p>
+        <div class="answers">
+          <button class="answer" data-next="3">Yes — diagnosed</button>
+          <button class="answer" data-result="undiagnosed">I have symptoms but no diagnosis</button>
+          <button class="answer" data-result="none">No ongoing condition</button>
+        </div>
+      </section>
+
+      <section class="step" data-step="3" hidden>
+        <p class="step-label">QUESTION 3 OF 4</p>
+        <h2>Have you already tried other treatments for it?</h2>
+        <p class="step-help">Specialists generally look for evidence that standard licensed treatments have
+        been tried first — typically two or more — without adequate relief or with intolerable side effects.</p>
+        <div class="answers">
+          <button class="answer" data-next="4">Yes — two or more</button>
+          <button class="answer" data-next="4" data-flag="one-treatment">One so far</button>
+          <button class="answer" data-result="no-treatments">Not yet</button>
+        </div>
+      </section>
+
+      <section class="step" data-step="4" hidden>
+        <p class="step-label">QUESTION 4 OF 4</p>
+        <h2>Can you access your medical records?</h2>
+        <p class="step-help">Clinics ask for your GP Summary Care Record to evidence your diagnosis and
+        treatment history. You can request it free from your GP practice or via the NHS App.</p>
+        <div class="answers">
+          <button class="answer" data-result="likely">Yes, or I can request it</button>
+          <button class="answer" data-result="records-help">I'm not sure how</button>
+        </div>
+      </section>
+
+      <section class="result" id="result" hidden>
+        <div id="result-body"></div>
+        <button class="pill restart" id="restart">Start again</button>
+      </section>
+    </div>
+
+    <section class="disclaimer-band">
+      <p><strong>Important:</strong> this checker describes how the UK system works in general terms.
+      It does not assess you, diagnose anything, or guarantee any outcome — eligibility is always an
+      individual clinical decision made by a GMC-registered specialist after reviewing your full history.
+      If you're experiencing a mental health crisis or thoughts of self-harm, contact your GP, NHS 111,
+      or the Samaritans on 116 123.</p>
+    </section>
+
+    <Newsletter />
+  </main>
+
+  <Footer />
+</Base>
+
+<script>
+  const steps = document.querySelectorAll<HTMLElement>(".step");
+  const resultEl = document.getElementById("result")!;
+  const resultBody = document.getElementById("result-body")!;
+  let flags: string[] = [];
+
+  const RESULTS: Record<string, string> = {
+    likely: `
+      <p class="kicker good">BASED ON YOUR ANSWERS</p>
+      <h2>You match the profile clinics typically assess</h2>
+      <p>You're an adult with a diagnosed condition, prior treatments tried, and accessible records —
+      the same starting point as most UK patients who go on to receive a prescription. The decision
+      itself always rests with a specialist, but you have a clear next step:</p>
+      <ol>
+        <li><strong>Request your GP Summary Care Record</strong> (free, via your practice or the NHS App).</li>
+        <li><strong>Compare clinics</strong> — fees, models and onboarding speed differ a lot.</li>
+        <li><strong>Book an initial consultation</strong> — most are video calls within 1–2 weeks.</li>
+      </ol>
+      <a class="cta" href="/clinics">Compare UK clinics →</a>`,
+    "under18": `
+      <p class="kicker">ABOUT UNDER-18 ACCESS</p>
+      <h2>The route for under-18s is different</h2>
+      <p>Medical cannabis for children and young people in the UK runs through paediatric specialists —
+      most prominently for severe, treatment-resistant epilepsy — usually with parental involvement and
+      sometimes via the NHS. Private adult clinics won't assess under-18s. The right starting point is a
+      conversation between a parent or guardian and the young person's existing specialist or GP.</p>
+      <a class="cta" href="/guides/patient-rights">Read the patient guide →</a>`,
+    undiagnosed: `
+      <p class="kicker">NEXT STEP: DIAGNOSIS FIRST</p>
+      <h2>A diagnosis comes before a prescription</h2>
+      <p>Specialists prescribe against a documented diagnosis, so the system effectively requires one
+      before a clinic can help. The most useful step you can take is booking a GP appointment to get
+      your symptoms properly assessed and recorded — that documentation later becomes the evidence a
+      cannabis clinic would need.</p>
+      <a class="cta" href="/guides/getting-started">How the process works →</a>`,
+    none: `
+      <p class="kicker">HONEST ANSWER</p>
+      <h2>Medical cannabis is prescribed for ongoing conditions</h2>
+      <p>UK prescriptions are tied to diagnosed, persistent conditions where other treatments haven't
+      worked. Without one, there's no route to a legal prescription — and any service suggesting
+      otherwise is one to avoid. If you're curious about the medical system, our guides explain how it
+      works for the patients it exists for.</p>
+      <a class="cta" href="/guides">Browse the guides →</a>`,
+    "no-treatments": `
+      <p class="kicker">NEXT STEP: FIRST-LINE TREATMENTS</p>
+      <h2>Specialists look for treatments tried first</h2>
+      <p>UK prescribing guidance treats cannabis-based medicines as an option when standard licensed
+      treatments haven't delivered adequate relief. Working through first-line options with your GP —
+      and having that documented — is both good medicine and, practically, the path that makes a future
+      clinic assessment possible.</p>
+      <a class="cta" href="/guides/getting-started">What the pathway looks like →</a>`,
+    "records-help": `
+      <p class="kicker good">YOU'RE CLOSE — ONE PRACTICAL STEP</p>
+      <h2>Getting your records is straightforward</h2>
+      <p>Your GP Summary Care Record is free to access: ask your GP practice's reception for a copy, or
+      use the NHS App (Profile → GP health record). Clinics need it to evidence your diagnosis and
+      treatment history. Once you have it, you match the typical assessment profile.</p>
+      <ol>
+        <li>Request the record (practice or NHS App).</li>
+        <li>Compare clinics while you wait.</li>
+      </ol>
+      <a class="cta" href="/clinics">Compare UK clinics →</a>`,
+  };
+
+  function show(stepNum: string) {
+    steps.forEach(s => (s.hidden = s.dataset.step !== stepNum));
+  }
+  function finish(key: string) {
+    steps.forEach(s => (s.hidden = true));
+    let html = RESULTS[key];
+    if (key === "likely" && flags.includes("one-treatment")) {
+      html = html.replace(
+        "<ol>",
+        `<p class="flag-note">One note: with a single treatment tried so far, some clinics may ask you to
+        try a second first — others will assess regardless. Worth checking condition pages when comparing.</p><ol>`
+      );
+    }
+    resultBody.innerHTML = html;
+    resultEl.hidden = false;
+    resultEl.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  document.querySelectorAll<HTMLButtonElement>(".answer").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (btn.dataset.flag) flags.push(btn.dataset.flag);
+      if (btn.dataset.result) finish(btn.dataset.result);
+      else if (btn.dataset.next) show(btn.dataset.next);
+    });
+  });
+  document.getElementById("restart")!.addEventListener("click", () => {
+    flags = [];
+    resultEl.hidden = true;
+    show("1");
+  });
+</script>
+
+<style>
+  .tool-page { max-width: var(--max-width); margin: 0 auto; padding: 48px 20px 0; }
+  .tool-header { max-width: 760px; margin-bottom: 36px; }
+  .kicker { font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+    font-size: 0.65rem; color: var(--green); margin-bottom: 10px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.8rem, 4vw, 2.6rem);
+    letter-spacing: -0.01em; color: var(--text); margin-bottom: 14px; }
+  .lede { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; }
+
+  .checker { max-width: 680px; margin-bottom: 48px; }
+  .step, .result { background: var(--bg-card); border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 32px; }
+  .step-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; color: var(--text-muted);
+    margin-bottom: 10px; }
+  .step h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--text);
+    margin-bottom: 12px; }
+  .step-help { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 18px; }
+  .answers { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+  .answer { border-radius: var(--radius-btn); border: 1px solid var(--border); background: var(--bg-card);
+    color: var(--text); font-family: var(--font-body); font-size: 0.92rem; font-weight: 500;
+    padding: 12px 26px; cursor: pointer; transition: all .15s ease; }
+  .answer:hover { background: var(--green-accent); border-color: var(--green-accent); color: var(--text-on-dark); }
+  .answer:active { transform: scale(0.95); }
+
+  :global(#result-body .kicker) { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em;
+    color: var(--gold); margin-bottom: 10px; }
+  :global(#result-body .kicker.good) { color: var(--green); }
+  :global(#result-body h2) { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600;
+    color: var(--text); margin-bottom: 12px; }
+  :global(#result-body p), :global(#result-body li) { font-size: 0.95rem; color: var(--text-secondary);
+    line-height: 1.65; }
+  :global(#result-body ol) { margin: 14px 0 6px 20px; }
+  :global(#result-body li) { margin-bottom: 8px; }
+  :global(#result-body .flag-note) { background: var(--gold-lightest); border-radius: var(--radius);
+    padding: 12px 16px; font-size: 0.86rem; margin: 12px 0; }
+  :global(#result-body .cta) { display: inline-block; margin-top: 18px; border-radius: var(--radius-btn);
+    background: var(--green-accent); color: var(--text-on-dark); font-size: 0.9rem; font-weight: 600;
+    padding: 12px 26px; text-decoration: none; transition: background .15s ease; }
+  :global(#result-body .cta:hover) { background: var(--green); }
+  .pill.restart { margin-top: 22px; border-radius: var(--radius-btn); border: 1px solid var(--border);
+    background: var(--bg-card); color: var(--text-secondary); font-size: 0.82rem; padding: 9px 18px;
+    cursor: pointer; }
+
+  .disclaimer-band { background: var(--green-bg); border-radius: var(--radius); padding: 20px 24px;
+    margin-bottom: 48px; max-width: 760px; }
+  .disclaimer-band p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; }
+</style>

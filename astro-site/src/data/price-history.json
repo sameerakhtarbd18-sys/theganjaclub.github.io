@@ -1,0 +1,9 @@
+{
+  "note": "Indicative market averages across major UK clinics — methodology being established. Values are seeded estimates pending the first full quarterly survey; treat as directional only until replaced by surveyed data.",
+  "series": [
+    { "quarter": "2025 Q3", "avgInitialFee": 110, "avgFlowerPerGram": 8.5, "surveyed": false },
+    { "quarter": "2025 Q4", "avgInitialFee": 100, "avgFlowerPerGram": 8.0, "surveyed": false },
+    { "quarter": "2026 Q1", "avgInitialFee": 90,  "avgFlowerPerGram": 7.8, "surveyed": false },
+    { "quarter": "2026 Q2", "avgInitialFee": 80,  "avgFlowerPerGram": 7.5, "surveyed": false }
+  ]
+}

@@ -8,7 +8,6 @@ import ArticleCard from "../components/ArticleCard.astro";
 import Newsletter from "../components/Newsletter.astro";
 import AffiliateBanner from "../components/AffiliateBanner.astro";
 import Search from "../components/Search.astro";
-import GrowWidget from "../components/GrowWidget.astro";
 
 const posts = await getCollection("posts", ({ data }) => !data.slug.includes("daily-briefing"));
 posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
@@ -97,7 +96,6 @@ function getReadTime(body: string): number {
 </main>
 
 <Footer />
-<GrowWidget />
 
 <button class="back-to-top" id="back-to-top" aria-label="Back to top" style="position:fixed;bottom:80px;right:16px;z-index:140;width:36px;height:36px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);box-shadow:var(--shadow);cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;color:var(--text-secondary);">↑</button>
 

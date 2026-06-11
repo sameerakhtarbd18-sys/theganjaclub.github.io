@@ -54,9 +54,21 @@ function isGuides() {
         </div>
       </div>
 
+      <!-- Tools dropdown -->
+      <div class="nav-dropdown" id="dropdown-tools">
+        <span class="nav-item nav-trigger" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">
+          Tools
+          <span class="dropdown-arrow">▾</span>
+        </span>
+        <div class="dropdown-menu">
+          <a href="/clinics" class:list={["dropdown-item", { active: isActive('/clinics') }]}>Compare Clinics</a>
+          <a href="/strains" class:list={["dropdown-item", { active: isActive('/strains') }]}>Strain Explorer</a>
+          <a href="/eligibility" class:list={["dropdown-item", { active: isActive('/eligibility') }]}>Eligibility Checker</a>
+        </div>
+      </div>
+
       <!-- Direct links -->
       <a href="/resources" class:list={["nav-item", { active: isActive('/resources') }]}>Resources</a>
-      <a href="/grow-assistant" class:list={["nav-item", { active: isActive('/grow-assistant') }]}>Grow</a>
 
       <!-- Shop CTA pill -->
       <a href="/shop" class:list={["nav-item", "shop-pill", { active: isActive('/shop') }]}>Shop</a>

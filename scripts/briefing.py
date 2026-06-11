@@ -452,12 +452,14 @@ def append_to_astro_markdown(post: dict) -> bool:
             region = region_map[t]
             break
 
+    # json.dumps produces a valid YAML double-quoted scalar — handles embedded
+    # quotes, colons, backslashes and newlines without silent build failures.
     md_content = f"""---
-title: "{post['title'].replace(chr(34), chr(92)+chr(34))}"
-slug: "{post['slug']}"
+title: {json.dumps(post['title'], ensure_ascii=False)}
+slug: {json.dumps(post['slug'], ensure_ascii=False)}
 date: "{post['date']}"
 region: "{region}"
-excerpt: "{post['excerpt'].replace(chr(34), chr(92)+chr(34))}"
+excerpt: {json.dumps(post['excerpt'], ensure_ascii=False)}
 image: "{img}"
 category: "news"
 tags:

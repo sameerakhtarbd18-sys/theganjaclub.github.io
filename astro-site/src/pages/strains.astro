@@ -1,0 +1,316 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Newsletter from "../components/Newsletter.astro";
+import strainData from "../data/strains.json";
+
+const { strains, disclaimer, lastReviewed } = strainData;
+const siteUrl = "https://theganjaclub.netlify.app";
+
+const EFFECTS = ["relaxed", "euphoric", "focused", "creative", "sleepy", "energetic", "uplifted", "calm", "clear-headed"];
+const CONDITIONS = ["chronic pain", "anxiety", "insomnia", "depression", "inflammation", "epilepsy", "nausea", "stress", "fatigue"];
+const FLAVOURS = ["earthy", "citrus", "pine", "berry", "diesel", "sweet"];
+---
+
+<Base
+  title="Strain Explorer — Cannabinoid & Terpene Profiles | The Ganja Club"
+  description="Explore cannabis cultivars by cannabinoid ratio, reported effects, terpene profile and medical use — with UK availability context for prescription patients."
+  canonicalUrl={`${siteUrl}/strains`}
+>
+  <Nav />
+
+  <main class="tool-page">
+    <header class="tool-header">
+      <p class="kicker">PATIENT TOOLS</p>
+      <h1>Strain Explorer</h1>
+      <p class="lede">
+        Cultivar profiles built for UK patients: published cannabinoid ranges, terpene profiles and
+        reported effects — with honest context on what's actually prescribable here. Filter by what
+        matters to you; product selection always rests with your prescribing clinician.
+      </p>
+    </header>
+
+    <div class="explorer-controls">
+      <input type="search" id="strain-search" placeholder="Search by name… (e.g. Bedrocan)" aria-label="Search strains by name" />
+      <div class="filter-group" data-group="type">
+        <span class="group-label">TYPE</span>
+        <button class="pill" data-val="indica">Indica</button>
+        <button class="pill" data-val="sativa">Sativa</button>
+        <button class="pill" data-val="hybrid">Hybrid</button>
+      </div>
+      <div class="filter-group" data-group="ratio">
+        <span class="group-label">RATIO</span>
+        <button class="pill" data-val="high-thc">High THC</button>
+        <button class="pill" data-val="balanced">Balanced</button>
+        <button class="pill" data-val="high-cbd">High CBD</button>
+      </div>
+      <div class="filter-group" data-group="effect">
+        <span class="group-label">EFFECT</span>
+        {EFFECTS.map(e => <button class="pill" data-val={e}>{e}</button>)}
+      </div>
+      <div class="filter-group" data-group="condition">
+        <span class="group-label">MEDICAL USE</span>
+        {CONDITIONS.map(c => <button class="pill" data-val={c}>{c}</button>)}
+      </div>
+      <div class="filter-group" data-group="flavour">
+        <span class="group-label">FLAVOUR</span>
+        {FLAVOURS.map(f => <button class="pill" data-val={f}>{f}</button>)}
+      </div>
+      <button class="pill reset" id="strain-reset">Reset filters</button>
+    </div>
+
+    <p class="result-count" id="result-count"></p>
+
+    <div class="strain-grid" id="strain-grid"></div>
+
+    <div class="empty-state" id="empty-state" hidden>
+      <p>No strains match — try adjusting your filters.</p>
+      <button class="pill" id="empty-reset">Reset all filters</button>
+    </div>
+
+    <section class="disclaimer-band">
+      <p><strong>About this data:</strong> {disclaimer} Last reviewed {new Date(lastReviewed).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}.</p>
+    </section>
+
+    <Newsletter />
+  </main>
+
+  <!-- Detail panel -->
+  <div class="panel-backdrop" id="panel-backdrop" hidden></div>
+  <aside class="detail-panel" id="detail-panel" aria-hidden="true">
+    <button class="panel-close" id="panel-close" aria-label="Close detail panel">✕</button>
+    <div id="panel-content"></div>
+  </aside>
+
+  <Footer />
+
+  <script type="application/json" id="strain-data" set:html={JSON.stringify(strains)} is:inline />
+</Base>
+
+<script>
+  const strains = JSON.parse(document.getElementById("strain-data")!.textContent!);
+  const grid = document.getElementById("strain-grid")!;
+  const search = document.getElementById("strain-search") as HTMLInputElement;
+  const countEl = document.getElementById("result-count")!;
+  const emptyEl = document.getElementById("empty-state")!;
+  const panel = document.getElementById("detail-panel")!;
+  const backdrop = document.getElementById("panel-backdrop")!;
+  const panelContent = document.getElementById("panel-content")!;
+
+  type Strain = typeof strains[number];
+
+  const ratioOf = (s: Strain) => {
+    const cbd = s.cbdRange[1], thc = s.thcRange[1];
+    if (cbd >= 8 && thc <= 8) return "high-cbd";
+    if (cbd >= 5 && thc >= 3) return "balanced";
+    return "high-thc";
+  };
+
+  const state: Record<string, string | null> = { type: null, ratio: null, effect: null, condition: null, flavour: null };
+
+  function readUrl() {
+    const q = new URLSearchParams(location.search);
+    for (const k of Object.keys(state)) state[k] = q.get(k);
+    search.value = q.get("q") || "";
+    document.querySelectorAll<HTMLButtonElement>(".filter-group .pill").forEach(p => {
+      const group = (p.closest(".filter-group") as HTMLElement).dataset.group!;
+      p.classList.toggle("active", state[group] === p.dataset.val);
+    });
+  }
+
+  function writeUrl() {
+    const q = new URLSearchParams();
+    for (const [k, v] of Object.entries(state)) if (v) q.set(k, v);
+    if (search.value.trim()) q.set("q", search.value.trim());
+    history.replaceState(null, "", q.toString() ? `?${q}` : location.pathname);
+  }
+
+  const ukBadge = (s: Strain) =>
+    s.ukAvailability.startsWith("Standardised") ? ["RX UK", "rx"] :
+    s.ukAvailability.startsWith("Available") ? ["UK CLINICS", "clinic"] : ["NAME VARIES", "varies"];
+
+  function card(s: Strain) {
+    const [label, cls] = ukBadge(s);
+    return `<article class="strain-card" data-id="${s.id}" tabindex="0" role="button" aria-label="Open ${s.name} details">
+      <div class="strain-top">
+        <h2>${s.name}</h2>
+        <span class="type-badge type-${s.type}">${s.type}</span>
+      </div>
+      <p class="ranges">THC ${s.thcRange[0]}–${s.thcRange[1]}% · CBD ${s.cbdRange[0]}–${s.cbdRange[1]}%</p>
+      <p class="effects">${s.effects.slice(0, 3).join(" · ")}</p>
+      <p class="flavours">${s.flavours.map((f: string) => `<span>${f}</span>`).join("")}</p>
+      <span class="uk-badge uk-${cls}">${label}</span>
+    </article>`;
+  }
+
+  function detail(s: Strain) {
+    return `
+      <p class="kicker">${s.type.toUpperCase()} · ${s.lineage}</p>
+      <h2>${s.name}</h2>
+      <p class="ranges big">THC ${s.thcRange[0]}–${s.thcRange[1]}% · CBD ${s.cbdRange[0]}–${s.cbdRange[1]}%</p>
+      <p class="desc">${s.description}</p>
+      <h3>Terpene profile</h3>
+      <p class="tags">${s.terpenes.map((t: string) => `<span>${t}</span>`).join("")}</p>
+      <h3>Reported effects</h3>
+      <p class="tags">${s.effects.map((e: string) => `<span>${e}</span>`).join("")}</p>
+      <h3>Cited medical uses</h3>
+      <p class="tags">${s.medicalUses.map((m: string) => `<span>${m}</span>`).join("")}</p>
+      <h3>UK availability</h3>
+      <p class="desc">${s.ukAvailability}.</p>
+      <p class="panel-note">Figures are typical published ranges — prescribed products carry batch-specific
+      certificates of analysis. Discuss product selection with your prescribing clinician.</p>
+      <a class="panel-cta" href="/clinics">Compare UK clinics →</a>`;
+  }
+
+  function openPanel(s: Strain) {
+    panelContent.innerHTML = detail(s);
+    panel.classList.add("open");
+    panel.setAttribute("aria-hidden", "false");
+    backdrop.hidden = false;
+  }
+  function closePanel() {
+    panel.classList.remove("open");
+    panel.setAttribute("aria-hidden", "true");
+    backdrop.hidden = true;
+  }
+
+  function render() {
+    const q = search.value.trim().toLowerCase();
+    const visible = strains.filter((s: Strain) =>
+      (!q || s.name.toLowerCase().includes(q)) &&
+      (!state.type || s.type === state.type) &&
+      (!state.ratio || ratioOf(s) === state.ratio) &&
+      (!state.effect || s.effects.includes(state.effect)) &&
+      (!state.condition || s.medicalUses.includes(state.condition)) &&
+      (!state.flavour || s.flavours.includes(state.flavour))
+    );
+    grid.innerHTML = visible.map(card).join("");
+    countEl.textContent = `${visible.length} of ${strains.length} strains`;
+    emptyEl.hidden = visible.length > 0;
+    grid.querySelectorAll<HTMLElement>(".strain-card").forEach(el => {
+      const open = () => openPanel(strains.find((s: Strain) => s.id === el.dataset.id)!);
+      el.addEventListener("click", open);
+      el.addEventListener("keydown", e => { if ((e as KeyboardEvent).key === "Enter") open(); });
+    });
+    writeUrl();
+  }
+
+  document.querySelectorAll<HTMLButtonElement>(".filter-group .pill").forEach(p => {
+    p.addEventListener("click", () => {
+      const group = (p.closest(".filter-group") as HTMLElement).dataset.group!;
+      const val = p.dataset.val!;
+      state[group] = state[group] === val ? null : val;
+      p.closest(".filter-group")!.querySelectorAll(".pill").forEach(x => x.classList.remove("active"));
+      if (state[group]) p.classList.add("active");
+      render();
+    });
+  });
+  const resetAll = () => {
+    for (const k of Object.keys(state)) state[k] = null;
+    search.value = "";
+    document.querySelectorAll(".filter-group .pill").forEach(x => x.classList.remove("active"));
+    render();
+  };
+  document.getElementById("strain-reset")!.addEventListener("click", resetAll);
+  document.getElementById("empty-reset")!.addEventListener("click", resetAll);
+  search.addEventListener("input", render);
+  document.getElementById("panel-close")!.addEventListener("click", closePanel);
+  backdrop.addEventListener("click", closePanel);
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closePanel(); });
+
+  readUrl();
+  render();
+</script>
+
+<style>
+  .tool-page { max-width: var(--max-width); margin: 0 auto; padding: 48px 20px 0; }
+  .tool-header { max-width: 760px; margin-bottom: 32px; }
+  .kicker { font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+    font-size: 0.65rem; color: var(--green); margin-bottom: 10px; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.8rem, 4vw, 2.6rem);
+    letter-spacing: -0.01em; color: var(--text); margin-bottom: 14px; }
+  .lede { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; }
+
+  .explorer-controls { margin-bottom: 20px; }
+  #strain-search { width: 100%; max-width: 420px; border-radius: var(--radius-btn);
+    border: 1px solid var(--border); background: var(--bg-card); color: var(--text);
+    font-family: var(--font-body); font-size: 0.95rem; padding: 12px 22px; margin-bottom: 18px; }
+  #strain-search:focus { outline: none; border-color: var(--green-accent); }
+  .filter-group { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+  .group-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.08em;
+    color: var(--text-muted); min-width: 88px; }
+  .pill { border-radius: var(--radius-btn); border: 1px solid var(--border); background: var(--bg-card);
+    color: var(--text); font-family: var(--font-body); font-size: 0.78rem; font-weight: 500;
+    padding: 7px 15px; cursor: pointer; transition: all .15s ease; }
+  .pill:hover { border-color: var(--green-accent); }
+  .pill.active { background: var(--green-accent); border-color: var(--green-accent); color: var(--text-on-dark); }
+  .pill:active { transform: scale(0.95); }
+  .pill.reset { color: var(--text-secondary); margin-top: 4px; }
+
+  .result-count { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--text-muted); margin-bottom: 16px; }
+
+  .strain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); margin-bottom: 48px; }
+  :global(.strain-card) { background: var(--bg-card); border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 22px; cursor: pointer; transition: box-shadow .2s ease; }
+  :global(.strain-card:hover) { box-shadow: var(--shadow-lg); }
+  :global(.strain-top) { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+  :global(.strain-card h2) { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--text); }
+  :global(.type-badge) { border-radius: var(--radius-btn); font-size: 0.6rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em; padding: 5px 12px; color: var(--text-on-dark); }
+  :global(.type-indica) { background: var(--green-house); }
+  :global(.type-sativa) { background: var(--gold); }
+  :global(.type-hybrid) { background: linear-gradient(120deg, var(--green-accent), var(--gold)); }
+  :global(.strain-card .ranges) { font-size: 0.82rem; font-weight: 600; color: var(--green); margin: 10px 0 6px; }
+  :global(.strain-card .effects) { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 10px;
+    text-transform: capitalize; }
+  :global(.strain-card .flavours span) { display: inline-block; background: var(--green-bg);
+    border-radius: var(--radius-btn); font-size: 0.7rem; color: var(--text-secondary);
+    padding: 4px 11px; margin: 0 6px 6px 0; text-transform: capitalize; }
+  :global(.uk-badge) { display: inline-block; border-radius: var(--radius-btn); font-size: 0.58rem;
+    font-weight: 600; letter-spacing: 0.06em; padding: 4px 10px; margin-top: 4px; }
+  :global(.uk-rx) { background: var(--green-light); color: var(--green); }
+  :global(.uk-clinic) { background: var(--green-bg); color: var(--green); }
+  :global(.uk-varies) { background: var(--gold-lightest); color: var(--gold); border: 1px solid var(--gold-light); }
+
+  .empty-state { text-align: center; padding: 56px 0; color: var(--text-secondary); }
+  .empty-state .pill { margin-top: 16px; }
+
+  .panel-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 60; }
+  .detail-panel { position: fixed; top: 0; right: 0; bottom: 0; width: min(440px, 92vw);
+    background: var(--bg-card); box-shadow: var(--shadow-lg); z-index: 61; padding: 56px 30px 40px;
+    overflow-y: auto; transform: translateX(105%); transition: transform .25s ease; }
+  .detail-panel.open { transform: translateX(0); }
+  .panel-close { position: absolute; top: 16px; right: 16px; border: none; background: var(--bg-cool);
+    border-radius: var(--radius-circle); width: 36px; height: 36px; cursor: pointer; color: var(--text);
+    font-size: 0.9rem; }
+  :global(#panel-content h2) { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600;
+    color: var(--text); margin-bottom: 8px; }
+  :global(#panel-content h3) { font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--text-muted); margin: 20px 0 8px; }
+  :global(#panel-content .kicker) { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em;
+    color: var(--green); margin-bottom: 8px; }
+  :global(#panel-content .ranges.big) { font-size: 1rem; font-weight: 600; color: var(--green); margin-bottom: 14px; }
+  :global(#panel-content .desc) { font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary); }
+  :global(#panel-content .tags span) { display: inline-block; background: var(--green-bg);
+    border-radius: var(--radius-btn); font-size: 0.74rem; color: var(--text-secondary);
+    padding: 5px 13px; margin: 0 6px 6px 0; text-transform: capitalize; }
+  :global(#panel-content .panel-note) { font-size: 0.76rem; color: var(--text-muted); line-height: 1.5;
+    margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border-light); }
+  :global(#panel-content .panel-cta) { display: inline-block; margin-top: 16px; border-radius: var(--radius-btn);
+    background: var(--green-accent); color: var(--text-on-dark); font-size: 0.85rem; font-weight: 600;
+    padding: 11px 24px; text-decoration: none; }
+  :global(#panel-content .panel-cta:hover) { background: var(--green); }
+
+  .disclaimer-band { background: var(--green-bg); border-radius: var(--radius); padding: 20px 24px; margin-bottom: 48px; }
+  .disclaimer-band p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; }
+
+  @media (max-width: 900px) { .strain-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) {
+    .strain-grid { grid-template-columns: 1fr; }
+    .detail-panel { top: auto; left: 0; right: 0; width: 100%; max-height: 84vh;
+      transform: translateY(105%); border-radius: var(--radius) var(--radius) 0 0; }
+    .detail-panel.open { transform: translateY(0); }
+  }
+</style>

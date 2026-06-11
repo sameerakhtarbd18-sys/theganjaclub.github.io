@@ -5,6 +5,7 @@ export interface Props {
   ogImage?: string;
   ogType?: string;
   region?: string;
+  canonicalUrl?: string;
 }
 
 const {
@@ -13,10 +14,11 @@ const {
   ogImage = "/images/flower/pexels-kindelmedia-7667912.webp",
   ogType = "website",
   region,
+  canonicalUrl,
 } = Astro.props;
 
 const siteUrl = "https://theganjaclub.netlify.app";
-const ogUrl = region ? `${siteUrl}/${region}` : siteUrl;
+const ogUrl = canonicalUrl || (region ? `${siteUrl}/${region}` : siteUrl);
 const fullOgImage = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}`;
 ---
 
@@ -42,6 +44,15 @@ const fullOgImage = ogImage.startsWith("http") ? ogImage : `${siteUrl}${ogImage}
   
   <link rel="canonical" href={ogUrl} />
   <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="The Ganja Club" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "The Ganja Club",
+    url: siteUrl,
+    logo: `${siteUrl}/logo.svg`,
+    sameAs: ["https://www.instagram.com/theganjaclub_/"],
+  })} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   
   <!-- Fonts: Inter (SoDoSans substitute) + Lora (headings) — Starbucks-inspired -->
