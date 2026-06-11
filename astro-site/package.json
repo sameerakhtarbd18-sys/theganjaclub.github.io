@@ -7,13 +7,12 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && npx pagefind --site dist",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "postbuild": "npx pagefind --site dist"
   },
   "dependencies": {
-    "@astrojs/netlify": "^7.0.10",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^6.3.7",

@@ -660,3 +660,16 @@ a:hover { color: var(--green); }
   .card-grid { grid-template-columns: 1fr; }
   .article-body { font-size: 0.9rem; }
 }
+
+/* Brand wordmark (masthead identity, replaces leaf logo) */
+.brand-wordmark {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.3rem;
+  letter-spacing: 0.01em;
+  color: var(--green);
+  white-space: nowrap;
+}
+.nav-brand { text-decoration: none; display: flex; align-items: center; }
+.nav-brand:hover .brand-wordmark { color: var(--green-accent); }
+[data-theme="dark"] .brand-wordmark { color: var(--green-light); }

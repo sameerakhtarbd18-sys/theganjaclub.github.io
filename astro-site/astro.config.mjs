@@ -3,7 +3,8 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   output: "static",
-  site: "https://theganjaclub.netlify.app",
+  // Updated for Cloudflare Pages. Change to the custom domain when one is purchased.
+  site: "https://theganjaclub.pages.dev",
   integrations: [sitemap()],
   build: {
     assets: "assets",

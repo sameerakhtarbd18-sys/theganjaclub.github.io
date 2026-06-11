@@ -5,23 +5,21 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import ArticleCard from "../components/ArticleCard.astro";
+import Search from "../components/Search.astro";
 import Newsletter from "../components/Newsletter.astro";
 import AffiliateBanner from "../components/AffiliateBanner.astro";
-import Search from "../components/Search.astro";
 
-const posts = await getCollection("posts", ({ data }) => !data.slug.includes("daily-briefing"));
-posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+const allPosts = await getCollection("posts");
+allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
-const featured = posts[0];
-const latest = posts.slice(1, 7);
+const editorial = allPosts.filter(p => !p.data.slug.includes("daily-briefing"));
+const latestBriefing = allPosts.find(p => p.data.slug.includes("daily-briefing"));
+const briefingHref = latestBriefing ? `/post/${latestBriefing.data.slug}` : "/uk";
 
-const regionPosts = (region: string) =>
-  posts.filter(p => p.data.region === region).slice(0, 3);
-
-const ukPosts = regionPosts("uk");
-const europePosts = regionPosts("europe");
-const usaPosts = regionPosts("usa");
-const globalPosts = regionPosts("global");
+const featured = editorial[0];
+const latest = editorial.slice(1, 4);
+const ukPosts = editorial.filter(p => p.data.region === "uk").slice(0, 3);
+const worldPosts = editorial.filter(p => p.data.region !== "uk").slice(0, 3);
 
 function getReadTime(body: string): number {
   return Math.max(1, Math.ceil((body || "").split(/\s+/).length / 200));
@@ -33,24 +31,62 @@ function getReadTime(body: string): number {
   description="Daily intelligence on UK medical cannabis, global policy reform, industry analysis, and the culture that binds it all."
 >
 
-<AffiliateBanner />
 <Nav />
 <Search />
 
 <main id="main-content">
-  <Hero post={featured} />
+
+  <!-- Identity hero: orient first -->
+  <section class="identity-hero">
+    <p class="identity-kicker">INDEPENDENT · UK · PATIENT-FIRST</p>
+    <h1>Medical cannabis in the UK,<br />covered properly.</h1>
+    <p class="identity-sub">
+      Daily briefings, patient tools and guides for the system nobody explains.
+    </p>
+    <div class="identity-ctas">
+      <a class="cta cta-filled" href={briefingHref}>Today's briefing</a>
+      <a class="cta cta-outline" href="/clinics">Compare clinics</a>
+      <a class="cta cta-ghost" href="/guides">Start here: guides</a>
+    </div>
+  </section>
+
+  <!-- Patient tools band -->
+  <section class="tools-band">
+    <div class="tools-inner">
+      <p class="tools-kicker">PATIENT TOOLS</p>
+      <div class="tools-grid">
+        <a class="tool-card" href="/clinics">
+          <span class="tool-name">Compare clinics</span>
+          <span class="tool-desc">Every major UK clinic — fees, models and onboarding speed, side by side.</span>
+          <span class="tool-go">Open tool →</span>
+        </a>
+        <a class="tool-card" href="/eligibility">
+          <span class="tool-name">Eligibility checker</span>
+          <span class="tool-desc">Could you qualify? How the UK system actually works, in two minutes.</span>
+          <span class="tool-go">Open tool →</span>
+        </a>
+        <a class="tool-card" href="/strains">
+          <span class="tool-name">Strain explorer</span>
+          <span class="tool-desc">Cannabinoid ranges, terpenes and UK availability — built for patients.</span>
+          <span class="tool-go">Open tool →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {featured && <Hero post={featured} />}
 
   <section class="section">
     <div class="section-header">
       <h2>Latest Briefings</h2>
-      <a href="/">View All →</a>
+      <a href="/uk">View All →</a>
     </div>
     <div class="card-grid">
       {latest.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
     </div>
   </section>
 
-  <hr class="section-divider" />
+  <AffiliateBanner />
 
   <section class="section">
     <div class="section-header">
@@ -64,31 +100,11 @@ function getReadTime(body: string): number {
 
   <section class="section">
     <div class="section-header">
-      <h2>Europe</h2>
-      <a href="/europe">All Europe →</a>
+      <h2>World</h2>
+      <a href="/global">Europe, USA &amp; Global →</a>
     </div>
     <div class="card-grid">
-      {europePosts.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-header">
-      <h2>United States</h2>
-      <a href="/usa">All USA →</a>
-    </div>
-    <div class="card-grid">
-      {usaPosts.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-header">
-      <h2>Global</h2>
-      <a href="/global">All Global →</a>
-    </div>
-    <div class="card-grid">
-      {globalPosts.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
+      {worldPosts.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
     </div>
   </section>
 
@@ -97,17 +113,70 @@ function getReadTime(body: string): number {
 
 <Footer />
 
-<button class="back-to-top" id="back-to-top" aria-label="Back to top" style="position:fixed;bottom:80px;right:16px;z-index:140;width:36px;height:36px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);box-shadow:var(--shadow);cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;color:var(--text-secondary);">↑</button>
-
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
 <script>
-  const btn = document.getElementById('back-to-top');
-  if (btn) {
-    window.addEventListener('scroll', () => {
-      btn.classList.toggle('visible', window.scrollY > 500);
-      btn.style.opacity = window.scrollY > 500 ? '1' : '0';
-    });
-    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-  }
+  const btn = document.getElementById("back-to-top")!;
+  window.addEventListener("scroll", () => btn.classList.toggle("visible", window.scrollY > 500));
+  btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 </script>
 
 </Base>
+
+<style>
+  .identity-hero {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 72px 20px 56px;
+    text-align: center;
+  }
+  .identity-kicker {
+    font-weight: 600; font-size: 0.65rem; letter-spacing: 0.24em;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .identity-hero h1 {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -0.01em;
+    line-height: 1.15; color: var(--text); margin-bottom: 16px;
+  }
+  .identity-sub {
+    color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6;
+    max-width: 520px; margin: 0 auto 28px;
+  }
+  .identity-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .cta {
+    border-radius: var(--radius-btn); font-size: 0.92rem; font-weight: 600;
+    padding: 13px 28px; text-decoration: none; transition: all .15s ease;
+  }
+  .cta:active { transform: scale(0.95); }
+  .cta-filled { background: var(--green-accent); color: var(--text-on-dark); }
+  .cta-filled:hover { background: var(--green); }
+  .cta-outline { border: 1.5px solid var(--green-accent); color: var(--green-accent); }
+  .cta-outline:hover { background: var(--green-bg); }
+  .cta-ghost { border: 1px solid var(--border); color: var(--text-secondary); }
+  .cta-ghost:hover { border-color: var(--green-accent); color: var(--green-accent); }
+
+  .tools-band { background: var(--green-house); margin-bottom: 8px; }
+  .tools-inner { max-width: var(--max-width); margin: 0 auto; padding: 40px 20px 44px; }
+  .tools-kicker {
+    font-weight: 600; font-size: 0.65rem; letter-spacing: 0.2em;
+    color: var(--gold); margin-bottom: 20px;
+  }
+  .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
+  .tool-card {
+    display: flex; flex-direction: column; gap: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: var(--radius); padding: 22px;
+    text-decoration: none; transition: background .15s ease, border-color .15s ease;
+  }
+  .tool-card:hover { background: rgba(255,255,255,0.1); border-color: var(--gold-light); }
+  .tool-name { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; color: var(--text-on-dark); }
+  .tool-desc { font-size: 0.88rem; line-height: 1.5; color: var(--text-on-dark-soft); }
+  .tool-go { font-size: 0.78rem; font-weight: 600; color: var(--gold); margin-top: 6px; }
+
+  @media (max-width: 900px) { .tools-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) {
+    .identity-hero { padding: 52px 20px 40px; }
+    .identity-ctas .cta { width: 100%; text-align: center; }
+  }
+</style>
