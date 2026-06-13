@@ -4,7 +4,7 @@ slug: "daily-briefing-11-06-2026"
 date: "11 June 2026"
 region: "uk"
 excerpt: "Federal marijuana trafficking prosecutions in US fall to historic low New data from the United States shows that federal law enforcement officials charged fewer than 400 people with marijuana"
-image: "/images/flower/pexels-rdne-8139077.webp"
+image: "/images/heroes/hero-daily-briefing-11-06-2026.jpg"
 category: "news"
 tags:
   - Briefing

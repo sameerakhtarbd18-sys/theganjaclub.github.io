@@ -4,7 +4,7 @@ slug: "daily-briefing-21-05-2026"
 date: "21 May 2026"
 region: "uk"
 excerpt: "House-approved US funding bill includes medical cannabis access for veterans The US House of Representatives has approved a Fiscal Year 2027 funding bill that includes a provision allowing veterans"
-image: "/images/industrial-weed/pexels-dadgrass-9705351.webp"
+image: "/images/heroes/hero-daily-briefing-21-05-2026.jpg"
 category: "news"
 tags:
   - Briefing

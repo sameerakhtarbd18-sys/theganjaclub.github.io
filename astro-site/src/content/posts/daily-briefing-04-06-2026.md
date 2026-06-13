@@ -4,7 +4,7 @@ slug: "daily-briefing-04-06-2026"
 date: "4 June 2026"
 region: "uk"
 excerpt: "Kentucky governor signs executive order expanding medical cannabis access Governor Andy Beshear has issued an emergency executive order expanding access to medical cannabis in Kentucky. The order,"
-image: "/images/flower/pexels-teanna-morgan-48865981-7584671.webp"
+image: "/images/heroes/hero-daily-briefing-04-06-2026.jpg"
 category: "news"
 tags:
   - Briefing

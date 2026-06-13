@@ -4,7 +4,7 @@ slug: "daily-briefing-24-05-2026"
 date: "24 May 2026"
 region: "uk"
 excerpt: "Amber heat health alerts issued for UK bank holiday weekend The UK Health Security Agency has issued amber heat health alerts for the bank holiday weekend, with forecasters predicting record-breaking"
-image: "/images/flower/pexels-manuschorchit-18856165.webp"
+image: "/images/heroes/hero-daily-briefing-24-05-2026.jpg"
 category: "news"
 tags:
   - Briefing

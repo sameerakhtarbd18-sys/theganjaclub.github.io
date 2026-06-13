@@ -4,7 +4,7 @@ slug: "daily-briefing-23-05-2026"
 date: "23 May 2026"
 region: "uk"
 excerpt: "US House passes funding bill to expand medical cannabis access for veterans The US House of Representatives has approved an FY27 funding bill that includes a provision to expand medical cannabis"
-image: "/images/flower/pexels-teanna-morgan-48865981-7584671.webp"
+image: "/images/heroes/hero-daily-briefing-23-05-2026.jpg"
 category: "news"
 tags:
   - Briefing
