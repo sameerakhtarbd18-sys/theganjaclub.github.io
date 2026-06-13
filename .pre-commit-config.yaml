@@ -1,0 +1,6 @@
+# Local guard: scans staged changes for secrets before each commit.
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0          # `pre-commit autoupdate` will set the current latest
+    hooks:
+      - id: gitleaks
