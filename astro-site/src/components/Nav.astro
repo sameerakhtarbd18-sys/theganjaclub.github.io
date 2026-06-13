@@ -100,7 +100,6 @@ function isGuides() {
       if (!toggle) return;
       toggle.addEventListener('click', (e) => {
         e.preventDefault();
-        e.stopPropagation();
         const willOpen = !d.classList.contains('open');
         closeAll(d);
         d.classList.toggle('open', willOpen);
