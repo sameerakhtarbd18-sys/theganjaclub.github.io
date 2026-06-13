@@ -133,7 +133,10 @@ a:hover { color: var(--green); }
 .nav-brand img { height: 34px; width: auto; }
 .nav-links {
   display: flex; align-items: center; gap: 2px;
-  overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  /* Do NOT use overflow-x:auto here. A non-visible overflow on one axis forces
+     overflow-y to compute to `auto`, clipping the absolutely positioned
+     dropdown menus that hang below the bar (breaks desktop). Keep visible. */
+  overflow: visible;
 }
 .nav-links::-webkit-scrollbar { display: none; }
 
