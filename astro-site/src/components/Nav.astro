@@ -81,7 +81,7 @@ function isGuides() {
   </div>
 </nav>
 
-<script>
+<script is:inline>
   function initNavDropdowns() {
     const dropdowns = Array.from(document.querySelectorAll('[data-dropdown]'));
     if (!dropdowns.length) return;
@@ -98,16 +98,26 @@ function isGuides() {
     dropdowns.forEach((d) => {
       const toggle = d.querySelector('[data-dropdown-toggle]');
       if (!toggle) return;
-      toggle.addEventListener('click', (e) => {
+      
+      function handleToggle(e) {
         e.preventDefault();
+        e.stopPropagation();
         const willOpen = !d.classList.contains('open');
         closeAll(d);
-        d.classList.toggle('open', willOpen);
+        if (willOpen) {
+          d.classList.add('open');
+        } else {
+          d.classList.remove('open');
+        }
         toggle.setAttribute('aria-expanded', String(willOpen));
-      });
+      }
+      
+      toggle.addEventListener('click', handleToggle);
+      // Faster response on touch devices
+      toggle.addEventListener('touchstart', handleToggle, {passive: false});
     });
 
-    // tap/click outside closes everything
+    // Click outside closes everything
     document.addEventListener('click', (e) => {
       if (!e.target.closest('[data-dropdown]')) closeAll();
     });
@@ -123,10 +133,10 @@ function isGuides() {
     hamburger.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('mobile-open');
       hamburger.setAttribute('aria-expanded', String(isOpen));
-      hamburger.querySelector('.hamburger-icon')!.textContent = isOpen ? '✕' : '☰';
+      hamburger.querySelector('.hamburger-icon').textContent = isOpen ? '\u2715' : '\u2630';
     });
   }
 
-  if (document.readyState !== 'loading') initNavDropdowns();
-  else document.addEventListener('DOMContentLoaded', initNavDropdowns);
+  // Run immediately — this script is inline, no DOMContentLoaded needed
+  initNavDropdowns();
 </script>
