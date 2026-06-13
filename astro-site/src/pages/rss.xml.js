@@ -8,7 +8,7 @@ export async function GET(context) {
   return rss({
     title: "The Ganja Club",
     description: "Medical cannabis news, policy analysis, and culture.",
-    site: context.site || "https://theganjaclub.netlify.app",
+    site: context.site || "https://theganjaclub.co.uk",
     items: posts.map(post => ({
       title: post.data.title,
       description: post.data.excerpt,

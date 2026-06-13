@@ -10,7 +10,7 @@ const { title, slug, excerpt, image, tags, date, region } = post.data;
 const body = post.body || "";
 const readTime = Math.max(1, Math.ceil(body.split(/\s+/).length / 200));
 const kicker = tags?.[0] || "BRIEFING";
-const siteUrl = "https://theganjaclub.netlify.app";
+const siteUrl = "https://theganjaclub.co.uk";
 const imgSrc = image.startsWith("http") ? image : `${siteUrl}${image}`;
 const formattedDate = new Date(date).toLocaleDateString("en-GB", {
   day: "numeric", month: "long", year: "numeric"

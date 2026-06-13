@@ -11,7 +11,7 @@ export interface Props {
 
 const { title, slug, excerpt, image, tags, date, readTime = 3 } = Astro.props;
 const kicker = (tags && tags.length > 0) ? tags[0] : "BRIEFING";
-const siteUrl = "https://theganjaclub.netlify.app";
+const siteUrl = "https://theganjaclub.co.uk";
 const imgSrc = image.startsWith("http") ? image : `${siteUrl}${image}`;
 const formattedDate = new Date(date).toLocaleDateString("en-GB", {
   day: "numeric", month: "long", year: "numeric"

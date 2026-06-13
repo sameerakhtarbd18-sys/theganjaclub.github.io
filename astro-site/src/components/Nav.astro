@@ -91,17 +91,24 @@ function isGuides() {
 
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
-      if (isMobile()) {
-        const wasOpen = dropdown.classList.contains('open');
-        document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
-        if (!wasOpen) dropdown.classList.add('open');
-      }
+      e.stopPropagation();
+      const wasOpen = dropdown.classList.contains('open');
+      // Close all dropdowns
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+      // Toggle this one (works on both desktop and mobile)
+      if (!wasOpen) dropdown.classList.add('open');
     });
 
+    // Close when clicking outside
     document.addEventListener('click', (e) => {
       if (!dropdown.contains(e.target)) {
         dropdown.classList.remove('open');
       }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') dropdown.classList.remove('open');
     });
 
     menu.querySelectorAll('a').forEach(link => {
