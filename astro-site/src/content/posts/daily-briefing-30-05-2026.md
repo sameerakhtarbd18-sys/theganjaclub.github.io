@@ -4,7 +4,7 @@ slug: "daily-briefing-30-05-2026"
 date: "30 May 2026"
 region: "uk"
 excerpt: "Analysis finds opioid overdose rates decline after cannabis legalisation A new analysis published this week adds to the growing body of evidence linking legal cannabis access to reductions in"
-image: "/images/flower/pexels-keloke-grow-2160410644-36874625 (1).webp"
+image: "/images/heroes/hero-daily-briefing-30-05-2026.jpg"
 category: "news"
 tags:
   - Briefing

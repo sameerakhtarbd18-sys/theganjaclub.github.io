@@ -4,7 +4,7 @@ slug: "daily-briefing-25-05-2026"
 date: "25 May 2026"
 region: "usa"
 excerpt: "NORML calls for renewed support in fight for cannabis justice The US advocacy organisation NORML has issued a public appeal for continued support, arguing that the fight for \"justice, equity, and"
-image: "/images/flower/pexels-diego-barros-2149566212-33856589.webp"
+image: "/images/heroes/hero-daily-briefing-25-05-2026.jpg"
 category: "news"
 tags:
   - Briefing

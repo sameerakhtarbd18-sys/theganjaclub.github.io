@@ -4,7 +4,7 @@ slug: "daily-briefing-26-05-2026"
 date: "26 May 2026"
 region: "uk"
 excerpt: "NORML seeks representation at DEA rescheduling hearing The National Organisation for the Reform of Marijuana Laws (NORML) has formally requested a seat at the upcoming Drug Enforcement Administration"
-image: "/images/flower/pexels-diego-barros-2149566212-33639863 (1).webp"
+image: "/images/heroes/hero-daily-briefing-26-05-2026.jpg"
 category: "news"
 tags:
   - Briefing
