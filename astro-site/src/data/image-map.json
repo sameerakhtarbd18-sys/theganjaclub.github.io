@@ -1,0 +1,661 @@
+{
+  "_comment": "TGC Editorial Image Map — Maps each article slug to its correct image type based on article tags and region. This file does NOT replace existing images; it defines what type each article SHOULD have when images are generated.",
+  "_image_types": {
+    "A": "Branded typographic card (1200x630 JPEG, article-hero.py) — daily briefings, editorial",
+    "B": "AI illustration via Replicate Flux (abstract editorial, no photorealism, no faces) — research, science, industry",
+    "C": "Wikimedia Commons CC-licensed photo + house duotone treatment (tgc-duotone.py) — civic, human, place"
+  },
+  "_duotone_spec": {
+    "shadows": "#122620",
+    "midtones": "#1E3932 / #2b5148",
+    "highlights": "#d4e9e2",
+    "grain": "2%",
+    "quality": "JPEG q88",
+    "script": "~/.hermes/scripts/tgc-duotone.py"
+  },
+  "_no_repeat_rule": "No image reused within 30 days OR 15 articles, whichever is longer. Check ~/.hermes/tgc-image-log.json before assigning; log after publishing.",
+  "_classification_rules": {
+    "Policy/Legislation/Law": "Type C — civic imagery (parliament, courts, documents)",
+    "Patient Stories/Access/Healthcare": "Type C — human imagery (clinical, pharmacy, consultation)",
+    "Research/Science/Medical": "Type B — abstract illustration (lab, molecular, research)",
+    "Industry/Business/Market": "Type B or C — facilities (cultivation, supply chain)",
+    "International/Europe/USA/Global": "Type C — place (skyline, landmark, parliament)",
+    "Daily Briefing": "Type A — branded card (keep existing hero card system)"
+  },
+  "_last_updated": "2026-06-18",
+  "articles": {
+    "access-private-clinic-guide": {
+      "title": "How to Access Medical Cannabis Through a Private UK Clinic",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — clinical, pharmacy, consultation, human",
+      "current_image": "Legacy Pexels stock",
+      "region": "uk",
+      "tags": [
+        "Patient Stories",
+        "Guide"
+      ]
+    },
+    "cannabis-europa-london-2026-recap": {
+      "title": "Cannabis Europa 2026: The Continent Accelerates as the UK Stands Still",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — parliament, courts, government buildings, civic",
+      "current_image": "Legacy Pexels stock",
+      "region": "europe",
+      "tags": [
+        "Conference",
+        "Europe",
+        "Policy",
+        "Industry"
+      ]
+    },
+    "cbd-anxiety-clinical-trials": {
+      "title": "CBD for Anxiety: What the Latest Clinical Trials Tell Us",
+      "image_type": "B",
+      "imagery_hint": "Abstract editorial illustration — lab, molecular, research",
+      "current_image": "Legacy Pexels stock",
+      "region": "global",
+      "tags": [
+        "Research",
+        "Science",
+        "CBD"
+      ]
+    },
+    "cqc-concerns-private-clinics": {
+      "title": "CQC Concerns Add to Scrutiny of UK Private Medical Cannabis Clinics",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — clinical, pharmacy, consultation, human",
+      "current_image": "Legacy Pexels stock",
+      "region": "uk",
+      "tags": [
+        "UK Policy",
+        "Clinics",
+        "Regulation"
+      ]
+    },
+    "czech-republic-cannabis-reform-2026": {
+      "title": "Prague’s Green Signal: Czech Republic Charts Its Own Path to Adult-Use Cannabis Regulation",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — parliament, courts, government buildings, civic",
+      "current_image": "Legacy Pexels stock",
+      "region": "europe",
+      "tags": [
+        "Czech Republic",
+        "Europe",
+        "Legalisation",
+        "Policy",
+        "Reform"
+      ]
+    },
+    "daily-briefing-02-06-2026": {
+      "title": "The Daily Briefing — 2 June 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "USA",
+        "Health",
+        "Policy",
+        "Reform",
+        "Research"
+      ]
+    },
+    "daily-briefing-03-06-2026": {
+      "title": "The Daily Briefing — 3 June 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "USA",
+        "Health",
+        "Industry",
+        "Policy",
+        "Reform",
+        "Research"
+      ]
+    },
+    "daily-briefing-04-06-2026": {
+      "title": "The Daily Briefing — 4 June 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "USA",
+        "Health",
+        "Industry",
+        "Policy",
+        "Reform",
+        "Research"
+      ]
+    },
+    "daily-briefing-05-06-2026": {
+      "title": "The Daily Briefing — 5 June 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "USA",
+        "Health",
+        "Industry",
+        "Policy",
+        "Research"
+      ]
+    },
+    "daily-briefing-11-06-2026": {
+      "title": "The Daily Briefing — 11 June 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "Europe",
+        "USA",
+        "Health",
+        "Policy",
+        "Reform",
+        "Research"
+      ]
+    },
+    "daily-briefing-18-05-2026": {
+      "title": "The Daily Briefing — 18 May 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "Policy",
+        "Reform"
+      ]
+    },
+    "daily-briefing-21-05-2026": {
+      "title": "The Daily Briefing — 21 May 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "USA",
+        "Health",
+        "Industry",
+        "Policy",
+        "Reform"
+      ]
+    },
+    "daily-briefing-22-05-2026": {
+      "title": "The Daily Briefing — 22 May 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "USA",
+        "Health",
+        "Industry",
+        "Policy",
+        "Reform"
+      ]
+    },
+    "daily-briefing-23-05-2026": {
+      "title": "The Daily Briefing — 23 May 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "USA",
+        "Health",
+        "Policy",
+        "Reform"
+      ]
+    },
+    "daily-briefing-24-05-2026": {
+      "title": "The Daily Briefing — 24 May 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "Health",
+        "Policy",
+        "Research"
+      ]
+    },
+    "daily-briefing-25-05-2026": {
+      "title": "The Daily Briefing — 25 May 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "usa",
+      "tags": [
+        "Briefing",
+        "USA",
+        "Health",
+        "Industry",
+        "Policy",
+        "Reform",
+        "Research"
+      ]
+    },
+    "daily-briefing-26-05-2026": {
+      "title": "The Daily Briefing — 26 May 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "USA",
+        "Health",
+        "Industry",
+        "Policy",
+        "Reform",
+        "Research"
+      ]
+    },
+    "daily-briefing-27-05-2026": {
+      "title": "The Daily Briefing — 27 May 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "USA",
+        "Health",
+        "Industry",
+        "Policy",
+        "Reform",
+        "Research"
+      ]
+    },
+    "daily-briefing-28-05-2026": {
+      "title": "The Daily Briefing — 28 May 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "USA",
+        "Health",
+        "Policy",
+        "Reform",
+        "Research"
+      ]
+    },
+    "daily-briefing-29-05-2026": {
+      "title": "The Daily Briefing — 29 May 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "USA",
+        "Health",
+        "Industry",
+        "Policy",
+        "Reform",
+        "Research"
+      ]
+    },
+    "daily-briefing-30-05-2026": {
+      "title": "The Daily Briefing — 30 May 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "USA",
+        "Health",
+        "Policy",
+        "Reform",
+        "Research"
+      ]
+    },
+    "daily-briefing-31-05-2026": {
+      "title": "The Daily Briefing — 31 May 2026",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — daily briefing",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Briefing",
+        "UK",
+        "Europe",
+        "USA",
+        "Health",
+        "Industry",
+        "Policy",
+        "Reform",
+        "Research"
+      ]
+    },
+    "dea-cannabis-rescheduling-hearings-march-2026": {
+      "title": "DEA Cannabis Rescheduling Hearings Begin: Historic Shift Looms as Schedule III Debate Intensifies",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — parliament, courts, government buildings, civic",
+      "current_image": "Legacy Pexels stock",
+      "region": "usa",
+      "tags": [
+        "USA",
+        "DEA",
+        "Policy",
+        "Rescheduling",
+        "Reform"
+      ]
+    },
+    "delaware-adult-use-cannabis-launch": {
+      "title": "First Light in the First State: Delaware Launches Adult-Use Cannabis Sales, Becoming 25th Market",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — parliament, courts, government buildings, civic",
+      "current_image": "Legacy Pexels stock",
+      "region": "usa",
+      "tags": [
+        "USA",
+        "Legalisation",
+        "Policy",
+        "Delaware"
+      ]
+    },
+    "european-medical-cannabis-market-growth-2026": {
+      "title": "European Medical Cannabis Market Breaks €2 Billion Barrier in 2026",
+      "image_type": "B",
+      "imagery_hint": "Flux abstract — cultivation facilities, supply chain, industry",
+      "current_image": "Legacy Pexels stock",
+      "region": "europe",
+      "tags": [
+        "Europe",
+        "Market Analysis",
+        "Industry",
+        "Medical"
+      ]
+    },
+    "fda-cbd-regulation-pathway-2026": {
+      "title": "FDA Unveils Long-Awaited CBD Regulatory Framework, Sparking Industry Debate",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — clinical, pharmacy, consultation, human",
+      "current_image": "Legacy Pexels stock",
+      "region": "usa",
+      "tags": [
+        "USA",
+        "CBD",
+        "FDA",
+        "Regulation",
+        "Health"
+      ]
+    },
+    "germany-adult-use-cannabis-one-year-review": {
+      "title": "Germany’s Cannabis Experiment: One Year On from the Regional Pilot Programmes",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — parliament, courts, government buildings, civic",
+      "current_image": "Legacy Pexels stock",
+      "region": "europe",
+      "tags": [
+        "Germany",
+        "Europe",
+        "Legalisation",
+        "Policy"
+      ]
+    },
+    "germany-uk-comparison": {
+      "title": "What the UK Can Learn From Germany's Medical Cannabis Model",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — parliament, courts, government buildings, civic",
+      "current_image": "Legacy Pexels stock",
+      "region": "europe",
+      "tags": [
+        "Global",
+        "Policy",
+        "Europe"
+      ]
+    },
+    "global-cannabis-reform-roundup": {
+      "title": "Global Cannabis Reform Roundup: Policy Changes Across the World",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — parliament, courts, government buildings, civic",
+      "current_image": "Legacy Pexels stock",
+      "region": "global",
+      "tags": [
+        "Global",
+        "Policy",
+        "Reform"
+      ]
+    },
+    "home-office-cannabis-scheduling": {
+      "title": "Home Office Review: Why Cannabis Scheduling Remains a Political Flashpoint",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — parliament, courts, government buildings, civic",
+      "current_image": "Legacy Pexels stock",
+      "region": "uk",
+      "tags": [
+        "UK Policy",
+        "Politics"
+      ]
+    },
+    "key-cannabinoid-research-2026": {
+      "title": "Key Cannabinoid Research Studies to Watch in 2026",
+      "image_type": "B",
+      "imagery_hint": "Abstract editorial illustration — lab, molecular, research",
+      "current_image": "Legacy Pexels stock",
+      "region": "global",
+      "tags": [
+        "Research",
+        "Science",
+        "Medicine"
+      ]
+    },
+    "london-cannabis-culture": {
+      "title": "Culture Shift: How London's Cannabis Scene Is Evolving",
+      "image_type": "B",
+      "imagery_hint": "Flux abstract — cultural, community, editorial illustration",
+      "current_image": "Legacy Pexels stock",
+      "region": "uk",
+      "tags": [
+        "Culture",
+        "Community",
+        "Lifestyle"
+      ]
+    },
+    "nhs-prescribing-access": {
+      "title": "NHS Prescribing: Why Medical Cannabis Remains Out of Reach for Most Patients",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — clinical, pharmacy, consultation, human",
+      "current_image": "Legacy Pexels stock",
+      "region": "uk",
+      "tags": [
+        "UK Policy",
+        "NHS",
+        "Access"
+      ]
+    },
+    "patient-rights-nhs-access": {
+      "title": "Patient Rights Under Threat: The Campaign for NHS Access Continues",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — clinical, pharmacy, consultation, human",
+      "current_image": "Legacy Pexels stock",
+      "region": "uk",
+      "tags": [
+        "Patient Stories",
+        "UK Policy"
+      ]
+    },
+    "patient-stigma-uk-healthcare": {
+      "title": "Patient Experiences: Navigating Stigma in the UK Healthcare System",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — clinical, pharmacy, consultation, human",
+      "current_image": "Legacy Pexels stock",
+      "region": "uk",
+      "tags": [
+        "Patient Stories",
+        "Culture"
+      ]
+    },
+    "safe-banking-act-senate-progress-2026": {
+      "title": "SAFE Banking Act Revived in US Senate with Bipartisan Push and 280E Reform Amendment",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — parliament, courts, government buildings, civic",
+      "current_image": "Legacy Pexels stock",
+      "region": "usa",
+      "tags": [
+        "USA",
+        "Banking",
+        "Policy",
+        "Finance",
+        "Reform"
+      ]
+    },
+    "terpenes-cannabis-science": {
+      "title": "Beyond THC and CBD: The Emerging Science of Terpenes",
+      "image_type": "B",
+      "imagery_hint": "Abstract editorial illustration — lab, molecular, research",
+      "current_image": "Legacy Pexels stock",
+      "region": "global",
+      "tags": [
+        "Research",
+        "Science"
+      ]
+    },
+    "thc-chronic-pain-evidence": {
+      "title": "THC for Chronic Pain: New Evidence Strengthens the Case",
+      "image_type": "B",
+      "imagery_hint": "Abstract editorial illustration — lab, molecular, research",
+      "current_image": "Legacy Pexels stock",
+      "region": "global",
+      "tags": [
+        "Research",
+        "Science",
+        "Medicine"
+      ]
+    },
+    "uk-cannabis-community-culture": {
+      "title": "Inside the UK's Underground Cannabis Community: A New Kind of Culture",
+      "image_type": "B",
+      "imagery_hint": "Flux abstract — cultural, community, editorial illustration",
+      "current_image": "Legacy Pexels stock",
+      "region": "uk",
+      "tags": [
+        "Culture",
+        "Community",
+        "Lifestyle"
+      ]
+    },
+    "uk-medical-cannabis-market-growth": {
+      "title": "The UK Medical Cannabis Market: Growth, Challenges and the Road Ahead",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — parliament, courts, government buildings, civic",
+      "current_image": "Legacy Pexels stock",
+      "region": "uk",
+      "tags": [
+        "UK Policy",
+        "Market Analysis"
+      ]
+    },
+    "us-cannabis-market-growth-2026": {
+      "title": "Green Gold Rush: US Medical Cannabis Market on Track to Surpass $45 Billion by 2027, Q1 2026 Report Reveals",
+      "image_type": "B",
+      "imagery_hint": "Flux abstract — cultivation facilities, supply chain, industry",
+      "current_image": "Legacy Pexels stock",
+      "region": "usa",
+      "tags": [
+        "USA",
+        "Industry",
+        "Market Analysis",
+        "Growth"
+      ]
+    },
+    "veterans-medical-cannabis-access-va": {
+      "title": "Landmark Bipartisan Bill Aims to Expand Medical Cannabis Access for US Veterans",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — clinical, pharmacy, consultation, human",
+      "current_image": "Legacy Pexels stock",
+      "region": "usa",
+      "tags": [
+        "USA",
+        "Veterans",
+        "Policy",
+        "Health",
+        "Access"
+      ]
+    },
+    "welcome-to-the-ganja-club": {
+      "title": "Welcome to The Ganja Club — The Story So Far",
+      "image_type": "A",
+      "imagery_hint": "Branded hero card — editorial welcome",
+      "current_image": "Type A hero",
+      "region": "uk",
+      "tags": [
+        "Editorial",
+        "Culture"
+      ]
+    },
+    "uk-cannabis-licensing-reform-2026": {
+      "title": "UK Cannabis Licensing Reform: What the 2026 Home Office Review Means for Patients",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — UK Parliament, Westminster, government buildings, civic",
+      "current_image": "New — not yet assigned",
+      "region": "uk",
+      "tags": [
+        "UK Policy",
+        "Licensing",
+        "Reform",
+        "Legislation"
+      ]
+    },
+    "medical-cannabis-bridging-the-access-gap": {
+      "title": "Bridging the Gap: Why Medical Cannabis Access Still Fails Patients Who Need It Most",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — clinical setting, pharmacy, consultation room, patient with doctor",
+      "current_image": "New — not yet assigned",
+      "region": "uk",
+      "tags": [
+        "Patient Stories",
+        "Access",
+        "Healthcare",
+        "NHS"
+      ]
+    },
+    "eu-cannabis-reform-momentum-2026": {
+      "title": "Europe Turns Green: How EU Cannabis Reform Momentum Is Reshaping the Continent",
+      "image_type": "C",
+      "imagery_hint": "Wikimedia CC + duotone — EU Parliament Brussels, European flags, skyline",
+      "current_image": "New — not yet assigned",
+      "region": "europe",
+      "tags": [
+        "Europe",
+        "Policy",
+        "Reform",
+        "Legalisation"
+      ]
+    }
+  }
+}

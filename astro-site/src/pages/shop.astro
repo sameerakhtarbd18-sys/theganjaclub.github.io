@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import AffiliateBanner from "../components/AffiliateBanner.astro";
+import Icons from "../components/Icons.astro";
 ---
 
 <Base
@@ -15,29 +16,133 @@ import AffiliateBanner from "../components/AffiliateBanner.astro";
 <Nav />
 
 <main id="main-content">
-  <div class="shop-page">
-    <div class="shop-icon">
-      <img src="/logo.svg" alt="The Ganja Club" style="width:60px;height:auto;opacity:0.8;" />
+  <section class="shop-hero">
+    <div class="shop-card">
+      <div class="shop-icon-wrap"><Icons name="mail" class="shop-mail-icon" /></div>
+      <p class="shop-kicker">Coming Soon</p>
+      <h1 class="shop-title">The Ganja Club Shop</h1>
+      <p class="shop-desc">
+        We're curating a collection of premium cannabis accessories, lifestyle goods,
+        and essentials. Quality you can trust, designed for the community.
+      </p>
+
+      <form class="shop-notify" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Thank you'; this.querySelector('input').disabled=true;">
+        <input type="email" placeholder="Your email for launch alerts" required />
+        <button type="submit">Get notified when we launch</button>
+      </form>
+
+      <p class="shop-fineprint">No spam. Just a one-time heads-up when we open.</p>
     </div>
-
-    <h1>Shop — Coming Soon</h1>
-
-    <p>
-      We're curating a collection of premium cannabis accessories, lifestyle goods,
-      and essentials. Quality you can trust, delivered to your door.
-    </p>
-
-    <form class="shop-notify" onsubmit="event.preventDefault(); alert('Thanks! We\'ll let you know when the shop opens.');">
-      <input type="email" placeholder="Your email for launch alerts" required />
-      <button type="submit">Notify Me</button>
-    </form>
-
-    <p style="font-size:0.75rem;color:var(--text-muted);margin-top:24px;">
-      No spam. Just a one-time heads-up when we open.
-    </p>
-  </div>
+  </section>
 </main>
 
 <Footer />
-
 </Base>
+
+<style>
+  .shop-hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 24px;
+    background: var(--green-house);
+  }
+  .shop-card {
+    max-width: 560px;
+    text-align: center;
+    padding: 48px 40px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(212, 233, 226, 0.12);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  }
+  .shop-icon-wrap {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+  }
+  .shop-mail-icon {
+    color: var(--gold) !important;
+  }
+  .shop-kicker {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .shop-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text-on-dark);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .shop-desc {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-on-dark-soft);
+    margin-bottom: 32px;
+  }
+  .shop-notify {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .shop-notify input {
+    padding: 14px 20px;
+    border-radius: var(--radius-circle);
+    border: 1px solid rgba(212, 233, 226, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-on-dark);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .shop-notify input::placeholder {
+    color: rgba(212, 233, 226, 0.4);
+  }
+  .shop-notify input:focus {
+    border-color: var(--gold);
+  }
+  .shop-notify button {
+    padding: 14px 28px;
+    border-radius: var(--radius-circle);
+    border: none;
+    background: var(--gold);
+    color: #1E3932;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .shop-notify button:hover {
+    opacity: 0.9;
+  }
+  .shop-notify button:active {
+    transform: scale(var(--btn-active-scale));
+  }
+  .shop-fineprint {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: rgba(212, 233, 226, 0.4);
+    margin-top: 20px;
+  }
+  @media (min-width: 640px) {
+    .shop-notify {
+      flex-direction: row;
+    }
+    .shop-notify input {
+      flex: 1;
+    }
+  }
+</style>

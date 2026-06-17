@@ -7,15 +7,17 @@ export interface Props {
   tags: string[];
   date: string;
   readTime?: number;
+  author?: string;
 }
 
-const { title, slug, excerpt, image, tags, date, readTime = 3 } = Astro.props;
+const { title, slug, excerpt, image, tags, date, readTime = 3, author = "The Ganja Club" } = Astro.props;
 const kicker = (tags && tags.length > 0) ? tags[0] : "BRIEFING";
 const siteUrl = "https://theganjaclub.co.uk";
 const imgSrc = image.startsWith("http") ? image : `${siteUrl}${image}`;
 const formattedDate = new Date(date).toLocaleDateString("en-GB", {
   day: "numeric", month: "long", year: "numeric"
 }).toUpperCase();
+const authorShort = author === "The Ganja Club" ? "TGC" : author;
 ---
 
 <article class="card">
@@ -28,6 +30,6 @@ const formattedDate = new Date(date).toLocaleDateString("en-GB", {
       <a href={`/post/${slug}`}>{title}</a>
     </h3>
     <p class="card-excerpt">{excerpt}</p>
-    <div class="card-meta">{formattedDate} <span aria-hidden="true">·</span> <span class="read-time">{readTime} min read</span></div>
+    <div class="card-meta">{formattedDate} <span aria-hidden="true">·</span> By {authorShort} <span aria-hidden="true">·</span> <span class="read-time">{readTime} min read</span></div>
   </div>
 </article>

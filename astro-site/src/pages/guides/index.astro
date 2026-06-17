@@ -9,21 +9,25 @@ const guides = [
   {
     title: "Patient Rights",
     slug: "patient-rights",
+    icon: "shield",
     description: "Your legal rights as a UK medical cannabis patient — from driving and travel to housing and workplace protections.",
   },
   {
     title: "Getting Started",
     slug: "getting-started",
+    icon: "compass",
     description: "Everything you need to know about becoming a medical cannabis patient in the UK — eligibility, clinics, and your first prescription.",
   },
   {
     title: "Using Cannabis",
     slug: "using-cannabis",
+    icon: "clock",
     description: "Practical guidance on dosing, storage, vaporisers, and getting the most from your prescribed medication.",
   },
   {
     title: "Strains & Terpenes",
     slug: "strains-terpenes",
+    icon: "flask",
     description: "Understand the compounds that shape your experience — from THC and CBD to the terpenes behind every aroma and effect.",
   },
 ];
@@ -49,6 +53,7 @@ const guides = [
     <div class="card-grid">
       {guides.map((guide) => (
         <a href={`/guides/${guide.slug}`} class="guide-card">
+          <div class="guide-icon-wrap"><Icons name={guide.icon as any} /></div>
           <h2 class="guide-title">{guide.title}</h2>
           <p class="guide-desc">{guide.description}</p>
           <span class="guide-cta">Read guide <Icons name="arrow-right" /></span>
@@ -111,14 +116,14 @@ const guides = [
     border: 1px solid var(--border);
     border-radius: var(--radius);
     text-decoration: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   }
   .guide-card:hover {
     border-color: var(--green);
     box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
   }
-  .guide-icon {
-    font-size: 2rem;
+  .guide-icon-wrap {
     margin-bottom: 16px;
   }
   .guide-title {
@@ -145,6 +150,11 @@ const guides = [
   @media (min-width: 640px) {
     .card-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 900px) {
+    .card-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>

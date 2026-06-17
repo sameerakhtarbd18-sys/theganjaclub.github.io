@@ -5,57 +5,81 @@ import Footer from "../components/Footer.astro";
 import AffiliateBanner from "../components/AffiliateBanner.astro";
 import Icons from "../components/Icons.astro";
 
-const resources = [
+const categories = [
   {
-    title: "MedBud.wiki",
-    url: "https://medbud.wiki/",
-    description: "The UK's most comprehensive medical cannabis resource. Search strains, compare clinics and pharmacies, access detailed patient guides, and join community forums. Independently run and trusted by thousands of UK patients.",
-    tag: "Essential",
-    featured: true,
+    heading: "Patient Organisations",
+    items: [
+      {
+        title: "PLEA (Patient-Led Engagement for Access)",
+        url: "https://pleacommunity.org.uk/",
+        source: "pleacommunity.org.uk",
+        description: "Community-led patient advocacy organisation working to improve medical cannabis access in the UK. Runs campaigns, publishes patient surveys, and engages with policymakers.",
+      },
+      {
+        title: "Cancard",
+        url: "https://www.cancard.co.uk/",
+        source: "cancard.co.uk",
+        description: "A patient verification card recognised by UK police forces. Provides identification for medical cannabis patients and supports advocacy for broader access. Free for eligible patients.",
+      },
+    ],
   },
   {
-    title: "Smokie McGreen",
-    url: "https://smokiemcgreen.com/",
-    description: "Patient-focused education platform with terpene infographics, patient rights guides, clinic spotlights, and YouTube content. Plain English, no jargon — a trusted voice in the UK medical cannabis community.",
-    tag: "Education",
+    heading: "Research & Data",
+    items: [
+      {
+        title: "Drug Science — Project Twenty21",
+        url: "https://www.drugscience.org.uk/project-twenty21/",
+        source: "drugscience.org.uk",
+        description: "The UK's largest medical cannabis patient registry, building the evidence base for NHS access while subsidising treatment for participating patients. Founded by Professor David Nutt.",
+      },
+      {
+        title: "MedBud.wiki",
+        url: "https://medbud.wiki/",
+        source: "medbud.wiki",
+        description: "The UK's most comprehensive medical cannabis resource. Search strains, compare clinics and pharmacies, access detailed patient guides, and join community forums. Independently run.",
+      },
+    ],
   },
   {
-    title: "Drug Science — Project Twenty21",
-    url: "https://www.drugscience.org.uk/project-twenty21/",
-    description: "The UK's largest medical cannabis patient registry, building the evidence base for NHS access while subsidising treatment for participating patients. Founded by Professor David Nutt.",
-    tag: "Research",
+    heading: "Industry & Policy",
+    items: [
+      {
+        title: "Smokie McGreen",
+        url: "https://smokiemcgreen.com/",
+        source: "smokiemcgreen.com",
+        description: "Patient-focused education platform with terpene infographics, patient rights guides, clinic spotlights, and YouTube content. Plain English, no jargon.",
+      },
+      {
+        title: "UK Medical Cannabis Clinics Directory",
+        url: "https://medbud.wiki/clinics/",
+        source: "medbud.wiki/clinics",
+        description: "MedBud's impartial directory of every UK medical cannabis clinic — pricing, services, pharmacy partnerships, and patient reviews. The definitive starting point for choosing a clinic.",
+      },
+    ],
   },
   {
-    title: "Cancard",
-    url: "https://www.cancard.co.uk/",
-    description: "A patient verification card recognised by UK police forces. Provides identification for medical cannabis patients and supports advocacy for broader access. Free for eligible patients.",
-    tag: "Patient ID",
+    heading: "Legal",
+    items: [
+      {
+        title: "Release — Drug Law Charity",
+        url: "https://www.release.org.uk/",
+        source: "release.org.uk",
+        description: "The UK's leading centre of expertise on drugs and drug law. Provides free legal advice, campaigns for drug policy reform, and publishes research on drug law enforcement.",
+      },
+      {
+        title: "Transform Drug Policy",
+        url: "https://transformdrugs.org/",
+        source: "transformdrugs.org",
+        description: "A think tank campaigning for the legal regulation of drugs. Publishes detailed policy briefs, international comparisons, and economic analyses of drug policy reform.",
+      },
+    ],
   },
-  {
-    title: "PLEA (Patient-Led Engagement for Access)",
-    url: "https://pleacommunity.org.uk/",
-    description: "Community-led patient advocacy organisation working to improve medical cannabis access in the UK. Runs campaigns, publishes patient surveys, and engages with policymakers.",
-    tag: "Advocacy",
-  },
-  {
-    title: "UK Medical Cannabis Clinics Directory",
-    url: "https://medbud.wiki/clinics/",
-    description: "MedBud's impartial directory of every UK medical cannabis clinic — pricing, services, pharmacy partnerships, and patient reviews. The definitive starting point for choosing a clinic.",
-    tag: "Clinics",
-  },
-];
-
-const guides = [
-  { title: "Patient Rights", url: "/guides/patient-rights", desc: "Your legal rights as a UK medical cannabis patient." },
-  { title: "Getting Started", url: "/guides/getting-started", desc: "Eligibility, clinics, and your first prescription." },
-  { title: "Using Cannabis", url: "/guides/using-cannabis", desc: "Dosing, vaporisers, storage, and practical guidance." },
-  { title: "Strains & Terpenes", url: "/guides/strains-terpenes", desc: "Cannabinoids, terpenes, and choosing the right medication." },
 ];
 ---
 
 <Base
   title="Resources — Medical Cannabis Links & Directories | The Ganja Club"
-  description="Curated directory of trusted medical cannabis resources: MedBud.wiki, clinics, patient advocacy, research, and community support."
+  description="Curated directory of trusted medical cannabis resources: patient organisations, research data, industry and policy, and legal support."
   ogImage="/images/flower/pexels-kindelmedia-7667912.webp"
 >
 
@@ -69,34 +93,26 @@ const guides = [
     <p class="hero-sub">A hand-picked collection of the best resources, tools, and communities for UK medical cannabis patients. We've done the filtering so you don't have to.</p>
   </header>
 
-  <section class="section">
-    <h2 class="section-heading">External Resources</h2>
-    <div class="resource-grid">
-      {resources.map((r) => (
-        <a href={r.url} target="_blank" rel="noopener" class={`resource-card${r.featured ? ' featured' : ''}`}>
-          <div class="resource-header">
-            <h3>{r.title}</h3>
-            <span class="resource-tag">{r.tag}</span>
-          </div>
-          <p>{r.description}</p>
-          <span class="resource-cta">Visit {r.url.replace('https://', '').replace('www.', '').split('/')[0]} <Icons name="arrow-right" /></span>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <h2 class="section-heading">Our Guides</h2>
-    <div class="guide-mini-grid">
-      {guides.map((g) => (
-        <a href={g.url} class="guide-mini-card">
-          <h3>{g.title}</h3>
-          <p>{g.desc}</p>
-          <span class="resource-cta">Read guide <Icons name="arrow-right" /></span>
-        </a>
-      ))}
-    </div>
-  </section>
+  <div class="resources-container">
+    {categories.map((cat) => (
+      <section class="section">
+        <h2 class="section-heading">{cat.heading}</h2>
+        <div class="resource-grid">
+          {cat.items.map((r) => (
+            <a href={r.url} target="_blank" rel="noopener" class="resource-card">
+              <div class="resource-header">
+                <h3>{r.title}</h3>
+                <Icons name="external" class="resource-ext-icon" />
+              </div>
+              <p class="resource-source">{r.source}</p>
+              <p class="resource-desc">{r.description}</p>
+              <span class="resource-cta">Visit site <Icons name="arrow-right" /></span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
 </main>
 
 <Footer />
@@ -134,20 +150,20 @@ const guides = [
     max-width: 600px;
     margin: 0 auto;
   }
-  .section {
-    padding: 0 24px 48px;
+  .resources-container {
     max-width: var(--max-width);
     margin: 0 auto;
+    padding: 0 24px 64px;
   }
-  .section-alt {
-    padding-bottom: 64px;
+  .section {
+    margin-bottom: 48px;
   }
   .section-heading {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 700;
     color: var(--text);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     padding-bottom: 8px;
     border-bottom: 2px solid var(--green);
     display: inline-block;
@@ -165,44 +181,41 @@ const guides = [
     border: 1px solid var(--border);
     border-radius: var(--radius);
     text-decoration: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  .resource-card.featured {
-    border-color: var(--green);
-    border-width: 2px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   }
   .resource-card:hover {
     border-color: var(--green);
     box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
   }
   .resource-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 10px;
+    gap: 12px;
   }
   .resource-card h3 {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--text);
   }
-  .resource-tag {
-    font-family: var(--font-body);
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--green);
-    background: rgba(5, 150, 105, 0.08);
-    padding: 3px 10px;
-    border-radius: 100px;
-    white-space: nowrap;
-    margin-left: 12px;
+  .resource-ext-icon {
+    flex-shrink: 0;
+    margin-top: 4px;
   }
-  .resource-card p {
+  .resource-source {
     font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--green);
+    text-transform: lowercase;
+    margin: 6px 0 10px;
+    letter-spacing: 0.02em;
+  }
+  .resource-desc {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
     line-height: 1.55;
     color: var(--text-secondary);
     flex: 1;
@@ -214,44 +227,7 @@ const guides = [
     color: var(--green);
     margin-top: 14px;
   }
-  .guide-mini-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--gap);
-  }
-  .guide-mini-card {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    text-decoration: none;
-    transition: border-color 0.2s;
-  }
-  .guide-mini-card:hover {
-    border-color: var(--green);
-  }
-  .guide-mini-card h3 {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 6px;
-  }
-  .guide-mini-card p {
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: var(--text-secondary);
-    flex: 1;
-  }
   @media (min-width: 640px) {
     .resource-grid { grid-template-columns: repeat(2, 1fr); }
-    .guide-mini-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (min-width: 900px) {
-    .resource-grid { grid-template-columns: repeat(3, 1fr); }
-    .guide-mini-grid { grid-template-columns: repeat(4, 1fr); }
   }
 </style>

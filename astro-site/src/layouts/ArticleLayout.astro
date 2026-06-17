@@ -25,6 +25,7 @@ export interface Props {
   image: string;
   tags: string[];
   body: string;
+  author?: string;
   related?: RelatedPost[];
 }
 
@@ -37,6 +38,7 @@ const {
   image,
   tags = [],
   body = "",
+  author = "The Ganja Club",
   related = [],
 } = Astro.props;
 
@@ -70,6 +72,24 @@ const regionMap: Record<string, string> = {
 const regionLabel = regionMap[region] || "News";
 const backRegionLabel = region === "global" ? "World" : regionLabel;
 const regionUrl = region === "Research" ? "/research" : `/${region}`;
+
+/* Tag → URL mapping: region tags route to region pages, topic tags to /guides */
+const regionTagMap: Record<string, string> = {
+  uk: "/uk",
+  europe: "/europe",
+  usa: "/usa",
+  global: "/global",
+  research: "/research",
+};
+function tagUrl(tag: string): string {
+  const lower = tag.toLowerCase();
+  if (lower in regionTagMap) return regionTagMap[lower];
+  return `/guides?tag=${encodeURIComponent(tag)}`;
+}
+
+/* Author display name */
+const authorDisplay = author || "The Ganja Club";
+const authorInitials = authorDisplay === "The Ganja Club" ? "TGC" : authorDisplay.split(" ").map((w: string) => w[0]).join("").slice(0, 3).toUpperCase();
 
 /* Formatted date */
 const dateObj = new Date(date);
@@ -120,6 +140,8 @@ const breadcrumbSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} is:inline />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} is:inline />
 
+  <div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar"></div></div>
+
   <AffiliateBanner />
   <Nav />
   <BreadcrumbBar region={region} title={title} />
@@ -148,6 +170,10 @@ const breadcrumbSchema = {
           <div class="article-kicker-line">{kickerText}</div>
           <h1 class="article-headline">{title}</h1>
           <p class="article-standfirst">{excerpt}</p>
+          <div class="article-author-byline">
+            <span class="author-rule" aria-hidden="true"></span>
+            <span class="author-text">By {authorDisplay}</span>
+          </div>
           <div class="article-byline">
             <time datetime={dateObj.toISOString()}>{formattedDate}</time>
             <span class="byline-dot" aria-hidden="true">·</span>
@@ -185,7 +211,7 @@ const breadcrumbSchema = {
       {tags.length > 0 && (
         <div class="article-tags-bar">
           {tags.map((tag: string) => (
-            <a href={`/guides?tag=${encodeURIComponent(tag)}`} class="tag-pill">{tag}</a>
+            <a href={tagUrl(tag)} class="tag-pill">{tag}</a>
           ))}
         </div>
       )}
@@ -233,6 +259,28 @@ const breadcrumbSchema = {
           /* Clipboard API unavailable — silently fail */
         }
       });
+    }
+  </script>
+
+  <script>
+    // Reading progress bar — transforms scaleX based on scroll position
+    const progressBar = document.querySelector<HTMLElement>('.reading-progress-bar');
+    if (progressBar) {
+      let ticking = false;
+      function updateProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
+        progressBar.style.transform = `scaleX(${progress})`;
+        ticking = false;
+      }
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateProgress);
+          ticking = true;
+        }
+      }, { passive: true });
+      updateProgress();
     }
   </script>
 </Base>
@@ -309,6 +357,48 @@ const breadcrumbSchema = {
     letter-spacing: 0.02em;
   }
   .byline-dot { opacity: 0.5; }
+
+  /* ── Reading Progress Bar ── */
+  .reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    z-index: 9999;
+    pointer-events: none;
+    background: transparent;
+  }
+  .reading-progress-bar {
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: left center;
+    background: linear-gradient(90deg, var(--green-accent), var(--green));
+    transition: transform 0.15s ease-out;
+  }
+
+  /* ── Author Byline ── */
+  .article-author-byline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .author-rule {
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--border);
+    flex-shrink: 0;
+  }
+  .author-text {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
 
   /* ── Body Grid: share rail + prose ── */
   .article-body-grid {
@@ -508,6 +598,7 @@ const breadcrumbSchema = {
     .article-prose :global(h2) { font-size: 1.35rem; }
     .article-related-grid { grid-template-columns: 1fr; }
     .article-related { margin-top: 48px; padding-top: 32px; }
+    .reading-progress { height: 2px; }
   }
 
   /* ── Dark mode overrides — brand green night theme ──
@@ -551,6 +642,8 @@ const breadcrumbSchema = {
     color: var(--text-on-dark);
   }
   :global([data-theme="dark"]) .article-related-heading { color: #e8f2ed; }
+  :global([data-theme="dark"]) .author-text { color: rgba(163,196,184,0.5); }
+  :global([data-theme="dark"]) .author-rule { background: rgba(212,233,226,0.12); }
   :global([data-theme="dark"]) .share-rail-btn {
     background: var(--green-light);
     color: #122620;

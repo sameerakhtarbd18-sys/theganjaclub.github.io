@@ -1,0 +1,181 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import AffiliateBanner from "../components/AffiliateBanner.astro";
+import Icons from "../components/Icons.astro";
+
+const tools = [
+  {
+    title: "Eligibility Checker",
+    slug: "eligibility",
+    icon: "clipboard",
+    description: "A four-question flow that helps you determine whether you could qualify for medical cannabis in the UK. Based on current prescribing guidelines and clinic acceptance criteria — takes two minutes, no sign-up required.",
+    points: ["Quick 4-question assessment", "Based on UK prescribing criteria", "Immediate results"],
+  },
+  {
+    title: "Compare Clinics",
+    slug: "clinics",
+    icon: "building",
+    description: "Every major UK medical cannabis clinic side by side — consultation fees, prescription costs, pharmacy partnerships, and onboarding speed. Make an informed choice before you book.",
+    points: ["6+ UK clinics compared", "Fees, models, and timelines", "Patient reviews included"],
+  },
+  {
+    title: "Strain Explorer",
+    slug: "strains",
+    icon: "leaf",
+    description: "A searchable database of medical cannabis strains available in the UK. Filter by THC:CBD ratio, dominant terpenes, and effects to find the medication that matches your needs.",
+    points: ["30+ strains with full profiles", "Filter by cannabinoid and terpene", "UK availability data"],
+  },
+];
+---
+
+<Base
+  title="Patient Tools — The Ganja Club"
+  description="Free tools for UK medical cannabis patients: eligibility checker, clinic comparison, and strain explorer. Built for patients, by patients."
+  ogImage="/images/flower/pexels-kindelmedia-7667912.webp"
+>
+
+<AffiliateBanner />
+<Nav />
+
+<main id="main-content">
+  <header class="page-hero">
+    <p class="kicker">Patient Tools</p>
+    <h1>Tools That Put You in Control</h1>
+    <p class="hero-sub">Practical, free tools designed to help you navigate the UK medical cannabis system. Check your eligibility, compare clinics, and explore strains — all in one place.</p>
+  </header>
+
+  <section class="section">
+    <div class="tools-grid">
+      {tools.map((tool) => (
+        <a href={`/${tool.slug}`} class="tool-card">
+          <div class="tool-icon-wrap"><Icons name={tool.icon as any} /></div>
+          <h2 class="tool-title">{tool.title}</h2>
+          <p class="tool-desc">{tool.description}</p>
+          <ul class="tool-points">
+            {tool.points.map((point) => (
+              <li><Icons name="check-circle" class="tool-check" /> {point}</li>
+            ))}
+          </ul>
+          <span class="tool-cta">Open tool <Icons name="arrow-right" /></span>
+        </a>
+      ))}
+    </div>
+  </section>
+</main>
+
+<Footer />
+</Base>
+
+<style>
+  .page-hero {
+    text-align: center;
+    padding: 64px 24px 48px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .kicker {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+  .page-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .section {
+    padding: 0 24px 64px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .tools-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+  }
+  .tool-card {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .tool-card:hover {
+    border-color: var(--green);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+  .tool-icon-wrap {
+    margin-bottom: 20px;
+  }
+  .tool-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  .tool-desc {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+  .tool-points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .tool-points li {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tool-check {
+    flex-shrink: 0;
+  }
+  .tool-cta {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--green);
+    margin-top: auto;
+  }
+  @media (min-width: 640px) {
+    .tools-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 900px) {
+    .tools-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
