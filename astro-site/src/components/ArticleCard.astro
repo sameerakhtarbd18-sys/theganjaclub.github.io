@@ -28,6 +28,6 @@ const formattedDate = new Date(date).toLocaleDateString("en-GB", {
       <a href={`/post/${slug}`}>{title}</a>
     </h3>
     <p class="card-excerpt">{excerpt}</p>
-    <div class="card-meta">{formattedDate} · {readTime} MIN READ</div>
+    <div class="card-meta">{formattedDate} <span aria-hidden="true">·</span> <span class="read-time">{readTime} min read</span></div>
   </div>
 </article>

@@ -8,6 +8,7 @@ import ArticleCard from "../components/ArticleCard.astro";
 import Search from "../components/Search.astro";
 import Newsletter from "../components/Newsletter.astro";
 import AffiliateBanner from "../components/AffiliateBanner.astro";
+import Icons from "../components/Icons.astro";
 
 const allPosts = await getCollection("posts");
 allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
@@ -55,20 +56,20 @@ function getReadTime(body: string): number {
     <div class="tools-inner">
       <p class="tools-kicker">PATIENT TOOLS</p>
       <div class="tools-grid">
-        <a class="tool-card" href="/clinics">
-          <span class="tool-name">Compare clinics</span>
-          <span class="tool-desc">Every major UK clinic — fees, models and onboarding speed, side by side.</span>
-          <span class="tool-go">Open tool →</span>
-        </a>
         <a class="tool-card" href="/eligibility">
           <span class="tool-name">Eligibility checker</span>
           <span class="tool-desc">Could you qualify? How the UK system actually works, in two minutes.</span>
-          <span class="tool-go">Open tool →</span>
+          <span class="tool-go">Open tool <Icons name="arrow-right" /></span>
+        </a>
+        <a class="tool-card" href="/clinics">
+          <span class="tool-name">Compare clinics</span>
+          <span class="tool-desc">Every major UK clinic — fees, models and onboarding speed, side by side.</span>
+          <span class="tool-go">Open tool <Icons name="arrow-right" /></span>
         </a>
         <a class="tool-card" href="/strains">
           <span class="tool-name">Strain explorer</span>
           <span class="tool-desc">Cannabinoid ranges, terpenes and UK availability — built for patients.</span>
-          <span class="tool-go">Open tool →</span>
+          <span class="tool-go">Open tool <Icons name="arrow-right" /></span>
         </a>
       </div>
     </div>
@@ -79,7 +80,7 @@ function getReadTime(body: string): number {
   <section class="section">
     <div class="section-header">
       <h2>Latest Briefings</h2>
-      <a href="/uk">View All →</a>
+      <a href="/uk">View All <Icons name="arrow-right" /></a>
     </div>
     <div class="card-grid">
       {latest.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
@@ -91,7 +92,7 @@ function getReadTime(body: string): number {
   <section class="section">
     <div class="section-header">
       <h2>United Kingdom</h2>
-      <a href="/uk">All UK →</a>
+      <a href="/uk">All UK <Icons name="arrow-right" /></a>
     </div>
     <div class="card-grid">
       {ukPosts.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
@@ -101,7 +102,7 @@ function getReadTime(body: string): number {
   <section class="section">
     <div class="section-header">
       <h2>World</h2>
-      <a href="/global">Europe, USA &amp; Global →</a>
+      <a href="/global">Europe, USA &amp; Global <Icons name="arrow-right" /></a>
     </div>
     <div class="card-grid">
       {worldPosts.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
@@ -113,7 +114,7 @@ function getReadTime(body: string): number {
 
 <Footer />
 
-<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top"><Icons name="arrow-up" /></button>
 <script>
   const btn = document.getElementById("back-to-top")!;
   window.addEventListener("scroll", () => btn.classList.toggle("visible", window.scrollY > 500));

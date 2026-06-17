@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import AffiliateBanner from "../components/AffiliateBanner.astro";
 import BreadcrumbBar from "../components/BreadcrumbBar.astro";
+import Icons from "../components/Icons.astro";
 
 export interface RelatedPost {
   title: string;
@@ -67,6 +68,7 @@ const regionMap: Record<string, string> = {
   Research: "Research",
 };
 const regionLabel = regionMap[region] || "News";
+const backRegionLabel = region === "global" ? "World" : regionLabel;
 const regionUrl = region === "Research" ? "/research" : `/${region}`;
 
 /* Formatted date */
@@ -124,6 +126,11 @@ const breadcrumbSchema = {
 
   <main id="main-content">
     <article class="article-page">
+      <a href={regionUrl} class="article-back-link">
+        <Icons name="arrow-left" />
+        Back to {backRegionLabel} News
+      </a>
+
       <!-- Hero -->
       <header class="article-hero-section">
         <div class="article-hero-img-wrap">

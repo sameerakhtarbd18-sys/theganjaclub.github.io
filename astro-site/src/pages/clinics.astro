@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import Newsletter from "../components/Newsletter.astro";
+import Icons from "../components/Icons.astro";
 import clinicData from "../data/clinics.json";
 import priceHistory from "../data/price-history.json";
 
@@ -54,7 +55,7 @@ const faqSchema = {
       <span class="sort-wrap">
         <label for="clinic-sort">Sort:</label>
         <select id="clinic-sort">
-          <option value="initial">Initial fee (low → high)</option>
+          <option value="initial">Initial fee (low to high)</option>
           <option value="name">Name (A–Z)</option>
         </select>
       </span>
@@ -92,9 +93,9 @@ const faqSchema = {
             )}
           </div>
           <p class="note">{c.ongoingNote}</p>
-          {c.speedNote && <p class="note speed">⏱ {c.speedNote}</p>}
+          {c.speedNote && <p class="note speed">{c.speedNote}</p>}
           <p class="conditions">{c.conditions.join(" · ")}</p>
-          <a class="clinic-link" href={c.url} target="_blank" rel="noopener nofollow">Visit clinic →</a>
+          <a class="clinic-link" href={c.url} target="_blank" rel="noopener nofollow">Visit clinic <Icons name="arrow-right" /></a>
         </article>
       ))}
     </div>

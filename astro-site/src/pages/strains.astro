@@ -79,7 +79,7 @@ const FLAVOURS = ["earthy", "citrus", "pine", "berry", "diesel", "sweet"];
   <!-- Detail panel -->
   <div class="panel-backdrop" id="panel-backdrop" hidden></div>
   <aside class="detail-panel" id="detail-panel" aria-hidden="true">
-    <button class="panel-close" id="panel-close" aria-label="Close detail panel">✕</button>
+    <button class="panel-close" id="panel-close" aria-label="Close detail panel"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" role="img" aria-label="Close"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
     <div id="panel-content"></div>
   </aside>
 
@@ -160,7 +160,7 @@ const FLAVOURS = ["earthy", "citrus", "pine", "berry", "diesel", "sweet"];
       <p class="desc">${s.ukAvailability}.</p>
       <p class="panel-note">Figures are typical published ranges — prescribed products carry batch-specific
       certificates of analysis. Discuss product selection with your prescribing clinician.</p>
-      <a class="panel-cta" href="/clinics">Compare UK clinics →</a>`;
+      <a class="panel-cta" href="/clinics">Compare UK clinics <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;display:inline-block;margin-left:2px" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>`;
   }
 
   function openPanel(s: Strain) {

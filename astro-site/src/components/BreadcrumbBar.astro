@@ -4,6 +4,8 @@
  * Shows Home › Region › Article Title, sticks below the main nav.
  * Renders ONLY when included (article pages via ArticleLayout).
  */
+import Icons from "./Icons.astro";
+
 export interface Props {
   region: string;
   title: string;
@@ -25,9 +27,9 @@ const regionUrl = region === "Research" ? "/research" : `/${region}`;
 <nav class="breadcrumb-bar" aria-label="Breadcrumb">
   <div class="breadcrumb-bar-inner">
     <a href="/" class="bb-link">Home</a>
-    <span class="bb-sep" aria-hidden="true">›</span>
+    <span class="bb-sep" aria-hidden="true"><Icons name="chevron-right" /></span>
     <a href={regionUrl} class="bb-link">{regionLabel}</a>
-    <span class="bb-sep" aria-hidden="true">›</span>
+    <span class="bb-sep" aria-hidden="true"><Icons name="chevron-right" /></span>
     <span class="bb-current">{title}</span>
   </div>
 </nav>

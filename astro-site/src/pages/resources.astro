@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import AffiliateBanner from "../components/AffiliateBanner.astro";
+import Icons from "../components/Icons.astro";
 
 const resources = [
   {
@@ -63,7 +64,7 @@ const guides = [
 
 <main id="main-content">
   <header class="page-hero">
-    <p class="kicker">🔗 Resources</p>
+    <p class="kicker">Resources</p>
     <h1>Curated Cannabis Directory</h1>
     <p class="hero-sub">A hand-picked collection of the best resources, tools, and communities for UK medical cannabis patients. We've done the filtering so you don't have to.</p>
   </header>
@@ -78,7 +79,7 @@ const guides = [
             <span class="resource-tag">{r.tag}</span>
           </div>
           <p>{r.description}</p>
-          <span class="resource-cta">Visit {r.url.replace('https://', '').replace('www.', '').split('/')[0]} →</span>
+          <span class="resource-cta">Visit {r.url.replace('https://', '').replace('www.', '').split('/')[0]} <Icons name="arrow-right" /></span>
         </a>
       ))}
     </div>
@@ -91,7 +92,7 @@ const guides = [
         <a href={g.url} class="guide-mini-card">
           <h3>{g.title}</h3>
           <p>{g.desc}</p>
-          <span class="resource-cta">Read guide →</span>
+          <span class="resource-cta">Read guide <Icons name="arrow-right" /></span>
         </a>
       ))}
     </div>

@@ -1,0 +1,165 @@
+---
+/**
+ * Icons.astro — Shared inline SVG icon components
+ * No icon library, no npm dependency. Each icon is a pure inline <svg>.
+ * All icons use currentColor for stroke/fill so they inherit text colour
+ * unless overridden by a style/class on the calling element.
+ *
+ * Usage: <Icons name="arrow-right" /> or <Icons name="search" class="my-class" />
+ */
+interface Props {
+  name:
+    | 'hamburger'
+    | 'chevron-down'
+    | 'chevron-right'
+    | 'dark-mode'
+    | 'arrow-right'
+    | 'arrow-left'
+    | 'arrow-up'
+    | 'search'
+    | 'rss'
+    | 'copy'
+    | 'x'
+    | 'close'
+    | 'mail'
+    | 'clock'
+    | 'link'
+    | 'external';
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+---
+
+{/* Hamburger — 3 horizontal lines, 24×24, var(--text) */}
+{name === 'hamburger' && (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" role="img" aria-label="Menu" class={className} style="color: var(--text)">
+    <line x1="3" y1="6" x2="21" y2="6" />
+    <line x1="3" y1="12" x2="21" y2="12" />
+    <line x1="3" y1="18" x2="21" y2="18" />
+  </svg>
+)}
+
+{/* Close — X mark, 24×24, var(--text) */}
+{name === 'close' && (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" role="img" aria-label="Close" class={className} style="color: var(--text)">
+    <line x1="6" y1="6" x2="18" y2="18" />
+    <line x1="18" y1="6" x2="6" y2="18" />
+  </svg>
+)}
+
+{/* ChevronDown — downward chevron, 16×16, var(--text-secondary) */}
+{name === 'chevron-down' && (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Toggle dropdown" class={className} style="color: var(--text-secondary)">
+    <polyline points="6 9 12 15 18 9" />
+  </svg>
+)}
+
+{/* ChevronRight — right chevron for breadcrumbs, 16×16, var(--text-secondary) */}
+{name === 'chevron-right' && (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Separator" class={className} style="color: var(--text-secondary); opacity: 0.4">
+    <polyline points="9 6 15 12 9 18" />
+  </svg>
+)}
+
+{/* DarkMode — sun (light mode) / moon (dark mode), 20×20, var(--text-secondary) */}
+{name === 'dark-mode' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Toggle dark mode" class={`dark-mode-icon ${className || ''}`} style="color: var(--text-secondary)">
+    {/* Sun — shown in light mode */}
+    <g class="dm-sun">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+    </g>
+    {/* Moon — shown in dark mode */}
+    <g class="dm-moon">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </g>
+  </svg>
+)}
+
+{/* ArrowRight — right arrow, 16×16, inherits parent colour */}
+{name === 'arrow-right' && (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Go to" class={className} style="vertical-align: middle; display: inline-block; margin-left: 2px">
+    <line x1="5" y1="12" x2="19" y2="12" />
+    <polyline points="12 5 19 12 12 19" />
+  </svg>
+)}
+
+{/* ArrowLeft — left arrow, 16×16, inherits parent colour */}
+{name === 'arrow-left' && (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Go back" class={className} style="vertical-align: middle; display: inline-block; margin-right: 6px">
+    <line x1="19" y1="12" x2="5" y2="12" />
+    <polyline points="12 19 5 12 12 5" />
+  </svg>
+)}
+
+{/* ArrowUp — up arrow, 24×24, var(--text-on-dark) */}
+{name === 'arrow-up' && (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Back to top" class={className}>
+    <line x1="12" y1="19" x2="12" y2="5" />
+    <polyline points="5 12 12 5 19 12" />
+  </svg>
+)}
+
+{/* Search — magnifying glass, 20×20, var(--text-secondary) */}
+{name === 'search' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Search" class={className} style="color: var(--text-secondary)">
+    <circle cx="11" cy="11" r="8" />
+    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+  </svg>
+)}
+
+{/* RSS — RSS symbol, 20×20, var(--text-secondary) */}
+{name === 'rss' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="RSS feed" class={className} style="color: var(--text-secondary)">
+    <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20a2.18 2.18 0 1 1 0-4.36zM4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44zm0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z" />
+  </svg>
+)}
+
+{/* Copy — copy/link, 16×16, var(--text-secondary) */}
+{name === 'copy' && (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Copy link" class={className} style="color: var(--text-secondary)">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+  </svg>
+)}
+
+{/* X — X/Twitter logo, 16×16, var(--text-secondary) */}
+{name === 'x' && (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="X (Twitter)" class={className} style="color: var(--text-secondary)">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+)}
+
+{/* Mail — envelope, 20×20, var(--text-secondary) */}
+{name === 'mail' && (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Newsletter" class={className} style="color: var(--text-secondary)">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+    <polyline points="22,6 12,13 2,6" />
+  </svg>
+)}
+
+{/* Clock — clock, 16×16, var(--text-secondary) */}
+{name === 'clock' && (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Speed" class={className} style="color: var(--text-secondary); margin-right: 4px; vertical-align: middle">
+    <circle cx="12" cy="12" r="10" />
+    <polyline points="12 6 12 12 16 14" />
+  </svg>
+)}
+
+{/* Link — chain link, 16×16, var(--text-secondary) */}
+{name === 'link' && (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Link" class={className} style="color: var(--text-secondary); margin-right: 6px; vertical-align: middle">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+  </svg>
+)}
+
+{/* External — external link, 14×14, inherits parent colour */}
+{name === 'external' && (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="External link" class={className} style="vertical-align: middle; display: inline-block; margin-left: 2px">
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    <polyline points="15 3 21 3 21 9" />
+    <line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+)}

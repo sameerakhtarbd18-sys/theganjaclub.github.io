@@ -1,4 +1,5 @@
 ---
+import Icons from "./Icons.astro";
 const currentPath = Astro.url.pathname;
 function isActive(path: string) {
   if (path === '/') return currentPath === '/';
@@ -19,7 +20,7 @@ function isGuides() {
     </a>
 
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false">
-      <span class="hamburger-icon">☰</span>
+      <span class="hamburger-icon"><Icons name="hamburger" /></span>
     </button>
 
     <div class="nav-links" id="nav-links">
@@ -27,7 +28,7 @@ function isGuides() {
       <div class="nav-dropdown" data-dropdown>
         <button class="nav-dropdown-toggle" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
           News
-          <span class="caret" aria-hidden="true">▾</span>
+          <span class="caret" aria-hidden="true"><Icons name="chevron-down" /></span>
         </button>
         <div class="nav-dropdown-menu" data-dropdown-menu>
           <a href="/" class:list={["dropdown-item", { active: isActive('/') && !isNews() }]}>Latest</a>
@@ -43,7 +44,7 @@ function isGuides() {
       <div class="nav-dropdown" data-dropdown>
         <button class="nav-dropdown-toggle" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
           Guides
-          <span class="caret" aria-hidden="true">▾</span>
+          <span class="caret" aria-hidden="true"><Icons name="chevron-down" /></span>
         </button>
         <div class="nav-dropdown-menu" data-dropdown-menu>
           <a href="/guides" class:list={["dropdown-item", { active: currentPath === '/guides' }]}>All Guides</a>
@@ -58,7 +59,7 @@ function isGuides() {
       <div class="nav-dropdown" data-dropdown>
         <button class="nav-dropdown-toggle" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
           Tools
-          <span class="caret" aria-hidden="true">▾</span>
+          <span class="caret" aria-hidden="true"><Icons name="chevron-down" /></span>
         </button>
         <div class="nav-dropdown-menu" data-dropdown-menu>
           <a href="/clinics" class:list={["dropdown-item", { active: isActive('/clinics') }]}>Compare Clinics</a>
@@ -76,7 +77,15 @@ function isGuides() {
       <!-- RSS -->
       <a href="/rss" class:list={["nav-item", { active: isActive('/rss') }]}>RSS</a>
 
-      <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+      <!-- Search button -->
+      <button class="nav-search-btn" id="nav-search-btn" aria-label="Search articles">
+        <Icons name="search" />
+      </button>
+
+      <!-- Dark mode toggle -->
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <Icons name="dark-mode" />
+      </button>
     </div>
   </div>
 </nav>
@@ -133,7 +142,12 @@ function isGuides() {
     hamburger.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('mobile-open');
       hamburger.setAttribute('aria-expanded', String(isOpen));
-      hamburger.querySelector('.hamburger-icon').textContent = isOpen ? '\u2715' : '\u2630';
+      const iconWrap = hamburger.querySelector('.hamburger-icon');
+      if (iconWrap) {
+        iconWrap.innerHTML = isOpen
+          ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" role="img" aria-label="Close" style="color: var(--text)"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>'
+          : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" role="img" aria-label="Menu" style="color: var(--text)"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+      }
     });
   }
 

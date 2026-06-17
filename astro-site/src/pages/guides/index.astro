@@ -3,31 +3,28 @@ import Base from "../../layouts/Base.astro";
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
 import AffiliateBanner from "../../components/AffiliateBanner.astro";
+import Icons from "../../components/Icons.astro";
 
 const guides = [
   {
     title: "Patient Rights",
     slug: "patient-rights",
     description: "Your legal rights as a UK medical cannabis patient — from driving and travel to housing and workplace protections.",
-    icon: "⚖️",
   },
   {
     title: "Getting Started",
     slug: "getting-started",
     description: "Everything you need to know about becoming a medical cannabis patient in the UK — eligibility, clinics, and your first prescription.",
-    icon: "🏁",
   },
   {
     title: "Using Cannabis",
     slug: "using-cannabis",
     description: "Practical guidance on dosing, storage, vaporisers, and getting the most from your prescribed medication.",
-    icon: "💨",
   },
   {
     title: "Strains & Terpenes",
     slug: "strains-terpenes",
     description: "Understand the compounds that shape your experience — from THC and CBD to the terpenes behind every aroma and effect.",
-    icon: "🧬",
   },
 ];
 ---
@@ -52,10 +49,9 @@ const guides = [
     <div class="card-grid">
       {guides.map((guide) => (
         <a href={`/guides/${guide.slug}`} class="guide-card">
-          <span class="guide-icon">{guide.icon}</span>
           <h2 class="guide-title">{guide.title}</h2>
           <p class="guide-desc">{guide.description}</p>
-          <span class="guide-cta">Read guide →</span>
+          <span class="guide-cta">Read guide <Icons name="arrow-right" /></span>
         </a>
       ))}
     </div>

@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import AffiliateBanner from "../components/AffiliateBanner.astro";
+import Icons from "../components/Icons.astro";
 ---
 
 <Base
@@ -14,7 +15,7 @@ import AffiliateBanner from "../components/AffiliateBanner.astro";
 <Nav />
 
 <main id="main-content" class="rss-page">
-  <div class="rss-icon">📡</div>
+  <div class="rss-icon"><Icons name="rss" /></div>
   <h1>RSS Feed</h1>
   <p style="color:var(--text-secondary);max-width:480px;margin:0 auto 0;">
     Subscribe to The Ganja Club and get every new article delivered to your feed reader.
@@ -22,12 +23,12 @@ import AffiliateBanner from "../components/AffiliateBanner.astro";
 
   <div class="rss-options">
     <div class="rss-option">
-      <h3>🔗 Direct Feed URL</h3>
+      <h3>Direct Feed URL</h3>
       <p>Copy this URL into any RSS reader</p>
       <div class="rss-url" id="rss-url">https://theganjaclub.co.uk/rss.xml</div>
     </div>
     <div class="rss-option">
-      <h3>📱 Popular Readers</h3>
+      <h3>Popular Readers</h3>
       <p>Open directly in your preferred app</p>
       <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
         <a href="https://feedly.com/i/subscription/feed/https://theganjaclub.co.uk/rss.xml" target="_blank" rel="noopener" class="share-btn" style="background:#2bb24c;width:200px;">Feedly</a>
@@ -38,7 +39,7 @@ import AffiliateBanner from "../components/AffiliateBanner.astro";
   </div>
 
   <p style="font-size:0.85rem;color:var(--text-muted);margin-top:32px;">
-    New to RSS? <a href="https://aboutfeeds.com" target="_blank" rel="noopener">Learn how to get started →</a>
+    New to RSS? <a href="https://aboutfeeds.com" target="_blank" rel="noopener">Learn how to get started <Icons name="arrow-right" /></a>
   </p>
 </main>
 
