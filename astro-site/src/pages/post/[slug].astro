@@ -1,11 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import Base from "../../layouts/Base.astro";
-import Nav from "../../components/Nav.astro";
-import Footer from "../../components/Footer.astro";
-import ArticleCard from "../../components/ArticleCard.astro";
-import ShareButtons from "../../components/ShareButtons.astro";
-import AffiliateBanner from "../../components/AffiliateBanner.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -23,105 +18,32 @@ if (!post) {
 const { title, date, region, excerpt, image, tags } = post.data;
 const body = post.body || "";
 
-const siteUrl = "https://theganjaclub.co.uk";
-const postUrl = `${siteUrl}/post/${slug}`;
-
-const fullImage = image
-  ? (image.startsWith("http") ? image : `${siteUrl}/${image.replace(/^\//, "")}`)
-  : `${siteUrl}/images/flower/pexels-kindelmedia-7667912.webp`;
-
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: title,
-  description: excerpt,
-  image: [fullImage],
-  datePublished: date,
-  dateModified: date,
-  author: { "@type": "Organization", name: "The Ganja Club", url: siteUrl },
-  publisher: {
-    "@type": "Organization",
-    name: "The Ganja Club",
-    url: siteUrl,
-    logo: { "@type": "ImageObject", url: `${siteUrl}/logo.svg` },
-  },
-  mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
-};
-
-
-
-const kicker = tags?.[0] || "BRIEFING";
-const formattedDate = new Date(date).toLocaleDateString("en-GB", {
-  day: "numeric", month: "long", year: "numeric"
-}).toUpperCase();
-
-const readingTime = Math.max(1, Math.ceil((body || "").split(/\s+/).length / 225));
-
-const regionNames: Record<string, string> = {
-  uk: "UK", europe: "Europe", usa: "USA", global: "Global",
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-    { "@type": "ListItem", position: 2, name: regionNames[region] || "News", item: `${siteUrl}/${region}` },
-    { "@type": "ListItem", position: 3, name: title, item: postUrl },
-  ],
-};
-
+/* Related posts: same region or shared tags, excluding current */
 const related = posts
   .filter(p => p.data.slug !== slug)
-  .filter(p => p.data.region === region || p.data.tags.some((t: string) => tags.includes(t)))
-  .slice(0, 3);
+  .filter(p =>
+    p.data.region === region ||
+    p.data.tags.some((t: string) => tags.includes(t))
+  )
+  .slice(0, 3)
+  .map(p => ({
+    title: p.data.title,
+    slug: p.data.slug,
+    excerpt: p.data.excerpt,
+    image: p.data.image,
+    tags: p.data.tags,
+    date: p.data.date,
+  }));
 ---
 
-<Base
-  title={`${title} — The Ganja Club`}
-  description={excerpt}
-  ogImage={image}
-  ogType="article"
- canonicalUrl={postUrl}>
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} is:inline />
-  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} is:inline />
-
-<AffiliateBanner />
-<Nav />
-
-<main id="main-content">
-  <article class="article">
-    <nav class="breadcrumbs">
-      <a href="/">Home</a> / <a href={`/${region}`}>{regionNames[region] || region}</a> / <span>{title}</span>
-    </nav>
-
-    <div class="article-hero">
-      <img src={image.startsWith("http") ? image : `${siteUrl}${image}`} alt={title} width="1200" height="675" />
-    </div>
-
-    <header class="article-header">
-      <div class="article-kicker">{kicker}</div>
-      <h1 class="article-title">{title}</h1>
-      <div class="article-meta">
-        {formattedDate} · {readingTime} MIN READ
-      </div>
-    </header>
-
-    <div class="article-body" set:html={body} />
-  </article>
-
-  <ShareButtons title={title} url={postUrl} description={excerpt} />
-
-  {related.length > 0 && (
-    <section class="section related">
-      <h3>Related Articles</h3>
-      <div class="related-grid">
-        {related.map(p => <ArticleCard {...p.data} />)}
-      </div>
-    </section>
-  )}
-</main>
-
-<Footer />
-
-</Base>
+<ArticleLayout
+  title={title}
+  slug={slug!}
+  date={date}
+  region={region}
+  excerpt={excerpt}
+  image={image}
+  tags={tags}
+  body={body}
+  related={related}
+/>

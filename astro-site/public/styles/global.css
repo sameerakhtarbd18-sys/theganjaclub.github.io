@@ -62,18 +62,52 @@
 }
 
 [data-theme="dark"] {
-  --bg: #1a1816;
-  --bg-card: #242220;
-  --bg-cool: #2a2826;
-  --bg-nav: rgba(26, 24, 22, 0.96);
-  --text: rgba(255, 255, 255, 0.87);
-  --text-secondary: rgba(255, 255, 255, 0.58);
-  --text-muted: rgba(255, 255, 255, 0.38);
-  --border: #3a3836;
-  --border-light: #2e2c2a;
+  --bg: #122620;
+  --bg-card: #1A332B;
+  --bg-cool: #0F1E19;
+  --bg-nav: rgba(18, 38, 32, 0.96);
+  --text: #d4e9e2;
+  --text-secondary: #a3c4b8;
+  --text-muted: rgba(163, 196, 184, 0.5);
+  --text-on-dark: #e8f2ed;
+  --text-on-dark-soft: #a3c4b8;
+  --border: rgba(212, 233, 226, 0.12);
+  --border-light: rgba(212, 233, 226, 0.08);
   --green-bg: rgba(0, 117, 74, 0.12);
-  --gold-lightest: #2a2620;
+  --gold-lightest: #1A332B;
 }
+
+/* Dark mode — heading + link colour overrides (brand green, not white) */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2 { color: #e8f2ed; }
+[data-theme="dark"] h3,
+[data-theme="dark"] h4 { color: #d4e9e2; }
+[data-theme="dark"] a { color: #4dab8a; }
+[data-theme="dark"] a:hover { color: #d4e9e2; }
+
+/* Dark mode — nav hover uses mint tint, not black */
+[data-theme="dark"] .nav-item:hover,
+[data-theme="dark"] .nav-dropdown-toggle:hover,
+[data-theme="dark"] #theme-toggle:hover {
+  background: rgba(212, 233, 226, 0.08);
+}
+
+/* Dark mode — share buttons: green-light bg, dark text */
+[data-theme="dark"] .share-btn.copy {
+  background: var(--green-light);
+  color: #122620 !important;
+  border-color: var(--green-light);
+}
+
+/* Dark mode — search overlay uses green tint */
+[data-theme="dark"] .search-overlay { background: rgba(0, 0, 0, 0.6); }
+[data-theme="dark"] .search-result:hover { background: rgba(212, 233, 226, 0.06); }
+
+/* Dark mode — footer border uses mint tint */
+[data-theme="dark"] .footer-grid { border-bottom-color: rgba(212, 233, 226, 0.12); }
+
+/* Dark mode — blockquote gold border */
+[data-theme="dark"] .article-body blockquote { border-left-color: #cba258; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 

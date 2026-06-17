@@ -1,0 +1,85 @@
+---
+/**
+ * BreadcrumbBar — persistent sticky breadcrumb nav for article pages.
+ * Shows Home › Region › Article Title, sticks below the main nav.
+ * Renders ONLY when included (article pages via ArticleLayout).
+ */
+export interface Props {
+  region: string;
+  title: string;
+}
+
+const { region, title } = Astro.props;
+
+const regionMap: Record<string, string> = {
+  uk: "UK",
+  europe: "Europe",
+  usa: "USA",
+  global: "Global",
+  Research: "Research",
+};
+const regionLabel = regionMap[region] || "News";
+const regionUrl = region === "Research" ? "/research" : `/${region}`;
+---
+
+<nav class="breadcrumb-bar" aria-label="Breadcrumb">
+  <div class="breadcrumb-bar-inner">
+    <a href="/" class="bb-link">Home</a>
+    <span class="bb-sep" aria-hidden="true">›</span>
+    <a href={regionUrl} class="bb-link">{regionLabel}</a>
+    <span class="bb-sep" aria-hidden="true">›</span>
+    <span class="bb-current">{title}</span>
+  </div>
+</nav>
+
+<style>
+  .breadcrumb-bar {
+    position: sticky;
+    top: calc(var(--banner-height) + var(--nav-height));
+    z-index: 99;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .breadcrumb-bar-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 10px 24px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .bb-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .bb-link:hover { color: var(--green-accent); }
+
+  .bb-sep {
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+
+  .bb-current {
+    color: var(--text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 400px;
+  }
+
+  /* Dark mode — uses overridden CSS custom properties, no extra rules needed */
+
+  @media (max-width: 640px) {
+    .breadcrumb-bar-inner { padding: 8px 16px; font-size: 13px; }
+    .bb-current { max-width: 200px; }
+  }
+</style>
