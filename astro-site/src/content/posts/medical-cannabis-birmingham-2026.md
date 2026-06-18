@@ -4,7 +4,7 @@ slug: "medical-cannabis-birmingham-2026"
 date: "2026-06-18"
 region: "uk"
 excerpt: 'Birmingham is the UK''s second city, and its residents have full access to every UK cannabis clinic. Here is how the system works, which clinics serve the Midlands, and what your first step should be.'
-image: "images/heroes/hero-medical-cannabis-birmingham-2026.jpg"
+image: "/images/heroes/hero-medical-cannabis-birmingham-2026.jpg"
 author: "The Ganja Club"
 category: "guide"
 tags:
