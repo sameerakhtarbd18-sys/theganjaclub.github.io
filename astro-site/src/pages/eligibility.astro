@@ -6,9 +6,22 @@ import Newsletter from "../components/Newsletter.astro";
 
 const siteUrl = "https://theganjaclub.co.uk";
 
-// ── Configurable clinic partnership ──
-const clinicName = "Releaf";
-const clinicUrl = "https://releaf.co.uk";
+// ── Clinic partnerships (loaded from affiliates.json) ──
+import affiliates from "../data/affiliates.json";
+
+const clinicPartners = Object.entries(affiliates.partners.clinics)
+  .filter(([_, c]: [string, any]) => c.status === "active_untracked" || c.status === "outreach_pending")
+  .slice(0, 3)
+  .map(([_, c]: [string, any]) => ({
+    name: c.name,
+    url: c.url || c.affiliateUrl,
+    slug: c.slug,
+    bestFor: c.notes?.split(".")[0] || "",
+    trackedUrl: `${c.url || c.affiliateUrl}?utm_source=theganjaclub&utm_medium=affiliate&utm_campaign=${c.slug}&utm_content=eligibility-checker`
+  }));
+
+const primaryClinic = clinicPartners[0];
+const otherClinics = clinicPartners.slice(1);
 ---
 
 <Base
@@ -87,13 +100,26 @@ const clinicUrl = "https://releaf.co.uk";
         <div class="cta-inner">
           <h3 class="cta-heading">Ready to take the next step?</h3>
           <p class="cta-body">
-            We've partnered with {clinicName} to make the next step simple — book a
-            consultation and a GMC-registered specialist will review your case.
+            These UK clinics are listed on our clinic finder. Book a consultation and a GMC-registered specialist will review your case.
           </p>
-          <a href={clinicUrl} class="cta-button" target="_blank" rel="noopener nofollow sponsored">
-            Book a consultation at {clinicName}
-          </a>
-          <p class="cta-disclosure">The Ganja Club may receive a referral fee at no cost to you.</p>
+          <div class="cta-clinics">
+            {primaryClinic && (
+              <a href={primaryClinic.trackedUrl} class="cta-button cta-primary" target="_blank" rel="noopener nofollow sponsored">
+                Book at {primaryClinic.name} →
+              </a>
+            )}
+            {otherClinics.length > 0 && (
+              <div class="cta-others">
+                {otherClinics.map((clinic: any) => (
+                  <a href={clinic.trackedUrl} class="cta-link" target="_blank" rel="noopener nofollow sponsored">
+                    {clinic.name}
+                  </a>
+                ))}
+              </div>
+            )}
+            <a href="/clinics" class="cta-compare">Compare all clinics →</a>
+          </div>
+          <p class="cta-disclosure">The Ganja Club may receive a referral fee from clinic partners at no cost to you.</p>
         </div>
       </section>
     </div>
@@ -307,4 +333,38 @@ const clinicUrl = "https://releaf.co.uk";
     margin-top: 16px;
     line-height: 1.5;
   }
+  .cta-clinics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .cta-primary {
+    font-size: 1.05rem !important;
+    padding: 16px 40px !important;
+  }
+  .cta-others {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cta-link {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.15s;
+  }
+  .cta-link:hover { color: var(--green-accent); }
+  .cta-compare {
+    color: var(--green);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 4px;
+    transition: opacity 0.15s;
+  }
+  .cta-compare:hover { opacity: 0.8; }
 </style>
