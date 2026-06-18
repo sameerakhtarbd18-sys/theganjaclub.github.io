@@ -22,7 +22,7 @@ const authorShort = author === "The Ganja Club" ? "TGC" : author;
 
 <article class="card">
   <a href={`/post/${slug}`} class="card-image" aria-hidden="true" tabindex="-1">
-    <img src={imgSrc} alt="" loading="lazy" decoding="async" />
+    <img src={imgSrc} alt={title} loading="lazy" decoding="async" />
   </a>
   <div class="card-body">
     <div class="card-kicker">{kicker}</div>
