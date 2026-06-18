@@ -4,7 +4,7 @@ slug: "medical-cannabis-london-2026"
 date: "2026-06-18"
 region: "uk"
 excerpt: 'London has more prescribing clinics than anywhere else in the UK — but most Londoners still do not know medical cannabis is legal. Here is how the system works in the capital, which clinics serve London patients, and what your first step should be.'
-image: "/images/heroes/hero-medical-cannabis-london-2026.webp"
+image: "/images/heroes/hero-medical-cannabis-london-2026.jpg"
 author: "The Ganja Club"
 category: "guide"
 tags:
