@@ -1,0 +1,241 @@
+{
+  "_schema": "1.0",
+  "_description": "Single source of truth for all TGC affiliate partnerships. Update this file to add, modify, or pause partners. All article links, clinic finder links, and eligibility checker CTAs read from here.",
+  "_lastUpdated": "2026-06-18",
+  "_managedBy": "Hermes — ~/.hermes/hermes-agent",
+
+  "tracking": {
+    "utm_source": "theganjaclub",
+    "utm_medium": "affiliate",
+    "clickLog": "~/.hermes/tgc-affiliate-clicks.json",
+    "anonymise": true,
+    "note": "All outbound links append utm_source=theganjaclub&utm_medium=affiliate&utm_campaign={partner_slug}&utm_content={page_slug}"
+  },
+
+  "networks": {
+    "awin": {
+      "status": "active",
+      "publisherId": "2940095",
+      "deeplinkFormat": "https://www.awin1.com/cread.php?awinmid={merchantId}&awinaffid=2940095&ued={destinationUrl}",
+      "joinedDate": "2026-06-18",
+      "note": "Approved 18 Jun 2026. Joined: Storz & Bickel, Arizer, Pax, DaVinci, CBDfx, FourFive CBD. Still searching: Bulk, Provacan."
+    },
+    "cj": {
+      "status": "not_joined",
+      "note": "Commission Junction — secondary network. Some vaporiser brands exclusive here."
+    },
+    "tradedoubler": {
+      "status": "not_joined",
+      "note": "European focus, strong in UK wellness/supplements."
+    }
+  },
+
+  "partners": {
+    "clinics": {
+      "mamedica": {
+        "name": "Mamedica",
+        "slug": "mamedica",
+        "status": "outreach_pending",
+        "category": "clinic",
+        "url": "https://mamedica.co.uk",
+        "affiliateUrl": null,
+        "commissionType": "cpl",
+        "commissionRate": "negotiable",
+        "estimatedValue": "£20-50 per patient booking",
+        "contactEmail": null,
+        "contactName": null,
+        "notes": "Lowest long-term cost clinic. Trustpilot 4.7. Same-week video slots. Strong candidate for first partnership — operationally mature."
+      },
+      "medicann": {
+        "name": "Medicann",
+        "slug": "medicann",
+        "status": "outreach_pending",
+        "category": "clinic",
+        "url": "https://medicann.co.uk",
+        "affiliateUrl": null,
+        "commissionType": "cpl",
+        "commissionRate": "negotiable",
+        "estimatedValue": "£20-50 per patient booking",
+        "contactEmail": null,
+        "contactName": null,
+        "notes": "Zero-fee model. Fastest onboarding. Best for budget-conscious patients — highest conversion potential."
+      },
+      "curaleaf": {
+        "name": "Curaleaf Clinic",
+        "slug": "curaleaf",
+        "status": "outreach_pending",
+        "category": "clinic",
+        "url": "https://curaleafclinic.com",
+        "affiliateUrl": null,
+        "commissionType": "cpl",
+        "commissionRate": "negotiable",
+        "estimatedValue": "£20-50 per patient booking",
+        "contactEmail": null,
+        "contactName": null,
+        "notes": "Access Scheme: £50 initial. Major brand name. Part of Curaleaf International — may have existing affiliate infrastructure."
+      },
+      "releaf": {
+        "name": "Releaf",
+        "slug": "releaf",
+        "status": "active_untracked",
+        "category": "clinic",
+        "url": "https://releaf.co.uk",
+        "affiliateUrl": "https://releaf.co.uk",
+        "commissionType": "none_yet",
+        "commissionRate": null,
+        "estimatedValue": null,
+        "contactEmail": null,
+        "contactName": null,
+        "notes": "Already linked from eligibility checker. Wired as plain URL — needs tracking. Subscription model means recurring revenue potential."
+      },
+      "alternaleaf": {
+        "name": "Alternaleaf",
+        "slug": "alternaleaf",
+        "status": "outreach_pending",
+        "category": "clinic",
+        "url": "https://alternaleaf.co.uk",
+        "affiliateUrl": null,
+        "commissionType": "cpl",
+        "commissionRate": "negotiable",
+        "estimatedValue": "£20-50 per patient booking",
+        "contactEmail": null,
+        "contactName": null,
+        "notes": "Highest clinic web traffic share. Budget-category — high volume potential."
+      },
+      "cantourage": {
+        "name": "Cantourage Clinic",
+        "slug": "cantourage",
+        "status": "outreach_pending",
+        "category": "clinic",
+        "url": "https://cantourage-clinic.com",
+        "affiliateUrl": null,
+        "commissionType": "cpl",
+        "commissionRate": "negotiable",
+        "estimatedValue": "£20-50 per patient booking",
+        "contactEmail": null,
+        "contactName": null,
+        "notes": "First-time patient specialist. Verified: false — fees unconfirmed. Lower priority until verified."
+      }
+    },
+
+    "pharmacies": {
+      "_note": "UK dispensing pharmacies. Approach after clinic partnerships are live — pharmacy affiliation typically flows through clinic relationships."
+    },
+
+    "vaporisers": {
+      "storz_bickel": {
+        "name": "Storz & Bickel",
+        "slug": "storz-bickel",
+        "status": "researching",
+        "category": "vaporiser",
+        "url": "https://www.storz-bickel.com",
+        "affiliateUrl": null,
+        "network": "awin",
+        "commissionType": "cps",
+        "commissionRate": "5-8% (estimated)",
+        "estimatedValue": "£15-30 per sale",
+        "notes": "Medical-grade (Mighty+, Volcano). The default recommendation for UK patients. Awin programme confirmed."
+      },
+      "pax": {
+        "name": "Pax",
+        "slug": "pax",
+        "status": "researching",
+        "category": "vaporiser",
+        "url": "https://pax.com",
+        "affiliateUrl": null,
+        "network": "awin",
+        "commissionType": "cps",
+        "commissionRate": "5-10% (estimated)",
+        "estimatedValue": "£10-20 per sale",
+        "notes": "Pax Plus / Pax Mini. Lifestyle-forward design. Awin UK programme."
+      },
+      "arizer": {
+        "name": "Arizer",
+        "slug": "arizer",
+        "status": "researching",
+        "category": "vaporiser",
+        "url": "https://arizer.com",
+        "affiliateUrl": null,
+        "network": "awin",
+        "commissionType": "cps",
+        "commissionRate": "5-8% (estimated)",
+        "estimatedValue": "£10-20 per sale",
+        "notes": "Arizer Solo 3 — best glass vapour path. Popular with medical users."
+      },
+      "davinci": {
+        "name": "DaVinci",
+        "slug": "davinci",
+        "status": "researching",
+        "category": "vaporiser",
+        "url": "https://www.davincivaporizer.com",
+        "affiliateUrl": null,
+        "network": "awin",
+        "commissionType": "cps",
+        "commissionRate": "5-10% (estimated)",
+        "estimatedValue": "£10-25 per sale",
+        "notes": "DaVinci IQ3 — precision temp control. Medical-focused marketing."
+      }
+    },
+
+    "cbd_wellness": {
+      "_note": "UK CBD brands on Awin — legal, over-the-counter, no prescription needed. Largest addressable market for TGC.",
+      "brands": ["CBDfx", "Provacan", "FourFive", "Cannaray", "Vitality CBD", "Trip", "OTO", "Mindful Extracts"]
+    },
+
+    "supplements": {
+      "_note": "Adjacent wellness: nootropics, sleep aids, terpene blends. Overlaps the medical cannabis audience without regulatory risk.",
+      "brands": ["Bulk", "MyProtein", "Holland & Barrett", "British Supplements"]
+    },
+
+    "events": {
+      "_note": "UK cannabis events and conferences. Seasonal but high brand alignment.",
+      "brands": ["Product Earth", "CannExpo", "The Cannabis Industrial Council conference"]
+    },
+
+    "books_education": {
+      "_note": "Amazon Associates for cannabis books. Small commissions but zero effort — link existing content.",
+      "network": "amazon_associates",
+      "status": "not_joined"
+    }
+  },
+
+  "linkTemplates": {
+    "awin": "https://www.awin1.com/cread.php?awinmid={merchantId}&awinaffid={publisherId}&ued={destinationUrl}",
+    "direct_tracked": "{partnerUrl}?utm_source=theganjaclub&utm_medium=affiliate&utm_campaign={partnerSlug}&utm_content={pageSlug}",
+    "clinic_cta": "{partnerUrl}?ref=tgc-{partnerSlug}&utm_source=theganjaclub&utm_medium=affiliate&utm_campaign={partnerSlug}&utm_content=eligibility-checker"
+  },
+
+  "priorityOutreach": [
+    {
+      "rank": 1,
+      "partner": "mamedica",
+      "reason": "Trustpilot 4.7, operationally mature, lowest long-term cost — easiest to convert patients to. Start here.",
+      "emailTemplate": "template-1-clinic"
+    },
+    {
+      "rank": 2,
+      "partner": "medicann",
+      "reason": "Zero-fee model means zero barrier to entry. Highest conversion rate potential for budget-conscious patients.",
+      "emailTemplate": "template-1-clinic"
+    },
+    {
+      "rank": 3,
+      "partner": "releaf",
+      "reason": "Already linked from eligibility checker. Upgrade to tracked partnership. Subscription model = recurring revenue.",
+      "emailTemplate": "template-1-clinic"
+    },
+    {
+      "rank": 4,
+      "partner": "curaleaf",
+      "reason": "Major brand. May have existing affiliate infrastructure through Curaleaf International.",
+      "emailTemplate": "template-1-clinic"
+    }
+  ],
+
+  "compliance": {
+    "disclosure": "This article contains affiliate links. If you book a consultation or purchase a product through these links, The Ganja Club may earn a commission at no extra cost to you.",
+    "medicalDisclaimer": "The Ganja Club does not provide medical advice. Always consult a qualified healthcare professional. Affiliate partnerships do not influence our editorial recommendations.",
+    "asaCompliance": true,
+    "note": "All UK affiliate content must comply with ASA/CAP guidelines — sponsorship must be clearly disclosed before the affiliate link appears."
+  }
+}
