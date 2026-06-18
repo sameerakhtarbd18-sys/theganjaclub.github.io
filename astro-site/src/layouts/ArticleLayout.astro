@@ -216,10 +216,23 @@ const breadcrumbSchema = {
         </div>
       )}
 
+      <!-- Newsletter CTA -->
+      <section class="article-newsletter-cta">
+        <div class="article-newsletter-inner">
+          <span class="article-newsletter-kicker">STAY INFORMED</span>
+          <h3>Get the daily briefing in your inbox</h3>
+          <p>UK medical cannabis news, policy changes and patient resources — delivered daily, free.</p>
+          <a href="/#newsletter" class="article-newsletter-btn">Subscribe <Icons name="arrow-right" /></a>
+        </div>
+      </section>
+
       <!-- Related articles -->
       {related.length > 0 && (
         <section class="article-related">
-          <h2 class="article-related-heading">Read Next</h2>
+          <div class="article-related-header">
+            <span class="article-related-kicker">MORE TO READ</span>
+            <h2 class="article-related-heading">Read Next</h2>
+          </div>
           <div class="article-related-grid">
             {related.map((p: RelatedPost) => (
               <ArticleCard
@@ -499,13 +512,18 @@ const breadcrumbSchema = {
     font-weight: 600;
   }
   .article-prose :global(blockquote) {
-    border-left: 3px solid var(--green);
-    padding: 0.5rem 0 0.5rem 1.5rem;
-    margin: 1.5rem 0;
+    border-left: 4px solid var(--gold);
+    padding: 1rem 0 1rem 2rem;
+    margin: 2rem 0;
+    font-family: var(--font-display);
     font-style: italic;
-    color: var(--text-secondary);
-    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-size: 1.3rem;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
   }
+  .article-prose :global(blockquote p) { margin-bottom: 0; }
   .article-prose :global(ul),
   .article-prose :global(ol) {
     margin: 1rem 0 1.4rem 1.5rem;
@@ -654,4 +672,57 @@ const breadcrumbSchema = {
     border-color: var(--green);
     color: var(--text-on-dark);
   }
+
+  /* ── Newsletter CTA (inline, after article body) ── */
+  .article-newsletter-cta {
+    max-width: 720px;
+    margin: 48px auto 0;
+  }
+  .article-newsletter-inner {
+    background: var(--green-house);
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    text-align: center;
+  }
+  .article-newsletter-kicker {
+    font-weight: 700; font-size: 0.62rem; letter-spacing: 0.16em;
+    color: var(--gold); text-transform: uppercase;
+    display: block; margin-bottom: 10px;
+  }
+  .article-newsletter-inner h3 {
+    font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;
+    color: var(--text-on-dark); margin-bottom: 10px; letter-spacing: -0.01em;
+  }
+  .article-newsletter-inner p {
+    font-size: 0.92rem; line-height: 1.55; color: var(--text-on-dark-soft);
+    margin-bottom: 20px; max-width: 420px; margin-left: auto; margin-right: auto;
+  }
+  .article-newsletter-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--green-accent); color: var(--text-on-dark);
+    font-weight: 600; font-size: 0.9rem; padding: 12px 28px;
+    border-radius: var(--radius-btn); text-decoration: none;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+  .article-newsletter-btn:hover { background: var(--green); }
+  .article-newsletter-btn:active { transform: scale(0.95); }
+
+  /* ── Related articles header ── */
+  .article-related-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .article-related-kicker {
+    font-weight: 700; font-size: 0.62rem; letter-spacing: 0.16em;
+    color: var(--green); text-transform: uppercase;
+    display: block; margin-bottom: 6px;
+  }
+
+  /* ── Dark mode: newsletter CTA ── */
+  :global([data-theme="dark"]) .article-newsletter-inner {
+    background: var(--green-house);
+  }
+  :global([data-theme="dark"]) .article-newsletter-inner h3 { color: #e8f2ed; }
+  :global([data-theme="dark"]) .article-related-kicker { color: #4dab8a; }
+  :global([data-theme="dark"]) .article-prose :global(blockquote) { border-left-color: var(--gold); }
 </style>

@@ -1,31 +1,211 @@
+---
+import Icons from "./Icons.astro";
+const year = new Date().getFullYear();
+---
+
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-grid">
+    <div class="footer-top">
       <div class="footer-brand">
-        <h3>The Ganja Club</h3>
-        <p>Daily intelligence on UK medical cannabis, global policy reform, industry analysis, and the culture that binds it all.</p>
+        <h3 class="footer-logo">The Ganja Club</h3>
+        <p class="footer-tagline">
+          Independent UK medical cannabis publication. Science-led, patient-first.
+          Daily briefings, patient tools and guides for the system nobody explains.
+        </p>
+        <div class="footer-social">
+          <a href="https://instagram.com/theganjaclub_" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://x.com/theganjaclub_" target="_blank" rel="noopener" aria-label="X / Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="/rss" aria-label="RSS Feed">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 11a9 9 0 0 1 9 9"/>
+              <path d="M4 4a16 16 0 0 1 16 16"/>
+              <circle cx="5" cy="19" r="1"/>
+            </svg>
+          </a>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Regions</h4>
-        <a href="/uk">United Kingdom</a>
-        <a href="/europe">Europe</a>
-        <a href="/usa">United States</a>
-        <a href="/global">Global</a>
-        <a href="/research">Research</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="/clinics">Compare Clinics</a>
-        <a href="/strains">Strain Explorer</a>
-        <a href="/eligibility">Eligibility Checker</a>
-        <a href="/rss">RSS Feed</a>
-        <a href="https://instagram.com/theganjaclub_" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://x.com/theganjaclub_" target="_blank" rel="noopener">X / Twitter</a>
+
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h4>News</h4>
+          <a href="/uk">United Kingdom</a>
+          <a href="/europe">Europe</a>
+          <a href="/usa">United States</a>
+          <a href="/global">Global</a>
+          <a href="/research">Research</a>
+        </div>
+        <div class="footer-col">
+          <h4>Patient Tools</h4>
+          <a href="/eligibility">Eligibility Checker</a>
+          <a href="/clinics">Compare Clinics</a>
+          <a href="/strains">Strain Explorer</a>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <a href="/guides/patient-rights">Patient Rights</a>
+          <a href="/guides/getting-started">Getting Started</a>
+          <a href="/guides/using-cannabis">Using Cannabis</a>
+          <a href="/guides/strains-terpenes">Strains & Terpenes</a>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="/resources">Resources</a>
+          <a href="/shop">Shop</a>
+          <a href="/rss">RSS Feed</a>
+        </div>
       </div>
     </div>
+
+    <div class="footer-mid">
+      <div class="footer-disclaimer">
+        <p>
+          <strong>Medical disclaimer:</strong> The Ganja Club is an informational publication, not a medical provider.
+          Nothing on this site constitutes medical advice. Always consult a GMC-registered specialist about your
+          individual circumstances. Medical cannabis has been legal on prescription in the UK since November 2018.
+        </p>
+      </div>
+    </div>
+
     <div class="footer-bottom">
-      <span>© {new Date().getFullYear()} The Ganja Club. All rights reserved.</span>
-      <span>Part of AP Collective Ltd</span>
+      <span>&copy; {year} The Ganja Club. All rights reserved.</span>
+      <span class="footer-company">Part of AP Collective Ltd &middot; Bradford, UK</span>
     </div>
   </div>
 </footer>
+
+<style>
+  .site-footer {
+    background: var(--green-house);
+    color: var(--text-on-dark);
+    margin-top: auto;
+  }
+  .footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 56px 24px 28px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.4fr 2.6fr;
+    gap: 48px;
+    margin-bottom: 40px;
+  }
+  .footer-brand .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-on-dark);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .footer-tagline {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--text-on-dark-soft);
+    margin-bottom: 20px;
+    max-width: 340px;
+  }
+  .footer-social {
+    display: flex;
+    gap: 12px;
+  }
+  .footer-social a {
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-circle);
+    border: 1px solid rgba(255,255,255,0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-on-dark-soft);
+    transition: all 0.18s ease;
+  }
+  .footer-social a:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  .footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .footer-col h4 {
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .footer-col a {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--text-on-dark-soft);
+    text-decoration: none;
+    padding: 4px 0;
+    transition: color 0.15s ease;
+  }
+  .footer-col a:hover {
+    color: var(--text-on-dark);
+  }
+
+  .footer-mid {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 28px;
+    margin-bottom: 28px;
+  }
+  .footer-disclaimer p {
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: rgba(212,233,226,0.5);
+    max-width: 720px;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: rgba(212,233,226,0.45);
+  }
+  .footer-company {
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 780px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .footer-links-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+  @media (max-width: 480px) {
+    .footer-links-grid {
+      grid-template-columns: 1fr;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
