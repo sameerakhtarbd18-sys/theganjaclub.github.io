@@ -4,6 +4,7 @@ slug: "daily-briefing-31-05-2026"
 date: "31 May 2026"
 region: "uk"
 excerpt: "New analysis finds opioid overdoses decline after cannabis legalisation A fresh analysis published this week by NORML has added to the growing body of evidence that legal cannabis access is"
+author: "The Ganja Club"
 image: "/images/heroes/hero-daily-briefing-31-05-2026.jpg"
 category: "news"
 tags:

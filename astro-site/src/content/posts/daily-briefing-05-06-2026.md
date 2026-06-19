@@ -4,6 +4,7 @@ slug: "daily-briefing-05-06-2026"
 date: "5 June 2026"
 region: "uk"
 excerpt: "Alabama patients finally gain access to authorised medical cannabis after years of delays Patients in Alabama can now legally purchase authorised medical cannabis products, following years of"
+author: "The Ganja Club"
 image: "/images/heroes/hero-daily-briefing-05-06-2026.jpg"
 category: "news"
 tags:

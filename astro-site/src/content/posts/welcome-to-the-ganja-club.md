@@ -4,6 +4,7 @@ slug: "welcome-to-the-ganja-club"
 date: "14 May 2026"
 region: "uk"
 excerpt: "Why we're here, what we stand for, and what you can expect from this publication. Medical cannabis news, analysis, and the culture that connects the community."
+author: "The Ganja Club"
 image: "/images/flower/pexels-blak7ta-31952151.webp"
 category: "news"
 tags:

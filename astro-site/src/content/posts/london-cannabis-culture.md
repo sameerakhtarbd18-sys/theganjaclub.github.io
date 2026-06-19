@@ -4,6 +4,7 @@ slug: "london-cannabis-culture"
 date: "7 May 2026"
 region: "uk"
 excerpt: "From private members' clubs to patient meetups, London's cannabis culture is maturing. A look at the community behind the medicine."
+author: "The Ganja Club"
 image: "/images/flower/pexels-diego-barros-2149566212-33639863-v2.webp"
 category: "news"
 tags:

@@ -4,6 +4,7 @@ slug: "nhs-prescribing-access"
 date: "11 May 2026"
 region: "uk"
 excerpt: "Eight years after the law changed, NHS prescribing of cannabis-based medicines remains negligible. Here's what's blocking progress."
+author: "The Ganja Club"
 image: "/images/flower/pexels-diego-barros-2149566212-30682036.webp"
 category: "news"
 tags:

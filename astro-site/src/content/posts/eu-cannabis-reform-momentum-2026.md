@@ -4,7 +4,9 @@ slug: "eu-cannabis-reform-momentum-2026"
 date: "17 June 2026"
 region: "europe"
 excerpt: 'From German pilot programmes to Czech legalisation and French medical trials, European cannabis reform is accelerating. We examine the patchwork of policies reshaping access across the continent.'
+author: "The Ganja Club"
 image: "/images/editorial/eu-flags.webp"
+category: "news"
 tags:
   - Europe
   - Policy

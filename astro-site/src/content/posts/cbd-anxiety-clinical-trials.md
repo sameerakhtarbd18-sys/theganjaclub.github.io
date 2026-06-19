@@ -4,6 +4,7 @@ slug: "cbd-anxiety-clinical-trials"
 date: "9 May 2026"
 region: "global"
 excerpt: "New clinical trials are providing clearer evidence on CBD's potential for anxiety disorders. Here's what the science says in May 2026."
+author: "The Ganja Club"
 image: "/images/flower/pexels-diego-barros-2149566212-30682042.webp"
 category: "news"
 tags:

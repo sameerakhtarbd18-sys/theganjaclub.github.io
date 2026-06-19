@@ -4,6 +4,7 @@ slug: "patient-stigma-uk-healthcare"
 date: "15 May 2026"
 region: "uk"
 excerpt: "Patients report that stigma around cannabis as medicine remains one of the biggest challenges — often within the healthcare system itself."
+author: "The Ganja Club"
 image: "/images/flower/pexels-alejo-turola-2741789-17269272.webp"
 category: "news"
 tags:

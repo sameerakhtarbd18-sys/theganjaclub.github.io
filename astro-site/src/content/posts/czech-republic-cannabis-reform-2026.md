@@ -4,6 +4,7 @@ slug: "czech-republic-cannabis-reform-2026"
 date: "15 April 2026"
 region: "europe"
 excerpt: "In early 2026, the Czech Republic unveiled draft legislation for a regulated adult-use cannabis market, drawing inspiration from Germany’s model while tailoring provisions to local priorities. The move, paired with a major expansion of the medical programme, is reshaping Central Europe’s cannabis landscape and setting a potential timeline for legal sales by late 2027."
+author: "The Ganja Club"
 image: "/images/industrial-weed/pexels-jess-vide-9268920.webp"
 category: "news"
 tags:

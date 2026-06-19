@@ -4,6 +4,7 @@ slug: "fda-cbd-regulation-pathway-2026"
 date: "25 March 2026"
 region: "usa"
 excerpt: "FDA releases March 2026 draft guidance on hemp-derived CBD, proposing a 20 mg daily cap and strict labelling rules for a $4B+ market."
+author: "The Ganja Club"
 image: "/images/industrial-weed/pexels-lucas-porras-1937324539-36727257.webp"
 category: "news"
 tags:

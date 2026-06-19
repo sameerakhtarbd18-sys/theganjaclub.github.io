@@ -4,6 +4,7 @@ slug: "daily-briefing-02-06-2026"
 date: "2 June 2026"
 region: "uk"
 excerpt: "Global cancer workforce shortage raises concerns for patient access to care A new report from researchers published by The Guardian warns that the world faces a cancer workforce crisis, with a"
+author: "The Ganja Club"
 image: "/images/heroes/hero-daily-briefing-02-06-2026.jpg"
 category: "news"
 tags:

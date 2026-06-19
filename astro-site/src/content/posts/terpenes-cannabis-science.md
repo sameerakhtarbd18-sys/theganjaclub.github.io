@@ -4,6 +4,7 @@ slug: "terpenes-cannabis-science"
 date: "3 May 2026"
 region: "global"
 excerpt: "Terpenes — the aromatic compounds in cannabis — are emerging as a key area of research with potential therapeutic applications."
+author: "The Ganja Club"
 image: "/images/flower/pexels-diego-barros-2149566212-33856592.webp"
 category: "news"
 tags:

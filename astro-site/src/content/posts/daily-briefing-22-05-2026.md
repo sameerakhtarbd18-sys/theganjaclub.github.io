@@ -4,6 +4,7 @@ slug: "daily-briefing-22-05-2026"
 date: "22 May 2026"
 region: "uk"
 excerpt: "House-approved funding bill secures medical cannabis access for US veterans The US House of Representatives has approved a Fiscal Year 2027 funding bill that includes a provision protecting medical"
+author: "The Ganja Club"
 image: "/images/heroes/hero-daily-briefing-22-05-2026.jpg"
 category: "news"
 tags:

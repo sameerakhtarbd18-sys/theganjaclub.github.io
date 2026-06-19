@@ -4,6 +4,7 @@ slug: "daily-briefing-28-05-2026"
 date: "28 May 2026"
 region: "uk"
 excerpt: "Pew Poll Shows Strong Public Support for Ending Marijuana Prohibition in US A new poll from the Pew Research Center has found that marijuana prohibition is increasingly unpopular among Americans. The"
+author: "The Ganja Club"
 image: "/images/heroes/hero-daily-briefing-28-05-2026.jpg"
 category: "news"
 tags:
