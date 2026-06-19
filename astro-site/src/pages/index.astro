@@ -269,6 +269,9 @@ const today = new Date().toLocaleDateString("en-GB", {
     transform: translateY(-2px);
   }
   .tool-icon {
+    color: var(--text-on-dark) !important;
+  }
+  .tool-icon svg { color: var(--text-on-dark) !important; }
     width: 40px; height: 40px; border-radius: var(--radius);
     background: rgba(203,162,88,0.12); display: flex; align-items: center;
     justify-content: center; color: var(--gold); margin-bottom: 4px;

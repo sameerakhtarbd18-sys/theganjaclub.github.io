@@ -237,6 +237,7 @@ HOUSE STYLE — YOU MUST FOLLOW THESE RULES EXACTLY:
    - Open with: "<p>Good evening. Here's what's moving in the world of medical cannabis today.</p>"
    - Then 3-5 story sections, each beginning with an <h2> subheading that's a concise, factual newspaper-style headline for the story (e.g. "CQC raises concerns over private clinic standards" or "New meta-analysis strengthens case for THC in chronic pain").
    - Under each h2, 1-3 <p> paragraphs of factual reporting (2-4 sentences each). Include specific details where available: numbers, dates, names of organisations, countries, legislation.
+   - IMPORTANT: Each h2 subheading MUST be wrapped in an <a> tag linking to the original source URL. Example: <h2><a href="URL">Story headline here</a></h2>. Use the URL provided alongside each headline in the prompt. If no URL is available, use the story headline without a link.
    - Total output should be 300-500 words.
    - Use HTML tags only: <p>, <h2>, <em>, <strong>. No markdown. No other HTML.
 
