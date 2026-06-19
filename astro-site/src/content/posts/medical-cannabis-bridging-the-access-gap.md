@@ -3,7 +3,7 @@ title: "Bridging the Gap: Why Medical Cannabis Access Still Fails Patients Who N
 slug: "medical-cannabis-bridging-the-access-gap"
 date: "17 June 2026"
 region: "uk"
-excerpt: "Eight years after legalisation, the gap between policy and practice in UK medical cannabis has never been wider. We examine the cost, geography, and bureaucracy that keep patients from the treatment they are legally entitled to."
+excerpt: 'Eight years after legalisation, the gap between policy and practice in UK medical cannabis has never been wider. We examine the cost, geography, and bureaucracy that keep patients from the treatment they are legally entitled to.'
 author: "The Ganja Club"
 image: "/images/editorial/patient-consultation.webp"
 category: "news"

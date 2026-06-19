@@ -3,7 +3,7 @@ title: "Medical Cannabis in Manchester (2026): Clinics, Eligibility & What Patie
 slug: "medical-cannabis-manchester-2026"
 date: "2026-06-18"
 region: "uk"
-excerpt: "Manchester patients can access every UK cannabis clinic via video consultation — no travel required. Here is how the system works, which clinics best serve the North West, and what your first step should be."
+excerpt: 'Manchester patients can access every UK cannabis clinic via video consultation — no travel required. Here is how the system works, which clinics best serve the North West, and what your first step should be.'
 image: "/images/heroes/hero-medical-cannabis-manchester-2026.jpg"
 author: "The Ganja Club"
 category: "guide"
