@@ -5,7 +5,7 @@ date: "10 March 2026"
 region: "usa"
 excerpt: "DEA hearings in March 2026 weigh historic move of cannabis to Schedule III, with HHS and DEA officials clashing over medical use and public health risks."
 author: "The Ganja Club"
-image: "/images/industrial-weed/pexels-mart-production-7231419.webp"
+image: "/images/heroes/hero-dea-cannabis-rescheduling-hearings-march-2026.jpg"
 category: "news"
 tags:
   - USA

@@ -5,7 +5,7 @@ date: "15 May 2026"
 region: "usa"
 excerpt: "Q1 2026 data projects US medical cannabis market to exceed $45 billion by 2027, with record sales but price compression squeezing multi-state operators in mature western states."
 author: "The Ganja Club"
-image: "/images/industrial-weed/pexels-elsa-olofsson-3357043-18512074.webp"
+image: "/images/heroes/hero-us-cannabis-market-growth-2026.jpg"
 category: "news"
 tags:
   - USA

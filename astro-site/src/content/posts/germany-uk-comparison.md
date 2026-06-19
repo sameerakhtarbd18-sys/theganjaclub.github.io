@@ -5,7 +5,7 @@ date: "10 May 2026"
 region: "europe"
 excerpt: "Germany's medical cannabis system has expanded rapidly since 2024 reforms. The UK could learn valuable lessons from its European neighbour."
 author: "The Ganja Club"
-image: "/images/industrial-weed/pexels-jess-vide-9259876.webp"
+image: "/images/heroes/hero-germany-uk-comparison.jpg"
 category: "news"
 tags:
   - Global

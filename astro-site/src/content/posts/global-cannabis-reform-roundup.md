@@ -5,7 +5,7 @@ date: "14 May 2026"
 region: "global"
 excerpt: "From Germany to Brazil, the global cannabis reform landscape is shifting rapidly. A roundup of the major policy developments you need to know."
 author: "The Ganja Club"
-image: "/images/industrial-weed/pexels-jess-vide-9259842.webp"
+image: "/images/heroes/hero-global-cannabis-reform-roundup.jpg"
 category: "news"
 tags:
   - Global
