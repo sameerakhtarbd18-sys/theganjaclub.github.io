@@ -98,4 +98,6 @@ Subscription (£99.99/month) with full concierge support. Best for first-time pa
 
 ---
 
+**Also see:** [Medical Cannabis in London](/post/medical-cannabis-london-2026) · [Manchester](/post/medical-cannabis-manchester-2026) · [Birmingham](/post/medical-cannabis-birmingham-2026) · [Compare all UK clinics](/clinics)
+
 *The Ganja Club does not provide medical advice. This guide contains affiliate links. Eligibility is a clinical decision made by a GMC-registered specialist.*

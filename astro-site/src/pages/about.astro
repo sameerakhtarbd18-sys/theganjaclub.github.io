@@ -1,0 +1,166 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+const siteUrl = "https://theganjaclub.co.uk";
+---
+
+<Base
+  title="About The Ganja Club — Editorial Policy & Medical Disclaimer"
+  description="The Ganja Club is a UK medical cannabis publication. Read our editorial policy, medical disclaimer, affiliate disclosure, and how we operate."
+  canonicalUrl={`${siteUrl}/about`}
+>
+  <Nav />
+
+  <main class="about-page">
+    <header class="page-header">
+      <p class="kicker">ABOUT US</p>
+      <h1>The Ganja Club is a UK medical cannabis publication</h1>
+      <p class="lede">
+        We publish patient education, clinic comparisons, strain guides, and
+        news — because most UK patients still discover cannabis is legal
+        through a stranger online, not their doctor.
+      </p>
+    </header>
+
+    <section class="section">
+      <h2>What we do</h2>
+      <p>
+        Medical cannabis has been legal in the UK since November 2018, but
+        awareness is low, information is fragmented, and the pathway from
+        "curious" to "consultation booked" is confusing. We exist to close
+        that gap.
+      </p>
+      <p>
+        Our site combines three things most UK cannabis resources do not:
+      </p>
+      <ul>
+        <li><strong>Editorial journalism</strong> — cited, fact-checked articles written for patients, not clinicians</li>
+        <li><strong>Practical tools</strong> — an eligibility checker, clinic finder, and strain explorer that answer the questions patients actually have</li>
+        <li><strong>Transparent funding</strong> — we earn through affiliate partnerships with clinics and product brands, always disclosed, never hidden</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Editorial policy</h2>
+      <p>
+        Our articles are written and reviewed by the editorial team. We cite
+        primary sources — legislation, clinical guidance, peer-reviewed
+        research — wherever possible. When we link to a clinic or product,
+        the link is either editorial (we are citing a source) or commercial
+        (we may earn a referral fee). Commercial links are always clearly
+        marked.
+      </p>
+      <p>
+        <strong>No brand pays for placement.</strong> Recommendations in our
+        guides and comparisons are based on published data (fees, Trustpilot
+        ratings, service models) and patient feedback. A clinic appearing
+        first does not mean they paid to be there.
+      </p>
+      <p>
+        Affiliate partnerships never influence what we cover, how we rank,
+        or what we recommend. If we publish sponsored content, it will be
+        explicitly labelled as such.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Medical disclaimer</h2>
+      <div class="disclaimer-box">
+        <p><strong>The Ganja Club does not provide medical advice.</strong></p>
+        <p>
+          All content on this site is for informational and educational
+          purposes only. It is not a substitute for professional medical
+          advice, diagnosis, or treatment. Always seek the advice of a
+          qualified healthcare provider with any questions you may have
+          regarding a medical condition.
+        </p>
+        <p>
+          Eligibility for medical cannabis in the UK is always an individual
+          clinical decision made by a GMC-registered specialist after
+          reviewing your full medical history. Our eligibility checker
+          describes how the system works in general terms — it does not
+          assess you or guarantee any outcome.
+        </p>
+        <p>
+          If you are experiencing a mental health crisis or thoughts of
+          self-harm, contact your GP, NHS 111, or the Samaritans on
+          <strong>116 123</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Affiliate disclosure</h2>
+      <p>
+        The Ganja Club participates in affiliate programmes, including the
+        Awin network. When you click a link to a clinic or product and make
+        a booking or purchase, we may earn a commission at no additional
+        cost to you.
+      </p>
+      <p>
+        Our affiliate partners include UK cannabis clinics, vaporiser
+        brands, and wellness companies. Every affiliate link is marked with
+        a disclosure statement on the page where it appears. You can read
+        our full partner list and commissioning model on the
+        <a href="/affiliates">affiliates page</a>.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Who runs The Ganja Club</h2>
+      <p>
+        The Ganja Club is published by AP Collective Ltd, a company
+        registered in England and Wales (company number 17047232). The
+        editorial team is based in Bradford, UK.
+      </p>
+      <p>
+        We are a small, independent team. The site is built and maintained
+        in-house — no agency, no investor, no parent media group. Every
+        article, tool, and guide is produced by us.
+      </p>
+      <p>
+        <strong>Contact:</strong>
+        <a href="mailto:contact@apcollective.ltd">contact@apcollective.ltd</a>
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Corrections and updates</h2>
+      <p>
+        Medical cannabis policy, clinic fees, and product availability
+        change frequently. We review and update our content regularly. Each
+        article shows its publication date and, where applicable, a "last
+        reviewed" date.
+      </p>
+      <p>
+        If you spot an error or outdated information, please email us and we
+        will correct it promptly.
+      </p>
+    </section>
+  </main>
+
+  <Footer />
+</Base>
+
+<style>
+  .about-page { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+  .page-header { margin-bottom: 40px; }
+  .kicker { font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+    font-size: 0.65rem; color: var(--green); margin-bottom: 10px; }
+  h1 { font-family: var(--font-display); font-weight: 600;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem); letter-spacing: -0.01em;
+    color: var(--text); margin-bottom: 12px; }
+  .lede { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; }
+  .section { margin-bottom: 40px; }
+  .section h2 { font-family: var(--font-display); font-size: 1.3rem;
+    font-weight: 600; color: var(--text); margin-bottom: 14px; }
+  .section p, .section li { font-size: 0.95rem; color: var(--text-secondary);
+    line-height: 1.7; margin-bottom: 10px; }
+  .section ul { padding-left: 20px; margin-bottom: 14px; }
+  .section a { color: var(--green-accent); text-decoration: underline;
+    text-underline-offset: 2px; }
+  .disclaimer-box { background: var(--green-bg); border-radius: var(--radius);
+    padding: 24px; margin: 16px 0; }
+  .disclaimer-box p { font-size: 0.9rem; margin-bottom: 10px; }
+</style>

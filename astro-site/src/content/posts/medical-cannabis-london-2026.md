@@ -121,4 +121,6 @@ If you found this guide useful, we publish new patient resources weekly. [Join t
 
 ---
 
+**Also see:** [Medical Cannabis in London](/post/medical-cannabis-london-2026) · [Manchester](/post/medical-cannabis-manchester-2026) · [Birmingham](/post/medical-cannabis-birmingham-2026) · [Compare all UK clinics](/clinics)
+
 *The Ganja Club does not provide medical advice. Eligibility is always an individual clinical decision made by a GMC-registered specialist. This guide contains affiliate links to clinics — we may earn a referral fee at no cost to you. Always consult a qualified healthcare professional about your treatment options.*

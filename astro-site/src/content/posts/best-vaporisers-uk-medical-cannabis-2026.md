@@ -140,6 +140,11 @@ The V3 Pro is the cheapest convection vaporiser worth buying. It uses the same h
 
 ## Quick Comparison
 
+![Vaporiser comparison chart](/images/heroes/vaporiser-comparison-chart-2026.jpg)
+
+*Comparison of the five recommended vaporisers. All prices indicative UK retail, June 2026.*
+
+
 | Device | Heat | Temp Control | Heat-up | Battery | Chamber | UK Price | Best For |
 |---|---|---|---|---|---|---|---|
 | **Mighty+** | Hybrid | Precise °C | 60s | 90 min | 0.25g | £275–300 | Clinic standard |
@@ -171,5 +176,7 @@ The V3 Pro is the cheapest convection vaporiser worth buying. It uses the same h
 - **Oil cartridge vapes.** UK medical cannabis flower prescriptions do not come in cartridges, and black-market THC vapes carry serious health risks (the EVALI crisis was caused by vitamin E acetate in illicit carts). Stick to dry herb.
 
 ---
+
+**Next steps:** [Check your eligibility for medical cannabis](/eligibility) · [Compare UK clinics](/clinics)
 
 *The Ganja Club does not provide medical advice. Always consult your prescribing clinic about suitable devices for your specific condition and prescribed flower. Prices are indicative UK retail as of June 2026 and may vary.*
