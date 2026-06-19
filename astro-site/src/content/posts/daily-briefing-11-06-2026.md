@@ -26,7 +26,7 @@ tags:
 
 <h2>Measles outbreak in US raises questions about public health preparedness</h2>
 <p>The United States has recorded more than 2,000 confirmed measles cases so far this year, approaching the total of 2,228 seen in all of 2025, according to a report in The Guardian. The outbreak, driven by falling vaccination rates and misinformation, is on track to become the worst year for measles in decades. Federal public health cuts have hampered state-level responses to the crisis.</p>
-<p>While not directly related to cannabis policy, the outbreak underscores the broader public health landscape in which medical cannabis operates. Access to reliable healthcare infrastructure and accurate health information are factors that affect patient outcomes across all therapeutic areas, including those using cannabis-based medicines.</p>
+<p>Whilst not directly related to cannabis policy, the outbreak underscores the broader public health landscape in which medical cannabis operates. Access to reliable healthcare infrastructure and accurate health information are factors that affect patient outcomes across all therapeutic areas, including those using cannabis-based medicines.</p>
 
 <h2>Study warns extreme heat will double US hospitalisations by 2040</h2>
 <p>A new study published this week projects that extreme heat will double hospitalisations in the United States by 2040, driving annual healthcare costs for heat-related conditions above $1bn. The research, reported by The Guardian, highlights the growing burden of climate change on health systems.</p>

@@ -5,7 +5,7 @@ date: "1 May 2026"
 region: "usa"
 excerpt: "Delaware became the 25th US state to legalise adult-use cannabis sales on 15 April 2026, with three retailers opening under a social equity-focused licensing programme."
 author: "The Ganja Club"
-image: "/images/industrial-weed/pexels-jess-vide-9259994.webp"
+image: "/images/heroes/hero-delaware-adult-use-cannabis-launch.jpg"
 category: "news"
 tags:
   - USA

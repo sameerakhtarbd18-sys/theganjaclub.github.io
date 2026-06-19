@@ -5,7 +5,7 @@ date: "16 May 2026"
 region: "uk"
 excerpt: "The UK medical cannabis market is expanding rapidly, but significant barriers remain for patients. A comprehensive look at where things stand in May 2026."
 author: "The Ganja Club"
-image: "/images/industrial-weed/pexels-diego-barros-2149566212-33965728.webp"
+image: "/images/heroes/hero-uk-medical-cannabis-market-growth.jpg"
 category: "news"
 tags:
   - UK Policy
@@ -20,4 +20,4 @@ tags:
 <h2>The political landscape</h2>
 <p>Calls for reform continue to grow louder. Patient advocacy groups are pushing for wider NHS access, clearer prescribing guidelines, and a more transparent regulatory framework. The Home Office's position on cannabis scheduling remains a point of contention, with many arguing that the current classification is not supported by the available evidence.</p>
 <h2>What's next</h2>
-<p>The trajectory is clear — more patients, more clinics, and more awareness. But the pace of change needs to accelerate if the UK is to realise the full potential of medical cannabis as a treatment option. The next 12 months will be crucial.</p>
+<p>But the pace of change needs to accelerate if the UK is to realise the full potential of medical cannabis as a treatment option. </p>

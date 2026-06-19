@@ -15,13 +15,13 @@ tags:
 ---
 <!-- Image type: C — Wikimedia CC place imagery (EU Parliament Brussels, European flags) + duotone treatment -->
 
-<p>Europe's cannabis landscape is changing faster than at any point in modern history. In the span of three years, the continent has moved from a near-universal prohibition model to a patchwork of reforms that includes adult-use legalisation, medical programmes, pilot projects, and decriminalisation. For policymakers, patients, and industry observers, keeping track of the shifting terrain has become a full-time job. What is clear is that the momentum is irreversible — and the implications extend far beyond cannabis itself.</p>
+<p>Europe's cannabis landscape is changing quickly. In the span of three years, the continent has moved from a near-universal prohibition model to a patchwork of reforms that includes adult-use legalisation, medical programmes, pilot projects, and decriminalisation. For policymakers, patients, and industry observers, keeping track of the shifting terrain is demanding attention. It is clear that the trend continues — and the implications extend far beyond cannabis itself.</p>
 
 <h2>Germany: The anchor reform</h2>
 
 <p>Germany's Cannabis Act, which came into force in April 2024, remains the centrepiece of European cannabis reform. The first pillar legalised personal cultivation and cannabis clubs for adults. The second pillar launched regional pilot programmes for commercial supply chains. A year on, the results are mixed but significant. Home cultivation and social clubs have integrated into communities without the public health disasters predicted by opponents. The commercial pilot programmes, however, have struggled with supply chain regulations, pricing pressures, and the fundamental tension between EU law and national drug policy.</p>
 
-<p>The pilot programmes — running in select cities including Frankfurt and Berlin — were designed to test whether a regulated commercial cannabis market could replace the illicit trade. Early data suggests they can, but the restrictions are tight. Each pilot is limited in scope, participant numbers are capped, and the products available are narrowly defined. Critics argue that the pilots are too constrained to generate meaningful data, while proponents point to the absence of major public health incidents as evidence that regulated supply works.</p>
+<p>The pilot programmes — running in select cities including Frankfurt and Berlin — were designed to test whether a regulated commercial cannabis market could replace the illicit trade. Early data suggests they can, but the restrictions are tight. Each pilot is limited in scope, participant numbers are capped, and the products available are narrowly defined. Critics argue that the pilots are too constrained to generate meaningful data, whilst proponents point to the absence of major public health incidents as evidence that regulated supply works.</p>
 
 <h2>Czech Republic: Going further</h2>
 
@@ -33,13 +33,13 @@ tags:
 
 <p>France, long one of Europe's most restrictive cannabis markets, has taken tentative steps towards reform. The country's medical cannabis experiment — launched in 2021 and extended multiple times — has provided controlled access to cannabis-based medicines for patients with specific conditions. The experiment remains limited in scope, with only a few thousand patients enrolled and a narrow range of products available, but it has generated valuable clinical data and demonstrated patient demand.</p>
 
-<p>Full legalisation remains politically contentious in France. President Macron's government has resisted calls for broader reform, citing public health concerns and the need for EU-wide coordination. However, pressure is mounting. With Germany, the Czech Republic, and Malta all moving towards regulated markets, France's prohibitionist stance is becoming increasingly isolated within the EU.</p>
+<p>Full legalisation remains politically contentious in France. President Macron's government has resisted calls for broader reform, citing public health concerns and the need for EU-wide coordination. But pressure is mounting. With Germany, the Czech Republic, and Malta all moving towards regulated markets, France's prohibitionist stance is becoming increasingly isolated within the EU.</p>
 
 <h2>Poland and Italy: The quiet growth</h2>
 
 <p>Beyond the headline-grabbing reforms, Poland and Italy have been quietly expanding their medical cannabis programmes. Poland legalised medical cannabis in 2017 but saw slow uptake due to regulatory hurdles and limited domestic supply. By 2026, those barriers are easing. Polish pharmacies are stocking a wider range of products, patient numbers are growing, and domestic cultivation is being explored as a way to reduce import dependency.</p>
 
-<p>Italy's programme, which includes both medical cannabis and a unique system of military-run cultivation facilities, has also expanded. The Italian model — where the state produces medical cannabis through the Stabilimento Chimico Farmaceutico Militare in Florence — is unique in Europe. While it has faced criticism for supply shortages and product inconsistency, it represents a state-centred approach that some policymakers see as a safer alternative to private-market models.</p>
+<p>Italy's programme, which includes both medical cannabis and a unique system of military-run cultivation facilities, has also expanded. The Italian model — where the state produces medical cannabis through the Stabilimento Chimico Farmaceutico Militare in Florence — is unique in Europe. Whilst it has faced criticism for supply shortages and product inconsistency, it represents a state-centred approach that some policymakers see as a safer alternative to private-market models.</p>
 
 <h2>The EU dimension</h2>
 
@@ -49,6 +49,6 @@ tags:
 
 <h2>What comes next</h2>
 
-<p>The trajectory is clear. By 2027, the majority of EU member states will have some form of regulated cannabis access — whether medical, adult-use, or pilot programmes. The question is no longer whether Europe will reform, but how quickly and to what extent. For the UK, watching from outside the EU, the continental shift adds another layer of pressure. While Germany and the Czech Republic build regulated markets, the UK's medical cannabis programme remains one of the most restrictive in Western Europe.</p>
+<p>By 2027, the majority of EU member states will have some form of regulated cannabis access — whether medical, adult-use, or pilot programmes. For the UK, watching from outside the EU, the continental shift adds another layer of pressure. While Germany and the Czech Republic build regulated markets, the UK's medical cannabis programme remains one of the most restrictive in Western Europe.</p>
 
-<p>The European experience offers lessons. First, incremental reform works — but it creates inequalities between jurisdictions. Second, pilot programmes generate valuable data but are not a substitute for comprehensive policy. Third, domestic cultivation is essential for supply security and cost control. And fourth, public support for reform, once it reaches a tipping point, is difficult for politicians to ignore. Europe's green wave is not slowing down. The countries that embrace it will shape the continent's cannabis policy for decades to come.</p>
+<p>The European experience offers lessons. First, incremental reform works — but it creates inequalities between jurisdictions. Second, pilot programmes generate valuable data but are not a substitute for comprehensive policy. Third, domestic cultivation is essential for supply security and cost control. And fourth, public support for reform, once it reaches a tipping point, is difficult for politicians to ignore. </p>

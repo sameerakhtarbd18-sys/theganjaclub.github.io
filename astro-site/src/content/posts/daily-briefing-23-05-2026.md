@@ -28,4 +28,4 @@ tags:
 
 <h2>UK heat health alerts issued for bank holiday weekend</h2>
 <p>Amber heat health alerts have been issued across parts of the UK as record-breaking May temperatures of up to 33C are forecast for the bank holiday weekend. The alerts, issued by the UK Health Security Agency, cover southern England and the Midlands, with the hottest day expected on Monday.</p>
-<p>While not directly related to medical cannabis policy, the heatwave may affect patients who rely on temperature-sensitive cannabis-based medicines and those with chronic conditions exacerbated by extreme heat. The Met Office has advised the public to stay hydrated and avoid prolonged sun exposure during peak hours.</p>
+<p>Whilst not directly related to medical cannabis policy, the heatwave may affect patients who rely on temperature-sensitive cannabis-based medicines and those with chronic conditions exacerbated by extreme heat. The Met Office has advised the public to stay hydrated and avoid prolonged sun exposure during peak hours.</p>

@@ -33,4 +33,4 @@ tags:
 
 <h2>Study reveals tobacco industry tactics used to market ultra-processed foods</h2>
 <p>A new issue of the American Journal of Public Health has examined how major tobacco companies applied strategies developed for cigarette marketing to promote ultra-processed foods. The research highlights parallels in advertising, lobbying, and targeting vulnerable populations.</p>
-<p>While not directly about cannabis, the findings are relevant to medical cannabis policy as regulators increasingly scrutinise how commercial interests influence public health outcomes. The study underscores the importance of evidence-based regulation in emerging markets.</p>
+<p>Whilst not directly about cannabis, the findings are relevant to medical cannabis policy as regulators increasingly scrutinise how commercial interests influence public health outcomes. The study underscores the importance of evidence-based regulation in emerging markets.</p>

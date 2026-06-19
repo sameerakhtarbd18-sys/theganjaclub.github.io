@@ -29,7 +29,7 @@ tags:
 <p>Operators are now pleading for a break, arguing that current market conditions — including falling wholesale prices and a saturated retail environment — render the fee unviable. The state's Office of Cannabis Management has yet to respond publicly to the requests for financial relief.</p>
 
 <h2>US federal agency sets standards for cannabinoid medicine in value-based care</h2>
-<p>The US Centers for Medicare & Medicaid Services (CMS) is establishing new standards for what cannabinoid medicine looks like within its Beneficiary Engagement Incentive programme. The initiative is not a broad cannabis reimbursement scheme, but rather a clinician-led pathway for hemp-derived products in value-based care models.</p>
+<p>The US Centres for Medicare & Medicaid Services (CMS) is establishing new standards for what cannabinoid medicine looks like within its Beneficiary Engagement Incentive programme. The initiative is not a broad cannabis reimbursement scheme, but rather a clinician-led pathway for hemp-derived products in value-based care models.</p>
 <p>The move signals a cautious but notable step by US federal health authorities toward integrating cannabinoid-based treatments into mainstream healthcare reimbursement structures, albeit limited to hemp-derived products at this stage.</p>
 
 <h2>Vermont lawmakers advance bill doubling adult-use possession limits</h2>

@@ -21,7 +21,7 @@ tags:
 <p>Good evening. Here's what's moving in the world of medical cannabis today.</p>
 
 <h2>Pew poll finds broad US public support for ending cannabis prohibition</h2>
-<p>A new survey from the Pew Research Center has found that marijuana prohibition is increasingly unpopular among American voters. The poll, reported by NORML on 27 May, indicates that liberalising cannabis laws continues to enjoy widespread favour across the electorate.</p>
+<p>A new survey from the Pew Research Centre has found that marijuana prohibition is increasingly unpopular among American voters. The poll, reported by NORML on 27 May, indicates that liberalising cannabis laws continues to enjoy widespread favour across the electorate.</p>
 <p>NORML's deputy director Paul Armentano commented that elected officials who refuse to act on cannabis criminalisation, or who vote against reform efforts, "do so at their own political peril". The findings underscore a sustained shift in US public opinion on cannabis policy, though no specific percentages from the poll were released in the report.</p>
 
 <h2>NORML seeks formal role in DEA rescheduling hearing</h2>

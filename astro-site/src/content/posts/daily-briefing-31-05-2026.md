@@ -27,7 +27,7 @@ tags:
 
 <h2>Global cancer workforce crisis could strain healthcare systems by 2050</h2>
 <p>A report published by <em>The Guardian</em> today warns that the world faces a shortfall of 100 million healthcare staff by 2050, as 100,000 people are diagnosed with cancer every day. Researchers caution that healthcare systems risk being overwhelmed unless urgent investment in workforce planning is made.</p>
-<p>While not directly about medical cannabis, the report has implications for the sector. As cancer incidence rises, demand for symptom management — including cannabis-based therapies for pain, nausea, and appetite loss — is likely to increase. The UK's medical cannabis sector, already struggling with limited NHS prescribing and access barriers, may face additional pressure if oncology services become further stretched.</p>
+<p>Whilst not directly about medical cannabis, the report has implications for the sector. As cancer incidence rises, demand for symptom management — including cannabis-based therapies for pain, nausea, and appetite loss — is likely to increase. The UK's medical cannabis sector, already struggling with limited NHS prescribing and access barriers, may face additional pressure if oncology services become further stretched.</p>
 
 <h2>Genomic test could spare millions of breast cancer patients chemotherapy</h2>
 <p>A groundbreaking trial reported by <em>The Guardian</em> suggests that a genomic test can identify breast cancer patients who can safely forgo chemotherapy and be treated with hormone therapy alone, with near-identical outcomes. The finding could spare millions of women the side effects of chemotherapy each year.</p>
