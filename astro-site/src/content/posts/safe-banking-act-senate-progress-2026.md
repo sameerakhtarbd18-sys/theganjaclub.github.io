@@ -4,7 +4,7 @@ slug: "safe-banking-act-senate-progress-2026"
 date: "8 April 2026"
 region: "usa"
 excerpt: "The SAFE Banking Act has been reintroduced in the US Senate with a key Section 280E reform amendment, advancing through committee hearings with bipartisan support."
-image: "/images/industrial-weed/pexels-kindelmedia-7667722.webp"
+image: "/images/heroes/hero-safe-banking-act-senate-progress-2026.webp"
 category: "news"
 tags:
   - USA

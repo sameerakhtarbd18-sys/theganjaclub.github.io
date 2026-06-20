@@ -4,7 +4,7 @@ slug: "patient-rights-nhs-access"
 date: "8 May 2026"
 region: "uk"
 excerpt: "Patient advocacy groups are ramping up their campaign for equal access to cannabis-based medicines on the NHS."
-image: "/images/industrial-weed/pexels-jess-vide-9259930.webp"
+image: "/images/heroes/hero-patient-rights-nhs-access.webp"
 category: "news"
 tags:
   - Patient Stories
