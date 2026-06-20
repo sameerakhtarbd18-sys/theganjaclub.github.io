@@ -4,7 +4,7 @@ slug: "best-vaporisers-uk-medical-cannabis-2026"
 date: "2026-06-18"
 region: "uk"
 excerpt: 'From the clinic-grade Mighty+ to the budget-friendly XMAX V3 Pro, we tested the five dry-herb vaporisers that UK patients actually rate. Not a single conduction pen made the cut.'
-image: "/images/heroes/hero-best-vaporisers-uk-medical-cannabis-2026.webp?v=2"
+image: "/images/heroes/hero-best-vaporisers-uk-medical-cannabis-2026.webp?v=3"
 author: "The Ganja Club"
 category: "guide"
 tags:
