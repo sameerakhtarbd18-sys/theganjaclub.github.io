@@ -5,7 +5,7 @@ date: "6 May 2026"
 region: "global"
 excerpt: "A major new meta-analysis provides some of the strongest evidence yet for THC-based treatments in chronic pain management."
 author: "The Ganja Club"
-image: "/images/heroes/hero-thc-chronic-pain-evidence.jpg"
+image: "/images/heroes/hero-thc-chronic-pain-evidence.webp"
 category: "news"
 tags:
   - Research

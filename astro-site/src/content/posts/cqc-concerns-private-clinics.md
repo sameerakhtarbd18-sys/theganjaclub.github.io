@@ -5,7 +5,7 @@ date: "17 May 2026"
 region: "uk"
 excerpt: "The Care Quality Commission has raised concerns about the standard of care in private medical cannabis clinics. Here's what it means for patients."
 author: "The Ganja Club"
-image: "/images/heroes/hero-cqc-concerns-private-clinics.jpg"
+image: "/images/heroes/hero-cqc-concerns-private-clinics.webp"
 category: "news"
 tags:
   - UK Policy

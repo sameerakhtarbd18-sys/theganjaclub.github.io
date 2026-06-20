@@ -5,7 +5,7 @@ date: "12 May 2026"
 region: "global"
 excerpt: "From pain management to mental health, the clinical research pipeline for cannabinoid medicines is more active than ever. Here are the studies to watch."
 author: "The Ganja Club"
-image: "/images/heroes/hero-key-cannabinoid-research-2026.jpg"
+image: "/images/heroes/hero-key-cannabinoid-research-2026.webp"
 category: "news"
 tags:
   - Research

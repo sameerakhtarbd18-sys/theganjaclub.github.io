@@ -5,7 +5,7 @@ date: "13 May 2026"
 region: "uk"
 excerpt: "Beyond the clinics and the headlines, a new cannabis community is taking shape across the UK — one built on education, peer support, and shared experience."
 author: "The Ganja Club"
-image: "/images/heroes/hero-uk-cannabis-community-culture.jpg"
+image: "/images/heroes/hero-uk-cannabis-community-culture.webp"
 category: "news"
 tags:
   - Culture
