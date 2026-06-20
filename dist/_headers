@@ -1,0 +1,19 @@
+# Cloudflare Pages headers — replaces the [[headers]] blocks in netlify.toml
+# Lives in public/ so Astro copies it into dist/ at build time.
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/styles/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/reels/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*
+  Cache-Control: public, max-age=7200, must-revalidate
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
