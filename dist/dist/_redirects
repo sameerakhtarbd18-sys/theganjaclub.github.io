@@ -1,0 +1,11 @@
+# Cloudflare Pages redirects — replaces the [[redirects]] blocks in netlify.toml
+# Lives in public/ so Astro copies it into dist/ at build time.
+
+/uk.html          /uk       301
+/europe.html      /europe   301
+/usa.html         /usa      301
+/global.html      /global   301
+/post.html        /         301
+/grow-assistant       /guides   301
+/grow-assistant.html  /guides   301
+/sitemap.xml      /sitemap-index.xml  301

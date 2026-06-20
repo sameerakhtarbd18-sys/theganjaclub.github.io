@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="The Ganja Club monogram">
+  <circle cx="100" cy="100" r="96" fill="#006241"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="#cba258" stroke-width="3"/>
+  <text x="100" y="122" text-anchor="middle"
+        font-family="Lora, Georgia, 'Times New Roman', serif"
+        font-size="58" fill="#f2f0eb">TGC</text>
+</svg>
