@@ -4,8 +4,7 @@ slug: "germany-uk-comparison"
 date: "10 May 2026"
 region: "europe"
 excerpt: "Germany's medical cannabis system has expanded rapidly since 2024 reforms. The UK could learn valuable lessons from its European neighbour."
-author: "The Ganja Club"
-image: "/images/heroes/hero-germany-uk-comparison.jpg"
+image: "/images/heroes/hero-germany-uk-comparison.webp"
 category: "news"
 tags:
   - Global

@@ -4,8 +4,7 @@ slug: "home-office-cannabis-scheduling"
 date: "5 May 2026"
 region: "uk"
 excerpt: "The Home Office's position on cannabis scheduling continues to draw criticism from clinicians, researchers, and patient groups."
-author: "The Ganja Club"
-image: "/images/heroes/hero-home-office-cannabis-scheduling.jpg"
+image: "/images/heroes/hero-home-office-cannabis-scheduling.webp"
 category: "news"
 tags:
   - UK Policy

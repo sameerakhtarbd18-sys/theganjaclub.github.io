@@ -4,9 +4,7 @@ slug: "uk-cannabis-licensing-reform-2026"
 date: "17 June 2026"
 region: "uk"
 excerpt: 'The Home Office has launched a review of medical cannabis licensing that could reshape how UK patients access treatment. Here is what the proposed reforms mean for patients, clinics, and the future of medical cannabis in Britain.'
-author: "The Ganja Club"
-image: "/images/editorial/uk-parliament.webp"
-category: "news"
+image: "/images/heroes/hero-uk-cannabis-licensing-reform-2026.webp"
 tags:
   - UK Policy
   - Licensing

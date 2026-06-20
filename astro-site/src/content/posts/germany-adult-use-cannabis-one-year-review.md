@@ -4,8 +4,7 @@ slug: "germany-adult-use-cannabis-one-year-review"
 date: "22 April 2026"
 region: "europe"
 excerpt: "A year after Germany launched its second pillar of adult-use cannabis reform, the regional pilot programmes are yielding mixed results. Home cultivation and social clubs have found their feet, but commercial supply chains face regulatory hurdles that offer key lessons for the rest of Europe."
-author: "The Ganja Club"
-image: "/images/heroes/hero-germany-adult-use-cannabis-one-year-review.jpg"
+image: "/images/heroes/hero-germany-adult-use-cannabis-one-year-review.webp"
 category: "news"
 tags:
   - Germany
