@@ -1,7 +1,7 @@
 ---
 title: "Storz & Bickel Volcano Hybrid Review: The Desktop Vaporiser That Defined a Category"
 slug: "storz-bickel-volcano-hybrid-review"
-date: "2026-06-23"
+date: "2026-06-11"
 region: "uk"
 excerpt: "The Volcano Hybrid is the clinical gold standard for desktop vaporisers. At £500+, it is a serious investment — here is what you are actually paying for and whether it makes sense for a UK medical cannabis patient."
 image: "/images/heroes/hero-storz-bickel-volcano-hybrid-review.webp"

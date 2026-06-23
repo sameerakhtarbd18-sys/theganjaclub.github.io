@@ -1,7 +1,7 @@
 ---
 title: "Storz & Bickel Crafty+ Review: The Pocket-Sized Medical Vaporiser That Punches Above Its Weight"
 slug: "storz-bickel-crafty-plus-review"
-date: "2026-06-23"
+date: "2026-06-04"
 region: "uk"
 excerpt: "The Crafty+ is the smallest and most affordable Storz & Bickel portable — same vapour quality as the Mighty+ in a genuinely pocketable body. We review it for UK medical cannabis patients who need portability without compromise."
 image: "/images/heroes/hero-storz-bickel-crafty-plus-review.webp"

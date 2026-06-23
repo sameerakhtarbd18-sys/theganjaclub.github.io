@@ -1,7 +1,7 @@
 ---
 title: "Storz & Bickel VENTY Review: The Most Powerful Portable Vaporiser They Have Ever Made"
 slug: "storz-bickel-venty-review"
-date: "2026-06-23"
+date: "2026-06-16"
 region: "uk"
 excerpt: "The VENTY is Storz & Bickel's newest and most powerful portable vaporiser — 20-second heat-up, adjustable airflow, and a 130-watt heater in your hand. We put it through its paces for medical cannabis patients."
 image: "/images/heroes/hero-storz-bickel-venty-review.webp"
