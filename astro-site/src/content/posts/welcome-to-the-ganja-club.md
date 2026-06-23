@@ -12,11 +12,18 @@ tags:
   - Culture
 ---
 
-<p>Welcome to The Ganja Club — a publication covering UK medical cannabis news, patient rights, research developments, and the culture growing around them.</p>
-<p>We started with a simple idea: that the people who care most about cannabis as medicine deserve information that's accurate, well-sourced, and genuinely useful. Not hype. Not clickbait. Just clear, reliable coverage of the stories that matter to the UK medical cannabis community.</p>
-<h2>What you'll find here</h2>
-<p>Every day we track the news that matters — policy changes at the MHRA and CQC, new research from UK and global universities, patient stories from the community, and the broader culture of cannabis as medicine. We don't just report headlines. We contextualise them.</p>
-<h2>Why it matters</h2>
-<p>The UK medical cannabis sector is growing. More patients are accessing treatment through private clinics. The conversation around patient rights is evolving. But the system still has gaps — in awareness, in access, in understanding.</p>
-<p>We're here to fill those gaps. Not with hype, but with information. Not with opinion dressed as news, but with genuine analysis.</p>
-<p>Welcome to The Ganja Club. Pull up.</p>
+Welcome to The Ganja Club — a publication covering UK medical cannabis news, patient rights, research developments, and the culture growing around them.
+
+We started with a simple idea: that the people who care most about cannabis as medicine deserve information that's accurate, well-sourced, and genuinely useful. Not hype. Not clickbait. Just clear, reliable coverage of the stories that matter to the UK medical cannabis community.
+
+## What you'll find here
+
+Every day we track the news that matters — policy changes at the MHRA and CQC, new research from UK and global universities, patient stories from the community, and the broader culture of cannabis as medicine. We don't just report headlines. We contextualise them.
+
+## Why it matters
+
+The UK medical cannabis sector is growing. More patients are accessing treatment through private clinics. The conversation around patient rights is evolving. But the system still has gaps — in awareness, in access, in understanding.
+
+We're here to fill those gaps. Not with hype, but with information. Not with opinion dressed as news, but with genuine analysis.
+
+Welcome to The Ganja Club. Pull up.
