@@ -47,6 +47,7 @@ if not DEEPSEEK_API_KEY:
 # ---------------------------------------------------------------------------
 
 FEEDS = [
+    # UK general news (cannabis filtered by keyword)
     {
         "name": "BBC Health",
         "url": "https://feeds.bbci.co.uk/news/health/rss.xml",
@@ -59,6 +60,7 @@ FEEDS = [
         "region": "UK",
         "type": "rss",
     },
+    # Cannabis-specific feeds
     {
         "name": "NORML",
         "url": "https://norml.org/blog/feed/",
@@ -67,16 +69,43 @@ FEEDS = [
     },
     {
         "name": "MJBizDaily",
-        "url": "https://mjbizdaily.com/feed/",
+        "url": "https://feeds.feedburner.com/mjbizdaily",
         "region": "USA",
         "type": "rss",
     },
+    {
+        "name": "High Times",
+        "url": "https://hightimes.com/feed/",
+        "region": "USA",
+        "type": "rss",
+    },
+    {
+        "name": "Ganjapreneur",
+        "url": "https://www.ganjapreneur.com/feed/",
+        "region": "USA",
+        "type": "rss",
+    },
+    {
+        "name": "Cannabis Now",
+        "url": "https://cannabisnow.com/feed/",
+        "region": "USA",
+        "type": "rss",
+    },
+    # European cannabis industry
+    {
+        "name": "Prohibition Partners",
+        "url": "https://prohibitionpartners.com/feed/",
+        "region": "Europe",
+        "type": "rss",
+    },
+    # General EU news (cannabis filtered by keyword)
     {
         "name": "Politico EU",
         "url": "https://www.politico.eu/feed/",
         "region": "Europe",
         "type": "rss",
     },
+    # Cannabis consumer news
     {
         "name": "Leafly News",
         "url": "https://www.leafly.com/news/rss",
