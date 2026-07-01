@@ -100,11 +100,6 @@ function hasReview(slug: string | null): boolean {
                   >
                     {product.linkText} <Icons name="arrow-right" />
                   </a>
-                  {product.commission && (
-                    <span class="product-commission">
-                      {product.reviewSlug ? `${product.commission} commission` : ''}
-                    </span>
-                  )}
                 </div>
               </article>
             ))}
@@ -176,7 +171,7 @@ function hasReview(slug: string | null): boolean {
     color: rgba(212, 233, 226, 0.6);
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(212, 233, 226, 0.1);
-    border-radius: var(--radius-circle);
+    border-radius: var(--radius);
     padding: 10px 20px;
   }
   .shop-disclosure-banner a {
@@ -331,7 +326,7 @@ function hasReview(slug: string | null): boolean {
     font-family: var(--font-body);
     font-size: 0.85rem;
     font-weight: 600;
-    border-radius: var(--radius-circle);
+    border-radius: var(--radius);
     text-decoration: none;
     transition: background 0.18s ease, transform 0.15s ease;
   }
@@ -341,12 +336,6 @@ function hasReview(slug: string | null): boolean {
   }
   .product-buy-btn:active {
     transform: scale(var(--btn-active-scale));
-  }
-  .product-commission {
-    font-family: var(--font-body);
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    font-style: italic;
   }
 
   /* ═══ CTA ═══ */
@@ -383,7 +372,7 @@ function hasReview(slug: string | null): boolean {
     font-family: var(--font-body);
     font-size: 0.95rem;
     font-weight: 700;
-    border-radius: var(--radius-circle);
+    border-radius: var(--radius);
     text-decoration: none;
     transition: transform 0.15s ease, opacity 0.15s ease;
   }
