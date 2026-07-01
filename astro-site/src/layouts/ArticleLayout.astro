@@ -6,6 +6,7 @@ import ArticleCard from "../components/ArticleCard.astro";
 import AffiliateBanner from "../components/AffiliateBanner.astro";
 import BreadcrumbBar from "../components/BreadcrumbBar.astro";
 import Icons from "../components/Icons.astro";
+import { marked } from "marked";
 
 export interface RelatedPost {
   title: string;
@@ -42,6 +43,9 @@ const {
   related = [],
 } = Astro.props;
 
+/* Convert markdown body to HTML — handles both pure markdown and inline HTML */
+const htmlBody = marked.parse(body, { breaks: true });
+
 const siteUrl = "https://theganjaclub.co.uk";
 const postUrl = `${siteUrl}/post/${slug}`;
 
@@ -54,7 +58,7 @@ const fullImage = image
 const heroSrc = image.startsWith("http") ? image : image;
 
 /* Reading time — strip HTML, count words, ~225 wpm */
-const wordCount = (body || "")
+const wordCount = (htmlBody || "")
   .replace(/<[^>]*>/g, " ")
   .split(/\s+/)
   .filter(Boolean)
@@ -204,7 +208,7 @@ const breadcrumbSchema = {
           </button>
         </aside>
 
-        <div class="article-prose" set:html={body} />
+        <div class="article-prose" set:html={htmlBody} />
       </div>
 
       <!-- Tag pills -->
