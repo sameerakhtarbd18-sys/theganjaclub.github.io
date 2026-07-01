@@ -4,66 +4,142 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import AffiliateBanner from "../components/AffiliateBanner.astro";
 import Icons from "../components/Icons.astro";
+import products from "../data/shop-products.json";
+
+const siteUrl = "https://theganjaclub.co.uk";
+
+const shopSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "The Ganja Club Shop — Medical Cannabis Accessories",
+  description: products._description,
+  url: `${siteUrl}/shop`,
+};
+
+// Products with reviews get a badge
+function hasReview(slug: string | null): boolean {
+  return slug !== null && slug !== undefined;
+}
 ---
 
 <Base
-  title="Shop — Coming Soon | The Ganja Club"
-  description="The Ganja Club shop is coming soon. Premium cannabis accessories, lifestyle goods, and curated products."
+  title="Shop — Medical Cannabis Vaporisers & Accessories | The Ganja Club"
+  description="Curated dry-herb vaporisers, dosing accessories, and cannabis seeds. Every product tested against UK clinic standards. Affiliate disclosure: we earn from qualifying purchases."
   ogImage="/logo.svg"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(shopSchema)} is:inline />
 
-<AffiliateBanner />
-<Nav />
+  <AffiliateBanner />
+  <Nav />
 
-<main id="main-content">
-  <section class="shop-hero">
-    <div class="shop-card">
-      <div class="shop-icon-wrap"><Icons name="mail" class="shop-mail-icon" /></div>
-      <p class="shop-kicker">Coming Soon</p>
-      <h1 class="shop-title">The Ganja Club Shop</h1>
-      <p class="shop-desc">
-        We're curating a collection of premium cannabis accessories, lifestyle goods,
-        and essentials. Quality you can trust, designed for the community.
-      </p>
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="shop-hero">
+      <div class="shop-hero-inner">
+        <p class="shop-kicker">TGC SHOP</p>
+        <h1 class="shop-title">Equipment That Works.</h1>
+        <p class="shop-desc">
+          Every product here has been tested against the same criteria UK clinics assess: vapour quality, temperature precision, ease of cleaning, and medical suitability. We do not stock conduction pens or anything we would not recommend to a patient.
+        </p>
+        <p class="shop-disclosure-banner">
+          ⓘ Affiliate disclosure — we earn from qualifying purchases at no extra cost to you.
+          <a href="/about#affiliate-disclosure">Full disclosure</a>.
+        </p>
+      </div>
+    </section>
 
-      <form class="shop-notify" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Thank you'; this.querySelector('input').disabled=true;">
-        <input type="email" placeholder="Your email for launch alerts" required />
-        <button type="submit">Get notified when we launch</button>
-      </form>
+    <!-- Product categories -->
+    {products.categories.map((cat) => {
+      const catProducts = products.products.filter((p) => p.category === cat.id);
+      if (catProducts.length === 0) return null;
 
-      <p class="shop-fineprint">No spam. Just a one-time heads-up when we open.</p>
-    </div>
-  </section>
-</main>
+      return (
+        <section class="shop-section">
+          <div class="shop-section-header">
+            <h2 class="shop-section-title">{cat.name}</h2>
+            <p class="shop-section-desc">{cat.description}</p>
+          </div>
 
-<Footer />
+          <div class="product-grid">
+            {catProducts.map((product) => (
+              <article class="product-card">
+                <div class="product-image-wrap">
+                  <img
+                    src={product.fallbackImage}
+                    alt={product.name}
+                    class="product-image"
+                    width="400"
+                    height="300"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  {hasReview(product.reviewSlug || null) && (
+                    <a href={`/post/${product.reviewSlug}`} class="product-review-badge">
+                      📝 Our review
+                    </a>
+                  )}
+                  {product.tagline && (
+                    <span class="product-tagline">{product.tagline}</span>
+                  )}
+                </div>
+
+                <div class="product-body">
+                  <div class="product-header">
+                    <h3 class="product-name">{product.name}</h3>
+                    <span class="product-price">{product.price}</span>
+                  </div>
+                  <p class="product-description">{product.description}</p>
+                </div>
+
+                <div class="product-footer">
+                  <a
+                    href={product.link}
+                    target="_blank"
+                    rel="nofollow sponsored noopener"
+                    class="product-buy-btn"
+                  >
+                    {product.linkText} <Icons name="arrow-right" />
+                  </a>
+                  {product.commission && (
+                    <span class="product-commission">
+                      {product.reviewSlug ? `${product.commission} commission` : ''}
+                    </span>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      );
+    })}
+
+    <!-- Bottom CTA -->
+    <section class="shop-cta">
+      <div class="shop-cta-inner">
+        <h2 class="shop-cta-title">Not sure which vaporiser is right for you?</h2>
+        <p class="shop-cta-desc">
+          We have tested every major dry-herb vaporiser against UK medical cannabis standards. Read our comparisons and find the device that fits your needs and budget.
+        </p>
+        <a href="/post/best-vaporisers-uk-medical-cannabis-2026/" class="shop-cta-btn">
+          Read the full comparison <Icons name="arrow-right" />
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
 </Base>
 
 <style>
+  /* ═══ Hero ═══ */
   .shop-hero {
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 64px 24px;
+    padding: 80px 24px 64px;
     background: var(--green-house);
-  }
-  .shop-card {
-    max-width: 560px;
     text-align: center;
-    padding: 48px 40px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(212, 233, 226, 0.12);
-    border-radius: var(--radius);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
   }
-  .shop-icon-wrap {
-    margin-bottom: 24px;
-    display: flex;
-    justify-content: center;
-  }
-  .shop-mail-icon {
-    color: var(--gold) !important;
+  .shop-hero-inner {
+    max-width: 680px;
+    margin: 0 auto;
   }
   .shop-kicker {
     font-family: var(--font-body);
@@ -72,77 +148,251 @@ import Icons from "../components/Icons.astro";
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--gold);
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
   .shop-title {
     font-family: var(--font-display);
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-size: clamp(2rem, 5vw, 3.25rem);
     font-weight: 700;
     color: var(--text-on-dark);
-    line-height: 1.15;
-    margin-bottom: 16px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
   }
   .shop-desc {
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.65;
     color: var(--text-on-dark-soft);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .shop-notify {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  .shop-notify input {
-    padding: 14px 20px;
+  .shop-disclosure-banner {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: rgba(212, 233, 226, 0.6);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 233, 226, 0.1);
     border-radius: var(--radius-circle);
-    border: 1px solid rgba(212, 233, 226, 0.2);
-    background: rgba(255, 255, 255, 0.06);
-    color: var(--text-on-dark);
+    padding: 10px 20px;
+  }
+  .shop-disclosure-banner a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    margin-left: 4px;
+  }
+
+  /* ═══ Sections ═══ */
+  .shop-section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 64px 24px;
+  }
+  .shop-section + .shop-section {
+    border-top: 1px solid var(--border);
+    padding-top: 64px;
+  }
+  .shop-section-header {
+    margin-bottom: 40px;
+  }
+  .shop-section-title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 8px;
+  }
+  .shop-section-desc {
     font-family: var(--font-body);
     font-size: 0.95rem;
-    outline: none;
-    transition: border-color 0.2s ease;
+    color: var(--text-secondary);
+    max-width: 540px;
   }
-  .shop-notify input::placeholder {
-    color: rgba(212, 233, 226, 0.4);
+
+  /* ═══ Product Grid ═══ */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 32px;
   }
-  .shop-notify input:focus {
-    border-color: var(--gold);
+
+  .product-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: var(--shadow);
   }
-  .shop-notify button {
-    padding: 14px 28px;
+  .product-card:hover {
+    border-color: var(--green-accent);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Image */
+  .product-image-wrap {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--green-house);
+  }
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .product-tagline {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: rgba(30, 57, 50, 0.85);
+    color: var(--gold);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+  }
+  .product-review-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: var(--gold);
+    color: #1E3932;
+    padding: 5px 12px;
     border-radius: var(--radius-circle);
-    border: none;
+    text-decoration: none;
+    transition: transform 0.15s ease;
+  }
+  .product-review-badge:hover {
+    transform: scale(1.05);
+  }
+
+  /* Body */
+  .product-body {
+    padding: 20px 20px 0;
+    flex: 1;
+  }
+  .product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .product-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.25;
+  }
+  .product-price {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--green);
+    white-space: nowrap;
+  }
+  .product-description {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  /* Footer */
+  .product-footer {
+    padding: 16px 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .product-buy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    background: var(--green);
+    color: var(--text-on-dark);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: var(--radius-circle);
+    text-decoration: none;
+    transition: background 0.18s ease, transform 0.15s ease;
+  }
+  .product-buy-btn:hover {
+    background: var(--green-dark);
+    transform: translateY(-1px);
+  }
+  .product-buy-btn:active {
+    transform: scale(var(--btn-active-scale));
+  }
+  .product-commission {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  /* ═══ CTA ═══ */
+  .shop-cta {
+    padding: 64px 24px 80px;
+    background: var(--green-house);
+  }
+  .shop-cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .shop-cta-title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--text-on-dark);
+    margin-bottom: 16px;
+  }
+  .shop-cta-desc {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-on-dark-soft);
+    margin-bottom: 28px;
+  }
+  .shop-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
     background: var(--gold);
     color: #1E3932;
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    cursor: pointer;
+    border-radius: var(--radius-circle);
+    text-decoration: none;
     transition: transform 0.15s ease, opacity 0.15s ease;
   }
-  .shop-notify button:hover {
-    opacity: 0.9;
-  }
-  .shop-notify button:active {
-    transform: scale(var(--btn-active-scale));
-  }
-  .shop-fineprint {
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    color: rgba(212, 233, 226, 0.4);
-    margin-top: 20px;
-  }
-  @media (min-width: 640px) {
-    .shop-notify {
-      flex-direction: row;
-    }
-    .shop-notify input {
-      flex: 1;
+  .shop-cta-btn:hover { opacity: 0.9; }
+  .shop-cta-btn:active { transform: scale(var(--btn-active-scale)); }
+
+  @media (max-width: 640px) {
+    .product-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>

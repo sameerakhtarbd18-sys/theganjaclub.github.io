@@ -1,0 +1,122 @@
+{
+  "_description": "TGC Shop products — single source of truth. Update partner links here.",
+  "_lastUpdated": "2026-07-01",
+  "_disclosure": "This page contains affiliate links. If you purchase through these links, The Ganja Club may earn a commission at no extra cost to you. All recommendations are editorial — brands do not pay for placement.",
+
+  "categories": [
+    {
+      "id": "vaporisers",
+      "name": "Vaporisers",
+      "description": "Dry-herb vaporisers for medical cannabis patients. Every device on this page has been tested against UK clinic standards."
+    },
+    {
+      "id": "accessories",
+      "name": "Accessories",
+      "description": "Dosing capsules, glass stems, replacement parts, and the bits that make daily use smoother."
+    },
+    {
+      "id": "seeds",
+      "name": "Seeds & Growing",
+      "description": "Cannabis seeds from trusted UK seedbanks. For souvenir and educational purposes only — germination may be illegal in your jurisdiction."
+    }
+  ],
+
+  "products": [
+    {
+      "id": "mighty-plus",
+      "name": "Storz & Bickel Mighty+",
+      "category": "vaporisers",
+      "price": "£299",
+      "tagline": "The clinic standard",
+      "description": "The vaporiser UK clinics implicitly recommend. Medical device certified, hybrid convection-conduction heating, USB-C charging. The most consistent vapour quality of any portable on the market.",
+      "image": "/images/products/mighty-plus.webp",
+      "fallbackImage": "/images/flower/pexels-kindelmedia-7667912.webp",
+      "link": "https://www.awin1.com/cread.php?awinmid=15607&awinaffid=2940095&ued=https%3A%2F%2Fwww.storz-bickel.com%2Fen%2Fproducts%2Fmighty-plus",
+      "linkText": "Buy from Storz & Bickel UK",
+      "commission": "10%",
+      "reviewSlug": "storz-bickel-mighty-plus-review"
+    },
+    {
+      "id": "volcano-hybrid",
+      "name": "Storz & Bickel Volcano Hybrid",
+      "category": "vaporisers",
+      "price": "£479",
+      "tagline": "The desktop gold standard",
+      "description": "The defining desktop vaporiser. Dual balloon and whip delivery, precise digital temperature control, and the build quality that made S&B the reference brand in medical cannabis.",
+      "image": "/images/products/volcano-hybrid.webp",
+      "fallbackImage": "/images/industrial-weed/pexels-myseeds-35643779.webp",
+      "link": "https://www.awin1.com/cread.php?awinmid=15607&awinaffid=2940095&ued=https%3A%2F%2Fwww.storz-bickel.com%2Fen%2Fproducts%2Fvolcano-hybrid",
+      "linkText": "Buy from Storz & Bickel UK",
+      "commission": "10%",
+      "reviewSlug": "storz-bickel-volcano-hybrid-review"
+    },
+    {
+      "id": "venty",
+      "name": "Storz & Bickel VENTY",
+      "category": "vaporisers",
+      "price": "£379",
+      "tagline": "Fastest heat-up in class",
+      "description": "20-second heat-up, adjustable airflow, 130-watt heater. The VENTY is S&B's newest and most powerful portable — unmatched draw resistance control for patients with respiratory considerations.",
+      "image": "/images/products/venty.webp",
+      "fallbackImage": "/images/flower/pexels-haley-bee-347725846-28862111.webp",
+      "link": "https://www.awin1.com/cread.php?awinmid=15607&awinaffid=2940095&ued=https%3A%2F%2Fwww.storz-bickel.com%2Fen%2Fproducts%2Fventy",
+      "linkText": "Buy from Storz & Bickel UK",
+      "commission": "10%",
+      "reviewSlug": "storz-bickel-venty-review"
+    },
+    {
+      "id": "crafty-plus",
+      "name": "Storz & Bickel Crafty+",
+      "category": "vaporisers",
+      "price": "£209",
+      "tagline": "Pocket-sized power",
+      "description": "Same vapour quality as the Mighty+ in a genuinely pocketable body. The smallest S&B portable — ideal for patients who need medical-grade vapour on the move.",
+      "image": "/images/products/crafty-plus.webp",
+      "fallbackImage": "/images/industrial-weed/pexels-myseeds-35542394.webp",
+      "link": "https://www.awin1.com/cread.php?awinmid=15607&awinaffid=2940095&ued=https%3A%2F%2Fwww.storz-bickel.com%2Fen%2Fproducts%2Fcrafty-plus",
+      "linkText": "Buy from Storz & Bickel UK",
+      "commission": "10%",
+      "reviewSlug": "storz-bickel-crafty-plus-review"
+    },
+    {
+      "id": "davinci-iq3",
+      "name": "DaVinci IQ3",
+      "category": "vaporisers",
+      "price": "£249",
+      "tagline": "Precision temperature control",
+      "description": "Fully adjustable airflow dial, removable 18650 battery, and 0.1°C temperature precision. The only portable that lets you tune draw resistance to match your lung capacity.",
+      "image": "/images/products/davinci-iq3.webp",
+      "fallbackImage": "/images/flower/pexels-diego-barros-2149566212-30682035.webp",
+      "link": "https://www.davincivaporizer.com?utm_source=theganjaclub&utm_medium=affiliate&utm_campaign=davinci&utm_content=shop",
+      "linkText": "Buy from DaVinci",
+      "commission": "5-10% (est.)",
+      "reviewSlug": null
+    },
+    {
+      "id": "dosing-capsules",
+      "name": "S&B Dosing Capsule Set (40pk)",
+      "category": "accessories",
+      "price": "£13.90",
+      "tagline": "Pre-load your medication",
+      "description": "The essential accessory for Mighty+, Crafty+, and VENTY users. Fill a week's worth of doses in advance. Reduces chamber cleaning and makes on-the-go medication clean and discreet.",
+      "image": "/images/products/dosing-capsules.webp",
+      "fallbackImage": "/images/flower/pexels-kindelmedia-7667897.webp",
+      "link": "https://www.awin1.com/cread.php?awinmid=15607&awinaffid=2940095&ued=https%3A%2F%2Fwww.storz-bickel.com%2Fen%2Faccessories%2Fdosing-capsules",
+      "linkText": "Buy from Storz & Bickel UK",
+      "commission": "10%"
+    },
+    {
+      "id": "the-vault-seeds",
+      "name": "The Vault Cannabis Seeds Store",
+      "category": "seeds",
+      "price": "From £5",
+      "tagline": "Trusted UK seedbank",
+      "description": "One of the UK's longest-running cannabis seed banks. Hundreds of strains from breeders worldwide — discreet shipping, germination guides, and regular promotions.",
+      "image": "/images/products/vault-seeds.webp",
+      "fallbackImage": "/images/industrial-weed/pexels-myseeds-35847760.webp",
+      "link": "http://www.cannabis-seeds-store.co.uk/apcollective-0-1-9.html",
+      "linkText": "Browse seeds at The Vault",
+      "commission": "Varies"
+    }
+  ]
+}
