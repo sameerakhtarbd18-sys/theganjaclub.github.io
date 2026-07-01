@@ -357,10 +357,11 @@ const breadcrumbSchema = {
     margin-bottom: 16px;
   }
   .article-standfirst {
-    font-family: var(--font-body);
-    font-size: 1.15rem;
+    font-family: var(--font-text);
+    font-style: italic;
+    font-size: var(--step-2);
     line-height: 1.6;
-    color: var(--text-secondary);
+    color: var(--text-2);
     letter-spacing: -0.01em;
     margin-bottom: 20px;
   }
@@ -479,13 +480,12 @@ const breadcrumbSchema = {
 
   /* ── Article Prose ── */
   .article-prose {
-    max-width: 720px;
+    max-width: 66ch;
     width: 100%;
-    font-family: var(--font-body);
-    font-size: 1.125rem;          /* 18px */
-    line-height: 1.7;
+    font-family: var(--font-text);
+    font-size: var(--step-1);
+    line-height: var(--leading-read);
     color: var(--text);
-    letter-spacing: -0.01em;
   }
 
   /* Drop cap on first paragraph */
@@ -499,33 +499,36 @@ const breadcrumbSchema = {
     font-weight: 600;
   }
 
-  .article-prose :global(p) { margin-bottom: 1.4rem; }
+  .article-prose :global(p) { margin-bottom: 1.25rem; }
   .article-prose :global(h2) {
     font-family: var(--font-display);
-    font-size: 1.6rem;
-    line-height: 1.2;
-    color: var(--green);
-    margin: 2.5rem 0 1rem;
+    font-size: var(--step-3);
+    line-height: var(--leading-tight);
+    color: var(--text);
+    margin: var(--sp-7) 0 var(--sp-4);
     font-weight: 600;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 0.5rem;
   }
   .article-prose :global(h3) {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: var(--step-2);
     color: var(--text);
-    margin: 2rem 0 0.75rem;
+    margin: var(--sp-6) 0 var(--sp-3);
     font-weight: 600;
   }
   .article-prose :global(blockquote) {
-    border-left: 4px solid var(--gold);
-    padding: 1rem 0 1rem 2rem;
-    margin: 2rem 0;
+    border-left: 3px solid var(--accent);
+    padding: var(--sp-3) var(--sp-5);
+    margin: var(--sp-5) 0;
     font-family: var(--font-display);
     font-style: italic;
     font-weight: 500;
-    color: var(--text);
-    font-size: 1.3rem;
+    color: var(--text-2);
+    font-size: var(--step-2);
     line-height: 1.5;
-    letter-spacing: -0.01em;
+    background: var(--bg-well);
+    border-radius: 0 var(--r-3) var(--r-3) 0;
   }
   .article-prose :global(blockquote p) { margin-bottom: 0; }
   .article-prose :global(ul),
@@ -535,16 +538,17 @@ const breadcrumbSchema = {
   .article-prose :global(li) { margin-bottom: 0.5rem; }
   .article-prose :global(strong) { color: var(--text); font-weight: 700; }
   .article-prose :global(a) {
-    color: var(--green-accent);
-    text-decoration: none;
-    border-bottom: 1px solid var(--green-accent);
-    transition: border-color 0.15s ease;
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    border-bottom: none;
+    transition: color var(--dur-1);
   }
-  .article-prose :global(a:hover) { border-bottom-color: var(--green); }
+  .article-prose :global(a:hover) { color: var(--link-hover); }
   .article-prose :global(hr) {
     border: none;
-    border-top: 2px solid var(--border);
-    margin: 2.5rem 0;
+    border-top: 1px solid var(--hairline);
+    margin: var(--sp-6) 0;
   }
   .article-prose :global(img) {
     width: 100%;
