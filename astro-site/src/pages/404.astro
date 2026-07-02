@@ -3,26 +3,14 @@ import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import Icons from "../components/Icons.astro";
-import PlateLeaf from "../components/PlateLeaf.astro";
 ---
 
 <Base title="Page Not Found — The Ganja Club">
   <Nav />
-  <main id="main-content" class="not-found journal-title-page">
-    <PlateLeaf class="botanical-watermark" />
-    <span class="plate-number" aria-hidden="true">Pl.&nbsp;?&nbsp;&mdash;&nbsp;Specimen&nbsp;missing</span>
+  <main id="main-content" class="not-found">
     <h1>404</h1>
-    <p class="title-sub">This page doesn't exist. Maybe it moved, maybe it never was.</p>
-    <a href="/" class="cta cta-filled"><Icons name="arrow-left" />Back to the Club</a>
+    <p>This page doesn't exist. Maybe it moved, maybe it never was.</p>
+    <a href="/" class="hero-cta"><Icons name="arrow-left" />Back to the Club</a>
   </main>
   <Footer />
 </Base>
-
-<style>
-  .not-found { min-height: 46vh; }
-  .not-found h1 {
-    font-size: var(--step-5);
-    font-weight: 560;
-    color: var(--accent-text);
-  }
-</style>

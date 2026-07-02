@@ -28,7 +28,7 @@ const parts = [
     icon: "🌿",
     short: "The flower's protective casing — where buds form",
     body: "The calyx is the tear-shaped base from which pistils emerge and the first part of the flower to form. It is the plant's reproductive organ — in an unfertilised plant, calyxes swell and stack on top of each other to create what we recognise as a cannabis bud.\n\nCalyxes house the plant's highest concentration of trichomes, making them the most potent part of the flower. When you see a dense, frosty bud, you are looking at layers of swollen calyxes covered in resin glands.\n\nIn trim, calyxes are what you want to keep — sugar leaves you trim away.",
-    colour: "#3D7A5A",
+    colour: "#059669",
   },
   {
     id: "sugar-leaves",
@@ -36,7 +36,7 @@ const parts = [
     icon: "🍃",
     short: "Small resin-coated leaves growing from the bud",
     body: "Sugar leaves are the small, trichome-covered leaves that grow directly from the flower. They get their name from the crystalline 'sugar' coating of resin glands visible to the naked eye.\n\nUnlike fan leaves (the large solar panels that power the plant), sugar leaves are trimmed closely during harvest. They are less potent than the calyx but still contain useful cannabinoids — most growers save sugar leaf trim for edibles, extracts, or hash.\n\nTheir purpose is structural: they protect the developing flower and provide additional surface area for trichome production.",
-    colour: "#8FB79B",
+    colour: "#4ADE80",
   },
   {
     id: "stem",
@@ -67,7 +67,6 @@ const parts = [
   <main id="main-content">
     <section class="plant-hero">
       <div class="plant-hero-inner">
-        <span class="plate-number" aria-hidden="true">Pl.&nbsp;VI&nbsp;&mdash;&nbsp;Anatomia</span>
         <p class="plant-kicker">INTERACTIVE</p>
         <h1 class="plant-title">Cannabis Plant Anatomy</h1>
         <p class="plant-subtitle">
@@ -100,8 +99,8 @@ const parts = [
             <path d="M238 570 Q244 480 248 380 L248 280" stroke="#9A8C80" stroke-width="5" fill="none" stroke-linecap="round" class="part-path"/>
 
             {/* Fan leaves (background) */}
-            <path d="M250 400 Q200 340 140 360 Q180 380 200 370 Q195 350 250 400" fill="#1F4A38" opacity="0.6"/>
-            <path d="M250 400 Q300 340 360 360 Q320 380 300 370 Q305 350 250 400" fill="#1F4A38" opacity="0.6"/>
+            <path d="M250 400 Q200 340 140 360 Q180 380 200 370 Q195 350 250 400" fill="#166534" opacity="0.6"/>
+            <path d="M250 400 Q300 340 360 360 Q320 380 300 370 Q305 350 250 400" fill="#166534" opacity="0.6"/>
             <!-- Fan leaf veins -->
             <line x1="250" y1="400" x2="160" y2="362" stroke="#22C55E" stroke-width="0.8" opacity="0.4"/>
             <line x1="250" y1="400" x2="340" y2="362" stroke="#22C55E" stroke-width="0.8" opacity="0.4"/>
@@ -110,20 +109,20 @@ const parts = [
             <path id="fan-leaves-hit" d="M250 430 Q180 380 140 360 Q190 380 210 385 L250 430 M250 430 Q320 380 360 360 Q310 380 290 385 L250 430" fill="#22C55E" opacity="0.01" class="part-interactive" style="cursor:pointer"/>
 
             {/* Sugar leaves */}
-            <path id="sugar-leaves-hit" d="M250 280 Q200 230 180 200 Q210 210 230 230 L250 280 M250 280 Q300 230 320 200 Q290 210 270 230 L250 280" fill="#8FB79B" opacity="0.01" class="part-interactive" style="cursor:pointer"/>
-            <path d="M250 280 Q205 235 185 205 Q210 218 232 235 L250 280" fill="#1F4A38" opacity="0.7" stroke="#8FB79B" stroke-width="0.5"/>
-            <path d="M250 280 Q295 235 315 205 Q290 218 268 235 L250 280" fill="#1F4A38" opacity="0.7" stroke="#8FB79B" stroke-width="0.5"/>
+            <path id="sugar-leaves-hit" d="M250 280 Q200 230 180 200 Q210 210 230 230 L250 280 M250 280 Q300 230 320 200 Q290 210 270 230 L250 280" fill="#4ADE80" opacity="0.01" class="part-interactive" style="cursor:pointer"/>
+            <path d="M250 280 Q205 235 185 205 Q210 218 232 235 L250 280" fill="#166534" opacity="0.7" stroke="#4ADE80" stroke-width="0.5"/>
+            <path d="M250 280 Q295 235 315 205 Q290 218 268 235 L250 280" fill="#166534" opacity="0.7" stroke="#4ADE80" stroke-width="0.5"/>
 
             {/* Main bud — layered calyxes */}
-            <ellipse id="calyx-hit" cx="250" cy="240" rx="48" ry="65" fill="#3D7A5A" opacity="0.1" class="part-interactive" style="cursor:pointer"/>
+            <ellipse id="calyx-hit" cx="250" cy="240" rx="48" ry="65" fill="#059669" opacity="0.1" class="part-interactive" style="cursor:pointer"/>
 
             {/* Calyx cluster — individual shapes */}
-            <ellipse cx="250" cy="210" rx="30" ry="22" fill="#2C624A" transform="rotate(-5 250 210)"/>
-            <ellipse cx="265" cy="235" rx="25" ry="20" fill="#3D7A5A" transform="rotate(8 265 235)"/>
-            <ellipse cx="235" cy="238" rx="24" ry="19" fill="#2C624A" transform="rotate(-8 235 238)"/>
-            <ellipse cx="250" cy="255" rx="28" ry="20" fill="#3D7A5A" transform="rotate(3 250 255)"/>
-            <ellipse cx="240" cy="225" rx="22" ry="18" fill="#2C624A" transform="rotate(-3 240 225)"/>
-            <ellipse cx="260" cy="222" rx="22" ry="17" fill="#3D7A5A" transform="rotate(6 260 222)"/>
+            <ellipse cx="250" cy="210" rx="30" ry="22" fill="#047857" transform="rotate(-5 250 210)"/>
+            <ellipse cx="265" cy="235" rx="25" ry="20" fill="#059669" transform="rotate(8 265 235)"/>
+            <ellipse cx="235" cy="238" rx="24" ry="19" fill="#047857" transform="rotate(-8 235 238)"/>
+            <ellipse cx="250" cy="255" rx="28" ry="20" fill="#059669" transform="rotate(3 250 255)"/>
+            <ellipse cx="240" cy="225" rx="22" ry="18" fill="#047857" transform="rotate(-3 240 225)"/>
+            <ellipse cx="260" cy="222" rx="22" ry="17" fill="#059669" transform="rotate(6 260 222)"/>
 
             {/* Trichomes — clustered dots */}
             <g class="trichome-dots" id="trichomes-hit">
@@ -163,7 +162,7 @@ const parts = [
             <line x1="305" y1="233" x2="275" y2="228" stroke="#E8815C" stroke-width="0.8" stroke-dasharray="3 2" opacity="0.6"/>
 
             <text x="310" y="255" class="plant-label" id="label-calyx">Calyx</text>
-            <line x1="300" y1="258" x2="280" y2="250" stroke="#3D7A5A" stroke-width="0.8" stroke-dasharray="3 2" opacity="0.6"/>
+            <line x1="300" y1="258" x2="280" y2="250" stroke="#059669" stroke-width="0.8" stroke-dasharray="3 2" opacity="0.6"/>
 
             <text x="130" y="400" class="plant-label" id="label-fan-leaves">Fan Leaf</text>
             <line x1="200" y1="403" x2="180" y2="385" stroke="#22C55E" stroke-width="0.8" stroke-dasharray="3 2" opacity="0.6"/>
@@ -219,8 +218,8 @@ const parts = [
   const partData = [
     { id: "trichomes", name: "Trichomes", icon: "💎", short: "Resin glands — where cannabinoids and terpenes live", colour: "#C9A84C" },
     { id: "pistils", name: "Pistils", icon: "🧶", short: "The reproductive hairs that catch pollen", colour: "#E8815C" },
-    { id: "calyx", name: "Calyx", icon: "🌿", short: "The flower's protective casing — where buds form", colour: "#3D7A5A" },
-    { id: "sugar-leaves", name: "Sugar Leaves", icon: "🍃", short: "Small resin-coated leaves growing from the bud", colour: "#8FB79B" },
+    { id: "calyx", name: "Calyx", icon: "🌿", short: "The flower's protective casing — where buds form", colour: "#059669" },
+    { id: "sugar-leaves", name: "Sugar Leaves", icon: "🍃", short: "Small resin-coated leaves growing from the bud", colour: "#4ADE80" },
     { id: "stem", name: "Stem", icon: "🪵", short: "The vascular highway — water, nutrients, and structural support", colour: "#78716C" },
     { id: "fan-leaves", name: "Fan Leaves", icon: "☀️", short: "The iconic cannabis leaf — the plant's solar panels", colour: "#22C55E" },
   ];
