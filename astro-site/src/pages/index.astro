@@ -9,6 +9,7 @@ import Search from "../components/Search.astro";
 import Newsletter from "../components/Newsletter.astro";
 import AffiliateBanner from "../components/AffiliateBanner.astro";
 import Icons from "../components/Icons.astro";
+import PlateLeaf from "../components/PlateLeaf.astro";
 
 const allPosts = await getCollection("posts");
 allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
@@ -44,7 +45,7 @@ const today = new Date().toLocaleDateString("en-GB", {
 
 <main id="main-content">
 
-  <!-- Editorial masthead bar -->
+  <!-- Journal dateline -->
   <div class="masthead-bar">
     <div class="masthead-inner">
       <span class="masthead-date">{today}</span>
@@ -55,11 +56,13 @@ const today = new Date().toLocaleDateString("en-GB", {
     </div>
   </div>
 
-  <!-- Identity hero: orient first -->
-  <section class="identity-hero">
-    <p class="identity-kicker">INDEPENDENT &middot; UK &middot; PATIENT-FIRST</p>
+  <!-- Journal title page — the monograph frontispiece -->
+  <section class="journal-title-page">
+    <PlateLeaf class="botanical-watermark" />
+    <span class="plate-number" aria-hidden="true">Pl.&nbsp;I&nbsp;—&nbsp;Cannabis&nbsp;sativa&nbsp;L.</span>
+    <p class="title-kicker">Independent &middot; UK &middot; Patient-first</p>
     <h1>Medical cannabis in the UK,<br />covered properly.</h1>
-    <p class="identity-sub">
+    <p class="title-sub">
       Daily briefings, patient tools and guides for the system nobody explains.
     </p>
     <div class="identity-ctas">
@@ -69,12 +72,12 @@ const today = new Date().toLocaleDateString("en-GB", {
     </div>
   </section>
 
-  <!-- Patient tools band -->
+  <!-- Instruments — the patient tools band -->
   <section class="tools-band">
     <div class="tools-inner">
       <div class="section-label">
         <span class="section-rule"></span>
-        <span class="section-label-text">PATIENT TOOLS</span>
+        <span class="section-label-text">Instruments &middot; Patient Tools</span>
         <span class="section-rule"></span>
       </div>
       <div class="tools-grid">
@@ -102,14 +105,18 @@ const today = new Date().toLocaleDateString("en-GB", {
 
   {featured && <Hero post={featured} />}
 
+  <div class="fleuron-rule" role="presentation">
+    <Icons name="fleuron" class="section-fleuron" />
+  </div>
+
   <section class="section">
-    <div class="section-header">
-      <div class="section-header-left">
-        <span class="section-kicker">LATEST</span>
+    <header class="plate-header">
+      <div class="plate-header-left">
+        <span class="plate-number" aria-hidden="true">Pl.&nbsp;III</span>
         <h2>Latest Briefings</h2>
       </div>
-      <a href="/uk" class="section-link">View All <Icons name="arrow-right" /></a>
-    </div>
+      <a href="/uk" class="plate-link">View All <Icons name="arrow-right" /></a>
+    </header>
     <div class="card-grid">
       {latest.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
     </div>
@@ -118,41 +125,45 @@ const today = new Date().toLocaleDateString("en-GB", {
   <AffiliateBanner />
 
   <section class="section">
-    <div class="section-header">
-      <div class="section-header-left">
-        <span class="section-kicker">UNITED KINGDOM</span>
+    <header class="plate-header">
+      <div class="plate-header-left">
+        <span class="plate-number" aria-hidden="true">Pl.&nbsp;IV</span>
         <h2>UK News</h2>
       </div>
-      <a href="/uk" class="section-link">All UK <Icons name="arrow-right" /></a>
-    </div>
+      <a href="/uk" class="plate-link">All UK <Icons name="arrow-right" /></a>
+    </header>
     <div class="card-grid">
       {ukPosts.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
     </div>
   </section>
 
+  <div class="fleuron-rule" role="presentation">
+    <Icons name="fleuron" class="section-fleuron" />
+  </div>
+
   {editorsPicks.length > 0 && (
-    <section class="section section-alt">
-      <div class="section-header">
-        <div class="section-header-left">
-          <span class="section-kicker">WORLD</span>
+    <section class="section">
+      <header class="plate-header">
+        <div class="plate-header-left">
+          <span class="plate-number" aria-hidden="true">Pl.&nbsp;V</span>
           <h2>Europe, USA &amp; Global</h2>
         </div>
-        <a href="/global" class="section-link">All World <Icons name="arrow-right" /></a>
-      </div>
+        <a href="/global" class="plate-link">All World <Icons name="arrow-right" /></a>
+      </header>
       <div class="card-grid">
         {worldPosts.map(post => <ArticleCard {...post.data} readTime={getReadTime(post.body || "")} />)}
       </div>
     </section>
   )}
 
-  <!-- Eligibility CTA band -->
-  <section class="eligibility-cta-band">
-    <div class="eligibility-cta-inner">
+  <!-- Eligibility band -->
+  <section class="feature-band">
+    <div class="feature-band-inner">
       <div class="eligibility-cta-content">
-        <span class="eligibility-cta-kicker">PATIENT ACCESS</span>
+        <span class="band-kicker">Patient Access</span>
         <h2>Could you qualify for medical cannabis?</h2>
         <p>Medical cannabis has been legal in the UK since 2018. Most patients don't know it's an option. Take the two-minute checker to find out how the system works and whether you match the profile clinics assess.</p>
-        <a href="/eligibility" class="eligibility-cta-btn">Check your eligibility <Icons name="arrow-right" /></a>
+        <a href="/eligibility" class="cta cta-gilt band-cta">Check your eligibility <Icons name="arrow-right" /></a>
       </div>
     </div>
   </section>
@@ -172,10 +183,10 @@ const today = new Date().toLocaleDateString("en-GB", {
 </Base>
 
 <style>
-  /* ── Masthead bar ── */
+  /* ── Journal dateline ── */
   .masthead-bar {
-    background: var(--green-house);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: var(--bg-band);
+    border-bottom: 1px solid rgba(216,188,126,0.25);
   }
   .masthead-inner {
     max-width: var(--max-width);
@@ -187,166 +198,97 @@ const today = new Date().toLocaleDateString("en-GB", {
     font-size: 0.76rem;
     color: var(--text-on-dark-soft);
   }
-  .masthead-date { font-weight: 500; letter-spacing: 0.01em; }
-  .masthead-sep { width: 1px; height: 12px; background: rgba(255,255,255,0.2); }
+  .masthead-date {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 480;
+    letter-spacing: 0.01em;
+  }
+  .masthead-sep { width: 1px; height: 12px; background: rgba(233,239,233,0.2); }
   .masthead-edition {
-    font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
-    font-size: 0.66rem; color: var(--gold);
+    font-family: var(--font-ui);
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em;
+    font-size: 0.64rem; color: var(--gilt-400);
   }
   .masthead-spacer { flex: 1; }
   .masthead-cta {
-    color: var(--gold-light) !important;
+    color: var(--gilt-400) !important;
     font-weight: 600;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 4px;
     font-size: 0.76rem;
-    transition: color 0.15s ease;
+    transition: color var(--dur-1) var(--ease-out);
   }
-  .masthead-cta:hover { color: #fff !important; }
+  .masthead-cta:hover { color: var(--text-on-dark) !important; }
 
-  /* ── Identity hero ── */
-  .identity-hero {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 72px 20px 56px;
-    text-align: center;
-  }
-  .identity-kicker {
-    font-weight: 600; font-size: 0.65rem; letter-spacing: 0.24em;
-    color: var(--gold); margin-bottom: 16px;
-  }
-  .identity-hero h1 {
-    font-family: var(--font-display); font-weight: 600;
-    font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -0.01em;
-    line-height: 1.15; color: var(--text); margin-bottom: 16px;
-  }
-  .identity-sub {
-    color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6;
-    max-width: 520px; margin: 0 auto 28px;
-  }
   .identity-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .cta {
-    border-radius: var(--radius-btn); font-size: 0.92rem; font-weight: 600;
-    padding: 13px 28px; text-decoration: none; transition: all .15s ease;
-  }
-  .cta:active { transform: scale(0.95); }
-  .cta-filled { background: var(--green-accent); color: var(--text-on-dark); }
-  .cta-filled:hover { background: var(--green); }
-  .cta-outline { border: 1.5px solid var(--green-accent); color: var(--green-accent); }
-  .cta-outline:hover { background: var(--green-bg); }
-  .cta-ghost { border: 1px solid var(--border); color: var(--text-secondary); }
-  .cta-ghost:hover { border-color: var(--green-accent); color: var(--green-accent); }
 
-  /* ── Section label (editorial rule) ── */
+  /* ── Instruments band ── */
+  .tools-band { background: var(--bg-band); }
+  .tools-inner { max-width: var(--max-width); margin: 0 auto; padding: 44px 20px 48px; }
   .section-label {
     display: flex; align-items: center; gap: 14px;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
-  .section-rule {
-    flex: 1; height: 1px; background: rgba(255,255,255,0.16);
-  }
+  .section-rule { flex: 1; height: 1px; background: rgba(233,239,233,0.14); }
   .section-label-text {
-    font-family: var(--font-body);
-    font-weight: 700; font-size: 0.68rem;
-    letter-spacing: 0.18em; color: var(--gold);
+    font-family: var(--font-ui);
+    font-weight: 600; font-size: 0.66rem; text-transform: uppercase;
+    letter-spacing: 0.18em; color: var(--gilt-400);
   }
-
-  /* ── Tools band ── */
-  .tools-band { background: var(--green-house); margin-bottom: 8px; }
-  .tools-inner { max-width: var(--max-width); margin: 0 auto; padding: 40px 20px 44px; }
   .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
   .tool-card {
     display: flex; flex-direction: column; gap: 8px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.14);
-    border-radius: var(--radius); padding: 22px;
-    text-decoration: none; transition: background .15s ease, border-color .15s ease, transform .15s ease;
+    background: rgba(233,239,233,0.05);
+    border: 1px solid rgba(233,239,233,0.14);
+    border-radius: var(--r-3); padding: 22px;
+    text-decoration: none;
+    transition: background var(--dur-1) var(--ease-out), border-color var(--dur-1) var(--ease-out);
   }
   .tool-card:hover {
-    background: rgba(255,255,255,0.1); border-color: var(--gold-light);
-    transform: translateY(-2px);
+    background: rgba(233,239,233,0.08);
+    border-color: var(--gilt-400);
   }
   .tool-icon {
-    color: var(--text-on-dark) !important;
+    width: 40px; height: 40px; border-radius: var(--r-2);
+    background: rgba(216,188,126,0.12);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gilt-400); margin-bottom: 4px;
   }
-  .tool-icon svg { color: var(--text-on-dark) !important; }
-    width: 40px; height: 40px; border-radius: var(--radius);
-    background: rgba(203,162,88,0.12); display: flex; align-items: center;
-    justify-content: center; color: var(--gold); margin-bottom: 4px;
+  .tool-icon :global(svg) { color: var(--gilt-400); }
+  .tool-name {
+    font-family: var(--font-display); font-weight: 560;
+    font-size: 1.15rem; color: var(--text-on-dark);
   }
-  .tool-name { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; color: var(--text-on-dark); }
   .tool-desc { font-size: 0.88rem; line-height: 1.5; color: var(--text-on-dark-soft); }
-  .tool-go { font-size: 0.78rem; font-weight: 600; color: var(--gold); margin-top: 6px; display: flex; align-items: center; gap: 4px; }
+  .tool-go {
+    font-family: var(--font-ui);
+    font-size: 0.74rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gilt-400); margin-top: 6px;
+    display: flex; align-items: center; gap: 4px;
+  }
 
-  /* ── Section headers (editorial) ── */
-  .section { max-width: var(--max-width); margin: 0 auto; padding: 48px 20px; }
-  .section-alt { background: var(--green-bg); }
-  .section-header {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    margin-bottom: 28px; padding-bottom: 16px;
-    border-bottom: 2px solid var(--border);
-  }
-  .section-header-left { display: flex; flex-direction: column; gap: 4px; }
-  .section-kicker {
-    font-family: var(--font-body);
-    font-weight: 700; font-size: 0.62rem;
-    letter-spacing: 0.16em; color: var(--green);
-    text-transform: uppercase;
-  }
-  .section-header h2 {
-    font-family: var(--font-display); font-weight: 600;
-    font-size: 1.8rem; letter-spacing: -0.01em; color: var(--text);
-  }
-  .section-link {
-    font-size: 0.86rem; font-weight: 600; color: var(--green-accent);
-    text-decoration: none; display: flex; align-items: center; gap: 4px;
-    transition: color 0.15s ease;
-  }
-  .section-link:hover { color: var(--green); }
-
-  /* ── Eligibility CTA band ── */
-  .eligibility-cta-band {
-    background: var(--green-house);
-    margin-top: 0;
-  }
-  .eligibility-cta-inner {
-    max-width: var(--max-width); margin: 0 auto; padding: 56px 20px;
-  }
+  /* ── Eligibility band content ── */
   .eligibility-cta-content { max-width: 640px; }
-  .eligibility-cta-kicker {
-    font-weight: 700; font-size: 0.65rem; letter-spacing: 0.18em;
-    color: var(--gold); text-transform: uppercase;
-    display: block; margin-bottom: 12px;
-  }
   .eligibility-cta-content h2 {
-    font-family: var(--font-display); font-weight: 600;
-    font-size: clamp(1.6rem, 3.5vw, 2.2rem); color: var(--text-on-dark);
-    margin-bottom: 16px; letter-spacing: -0.01em; line-height: 1.2;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    margin-bottom: 16px; line-height: 1.2;
   }
   .eligibility-cta-content p {
-    font-size: 1rem; line-height: 1.65; color: var(--text-on-dark-soft);
+    font-size: 1rem; line-height: 1.65;
     margin-bottom: 24px;
   }
-  .eligibility-cta-btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--green-accent); color: var(--text-on-dark);
-    font-weight: 600; font-size: 0.95rem; padding: 14px 32px;
-    border-radius: var(--radius-btn); text-decoration: none;
-    transition: background 0.15s ease, transform 0.15s ease;
-  }
-  .eligibility-cta-btn:hover { background: var(--green); }
-  .eligibility-cta-btn:active { transform: scale(0.95); }
+  .band-cta { font-size: 0.9rem; }
 
   @media (max-width: 900px) {
     .tools-grid { grid-template-columns: 1fr; }
     .masthead-cta { display: none; }
   }
   @media (max-width: 640px) {
-    .identity-hero { padding: 52px 20px 40px; }
+    .identity-ctas { flex-direction: column; }
     .identity-ctas .cta { width: 100%; text-align: center; }
-    .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
-    .section-header h2 { font-size: 1.5rem; }
   }
 </style>

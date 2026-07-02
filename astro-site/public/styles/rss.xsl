@@ -9,18 +9,18 @@
         <title><xsl:value-of select="title"/> — RSS Feed</title>
         <style>
           body { font-family: 'Inter', system-ui, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; background: #fafaf9; color: #1c1917; }
-          h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; color: #059669; margin-bottom: 8px; }
+          h1 { font-family: 'Fraunces', Georgia, serif; font-size: 2rem; color: #2C624A; margin-bottom: 8px; }
           p.sub { color: #78716c; margin-bottom: 32px; }
           .item { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid #e7e5e4; }
           .item h2 { font-size: 1.25rem; margin-bottom: 6px; }
           .item h2 a { color: #1c1917; text-decoration: none; }
-          .item h2 a:hover { color: #059669; }
+          .item h2 a:hover { color: #2C624A; }
           .item .date { font-size: 0.8rem; color: #a8a29e; text-transform: uppercase; margin-bottom: 8px; }
           .item p { color: #57534e; line-height: 1.6; }
-          .subscribe { background: #f0fdf4; border: 1px solid #059669; border-radius: 8px; padding: 20px; margin-bottom: 40px; }
+          .subscribe { background: #f0fdf4; border: 1px solid #2C624A; border-radius: 8px; padding: 20px; margin-bottom: 40px; }
           .subscribe input { padding: 10px 14px; border: 1px solid #d6d3d1; border-radius: 6px; font-size: 0.9rem; width: 250px; }
-          .subscribe button { padding: 10px 20px; background: #059669; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; margin-left: 8px; }
-          a { color: #059669; }
+          .subscribe button { padding: 10px 20px; background: #2C624A; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; margin-left: 8px; }
+          a { color: #2C624A; }
         </style>
       </head>
       <body>

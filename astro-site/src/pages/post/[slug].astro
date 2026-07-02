@@ -15,7 +15,7 @@ if (!post) {
   return Astro.redirect("/404");
 }
 
-const { title, date, region, excerpt, image, tags, author } = post.data;
+const { title, date, region, excerpt, image, tags, author, sources } = post.data;
 const body = post.body || "";
 
 /* Related posts: same region or shared tags, excluding current */
@@ -46,5 +46,6 @@ const related = posts
   tags={tags}
   body={body}
   author={author}
+  sources={sources}
   related={related}
 />

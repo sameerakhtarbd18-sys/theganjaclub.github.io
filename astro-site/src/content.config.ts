@@ -13,6 +13,7 @@ const posts = defineCollection({
     author: z.string().default("The Ganja Club"),
     category: z.enum(["news", "guide", "review"]).default("news"),
     tags: z.array(z.string()).default(["uncategorized"]),
+    sources: z.array(z.string()).optional(),
   }),
 });
 

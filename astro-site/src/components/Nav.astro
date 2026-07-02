@@ -1,5 +1,6 @@
 ---
 import Icons from "./Icons.astro";
+import NavBrand from "./NavBrand.astro";
 const currentPath = Astro.url.pathname;
 function isActive(path: string) {
   if (path === '/') return currentPath === '/';
@@ -16,7 +17,8 @@ function isGuides() {
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="/" class="nav-brand" aria-label="The Ganja Club home">
-      <span class="brand-wordmark">The Ganja Club</span>
+      <NavBrand />
+      <span class="nav-brand-plate" aria-hidden="true">Pl.&nbsp;0</span>
     </a>
 
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false">
